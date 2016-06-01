@@ -1,0 +1,35 @@
+.back_dialog{
+	width: 100%;
+	min-height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	position: fixed;
+	top: 0px;
+	z-index: 250;
+
+	.content_dialog{
+		width: 500px;
+		height: 500px;
+		background-color: green;
+		position: relative;
+		overflow: hidden;
+		overflow-y: auto;
+		margin: 40px auto;
+		.close_dialog{
+			position: absolute;
+			right: 0;
+			top: 0;
+			text-align: center;
+			color: white;
+			height: 30px;
+			width: 30px;
+		}
+		.close_dialog:before{
+			font-family: Arial;
+			content: "x";
+			font-size: 24px;
+			color: black;
+
+		}
+	}
+}

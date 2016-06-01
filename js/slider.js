@@ -41,7 +41,7 @@ $(document).ready(function(){
         $('.list_menu').css({
     		"margin-left" : "-600px",
     	});
-         setTimeout(menuOut, 500);
+         setTimeout(menuOut, 350);
        
       } else {
         trigger.removeClass('is-closed');
@@ -54,7 +54,7 @@ $(document).ready(function(){
         $("#hamburger").css({
         	"margin-left": "110px",
         });
-        setTimeout(menuIn, 700);
+        setTimeout(menuIn, 350);
 
       }
     }
