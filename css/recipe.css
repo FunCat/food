@@ -161,17 +161,18 @@ li span.active {
 /* line 160, ../sass/recipe.scss */
 #receipeslist .receipe_block {
   width: 23%;
-  margin: 1%;
+  height: 150px;
+  margin: 10px 1%;
   display: none;
   float: left;
-  overflow: hidden;
+  transition: height 0.3s;
 }
-/* line 166, ../sass/recipe.scss */
+/* line 168, ../sass/recipe.scss */
 #receipeslist .receipe_block .receipe_block_wrapper {
   overflow: hidden;
   position: relative;
 }
-/* line 171, ../sass/recipe.scss */
+/* line 173, ../sass/recipe.scss */
 #receipeslist .receipe_block .kkal {
   transform: rotate(15deg);
   float: left;
@@ -187,17 +188,17 @@ li span.active {
   padding-top: 6px;
   border: 1px solid white;
 }
-/* line 186, ../sass/recipe.scss */
+/* line 188, ../sass/recipe.scss */
 #receipeslist .receipe_block img {
   max-width: 100%;
   position: relative;
 }
-/* line 190, ../sass/recipe.scss */
+/* line 192, ../sass/recipe.scss */
 #receipeslist .receipe_block .label {
   position: absolute;
   width: 100%;
 }
-/* line 194, ../sass/recipe.scss */
+/* line 196, ../sass/recipe.scss */
 #receipeslist .receipe_block .label_bg {
   background: #7ED42F;
   width: 100%;
@@ -206,96 +207,126 @@ li span.active {
   top: 0;
   left: 0;
 }
-/* line 202, ../sass/recipe.scss */
+/* line 204, ../sass/recipe.scss */
 #receipeslist .receipe_block .label_text {
   color: #fff;
   position: relative;
-  z-index: 500;
+  z-index: 15;
   padding: 5px 8px;
 }
-/* line 208, ../sass/recipe.scss */
+/* line 210, ../sass/recipe.scss */
 #receipeslist .receipe_block .text_category {
   display: block;
   font-size: 9px;
 }
-/* line 212, ../sass/recipe.scss */
-#receipeslist .receipe_block .recipe_more {
+/* line 215, ../sass/recipe.scss */
+#receipeslist .receipe_block_info {
+  height: 0px;
+  width: 100%;
+  background: #7ED42F;
+  z-index: 15;
+  position: relative;
+  transition: height 0.3s;
+  display: none;
+}
+/* line 223, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .hr_pad {
+  padding-top: 10px;
+}
+/* line 225, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .hr_pad .recipe_hr {
+  color: white;
+  background-color: white;
+  width: 60%;
+  height: 1px;
+  border: none;
+  margin: 0px auto;
+}
+/* line 235, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .recipe_stats {
+  color: white;
+  padding: 15px 0px 15px 20px;
+}
+/* line 239, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .recipe_more, #receipeslist .receipe_block_info .recipe_add {
   width: 120px;
   height: 30px;
   color: white;
+  float: left;
   text-align: center;
   padding-top: 5px;
   border: 2px solid white;
-  position: absolute;
-  top: 5;
-  cursor: pointer;
+  margin: 10px 8px 0px 8px;
   transition: all 0.3s;
 }
-/* line 224, ../sass/recipe.scss */
-#receipeslist .receipe_block .recipe_more:hover {
-  background-color: white;
+/* line 250, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .recipe_more:hover, #receipeslist .receipe_block_info .recipe_add:hover {
   color: #7ED42F;
+  background-color: white;
+  cursor: pointer;
 }
 
-/* line 240, ../sass/recipe.scss */
-#recs .recs_block {
-  width: 98%;
-  margin: 1%;
-  display: block;
-  float: left;
-  overflow: hidden;
-  box-shadow: 0 0 10px #285201;
-}
-/* line 247, ../sass/recipe.scss */
-#recs .recs_block .recs_block_wrapper {
-  overflow: hidden;
-  position: relative;
-  height: 200px;
-}
-/* line 252, ../sass/recipe.scss */
-#recs .recs_block img {
-  float: left;
-  height: 90%;
-  margin: 10px;
-  position: relative;
-}
 /* line 258, ../sass/recipe.scss */
-#recs .recs_block .recs_label {
-  float: left;
-}
-/* line 261, ../sass/recipe.scss */
-#recs .recs_block .recs_label_text {
+.dop_text {
+  height: 300px;
   background-color: #7ED42F;
-  text-align: center;
-  color: white;
+  width: 100%;
   position: relative;
-  margin: 5px auto;
-  padding: 3px;
 }
-/* line 268, ../sass/recipe.scss */
-#recs .recs_block .recs_label_text .recs_text_title {
-  font-size: 24px;
-}
-/* line 269, ../sass/recipe.scss */
-#recs .recs_block .recs_label_text .recs_text_category {
-  display: block;
-  font-size: 14px;
-}
-/* line 274, ../sass/recipe.scss */
-#recs .recs_block .recs_recipe_more {
-  width: 120px;
-  height: 30px;
-  color: black;
-  text-align: center;
-  padding-top: 5px;
-  border: 2px solid white;
-  position: absolute;
-  top: 5;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-/* line 286, ../sass/recipe.scss */
-#recs .recs_block .recipe_more:hover {
-  background-color: white;
-  color: #7ED42F;
-}
+
+/*
+
+#recs{
+	.recs_block {
+		width: 98%;
+		margin:1%;
+		display: block;
+		float:left;
+		overflow:hidden;
+		box-shadow: 0 0 10px #285201;
+		.recs_block_wrapper {
+			overflow:hidden;
+			position: relative;
+			height: 200px;
+		} 
+		img {
+			float: left;
+			height: 90%;
+			margin: 10px;
+			position: relative;
+		} 
+		.recs_label {
+			float: left;
+		}
+		.recs_label_text {
+			background-color: #7ED42F;
+			text-align: center;
+			color: white;
+			position: relative;
+			margin: 5px auto;
+			padding: 3px;
+			.recs_text_title{font-size: 24px}
+			.recs_text_category {
+				display: block;
+				font-size: 14px;
+			}
+		}
+		.recs_recipe_more{
+			width: 120px;
+			height: 30px;
+			color: black;
+			text-align: center;
+			padding-top: 5px;
+			border: 2px solid white;
+			position: absolute;
+			top: 5;
+			cursor: pointer;
+			transition: all 0.3s;
+		}
+		.recipe_more:hover{
+			background-color: white;
+			color: #7ED42F;
+		}
+	}
+
+}*/

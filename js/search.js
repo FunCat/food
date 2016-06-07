@@ -14,17 +14,17 @@ $(function () {
 			$('#receipeslist .receipe_block').hover(
 				function () {
 					$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-					//$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
 				},
 				function () {
 					$(this).find('.label').stop().animate({bottom: - $(this).find('.label').height() + "px"}, 200, 'easeInQuad');
-					//$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
-				}		
-			);				
+					$(this).find('.receipe_block_info').hide();
+					$(this).find('.receipe_block_info').stop().animate({height: "0px"}, 200, 'easeOutQuad');				
+				}
+			);
 		}
 	};
-	filterList.init();	
-});	
+	filterList.init();
+});
 
 $(document).ready(function(){
 	$('.recipe_more').css({"left": $(".label").width() - 125 + "px"});
@@ -33,5 +33,11 @@ $(document).ready(function(){
 		$('.recipe_more').css({"left": $(".label").width() - 125 + "px"});
 		$('.recs_label').css({"width": $(".recs_block_wrapper").width() - 350 + "px"});
 	});
+	$('.receipe_block').click(
+		function(){
+			$(this).find('.receipe_block_info').show();
+			$(this).find('.receipe_block_info').stop().animate({height: "170px"}, 200, 'easeInQuad');
+		}
+	);
 });
 

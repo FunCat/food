@@ -182,7 +182,8 @@ body{
 }
 
 .container_sait{
-	overflow: hidden;
+	//overflow: hidden;
+	padding-bottom: 170px;
 }
 
 .block_menu{
@@ -213,6 +214,16 @@ body{
 		}
 	}
 }
+
+
+.footer{
+	height: 100px;
+	width: 100%;
+	background-color: #7ED42F;
+
+}
+
+
 
 
 

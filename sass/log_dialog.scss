@@ -1,4 +1,4 @@
-.back_dialog{
+/*.back_dialog{
 	width: 100%;
 	min-height: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
@@ -9,27 +9,278 @@
 
 	.content_dialog{
 		width: 500px;
-		height: 500px;
-		background-color: green;
+		height: 250px;
+		background-color: #7ED42F;
+		position: relative;
+		overflow: hidden;
+		overflow-y: auto;
+		margin: 40px auto;
+		border-radius: 30px;
+		border: 2px solid white;
+		.close_dialog{
+			position: absolute;
+			right: 5;
+			top: 5;
+			text-align: center;
+			color: white;
+			height: 30px;
+			width: 30px;
+			text-decoration: none;
+		}
+		.close_dialog:before{
+			font-family: Arial;
+			content: "x";
+			font-size: 24px;
+			color: white;
+		}
+	}
+	.switch_form{
+		.vxod{
+			font-size: 28px;
+			color: white;
+			width: 41%;
+			margin: 15px 0px 0px 9%;
+			padding: 5px 0px 5px 10px;
+			float: left;
+			//text-align: center;
+		}
+		.reg{
+			font-size: 28px;
+			color: white;
+			background-color: #6EBA2A;
+			width: 41%;
+			margin: 15px 0px 0px 0px;
+			padding: 5px 0px 5px 10px;
+			float: left;
+			text-align: center;
+		}
+	}
+	.log_hr{
+		border: none;
+		background-color: white;
+		width: 82%;
+		height: 1px;
+		margin: 0px auto 10px auto;
+	}
+	.log_hr2{
+		border: none;
+		background-color: white;
+		width: 82%;
+		height: 1px;
+		margin: 10px auto 0px auto;
+	}
+	.form_acc
+	{
+		margin: 0px auto;
+		.text_log, .text_pass{
+			color: white;
+			font-size: 20px;
+		}
+		.pole_log, .pole_pass{
+			float: left;
+			width: 150px;
+			margin: 10px 0px 10px 5px;
+			border: 2px solid white;
+			//background-color: rgba(255, 255, 255, 0.12);
+			background-color: rgba(0, 0, 0, 0.12);
+			border-radius: 20px;
+			font-size: 15px;
+			color: white;
+			padding: 2px 0px 2px 5px;
+		}
+	}
+	.but_log{
+		width: 100px;
+		color: white;
+		text-align: center;
+		border: 2px solid white;
+		font-size: 20px;
+		margin: 20px auto 0px auto;
+		padding: 5px;
+		transition: all 0.3s;
+	}
+	.but_log:hover{
+		cursor: pointer;
+		background-color: white;
+		color: #7ED42F;
+	}
+}*/
+
+.back_dialog{
+	width: 100%;
+	min-height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	position: fixed;
+	top: 0px;
+	z-index: 250;
+	.content_dialog{
+		width: 450px;
+		height: 300px;
+		background-color: #7ED42F;
 		position: relative;
 		overflow: hidden;
 		overflow-y: auto;
 		margin: 40px auto;
 		.close_dialog{
 			position: absolute;
-			right: 0;
-			top: 0;
+			right: 5;
+			top: 5;
 			text-align: center;
 			color: white;
 			height: 30px;
 			width: 30px;
+			text-decoration: none;
 		}
 		.close_dialog:before{
 			font-family: Arial;
 			content: "x";
 			font-size: 24px;
-			color: black;
-
+			color: white;
+		}
+		.nav_dialog{
+			width: 100%;
+			overflow: hidden;
+			.vxod, .reg{
+				float: left;
+				font-size: 20px;
+				text-align: center;
+				color: white;
+				padding: 10px 0px;
+			}
+			.vxod:hover, .reg:hover{
+				cursor: pointer;
+			}
+			.vxod{
+				width: 30%;
+			}
+			.reg{
+				width: 70%;
+				background-color: #4D9808;
+			}
+		}
+		.vxod_content, .reg_content{
+			width: 100%;
+			height: 247px;
+			background-color: #7ED42F;
+			float: left;
+			position: absolute;
+			.title_dialog{
+				color: white;
+				font-size: 23px;
+				text-align: center;
+				width: 100%;
+				padding: 10px 0px;
+			}
+			.wrap_box{
+				text-align: center;
+				.pole_log, .pole_pass{
+					font-size: 18px;
+					padding: 8px;
+					margin-top: 20px;
+					width: 350px;
+					border: none;
+				}
+				.pole_last, .pole_first, .pole_middle{
+					font-size: 18px;
+					padding: 8px;
+					margin-top: 20px;
+					width: 350px;
+					border: none;
+				}
+				.pole_middle:focus::-webkit-input-placeholder,
+				.pole_first:focus::-webkit-input-placeholder,
+				.pole_last:focus::-webkit-input-placeholder,
+				.pole_log:focus::-webkit-input-placeholder,
+				.pole_pass:focus::-webkit-input-placeholder {
+					color: transparent
+				}
+				.pole_middle:focus::-moz-placeholder,
+				.pole_first:focus::-moz-placeholder,
+				.pole_last:focus::-moz-placeholder,
+				.pole_log:focus::-moz-placeholder,
+				.pole_acc:focus::-moz-placeholder{
+					color: transparent
+				}
+				.pole_middle:focus:-moz-placeholder,
+				.pole_first:focus:-moz-placeholder,
+				.pole_last:focus:-moz-placeholder,
+				.pole_log:focus:-moz-placeholder,
+				.pole_acc:focus:-moz-placeholder{
+					color: transparent
+				}
+				.pole_middle:focus:-ms-input-placeholder,
+				.pole_first:focus:-ms-input-placeholder,
+				.pole_last:focus:-ms-input-placeholder,
+				.pole_log:focus:-ms-input-placeholder,
+				.pole_acc:focus:-ms-input-placeholder{
+					color: transparent
+				}
+				.pole_middle::-webkit-input-placeholder,
+				.pole_first::-webkit-input-placeholder,
+				.pole_last::-webkit-input-placeholder,
+				.pole_log::-webkit-input-placeholder,
+				.pole_pass::-webkit-input-placeholder{
+					color: #4D9808;
+				}
+				.pole_middle::-moz-placeholder,
+				.pole_first::-moz-placeholder,
+				.pole_last::-moz-placeholder,
+				.pole_log::-moz-placeholder,
+				.pole_pass::-moz-placeholder{
+					color: #4D9808;
+				}/* Firefox 19+ */
+				.pole_middle:-moz-placeholder,
+				.pole_first:-moz-placeholder,
+				.pole_last:-moz-placeholder,
+				.pole_log:-moz-placeholder,
+				.pole_pass:-moz-placeholder{
+					color: #4D9808;
+				}/* Firefox 18- */
+				.pole_middle:-ms-input-placeholder,
+				.pole_first:-ms-input-placeholder,
+				.pole_last:-ms-input-placeholder,
+				.pole_log:-ms-input-placeholder,
+				.pole_pass:-ms-input-placeholder{
+					color: #4D9808;
+				}
+				.but_vxod, .but_reg{
+					text-align: center;
+					margin: 30px 0px 0px 0px;
+					width: 100px;
+					height: 35px;
+					background-color: #7ED42F; //#5EE89C
+					border: 2px solid white;
+					color: white;
+					font-size: 15px;
+					text-transform: uppercase;
+					-webkit-transition: all 0.3s;
+					-moz-transition: all 0.3s;
+					transition: all 0.3s;
+				}
+				.but_reg{
+					width: 220px;
+					background-color: #4D9808;
+				}
+				.but_vxod:hover{
+					cursor: pointer;
+					color: #7ED42F;
+					background-color: white;
+				}	
+				.but_reg:hover{
+					cursor: pointer;
+					color: #4D9808;;
+					background-color: white;
+				}
+			}
+		}
+		.reg_content{
+			display: none;
+			height: 417px;
+			left: 100%;
+			background-color: #4D9808;
 		}
 	}
 }
+
+//#4D9808
