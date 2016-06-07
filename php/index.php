@@ -1,3 +1,8 @@
+<?php 
+	include "config.php";
+	include "cookie.php";
+	include "reg_script.php";
+?>
 <html>
 <head>
 	<meta charset="utf-8" />
@@ -9,6 +14,7 @@
 	<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
 	<script src="../js/jquery.easing.min.js" type="text/javascript"></script>
 	<script src="../js/jquery.mixitup.min.js" type="text/javascript"></script>
+	<script src="../js/index.js" type="text/javascript"></script>
 	<script src="../js/slider.js" type="text/javascript"></script>
 	<script src="../js/search.js" type="text/javascript"></script>
 	<script src="../js/log_dialog.js" type="text/javascript"></script>
@@ -68,6 +74,8 @@
 		</div>
 	</div>-->
 
+
+
 	<div id="log_dialog" class="back_dialog">
 		<div class="content_dialog">
 			<div class="nav_dialog">
@@ -76,26 +84,32 @@
 			</div>
 			<a class="close_dialog" href="javascript: closeLogDialog()"></a>
 			<div class="vxod_content">
-				<div class="title_dialog">Войти в учётную запись</div>
-				<div class="wrap_box">
-					<input class="pole_log" type="text" placeholder="Логин" />
-					<input class="pole_pass" type="password" placeholder="Пароль"/>
-					<input type="button" value="Войти" class="but_vxod" />
-				</div>
+				<form method="post" action="index.php">
+					<div class="title_dialog">Войти в учётную запись</div>
+					<div class="wrap_box">
+						<input class="pole_log" name="pole_log" type="text" placeholder="Логин" />
+						<input class="pole_pass" name="pole_pass" type="password" placeholder="Пароль"/>
+						<input class="but_vxod" name="but_log" type="submit" value="Войти" />
+					</div>
+				</form>
 			</div>
 			<div class="reg_content">
-				<div class="title_dialog">Зарегистрироваться</div>
-				<div class="wrap_box">
-					<input class="pole_last" type="text" placeholder="Фамилия" />
-					<input class="pole_first" type="text" placeholder="Имя" />
-					<input class="pole_middle" type="text" placeholder="Отчество" />
-					<input class="pole_log" type="text" placeholder="Логин" />
-					<input class="pole_pass" type="password" placeholder="Пароль"/>
-					<input type="button" value="Зарегистрироваться" class="but_reg" />
-				</div>
+				<form method="post" action="index.php">
+					<div class="title_dialog">Зарегистрироваться</div>
+					<div class="wrap_box">
+						<input class="pole_last" name="reg_last" type="text" placeholder="Фамилия" />
+						<input class="pole_first" name="reg_first" type="text" placeholder="Имя" />
+						<input class="pole_middle" name="reg_middle" type="text" placeholder="Отчество" />
+						<input class="pole_log" name="reg_log" type="text" placeholder="Логин" />
+						<input class="pole_pass" name="reg_pass" type="password" placeholder="Пароль"/>
+						<input class="pole_pass" name="reg_pass2" type="password" placeholder="Повторите пароль"/>
+						<input class="but_reg" name="but_reg" type="submit" value="Зарегистрироваться" />
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
+
 
 
 
@@ -115,11 +129,24 @@
 				<div class="logo">
 					<img src="../img/logo.png" />
 				</div>
-				<form method="post" action="index.html">
+				<?php 
+					if(isset($_COOKIE["name"])){
+				?>
+					<form method="post" action="index.php">
+						<div class="wrap_login">
+							<div class="welcome_text">Здравствуйте, <?php echo $_COOKIE['log'];?>!</div>
+							<input class="but_login but_hov" name="but_exit" type="submit" value="Выйти" />
+						</div>
+					</form>
+				<?php
+					}else{
+				?>
 					<div class="wrap_login">
-						<input class="but_login but_hov" name="but_login" type="button" value="Войти" onclick="openLogDialog()" />
+						<input class="but_login but_hov" type="button" value="Войти" onclick="openLogDialog()" />
 					</div>
-				</form>
+				<?php 
+					}
+				?>
 			</div>
 		</div>
 

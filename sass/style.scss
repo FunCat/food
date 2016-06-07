@@ -51,6 +51,17 @@ body{
 				color: #7ED42F;
 				background-color: white;
 			}	
+			.welcome_text{
+				top: 0;
+				right: 0;
+				position: absolute;
+				color: white;
+				width: 180px;
+				margin-right: 125px;
+				text-align: center;
+				vertical-align: middle;
+				padding: 9px;
+			}
 		}
 	}
 }
@@ -200,10 +211,10 @@ body{
 		transition: all 0.4s;
 		li{
 			width: 100%;
-    		font-size: 25px;
-    		text-align: center;
-    		padding: 15px 0px;
-    		color: white;
+			font-size: 25px;
+			text-align: center;
+			padding: 15px 0px;
+			color: white;
 		}
 		li:hover{
 			cursor: pointer;
@@ -245,7 +256,7 @@ $scale: 1;				// icon scale 68/68 default
 	display: block;
 	width: 68px;
 	height: 68px;
- 	-webkit-touch-callout: none;
+	-webkit-touch-callout: none;
 	user-select: none;
 	transition: margin-left 0.5s;
 }
