@@ -3,11 +3,10 @@
 		$prov = '';
 		$lastname = $_REQUEST['reg_last'];
 		$firstname = $_REQUEST['reg_first'];
-		$middlename = $_REQUEST['reg_middle'];
 		$login = $_REQUEST['reg_log'];
 		$password = $_REQUEST['reg_pass'];
 		$password2 = $_REQUEST['reg_pass2'];
-		if($lastname == '' || $firstname == '' || $middlename == '' || $login == '' || $password == '' || $password2 == ''){
+		if($lastname == '' || $firstname == '' ||  $login == '' || $password == '' || $password2 == ''){
 			$prov = "Вы не везде указали данные!";
 		}
 		else if ($password != $password2){
@@ -25,7 +24,7 @@
 			else{
 				$password = md5(md5(trim($password)));
 
-				$result = mysqli_query($mysqli, "INSERT INTO clients (lastname, firstname, middlename, login, pass, data_registration) VALUES ('$lastname','$firstname', '$middlename','$login', '$password', CURDATE())");
+				$result = mysqli_query($mysqli, "INSERT INTO clients (lastname, firstname, login, pass, data_registration, permissions_id) VALUES ('$lastname','$firstname','$login', '$password', CURDATE(), 4)");
 				$prov = mysqli_query($mysqli, "SELECT COUNT(login) AS num FROM clients WHERE login =  '$login' AND pass =  '$password'");
 				$data = mysqli_fetch_assoc($prov);
 

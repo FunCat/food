@@ -1,0 +1,24 @@
+/* line 1, ../sass/cabinet.scss */
+.acc_property {
+  margin: auto;
+  font-size: 23px;
+}
+/* line 4, ../sass/cabinet.scss */
+.acc_property input[type='text'] {
+  font-size: 23px;
+  margin-bottom: 5px;
+}
+/* line 8, ../sass/cabinet.scss */
+.acc_property .but_upd {
+  border: none;
+  width: 200px;
+  height: 40px;
+  background-color: #7ed42f;
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+}
+/* line 17, ../sass/cabinet.scss */
+.acc_property .but_upd {
+  cursor: pointer;
+}

@@ -10,13 +10,17 @@
 	<title>Здоровое питание</title>
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/recipe.css" />
+	<link rel="stylesheet" href="../css/trackbar.css" />
+	<link rel="stylesheet" href="../css/recipes.css" />
 	<link rel="stylesheet" href="../css/log_dialog.css" />
 	<link rel="stylesheet" href="../fonts/font.css" />
 	<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
+	<script src="../js/jquery-1.6.1.min.js" type="text/javascript" ></script>
 	<script src="../js/jquery.easing.min.js" type="text/javascript"></script>
 	<script src="../js/jquery.mixitup.min.js" type="text/javascript"></script>
+	<script src="../js/jquery.ui-slider.js" type="text/javascript"></script>
 	<script src="../js/index.js" type="text/javascript"></script>
-	<script src="../js/slider.js" type="text/javascript"></script>
+	<script src="../js/recipes.js" type="text/javascript"></script>
 	<script src="../js/hamburger.js" type="text/javascript"></script>
 	<script src="../js/search.js" type="text/javascript"></script>
 	<script src="../js/log_dialog.js" type="text/javascript"></script>
@@ -92,8 +96,8 @@
 
 	<div class="block_menu">
 		<ul class="list_menu">
-			<a href="index.php"><li class="active_point_menu">Главная</li></a>
-			<a href="recipes.php"><li>Рецепты</li></a>
+			<a href="index.php"><li>Главная</li></a>
+			<a href="recipes.php"><li class="active_point_menu">Рецепты</li></a>
 			<li>Диеты</li>
 			<li>Калькулятор</li>
 			<li>Контакты</li>
@@ -129,23 +133,37 @@
 			</div>
 		</div>
 
-		<div class="wrap_slider">
-			<div class="slider">
-				<div class='left_point'></div>
-				<div class="slide">
-					<div class="pict_slide image_slide_1 active"></div>
-					<div class="pict_slide image_slide_2"></div>
-					<!--<img class="image_slide_2" src="../img/2.jpg" width="1200" height="600" />-->
-				</div>
-				<div class='right_point'></div>
-			</div>
-		</div>
 
 		<div class="wrap_main_part">
 			<div class="main_part">
-				<h1>Следи за своим здоровьем вместе с нами!</h1>
+				<div class="section_title">
+					<h1>Рецепты</h1>
+				</div>
 
-				<!--<div class="recipe recipe_border recipe_animation">Button</div>-->
+				<div class="search_panel">
+					<input class="pole_search" name="text_searh" type="text" placeholder="Найти...">
+					<input class="search_button" name="but_search" type="submit" value="Поиск" />
+					<input class="fullsearch_button" name="but_fullsearch" type="submit" value="Расширенный поиск" />
+					<div class="central_block">
+						<div class="kkal_block">
+							<div>Ккал от <input id="kkal_min" type="text" /> до <input id="kkal_max" type="text" /></div>
+							<div id="kkal_kol"></div>
+						</div>
+						<div class="proteins_block">
+							<div>Белки от <input id="proteins_min" type="text" /> до <input id="proteins_max" type="text" /></div>
+							<div id="proteins_kol"></div>
+						</div>
+						<div class="fats_block">
+							<div>Жиры от <input id="fats_min" type="text" /> до <input id="fats_max" type="text" /></div>
+							<div id="fats_kol"></div>
+						</div>
+						<div class="carboh_block">
+							<div>Углеводы от <input id="carboh_min" type="text" /> до <input id="carboh_max" type="text" /></div>
+							<div id="carboh_kol"></div>
+						</div>
+					</div>
+
+				</div>
 
 				<ul id="filters" class="clearfix">
 					<li><span class="filter active" data-filter="desert first breakfast salat soup snacks drinks sauces">Все</span></li>
@@ -306,8 +324,7 @@
 							</div>
 						</div>
 						<div class="receipe_block_info"></div>
-					</div>				
-
+					</div>
 
 				</div>
 

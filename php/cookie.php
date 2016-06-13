@@ -19,18 +19,21 @@ if (isset($_REQUEST["but_log"]))
 		$bol_enter_master = mysqli_num_rows($result_masters);
 
 		if($bol_enter_master == 1){
-			$resul = mysqli_query($mysqli, "SELECT firstname FROM masters WHERE login =  '$logres'");	
+			$resul = mysqli_query($mysqli, "SELECT firstname, permissions_id FROM masters WHERE login =  '$logres'");	
 		}
 		else if($bol_enter_client == 1){
-			$resul = mysqli_query($mysqli, "SELECT firstname FROM clients WHERE login =  '$logres'");
+			$resul = mysqli_query($mysqli, "SELECT firstname, permissions_id FROM clients WHERE login =  '$logres'");
 		}
 
 		if($bol_enter_client == 1 || $bol_enter_master == 1)
 		{
 			$info = mysqli_fetch_assoc($resul);
 			$nameres = $info["firstname"];
+			$permission = $info["permissions_id"];
 			SetCookie("name", "$nameres", time()+4800);
 			SetCookie("log", "$logres", time()+4800);
+			SetCookie("first", "$nameres", time()+4800);
+			SetCookie("perm", "$permission", time()+4800);
 			$prov_in = "Вы успешно вошли"; 
 			header('location:'.$_SERVER['HTTP_REFERER']);
 		} 
@@ -49,17 +52,10 @@ if (isset($_REQUEST["but_log"]))
 
 if(isset($_REQUEST["but_exit"]))
 {
-	$nameres = $_COOKIE['name'];
-	$logres = $_COOKIE['log'];
-	
-	$result_clients = mysqli_query($mysqli, "SELECT * FROM clients WHERE login =  '$logres'");
-	$bol_enter_client = mysqli_num_rows($result_clients);
-
-	$result_masters = mysqli_query($mysqli, "SELECT * FROM masters WHERE login =  '$logres'");
-	$bol_enter_master = mysqli_num_rows($result_masters);
-
-	SetCookie("name","$nameres",time()-4800);
-	SetCookie("log","$logres",time()-4800);
+	SetCookie("name","",time()-4800);
+	SetCookie("log","",time()-4800);
+	SetCookie("first", "", time()-4800);
+	SetCookie("perm", "", time()-4800);
 	header('location:'.$_SERVER['HTTP_REFERER']);
 }
 ?>

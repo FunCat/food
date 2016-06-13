@@ -19,7 +19,7 @@ function openDialogVxod(){
 	});
 }
 function openDialogReg(){
-	$('.content_dialog').animate({"height": "510px"}, 200, function(){
+	$('.content_dialog').animate({"height": "460px"}, 200, function(){
 		$(".reg_content").show();
 		$(".reg_content").animate({"left": "0%"}, 500);
 		$(".vxod_content").animate({"left": "-100%"}, 500);

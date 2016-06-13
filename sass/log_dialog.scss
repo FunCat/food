@@ -1,111 +1,3 @@
-/*.back_dialog{
-	width: 100%;
-	min-height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	overflow: hidden;
-	position: fixed;
-	top: 0px;
-	z-index: 250;
-
-	.content_dialog{
-		width: 500px;
-		height: 250px;
-		background-color: #7ED42F;
-		position: relative;
-		overflow: hidden;
-		overflow-y: auto;
-		margin: 40px auto;
-		border-radius: 30px;
-		border: 2px solid white;
-		.close_dialog{
-			position: absolute;
-			right: 5;
-			top: 5;
-			text-align: center;
-			color: white;
-			height: 30px;
-			width: 30px;
-			text-decoration: none;
-		}
-		.close_dialog:before{
-			font-family: Arial;
-			content: "x";
-			font-size: 24px;
-			color: white;
-		}
-	}
-	.switch_form{
-		.vxod{
-			font-size: 28px;
-			color: white;
-			width: 41%;
-			margin: 15px 0px 0px 9%;
-			padding: 5px 0px 5px 10px;
-			float: left;
-			//text-align: center;
-		}
-		.reg{
-			font-size: 28px;
-			color: white;
-			background-color: #6EBA2A;
-			width: 41%;
-			margin: 15px 0px 0px 0px;
-			padding: 5px 0px 5px 10px;
-			float: left;
-			text-align: center;
-		}
-	}
-	.log_hr{
-		border: none;
-		background-color: white;
-		width: 82%;
-		height: 1px;
-		margin: 0px auto 10px auto;
-	}
-	.log_hr2{
-		border: none;
-		background-color: white;
-		width: 82%;
-		height: 1px;
-		margin: 10px auto 0px auto;
-	}
-	.form_acc
-	{
-		margin: 0px auto;
-		.text_log, .text_pass{
-			color: white;
-			font-size: 20px;
-		}
-		.pole_log, .pole_pass{
-			float: left;
-			width: 150px;
-			margin: 10px 0px 10px 5px;
-			border: 2px solid white;
-			//background-color: rgba(255, 255, 255, 0.12);
-			background-color: rgba(0, 0, 0, 0.12);
-			border-radius: 20px;
-			font-size: 15px;
-			color: white;
-			padding: 2px 0px 2px 5px;
-		}
-	}
-	.but_log{
-		width: 100px;
-		color: white;
-		text-align: center;
-		border: 2px solid white;
-		font-size: 20px;
-		margin: 20px auto 0px auto;
-		padding: 5px;
-		transition: all 0.3s;
-	}
-	.but_log:hover{
-		cursor: pointer;
-		background-color: white;
-		color: #7ED42F;
-	}
-}*/
-
 .back_dialog{
 	width: 100%;
 	min-height: 100%;
@@ -259,7 +151,7 @@
 					transition: all 0.3s;
 				}
 				.but_reg{
-					width: 220px;
+					width: 170px;
 					background-color: #4D9808;
 				}
 				.but_vxod:hover{
@@ -276,7 +168,7 @@
 		}
 		.reg_content{
 			display: none;
-			height: 467px;
+			height: 417px;
 			left: 100%;
 			background-color: #4D9808;
 		}

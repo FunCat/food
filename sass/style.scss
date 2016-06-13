@@ -34,7 +34,7 @@ body{
 				position: absolute;
 				right: 0;
 				top: 0;
-				margin: 30px 25px 0px 50px;
+				margin: 30px 25px 0px 0px;
 				width: 100px;
 				height: 35px;
 				background-color: #7ED42F; //#5EE89C
@@ -51,13 +51,34 @@ body{
 				color: #7ED42F;
 				background-color: white;
 			}	
+			.but_cabinet{
+				position: absolute;
+				right: 0;
+				top: 0;
+				margin: 30px 130px 0px 0px;
+				width: 200px;
+				height: 35px;
+				background-color: #7ED42F; //#5EE89C
+				border: 2px solid white;
+				color: white;
+				font-size: 15px;
+				text-transform: uppercase;
+				-webkit-transition: all 0.3s;
+				-moz-transition: all 0.3s;
+				transition: all 0.3s;
+			}
+			.but_cabinet:hover{
+				cursor: pointer;
+				color: #7ED42F;
+				background-color: white;
+			}
 			.welcome_text{
 				top: 0;
 				right: 0;
 				position: absolute;
 				color: white;
 				width: 180px;
-				margin-right: 125px;
+				margin-right: 335px;
 				text-align: center;
 				vertical-align: middle;
 				padding: 9px;
@@ -180,6 +201,9 @@ body{
 			font-weight: normal;
 			background-color: #7ED42F;
 		}
+		h1.title{
+			margin: 20px 0px;
+		}
 	}
 }
 
@@ -193,7 +217,7 @@ body{
 }
 
 .container_sait{
-	//overflow: hidden;
+	overflow: auto; //подумать, т.к. нижник блоки обрезает
 	padding-bottom: 170px;
 }
 
@@ -205,6 +229,10 @@ body{
 	z-index: 19;
 	transition: all 0.4s;
 	border-right: 0px solid white;
+	a{
+		text-decoration: none;
+		color: white;
+	}
 	ul{
 		margin-top: 120px;
 		margin-left: -600px;
@@ -231,7 +259,17 @@ body{
 	height: 100px;
 	width: 100%;
 	background-color: #7ED42F;
+}
 
+.mess_no_log{
+	width: 1000px;
+	height: 100px;
+	margin: 130px auto 20px auto;
+	padding-top: 20px;
+	text-align: center;
+	font-size: 50px;
+	background-color: #7ed42f;
+	color: white;
 }
 
 

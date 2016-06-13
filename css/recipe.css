@@ -126,7 +126,7 @@
 */
 /* line 133, ../sass/recipe.scss */
 #filters {
-  margin: 1%;
+  margin: 1% auto;
   padding: 0;
   list-style: none;
 }

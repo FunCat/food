@@ -1,0 +1,86 @@
+.section_title{
+	margin: 20px 0px;
+}
+.search_panel{
+	width: 500px;
+	height: 75px;
+	overflow: hidden;
+	margin: 20px auto;
+	text-align: center;
+	.search_title{
+		text-align: center;
+		font-size: 22px;
+		color: #7ED42F;
+	}
+	.search_button, .fullsearch_button{
+		font-size: 18px;
+		padding: 3px;
+		border: 1px solid #7ED42F;
+		background-color: #7ED42F;
+		color: white;
+		margin-left: 10px;
+		margin-top: 8px;
+		width: 100px;
+		transition: all 0.3s;
+	}
+	.search_button:hover, .fullsearch_button:hover{
+		cursor: pointer;
+		background-color: white;
+		color: #7ED42F;
+	}
+	.fullsearch_button{
+		width: 200px;
+	}
+	.pole_search{
+		font-size: 20px;
+		border: 1px solid #7ED42F;
+		padding: 6px;
+		width: 500px;
+		color: #4D9808;
+	}
+	.pole_search:focus::-webkit-input-placeholder{
+		color: transparent
+	}
+	.pole_search:focus::-moz-placeholder{
+		color: transparent
+	}
+	.pole_search:focus:-moz-placeholder{
+		color: transparent
+	}
+	.pole_search:focus:-ms-input-placeholder{
+		color: transparent
+	}
+	.pole_search::-webkit-input-placeholder{
+		color: #4D9808;
+	}
+	.pole_search::-moz-placeholder{
+		color: #4D9808;
+	}/* Firefox 19+ */
+	.pole_search:-moz-placeholder{
+		color: #4D9808;
+	}/* Firefox 18- */
+	.pole_search:-ms-input-placeholder{
+		color: #4D9808;
+	}
+	.central_block{
+		.kkal_block, .proteins_block,
+		.fats_block, .carboh_block{
+			width: 25%;
+			height: 80px;
+			padding-top: 20px;
+			float: left;
+			#kkal_min, #kkal_max,
+			#proteins_min, #proteins_max,
+			#fats_min, #fats_max,
+			#carboh_min, #carboh_max{
+				width: 35px;
+				text-align: center;
+			}
+			#kkal_kol, #proteins_kol,
+			#fats_kol, #carboh_kol{
+				width: 200px;
+				margin: 10px auto;
+			}
+		}
+	}
+}
