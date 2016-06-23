@@ -38,7 +38,7 @@
 }
 /* line 33, ../sass/log_dialog.scss */
 .back_dialog .content_dialog .nav_dialog {
-  width: 100%;
+  width: 450px;
   overflow: hidden;
 }
 /* line 36, ../sass/log_dialog.scss */
@@ -55,11 +55,11 @@
 }
 /* line 46, ../sass/log_dialog.scss */
 .back_dialog .content_dialog .nav_dialog .vxod {
-  width: 30%;
+  width: 135px;
 }
 /* line 49, ../sass/log_dialog.scss */
 .back_dialog .content_dialog .nav_dialog .reg {
-  width: 70%;
+  width: 315px;
   background-color: #4D9808;
 }
 /* line 54, ../sass/log_dialog.scss */
@@ -85,118 +85,167 @@
   /* Firefox 18- */
 }
 /* line 69, ../sass/log_dialog.scss */
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_log, .back_dialog .content_dialog .vxod_content .wrap_box .pole_pass, .back_dialog .content_dialog .reg_content .wrap_box .pole_log, .back_dialog .content_dialog .reg_content .wrap_box .pole_pass {
+.back_dialog .content_dialog .vxod_content .wrap_box .prov_lastname,
+.back_dialog .content_dialog .vxod_content .wrap_box .prov_firstname,
+.back_dialog .content_dialog .vxod_content .wrap_box .prov_login,
+.back_dialog .content_dialog .vxod_content .wrap_box .prov_pass,
+.back_dialog .content_dialog .vxod_content .wrap_box .prov_pass2,
+.back_dialog .content_dialog .vxod_content .wrap_box .prov_log_log,
+.back_dialog .content_dialog .vxod_content .wrap_box .prov_log_pass, .back_dialog .content_dialog .reg_content .wrap_box .prov_lastname,
+.back_dialog .content_dialog .reg_content .wrap_box .prov_firstname,
+.back_dialog .content_dialog .reg_content .wrap_box .prov_login,
+.back_dialog .content_dialog .reg_content .wrap_box .prov_pass,
+.back_dialog .content_dialog .reg_content .wrap_box .prov_pass2,
+.back_dialog .content_dialog .reg_content .wrap_box .prov_log_log,
+.back_dialog .content_dialog .reg_content .wrap_box .prov_log_pass {
+  color: white;
+}
+/* line 78, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .total_prov, .back_dialog .content_dialog .vxod_content .wrap_box .total_log_prov, .back_dialog .content_dialog .reg_content .wrap_box .total_prov, .back_dialog .content_dialog .reg_content .wrap_box .total_log_prov {
+  color: white;
+  margin-top: 10px;
+}
+/* line 82, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log, .back_dialog .content_dialog .vxod_content .wrap_box .pole_pass, .back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_last, .back_dialog .content_dialog .vxod_content .wrap_box .pole_first,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log, .back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass, .back_dialog .content_dialog .reg_content .wrap_box .pole_log, .back_dialog .content_dialog .reg_content .wrap_box .pole_pass, .back_dialog .content_dialog .reg_content .wrap_box .pole_pass2,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_last, .back_dialog .content_dialog .reg_content .wrap_box .pole_first,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_log, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass {
   font-size: 18px;
   padding: 8px;
   margin-top: 20px;
   width: 350px;
   border: none;
 }
-/* line 76, ../sass/log_dialog.scss */
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_last, .back_dialog .content_dialog .vxod_content .wrap_box .pole_first, .back_dialog .content_dialog .vxod_content .wrap_box .pole_middle, .back_dialog .content_dialog .reg_content .wrap_box .pole_last, .back_dialog .content_dialog .reg_content .wrap_box .pole_first, .back_dialog .content_dialog .reg_content .wrap_box .pole_middle {
-  font-size: 18px;
-  padding: 8px;
-  margin-top: 20px;
-  width: 350px;
-  border: none;
-}
-/* line 83, ../sass/log_dialog.scss */
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_middle:focus::-webkit-input-placeholder,
+/* line 92, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:focus::-webkit-input-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_first:focus::-webkit-input-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_last:focus::-webkit-input-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_log:focus::-webkit-input-placeholder,
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:focus::-webkit-input-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_middle:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:focus::-webkit-input-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:focus::-webkit-input-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_first:focus::-webkit-input-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_last:focus::-webkit-input-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_log:focus::-webkit-input-placeholder,
-.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:focus::-webkit-input-placeholder {
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:focus::-webkit-input-placeholder {
   color: transparent;
 }
-/* line 90, ../sass/log_dialog.scss */
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_middle:focus::-moz-placeholder,
+/* line 101, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:focus::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:focus::-moz-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_first:focus::-moz-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_last:focus::-moz-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_log:focus::-moz-placeholder,
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_acc:focus::-moz-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_middle:focus::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:focus::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:focus::-moz-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:focus::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:focus::-moz-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_first:focus::-moz-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_last:focus::-moz-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_log:focus::-moz-placeholder,
-.back_dialog .content_dialog .reg_content .wrap_box .pole_acc:focus::-moz-placeholder {
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:focus::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:focus::-moz-placeholder {
   color: transparent;
 }
-/* line 97, ../sass/log_dialog.scss */
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_middle:focus:-moz-placeholder,
+/* line 110, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:focus:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:focus:-moz-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_first:focus:-moz-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_last:focus:-moz-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_log:focus:-moz-placeholder,
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_acc:focus:-moz-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_middle:focus:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:focus:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:focus:-moz-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:focus:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:focus:-moz-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_first:focus:-moz-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_last:focus:-moz-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_log:focus:-moz-placeholder,
-.back_dialog .content_dialog .reg_content .wrap_box .pole_acc:focus:-moz-placeholder {
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:focus:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:focus:-moz-placeholder {
   color: transparent;
 }
-/* line 104, ../sass/log_dialog.scss */
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_middle:focus:-ms-input-placeholder,
+/* line 119, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:focus:-ms-input-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_first:focus:-ms-input-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_last:focus:-ms-input-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_log:focus:-ms-input-placeholder,
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_acc:focus:-ms-input-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_middle:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:focus:-ms-input-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:focus:-ms-input-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_first:focus:-ms-input-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_last:focus:-ms-input-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_log:focus:-ms-input-placeholder,
-.back_dialog .content_dialog .reg_content .wrap_box .pole_acc:focus:-ms-input-placeholder {
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:focus:-ms-input-placeholder {
   color: transparent;
 }
-/* line 111, ../sass/log_dialog.scss */
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_middle::-webkit-input-placeholder,
+/* line 128, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass::-webkit-input-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_first::-webkit-input-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_last::-webkit-input-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_log::-webkit-input-placeholder,
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass::-webkit-input-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_middle::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2::-webkit-input-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass::-webkit-input-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_first::-webkit-input-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_last::-webkit-input-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_log::-webkit-input-placeholder,
-.back_dialog .content_dialog .reg_content .wrap_box .pole_pass::-webkit-input-placeholder {
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2::-webkit-input-placeholder {
   color: #4D9808;
 }
-/* line 118, ../sass/log_dialog.scss */
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_middle::-moz-placeholder,
+/* line 137, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass::-moz-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_first::-moz-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_last::-moz-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_log::-moz-placeholder,
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass::-moz-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_middle::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2::-moz-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass::-moz-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_first::-moz-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_last::-moz-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_log::-moz-placeholder,
-.back_dialog .content_dialog .reg_content .wrap_box .pole_pass::-moz-placeholder {
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2::-moz-placeholder {
   color: #4D9808;
 }
-/* line 125, ../sass/log_dialog.scss */
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_middle:-moz-placeholder,
+/* line 146, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:-moz-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_first:-moz-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_last:-moz-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_log:-moz-placeholder,
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:-moz-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_middle:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:-moz-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:-moz-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_first:-moz-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_last:-moz-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_log:-moz-placeholder,
-.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:-moz-placeholder {
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:-moz-placeholder {
   color: #4D9808;
 }
-/* line 132, ../sass/log_dialog.scss */
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_middle:-ms-input-placeholder,
+/* line 155, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:-ms-input-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_first:-ms-input-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_last:-ms-input-placeholder,
 .back_dialog .content_dialog .vxod_content .wrap_box .pole_log:-ms-input-placeholder,
-.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:-ms-input-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_middle:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:-ms-input-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:-ms-input-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_first:-ms-input-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_last:-ms-input-placeholder,
 .back_dialog .content_dialog .reg_content .wrap_box .pole_log:-ms-input-placeholder,
-.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:-ms-input-placeholder {
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:-ms-input-placeholder {
   color: #4D9808;
 }
-/* line 139, ../sass/log_dialog.scss */
+/* line 164, ../sass/log_dialog.scss */
 .back_dialog .content_dialog .vxod_content .wrap_box .but_vxod, .back_dialog .content_dialog .vxod_content .wrap_box .but_reg, .back_dialog .content_dialog .reg_content .wrap_box .but_vxod, .back_dialog .content_dialog .reg_content .wrap_box .but_reg {
   text-align: center;
   margin: 30px 0px 0px 0px;
@@ -211,24 +260,24 @@
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 153, ../sass/log_dialog.scss */
+/* line 178, ../sass/log_dialog.scss */
 .back_dialog .content_dialog .vxod_content .wrap_box .but_reg, .back_dialog .content_dialog .reg_content .wrap_box .but_reg {
   width: 170px;
   background-color: #4D9808;
 }
-/* line 157, ../sass/log_dialog.scss */
+/* line 182, ../sass/log_dialog.scss */
 .back_dialog .content_dialog .vxod_content .wrap_box .but_vxod:hover, .back_dialog .content_dialog .reg_content .wrap_box .but_vxod:hover {
   cursor: pointer;
   color: #7ED42F;
   background-color: white;
 }
-/* line 162, ../sass/log_dialog.scss */
+/* line 187, ../sass/log_dialog.scss */
 .back_dialog .content_dialog .vxod_content .wrap_box .but_reg:hover, .back_dialog .content_dialog .reg_content .wrap_box .but_reg:hover {
   cursor: pointer;
   color: #4D9808;
   background-color: white;
 }
-/* line 169, ../sass/log_dialog.scss */
+/* line 194, ../sass/log_dialog.scss */
 .back_dialog .content_dialog .reg_content {
   display: none;
   height: 417px;

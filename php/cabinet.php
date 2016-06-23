@@ -2,25 +2,24 @@
 	include "config.php";
 	include "cookie.php";
 	include "reg_script.php";
-	include "cabinet_script.php";
 ?>
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Здоровое питание</title>
+	<title>DailyFood - Личный кабинет</title>
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/cabinet.css" />
+	<link rel="stylesheet" href="../css/cabinet_valid.css" />
 	<link rel="stylesheet" href="../css/log_dialog.css" />
 	<link rel="stylesheet" href="../fonts/font.css" />
-	<link rel="stylesheet" href="../css/validationEngine.jquery.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
-	<script src="../js/jqueryforchecking.js" type="text/javascript"></script>
 	<script src="../js/index.js" type="text/javascript"></script>
 	<script src="../js/hamburger.js" type="text/javascript"></script>
 	<script src="../js/log_dialog.js" type="text/javascript"></script>
-	<script src="../js/jquery.validationEngine.js" type="text/javascript"></script>
-
-	
+	<script src="../js/reg_valid.js" type="text/javascript"></script>
+	<script src="../js/log_valid.js" type="text/javascript"></script>
+	<script src="../js/cabinet_valid.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="pict_menu">
@@ -63,27 +62,23 @@
 			</div>
 			<a class="close_dialog" href="javascript: closeLogDialog()"></a>
 			<div class="vxod_content">
-				<form method="post" action="index.php">
-					<div class="title_dialog">Войти в учётную запись</div>
-					<div class="wrap_box">
-						<input class="pole_log" name="pole_log" type="text" placeholder="Логин" />
-						<input class="pole_pass" name="pole_pass" type="password" placeholder="Пароль"/>
-						<input class="but_vxod" name="but_log" type="submit" value="Войти" />
-					</div>
-				</form>
+				<div class="title_dialog">Войти в учётную запись</div>
+				<div class="wrap_box">
+					<input class="pole_log_log" name="pole_log" type="text" placeholder="Логин" /><div class="prov_log_log"></div>
+					<input class="pole_log_pass" name="pole_pass" type="password" placeholder="Пароль"/><div class="prov_log_pass"></div>
+					<input class="but_vxod" name="but_log" type="button" value="Войти" /><div class="total_log_prov"></div>
+				</div>
 			</div>
 			<div class="reg_content">
-				<form method="post" action="index.php">
-					<div class="title_dialog">Регистрация</div>
-					<div class="wrap_box">
-						<input class="pole_last" name="reg_last" type="text" placeholder="Фамилия" />
-						<input class="pole_first" name="reg_first" type="text" placeholder="Имя" />
-						<input class="pole_log" name="reg_log" type="text" placeholder="Логин" />
-						<input class="pole_pass" name="reg_pass" type="password" placeholder="Пароль"/>
-						<input class="pole_pass" name="reg_pass2" type="password" placeholder="Повторите пароль"/>
-						<input class="but_reg" name="but_reg" type="submit" value="Регистрация" />
-					</div>
-				</form>
+				<div class="title_dialog">Регистрация</div>
+				<div class="wrap_box">
+					<input class="pole_last" name="reg_last" type="text" placeholder="Фамилия*" /><div class="prov_lastname"></div>
+					<input class="pole_first" name="reg_first" type="text" placeholder="Имя*" /><div class="prov_firstname"></div>
+					<input class="pole_log" name="reg_log" type="text" placeholder="Логин*" /><div class="prov_login"></div>
+					<input class="pole_pass" name="reg_pass" type="password" placeholder="Пароль*"/><div class="prov_pass"></div>
+					<input class="pole_pass2" name="reg_pass2" type="password" placeholder="Повторите пароль*"/><div class="prov_pass2"></div>
+					<input class="but_reg" name="but_reg" type="button" value="Регистрация" /><div class="total_prov"></div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -95,7 +90,7 @@
 		<ul class="list_menu">
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
-			<li>Диеты</li>
+			<li>Питание</li>
 			<li>Калькулятор</li>
 			<li>Контакты</li>
 			<?php if($_COOKIE['perm'] == 1){ ?><a href="admin_panel.php"><li>Панель администратора</li></a><?php }?>
@@ -166,31 +161,30 @@
 					<form method="post" action="#">
 					<table class="acc_property">
 						<tr>
-							<td>Фамилия:</td>
-							<td><input name="my_lastname" type="text" <?php  echo"value='$lastres'"; ?> /></td>
+							<td>Фамилия:*</td>
+							<td style="position: relative"><input class="my_lastname" name="my_lastname" type="text" <?php  echo"value='$lastres'"; ?> /><div class="prov_lastname"></div></td>
 						</tr>
 						<tr>
-							<td>Имя:</td>
-							<td><input name="my_firstname" type="text" <?php  echo"value='$nameres'"; ?> /></td>
+							<td>Имя:*</td>
+							<td style="position: relative"><input  class="my_firstname" name="my_firstname" type="text" <?php  echo"value='$nameres'"; ?> /><div class="prov_firstname"></div></td>
 						</tr>
 						<tr>
 							<td>Отчество:</td>
-							<td><input name="my_middlename" type="text" <?php  echo"value='$middres'"; ?> /></td>
+							<td style="position: relative"><input  class="my_middlename" name="my_middlename" type="text" <?php  echo"value='$middres'"; ?> /><div class="prov_middlename"></div></td>
 						</tr>
 						<tr>
 							<td>Телефон:</td>
-							<td><input name="my_tel" type="text"  <?php  echo"value='$telres'"; ?> /></td>
+							<td style="position: relative"><input  class="my_tel" name="my_tel" type="text"  <?php  echo"value='$telres'"; ?> /><div class="prov_tel"></div></td>
 						</tr>
 						<tr>
 							<td>E-mail:</td>
-							<td><input name="my_mail" type="text"  <?php  echo"value='$mailres'"; ?> /></td>
+							<td style="position: relative"><input  class="my_mail" name="my_mail" type="text"  <?php  echo"value='$mailres'"; ?> /><div class="prov_mail"></div></td>
 						</tr>
 						<tr>
-							<td style="text-align: center" colspan="2"><input class="but_upd" name="acc_update" type="submit" value="Изменить"/></td>
+							<td style="text-align: center" colspan="2"><input class="but_upd" name="acc_update" type="button" value="Изменить"/></td>
 						</tr>
 					</table>
 					</form>
-					<?php echo $prov; ?>
 			</div>
 		</div>
 

@@ -31,7 +31,7 @@
 			color: white;
 		}
 		.nav_dialog{
-			width: 100%;
+			width: 450px;
 			overflow: hidden;
 			.vxod, .reg{
 				float: left;
@@ -44,10 +44,10 @@
 				cursor: pointer;
 			}
 			.vxod{
-				width: 30%;
+				width: 135px;
 			}
 			.reg{
-				width: 70%;
+				width: 315px;
 				background-color: #4D9808;
 			}
 		}
@@ -66,74 +66,99 @@
 			}
 			.wrap_box{
 				text-align: center;
-				.pole_log, .pole_pass{
+				.prov_lastname,
+				.prov_firstname,
+				.prov_login,
+				.prov_pass,
+				.prov_pass2,
+				.prov_log_log,
+				.prov_log_pass{
+					color: white;
+				}
+				.total_prov, .total_log_prov{
+					color: white;
+					margin-top: 10px;
+				}
+				.pole_log, .pole_pass, .pole_pass2,
+				.pole_last, .pole_first,
+				.pole_log_log, .pole_log_pass
+				{
 					font-size: 18px;
 					padding: 8px;
 					margin-top: 20px;
 					width: 350px;
 					border: none;
 				}
-				.pole_last, .pole_first, .pole_middle{
-					font-size: 18px;
-					padding: 8px;
-					margin-top: 20px;
-					width: 350px;
-					border: none;
-				}
-				.pole_middle:focus::-webkit-input-placeholder,
+				.pole_log_log:focus::-webkit-input-placeholder,
+				.pole_log_pass:focus::-webkit-input-placeholder,
 				.pole_first:focus::-webkit-input-placeholder,
 				.pole_last:focus::-webkit-input-placeholder,
 				.pole_log:focus::-webkit-input-placeholder,
-				.pole_pass:focus::-webkit-input-placeholder {
+				.pole_pass:focus::-webkit-input-placeholder,
+				.pole_pass2:focus::-webkit-input-placeholder {
 					color: transparent
 				}
-				.pole_middle:focus::-moz-placeholder,
+				.pole_log_log:focus::-moz-placeholder,
+				.pole_log_pass:focus::-moz-placeholder,
 				.pole_first:focus::-moz-placeholder,
 				.pole_last:focus::-moz-placeholder,
 				.pole_log:focus::-moz-placeholder,
-				.pole_acc:focus::-moz-placeholder{
+				.pole_pass:focus::-moz-placeholder,
+				.pole_pass2:focus::-moz-placeholder{
 					color: transparent
 				}
-				.pole_middle:focus:-moz-placeholder,
+				.pole_log_log:focus:-moz-placeholder,
+				.pole_log_pass:focus:-moz-placeholder,
 				.pole_first:focus:-moz-placeholder,
 				.pole_last:focus:-moz-placeholder,
 				.pole_log:focus:-moz-placeholder,
-				.pole_acc:focus:-moz-placeholder{
+				.pole_pass:focus:-moz-placeholder,
+				.pole_pass2:focus:-moz-placeholder{
 					color: transparent
 				}
-				.pole_middle:focus:-ms-input-placeholder,
+				.pole_log_log:focus:-ms-input-placeholder,
+				.pole_log_pass:focus:-ms-input-placeholder,
 				.pole_first:focus:-ms-input-placeholder,
 				.pole_last:focus:-ms-input-placeholder,
 				.pole_log:focus:-ms-input-placeholder,
-				.pole_acc:focus:-ms-input-placeholder{
+				.pole_pass:focus:-ms-input-placeholder,
+				.pole_pass2:focus:-ms-input-placeholder{
 					color: transparent
 				}
-				.pole_middle::-webkit-input-placeholder,
+				.pole_log_log::-webkit-input-placeholder,
+				.pole_log_pass::-webkit-input-placeholder,
 				.pole_first::-webkit-input-placeholder,
 				.pole_last::-webkit-input-placeholder,
 				.pole_log::-webkit-input-placeholder,
-				.pole_pass::-webkit-input-placeholder{
+				.pole_pass::-webkit-input-placeholder,
+				.pole_pass2::-webkit-input-placeholder{
 					color: #4D9808;
 				}
-				.pole_middle::-moz-placeholder,
+				.pole_log_log::-moz-placeholder,
+				.pole_log_pass::-moz-placeholder,
 				.pole_first::-moz-placeholder,
 				.pole_last::-moz-placeholder,
 				.pole_log::-moz-placeholder,
-				.pole_pass::-moz-placeholder{
+				.pole_pass::-moz-placeholder,
+				.pole_pass2::-moz-placeholder{
 					color: #4D9808;
 				}/* Firefox 19+ */
-				.pole_middle:-moz-placeholder,
+				.pole_log_log:-moz-placeholder,
+				.pole_log_pass:-moz-placeholder,
 				.pole_first:-moz-placeholder,
 				.pole_last:-moz-placeholder,
 				.pole_log:-moz-placeholder,
-				.pole_pass:-moz-placeholder{
+				.pole_pass:-moz-placeholder,
+				.pole_pass2:-moz-placeholder{
 					color: #4D9808;
 				}/* Firefox 18- */
-				.pole_middle:-ms-input-placeholder,
+				.pole_log_log:-ms-input-placeholder,
+				.pole_log_pass:-ms-input-placeholder,
 				.pole_first:-ms-input-placeholder,
 				.pole_last:-ms-input-placeholder,
 				.pole_log:-ms-input-placeholder,
-				.pole_pass:-ms-input-placeholder{
+				.pole_pass:-ms-input-placeholder,
+				.pole_pass2:-ms-input-placeholder{
 					color: #4D9808;
 				}
 				.but_vxod, .but_reg{

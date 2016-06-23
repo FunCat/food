@@ -1,17 +1,17 @@
 <?php 
 	include "config.php";
-	include "cookie.php";
-	include "reg_script.php";
+	include "exit.php";
 	include "all_script.php";
 ?>
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Здоровое питание</title>
+	<title>DailyFood</title>
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/recipe.css" />
 	<link rel="stylesheet" href="../css/log_dialog.css" />
 	<link rel="stylesheet" href="../fonts/font.css" />
+	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
 	<script src="../js/jquery.easing.min.js" type="text/javascript"></script>
 	<script src="../js/jquery.mixitup.min.js" type="text/javascript"></script>
@@ -19,6 +19,8 @@
 	<script src="../js/slider.js" type="text/javascript"></script>
 	<script src="../js/hamburger.js" type="text/javascript"></script>
 	<script src="../js/search.js" type="text/javascript"></script>
+	<script src="../js/reg_valid.js" type="text/javascript"></script>
+	<script src="../js/log_valid.js" type="text/javascript"></script>
 	<script src="../js/log_dialog.js" type="text/javascript"></script>
 </head>
 <body>
@@ -62,27 +64,23 @@
 			</div>
 			<a class="close_dialog" href="javascript: closeLogDialog()"></a>
 			<div class="vxod_content">
-				<form method="post" action="index.php">
-					<div class="title_dialog">Войти в учётную запись</div>
-					<div class="wrap_box">
-						<input class="pole_log" name="pole_log" type="text" placeholder="Логин" />
-						<input class="pole_pass" name="pole_pass" type="password" placeholder="Пароль"/>
-						<input class="but_vxod" name="but_log" type="submit" value="Войти" />
-					</div>
-				</form>
+				<div class="title_dialog">Войти в учётную запись</div>
+				<div class="wrap_box">
+					<input class="pole_log_log" name="pole_log" type="text" placeholder="Логин" /><div class="prov_log_log"></div>
+					<input class="pole_log_pass" name="pole_pass" type="password" placeholder="Пароль"/><div class="prov_log_pass"></div>
+					<input class="but_vxod" name="but_log" type="button" value="Войти" /><div class="total_log_prov"></div>
+				</div>
 			</div>
 			<div class="reg_content">
-				<form method="post" action="index.php">
-					<div class="title_dialog">Регистрация</div>
-					<div class="wrap_box">
-						<input class="pole_last" name="reg_last" type="text" placeholder="Фамилия" />
-						<input class="pole_first" name="reg_first" type="text" placeholder="Имя" />
-						<input class="pole_log" name="reg_log" type="text" placeholder="Логин" />
-						<input class="pole_pass" name="reg_pass" type="password" placeholder="Пароль"/>
-						<input class="pole_pass" name="reg_pass2" type="password" placeholder="Повторите пароль"/>
-						<input class="but_reg" name="but_reg" type="submit" value="Регистрация" />
-					</div>
-				</form>
+				<div class="title_dialog">Регистрация</div>
+				<div class="wrap_box">
+					<input class="pole_last" name="reg_last" type="text" placeholder="Фамилия*" /><div class="prov_lastname"></div>
+					<input class="pole_first" name="reg_first" type="text" placeholder="Имя*" /><div class="prov_firstname"></div>
+					<input class="pole_log" name="reg_log" type="text" placeholder="Логин*" /><div class="prov_login"></div>
+					<input class="pole_pass" name="reg_pass" type="password" placeholder="Пароль*"/><div class="prov_pass"></div>
+					<input class="pole_pass2" name="reg_pass2" type="password" placeholder="Повторите пароль*"/><div class="prov_pass2"></div>
+					<input class="but_reg" name="but_reg" type="button" value="Регистрация" /><div class="total_prov"></div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -94,7 +92,7 @@
 		<ul class="list_menu">
 			<a href="index.php"><li class="active_point_menu">Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
-			<li>Диеты</li>
+			<li>Питание</li>
 			<li>Калькулятор</li>
 			<li>Контакты</li>
 			<?php if($_COOKIE['perm'] == 1){ ?><a href="admin_panel.php"><li>Панель администратора</li></a><?php }?>
@@ -160,157 +158,51 @@
 				</ul>
 
 				<div id="receipeslist">
-
-
-					<div class="receipe_block desert" data-cat="desert">
-						<div class="receipe_block_wrapper">
-							<img src="../img/1.jpg" alt="" />
-							<div class="kkal">
-								404<br />KKal
-							</div>
-							<div class="label">
-								<div class="label_text">
-									<div class="text_title">Новый рецепт Новый рецепт Новый рецепт Новый рецепт</div>
-									<span class="text_category">Выпечка и десерт</span>
-									<!--<div class="recipe_more">Подробнее -></div>-->
+					<?php 
+						$result = mysqli_query($mysqli, "SELECT * FROM recipes AS r JOIN recip_cat AS rc ON r.recip_cat_id = rc.cid");
+						while($row = mysqli_fetch_array($result))
+						{
+							echo "<div class='receipe_block ".$row['desc']."' data-cat='".$row['desc']."'>
+								<div class='receipe_block_wrapper'>
+									<img src='".$row['main_foto']."' alt='' />
+									<div class='kkal'>
+										".$row['kkal']."<br />KKal
+									</div>
+									<div class='label'>
+										<div class='label_text'>
+											<div class='text_title'>".$row['name']."</div>
+											<span class='text_category'>".$row['cname']."</span>
+										</div>
+										<div class='label_bg'></div>
+									</div>
 								</div>
-								<div class="label_bg"></div>
-							</div>
-						</div>
-						<div class="receipe_block_info">
-							<div class="hr_pad">
-								<hr class="recipe_hr" />
-							</div>
-								<div class="recipe_stats">
-									Белки: 1.50 г<br />
-									Жиры: 0.50 г<br />
-									Углеводы: 21.00 г<br />
-									Ккал: 89.30 ккал<br />
+								<div class='receipe_block_info'>
+									<div class='hr_pad'>
+										<hr class='recipe_hr' />
+									</div>
+										<div class='recipe_stats_left'>
+											<img src='../img/b.png' class='icon_stat' /> ".$row['proteins']." г<br />
+											<img src='../img/zh.png' class='icon_stat' /> ".$row['fats']." г<br />
+											<img src='../img/y.png' class='icon_stat' /> ".$row['carboh']." г<br />
+										</div>
+										<div class='recipe_stats_right'>
+											<img src='../img/k.png' class='icon_stat' /> ".$row['kkal']." К<br />
+											<img src='../img/p.png' class='icon_stat' /> ".$row['count_portion']."<br />
+											<img src='../img/v.png' class='icon_stat' /> ".$row['time']." м<br />
+										</div>
+										<div class='recipe_add'>
+											Добавить
+										</div>
+										<a href='recipe.php?r=".$row['id']."'>
+											<div class='recipe_more'>
+												Подробнее ->
+											</div>
+										</a>
 								</div>
-								<div class="recipe_add">
-									Добавить
-								</div>
-								<div class="recipe_more">
-									Подробнее ->
-								</div>
-						</div>
-					</div>
-
-					<div class="receipe_block first" data-cat="first">
-						<div class="receipe_block_wrapper">
-							<img src="../img/1.jpg" alt="" />
-							<div class="label">
-								<div class="label_text">
-									<div class="text_title">Новый рецепт</div>
-									<span class="text_category">Основное блюдо</span>
-								</div>
-								<div class="label_bg"></div>
-							</div>
-						</div>
-						<div class="receipe_block_info"></div>
-					</div>
-
-					<div class="receipe_block first" data-cat="first">
-						<div class="receipe_block_wrapper">
-							<img src="../img/1.jpg" alt="" />
-							<div class="label">
-								<div class="label_text">
-									<div class="text_title">Новый рецепт</div>
-									<span class="text_category">Основное блюдо</span>
-								</div>
-								<div class="label_bg"></div>
-							</div>
-						</div>
-						<div class="receipe_block_info"></div>
-					</div>
-
-					<div class="receipe_block first" data-cat="first">
-						<div class="receipe_block_wrapper">
-							<img src="../img/1.jpg" alt="" />
-							<div class="label">
-								<div class="label_text">
-									<div class="text_title">Новый рецепт</div>
-									<span class="text_category">Основное блюдо</span>
-								</div>
-								<div class="label_bg"></div>
-							</div>
-						</div>
-						<div class="receipe_block_info"></div>
-					</div>
-
-					<div class="receipe_block first" data-cat="first">
-						<div class="receipe_block_wrapper">
-							<img src="../img/1.jpg" alt="" />
-							<div class="label">
-								<div class="label_text">
-									<div class="text_title">Новый рецепт</div>
-									<span class="text_category">Основное блюдо</span>
-								</div>
-								<div class="label_bg"></div>
-							</div>
-						</div>
-						<div class="receipe_block_info"></div>
-					</div>
-
-					<div class="receipe_block first" data-cat="first">
-						<div class="receipe_block_wrapper">
-							<img src="../img/1.jpg" alt="" />
-							<div class="label">
-								<div class="label_text">
-									<div class="text_title">Новый рецепт</div>
-									<span class="text_category">Основное блюдо</span>
-								</div>
-								<div class="label_bg"></div>
-							</div>
-						</div>
-						<div class="receipe_block_info"></div>
-					</div>
-
-					<div class="receipe_block first" data-cat="first">
-						<div class="receipe_block_wrapper">
-							<img src="../img/1.jpg" alt="" />
-							<div class="label">
-								<div class="label_text">
-									<div class="text_title">Новый рецепт</div>
-									<span class="text_category">Основное блюдо</span>
-								</div>
-								<div class="label_bg"></div>
-							</div>
-						</div>
-						<div class="receipe_block_info"></div>
-					</div>
-
-					<div class="receipe_block first" data-cat="first">
-						<div class="receipe_block_wrapper">
-							<img src="../img/1.jpg" alt="" />
-							<div class="label">
-								<div class="label_text">
-									<div class="text_title">Новый рецепт</div>
-									<span class="text_category">Основное блюдо</span>
-								</div>
-								<div class="label_bg"></div>
-							</div>
-						</div>
-						<div class="receipe_block_info"></div>
-					</div>
-
-					<div class="receipe_block first" data-cat="first">
-						<div class="receipe_block_wrapper">
-							<img src="../img/1.jpg" alt="" />
-							<div class="label">
-								<div class="label_text">
-									<div class="text_title">Новый рецепт</div>
-									<span class="text_category">Основное блюдо</span>
-								</div>
-								<div class="label_bg"></div>
-							</div>
-						</div>
-						<div class="receipe_block_info"></div>
-					</div>				
-
-
+							</div>";
+						}
+					?>
 				</div>
-
 			</div>
 		</div>
 	</div>

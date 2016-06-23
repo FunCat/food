@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	var trigger = $('#hamburger'),
-        isClosed = true;
+        isClosed = false;
 
     trigger.click(function () {
       burgerTime();

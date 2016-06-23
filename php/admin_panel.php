@@ -7,15 +7,18 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Здоровое питание</title>
+	<title>DailyFood - Панель администратора</title>
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/admin_panel.css" />
 	<link rel="stylesheet" href="../css/log_dialog.css" />
 	<link rel="stylesheet" href="../fonts/font.css" />
+	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
 	<script src="../js/index.js" type="text/javascript"></script>
 	<script src="../js/hamburger.js" type="text/javascript"></script>
 	<script src="../js/log_dialog.js" type="text/javascript"></script>
+	<script src="../js/log_valid.js" type="text/javascript"></script>
+	<script src="../js/reg_valid.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="pict_menu">
@@ -58,27 +61,23 @@
 			</div>
 			<a class="close_dialog" href="javascript: closeLogDialog()"></a>
 			<div class="vxod_content">
-				<form method="post" action="index.php">
-					<div class="title_dialog">Войти в учётную запись</div>
-					<div class="wrap_box">
-						<input class="pole_log" name="pole_log" type="text" placeholder="Логин" />
-						<input class="pole_pass" name="pole_pass" type="password" placeholder="Пароль"/>
-						<input class="but_vxod" name="but_log" type="submit" value="Войти" />
-					</div>
-				</form>
+				<div class="title_dialog">Войти в учётную запись</div>
+				<div class="wrap_box">
+					<input class="pole_log_log" name="pole_log" type="text" placeholder="Логин" /><div class="prov_log_log"></div>
+					<input class="pole_log_pass" name="pole_pass" type="password" placeholder="Пароль"/><div class="prov_log_pass"></div>
+					<input class="but_vxod" name="but_log" type="button" value="Войти" /><div class="total_log_prov"></div>
+				</div>
 			</div>
 			<div class="reg_content">
-				<form method="post" action="index.php">
-					<div class="title_dialog">Регистрация</div>
-					<div class="wrap_box">
-						<input class="pole_last" name="reg_last" type="text" placeholder="Фамилия" />
-						<input class="pole_first" name="reg_first" type="text" placeholder="Имя" />
-						<input class="pole_log" name="reg_log" type="text" placeholder="Логин" />
-						<input class="pole_pass" name="reg_pass" type="password" placeholder="Пароль"/>
-						<input class="pole_pass" name="reg_pass2" type="password" placeholder="Повторите пароль"/>
-						<input class="but_reg" name="but_reg" type="submit" value="Регистрация" />
-					</div>
-				</form>
+				<div class="title_dialog">Регистрация</div>
+				<div class="wrap_box">
+					<input class="pole_last" name="reg_last" type="text" placeholder="Фамилия*" /><div class="prov_lastname"></div>
+					<input class="pole_first" name="reg_first" type="text" placeholder="Имя*" /><div class="prov_firstname"></div>
+					<input class="pole_log" name="reg_log" type="text" placeholder="Логин*" /><div class="prov_login"></div>
+					<input class="pole_pass" name="reg_pass" type="password" placeholder="Пароль*"/><div class="prov_pass"></div>
+					<input class="pole_pass2" name="reg_pass2" type="password" placeholder="Повторите пароль*"/><div class="prov_pass2"></div>
+					<input class="but_reg" name="but_reg" type="button" value="Регистрация" /><div class="total_prov"></div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -90,7 +89,7 @@
 		<ul class="list_menu">
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
-			<li>Диеты</li>
+			<li>Питание</li>
 			<li>Калькулятор</li>
 			<li>Контакты</li>
 			<?php if($_COOKIE['perm'] == 1){ ?><li class="active_point_menu">Панель администратора</li><?php }?>
@@ -135,6 +134,7 @@
 							<h1 class="title">Панель администратора</h1>
 
 							<input class="add_recipe" name="but_add_new_receipe" type="submit" value="Добавить рецепт" />
+							<a href="new_ingredient.php"><input class="add_recipe" name="but_add_new_ingredients" type="submit" value="Добавить ингредиент" /></a>
 						</div>
 					</div>
 		<?php

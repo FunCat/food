@@ -1,8 +1,8 @@
 <?php
 	$host = "mysql.hostinger.ru";
-	$user = "u918298497_fsa";
-	$password = "HgPyLH3JEb";
-	$db = "u918298497_food";
+	$user = "u553990008_dnosa";
+	$password = "SjxKDah2fY3c";
+	$db = "u553990008_food";
 
 	$mysqli = new mysqli("$host", "$user", "$password", "$db");
 	if($mysqli->connect_error){

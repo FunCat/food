@@ -1,61 +1,48 @@
 <?php
 
-if (isset($_REQUEST["but_log"]))
-{
-	$logres = $_REQUEST["pole_log"];
-	$pasres = $_REQUEST["pole_pass"];
-	$bul = strpbrk($logres, "'");
-	$bul2 = strpbrk($pasres, "'");
-
-	if($bul == FALSE && $bul2 == FALSE)
+	include "config.php";
+	if (isset($_POST["log_log"]))
 	{
-		$pasres = md5(md5(trim($pasres)));
-		echo $logres; echo $pasres;
+		$logres = $_POST["log_log"];
+		$pasres = $_POST["log_pass"];
+		$bul = strpbrk($logres, "'");
+		$bul2 = strpbrk($pasres, "'");
 
-		$result_clients = mysqli_query($mysqli, "SELECT * FROM clients WHERE login =  '$logres' AND pass =  '$pasres'");
-		$bol_enter_client = mysqli_num_rows($result_clients);
-
-		$result_masters = mysqli_query($mysqli, "SELECT * FROM masters WHERE login =  '$logres' AND pass =  '$pasres'");
-		$bol_enter_master = mysqli_num_rows($result_masters);
-
-		if($bol_enter_master == 1){
-			$resul = mysqli_query($mysqli, "SELECT firstname, permissions_id FROM masters WHERE login =  '$logres'");	
-		}
-		else if($bol_enter_client == 1){
-			$resul = mysqli_query($mysqli, "SELECT firstname, permissions_id FROM clients WHERE login =  '$logres'");
-		}
-
-		if($bol_enter_client == 1 || $bol_enter_master == 1)
+		if($bul == FALSE && $bul2 == FALSE)
 		{
-			$info = mysqli_fetch_assoc($resul);
-			$nameres = $info["firstname"];
-			$permission = $info["permissions_id"];
-			SetCookie("name", "$nameres", time()+4800);
-			SetCookie("log", "$logres", time()+4800);
-			SetCookie("first", "$nameres", time()+4800);
-			SetCookie("perm", "$permission", time()+4800);
-			$prov_in = "Вы успешно вошли"; 
-			header('location:'.$_SERVER['HTTP_REFERER']);
-		} 
+			$pasres = md5(md5(trim($pasres)));
+
+			$result_clients = mysqli_query($mysqli, "SELECT * FROM clients WHERE login =  '$logres' AND pass =  '$pasres'");
+			$bol_enter_client = mysqli_num_rows($result_clients);
+
+			$result_masters = mysqli_query($mysqli, "SELECT * FROM masters WHERE login =  '$logres' AND pass =  '$pasres'");
+			$bol_enter_master = mysqli_num_rows($result_masters);
+
+			if($bol_enter_master == 1){
+				$resul = mysqli_query($mysqli, "SELECT firstname, permissions_id FROM masters WHERE login =  '$logres'");	
+			}
+			else if($bol_enter_client == 1){
+				$resul = mysqli_query($mysqli, "SELECT firstname, permissions_id FROM clients WHERE login =  '$logres'");
+			}
+
+			if($bol_enter_client == 1 || $bol_enter_master == 1)
+			{
+				$info = mysqli_fetch_assoc($resul);
+				$nameres = $info["firstname"];
+				$permission = $info["permissions_id"];
+				SetCookie("name", "$nameres", time()+4800);
+				SetCookie("log", "$logres", time()+4800);
+				SetCookie("perm", "$permission", time()+4800);
+				header('location:'.$_SERVER['HTTP_REFERER']);
+			} 
+			else
+			{
+				echo 'Неправильный логин или пароль!';
+			}
+		}
 		else
 		{
-			$prov_in = "Вы неправильно ввели данные";
-			header('location:'.$_SERVER['HTTP_REFERER']);
+			echo 'Неправильный логин или пароль!';
 		}
 	}
-	else
-	{
-		$prov_in = "Вы неправильно ввели данные"; 
-		header('location:'.$_SERVER['HTTP_REFERER']);
-	}
-}
-
-if(isset($_REQUEST["but_exit"]))
-{
-	SetCookie("name","",time()-4800);
-	SetCookie("log","",time()-4800);
-	SetCookie("first", "", time()-4800);
-	SetCookie("perm", "", time()-4800);
-	header('location:'.$_SERVER['HTTP_REFERER']);
-}
 ?>
