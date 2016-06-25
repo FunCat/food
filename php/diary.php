@@ -86,6 +86,7 @@
 
 	<div class="block_menu">
 		<ul class="list_menu">
+			<?php if(isset($_COOKIE['log'])){ ?><a href="diary.php"><li class="active_point_menu">Личый дневник</li></a><?php }?>
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
 			<li>Питание</li>
@@ -145,7 +146,7 @@
 					 ?>
 					<form method="post" action="#">
 						<div class="wrap_diary_block">
-							
+							<div class="diary_name"></div>
 						</div>
 						<a href="diary_add.php">
 							<div class="but_create_diary">

@@ -128,6 +128,7 @@
 
 	<div class="block_menu">
 		<ul class="list_menu">
+			<?php if(isset($_COOKIE['log'])){ ?><a href="diary.php"><li>Личый дневник</li></a><?php }?>
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
 			<li>Питание</li>
@@ -186,8 +187,8 @@
 						$diary_name = $info["name"];
 					 ?>
 					<form method="post" action="#">
+						<div class="wrap_diary_name"><input class="diary_name" type="text" placeholder="Название дневника" /></div>
 						<div class="wrap_diary_block">
-							
 							<div class="week_day_block monday">
 								<div class="title_day">Понедельник</div>
 								<div class="add_recipe" onclick="openRecipeDialog(1)">

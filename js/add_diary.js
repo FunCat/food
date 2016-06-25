@@ -14,6 +14,7 @@ $(document).ready(function(){
 		var rec_kkal = $(this).parent().parent().find(".rec_kkal").text();
 		var portion_mass = $(this).parent().parent().find(".rec_portion_mass").text();
 		var buf_name = "<div class='added_recipe'>";
+			buf_name +=		"<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeRecipe(this)' /></div>";
 			buf_name +=		"<div class='rec_id' style='display: none;'>" + rec_id + "</div>";
 			buf_name +=		"<div class='recipe_foto'><img src='" + img_src + "' /></div>";
 			buf_name +=		"<div class='recipe_name'>" + rec_name + "</div>";
@@ -68,86 +69,71 @@ $(document).ready(function(){
 		$('.added_recipe').css({"width": $(".week_day_block").width() / 3 + "px"});
 		$('.add_recipe').css({"width": $(".week_day_block").width() / 3 + "px"});
 	});
+
 	$(".create_diary").click(function(){
 		$i = 0;
-		$buf = 0;
-		$flag = 0;
 		var recip_id = [];
-		var mon = [];
-		var tu = [];
-		var wed = [];
-		var thu = [];
-		var fri = [];
-		var sat = [];
-		var su = [];
+		var day = [];
 		var time = [];
 		var mass = [];
 		$(".monday").children(".added_recipe").each(function(){
 			recip_id[$i] = $(this).children(".rec_id").text();
-			mon[$i] = 1;
-			tu[$i] = 0;
-			wed[$i] = 0;
-			thu[$i] = 0;
-			fri[$i] = 0;
-			sat[$i] = 0;
-			su[$i] = 0;
+			day[$i] = 0;
 			time[$i] = $(this).children(".time_to_eat").children("input").val();
 			mass[$i] = $(this).children(".count_to_eat").children("input").val();
 			$i++;
 		});
 
 		$(".tuesday").children(".added_recipe").each(function(){
-			$buf = $(this).children(".rec_id").text();
-			for($j = 0; $j < recip_id.length; $j++){
-				if(recip_id[$j] == $buf){
-					tu[$j] = 1;
-					$flag = 1;
-				}
-			}
-			if($flag == 1){
-				recip_id[$i] = $(this).children(".rec_id").text();
-				mon[$i] = 0;
-				tu[$i] = 1;
-				wed[$i] = 0;
-				thu[$i] = 0;
-				fri[$i] = 0;
-				sat[$i] = 0;
-				su[$i] = 0;
-				time[$i] = $(this).children(".time_to_eat").children("input").val();
-				mass[$i] = $(this).children(".count_to_eat").children("input").val();
-				$i++;
-			}
-			$flag = 0;
+			recip_id[$i] = $(this).children(".rec_id").text();
+			day[$i] = 1;
+			time[$i] = $(this).children(".time_to_eat").children("input").val();
+			mass[$i] = $(this).children(".count_to_eat").children("input").val();
+			$i++;
 		});
 
 		$(".wednesday").children(".added_recipe").each(function(){
-			$buf = $(this).children(".rec_id").text();
-			for($j = 0; $j < recip_id.length; $j++){
-				if(recip_id[$j] == $buf){
-					wed[$j] = 1;
-					$flag = 1;
-				}
-			}
-			if($flag == 1){
-				recip_id[$i] = $(this).children(".rec_id").text();
-				mon[$i] = 0;
-				tu[$i] = 0;
-				wed[$i] = 1;
-				thu[$i] = 0;
-				fri[$i] = 0;
-				sat[$i] = 0;
-				su[$i] = 0;
-				time[$i] = $(this).children(".time_to_eat").children("input").val();
-				mass[$i] = $(this).children(".count_to_eat").children("input").val();
-				$i++;
-			}
-			$flag = 0;
+			recip_id[$i] = $(this).children(".rec_id").text();
+			day[$i] = 2;
+			time[$i] = $(this).children(".time_to_eat").children("input").val();
+			mass[$i] = $(this).children(".count_to_eat").children("input").val();
+			$i++;
 		});
 
-		for($j = 0; $j < recip_id.length; $j++){
-			console.log(recip_id[$j]);
-		}
+		$(".thursday").children(".added_recipe").each(function(){
+			recip_id[$i] = $(this).children(".rec_id").text();
+			day[$i] = 3;
+			time[$i] = $(this).children(".time_to_eat").children("input").val();
+			mass[$i] = $(this).children(".count_to_eat").children("input").val();
+			$i++;
+		});
 
+		$(".friday").children(".added_recipe").each(function(){
+			recip_id[$i] = $(this).children(".rec_id").text();
+			day[$i] = 4;
+			time[$i] = $(this).children(".time_to_eat").children("input").val();
+			mass[$i] = $(this).children(".count_to_eat").children("input").val();
+			$i++;
+		});
+
+		$(".saturday").children(".added_recipe").each(function(){
+			recip_id[$i] = $(this).children(".rec_id").text();
+			day[$i] = 5;
+			time[$i] = $(this).children(".time_to_eat").children("input").val();
+			mass[$i] = $(this).children(".count_to_eat").children("input").val();
+			$i++;
+		});
+		$(".sunday").children(".added_recipe").each(function(){
+			recip_id[$i] = $(this).children(".rec_id").text();
+			day[$i] = 6;
+			time[$i] = $(this).children(".time_to_eat").children("input").val();
+			mass[$i] = $(this).children(".count_to_eat").children("input").val();
+			$i++;
+		});
+
+		$dname = $(".diary_name").val();
+		$str = "t=" + Math.random() + "&diaryname=" + $dname + "&rec=" + recip_id + "&day=" + day + "&time=" + time + "&mass=" + mass;
+		send_request_diary_recipes($str);
 	});
 });
 
@@ -158,9 +144,35 @@ function openRecipeDialog(flag){ 		//плавное появление диал�
 function closeRecipeDialog(){		//плавное исчезновение диалогового окна
 	$("#add_recipe_dialog").fadeOut();
 }
+function removeRecipe(t){
+	$(t).parent().parent().remove();
+}
 function changeKkal(t){
 	$one_g = $(t).parent().parent().find(".total_kkal_to_eat").find(".one_portion").text();
 	$mass_p = $(t).parent().find("input").val();
 	$total_mass = Math.round($one_g * $mass_p).toFixed(2);
 	$(t).parent().parent().find(".total_kkal_to_eat").find(".wrap_kkal_to_eat").text($total_mass + " Ккал");
+}
+function send_request_diary_recipes(str)
+{
+	var r = new XMLHttpRequest();
+	var url = "add_diary_recipes.php";
+	var string = str;
+	var vars = str;
+	r.open("POST", url, true);
+	r.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	r.onreadystatechange = function(){
+		if(r.readyState == 4 && r.status == 210){
+			alert(r.responseText);
+		}
+	}
+	/*r.onload = function () {
+		if(this.responseText == "Неправильный логин или пароль!"){
+			$(".total_log_prov").text("Неправильный логин или пароль!");
+		}
+		else{
+			document.location.reload();
+		}
+	};*/
+	r.send(vars);
 }

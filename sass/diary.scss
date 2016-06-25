@@ -21,6 +21,40 @@ a{
 .wrap_diary_block{
 	overflow: hidden;
 }
+.wrap_diary_name{
+	text-align: center;
+	.diary_name{
+		font-size: 24px;
+		width: 500px;
+		border: 1px solid #7ed42f;
+		margin: 15px 0px;
+		padding: 5px;
+	}
+	.diary_name:focus::-webkit-input-placeholder {
+		color: transparent
+	}
+	.diary_name:focus::-moz-placeholder{
+		color: transparent
+	}
+	.diary_name:focus:-moz-placeholder{
+		color: transparent
+	}
+	.diary_name:focus:-ms-input-placeholder{
+		color: transparent
+	}
+	.diary_name::-webkit-input-placeholder{
+		color: #4D9808;
+	}
+	.diary_name::-moz-placeholder{
+		color: #4D9808;
+	}/* Firefox 19+ */
+	.diary_name:-moz-placeholder{
+		color: #4D9808;
+	}/* Firefox 18- */
+	.diary_name:-ms-input-placeholder{
+		color: #4D9808;
+	}
+}
 
 
 
@@ -57,6 +91,19 @@ a{
 	}
 	.add_recipe:hover{
 		cursor: pointer;
+	}
+	.close_img{
+		position: relative;
+		text-align: right;
+		.cl_img{
+			width: 20px;
+			position: relative;
+			top: 7;
+			right: 7;
+		}
+		.cl_img:hover{
+			cursor: pointer;
+		}
 	}
 	.recipe_foto{
 		width: 100px;

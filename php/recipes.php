@@ -95,6 +95,7 @@
 
 	<div class="block_menu">
 		<ul class="list_menu">
+			<?php if(isset($_COOKIE['log'])){ ?><a href="diary.php"><li>Личый дневник</li></a><?php }?>
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li class="active_point_menu">Рецепты</li></a>
 			<li>Питание</li>
