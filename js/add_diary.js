@@ -20,7 +20,7 @@ $(document).ready(function(){
 			buf_name +=		"<div class='recipe_name'>" + rec_name + "</div>";
 			buf_name +=		"<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='09:00' /></div>";
 			buf_name +=		"<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' onchange='changeKkal(this)' value='" + portion_mass + "' /></div>";
-			buf_name +=		"<div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'>" + rec_kkal + "<br/>ККал</div><div class='one_portion' style='display: none;'>" + rec_kkal/portion_mass+ "</div></div>";
+			buf_name +=		"<div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'><span>" + rec_kkal + "</span><br/>ККал</div><div class='one_portion' style='display: none;'>" + rec_kkal/portion_mass+ "</div></div>";
 			buf_name +=	"</div>";
 		if(flag_block == 1)
 		{
@@ -76,11 +76,13 @@ $(document).ready(function(){
 		var day = [];
 		var time = [];
 		var mass = [];
+		var week_kkal = 0;
 		$(".monday").children(".added_recipe").each(function(){
 			recip_id[$i] = $(this).children(".rec_id").text();
 			day[$i] = 0;
 			time[$i] = $(this).children(".time_to_eat").children("input").val();
 			mass[$i] = $(this).children(".count_to_eat").children("input").val();
+			week_kkal += parseInt($(this).children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text(), 10);
 			$i++;
 		});
 
@@ -89,6 +91,7 @@ $(document).ready(function(){
 			day[$i] = 1;
 			time[$i] = $(this).children(".time_to_eat").children("input").val();
 			mass[$i] = $(this).children(".count_to_eat").children("input").val();
+			week_kkal += parseInt($(this).children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text(), 10);
 			$i++;
 		});
 
@@ -97,6 +100,7 @@ $(document).ready(function(){
 			day[$i] = 2;
 			time[$i] = $(this).children(".time_to_eat").children("input").val();
 			mass[$i] = $(this).children(".count_to_eat").children("input").val();
+			week_kkal += parseInt($(this).children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text(), 10);
 			$i++;
 		});
 
@@ -105,6 +109,7 @@ $(document).ready(function(){
 			day[$i] = 3;
 			time[$i] = $(this).children(".time_to_eat").children("input").val();
 			mass[$i] = $(this).children(".count_to_eat").children("input").val();
+			week_kkal += parseInt($(this).children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text(), 10);
 			$i++;
 		});
 
@@ -113,6 +118,7 @@ $(document).ready(function(){
 			day[$i] = 4;
 			time[$i] = $(this).children(".time_to_eat").children("input").val();
 			mass[$i] = $(this).children(".count_to_eat").children("input").val();
+			week_kkal += parseInt($(this).children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text(), 10);
 			$i++;
 		});
 
@@ -121,6 +127,7 @@ $(document).ready(function(){
 			day[$i] = 5;
 			time[$i] = $(this).children(".time_to_eat").children("input").val();
 			mass[$i] = $(this).children(".count_to_eat").children("input").val();
+			week_kkal += parseInt($(this).children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text(), 10);
 			$i++;
 		});
 		$(".sunday").children(".added_recipe").each(function(){
@@ -128,11 +135,12 @@ $(document).ready(function(){
 			day[$i] = 6;
 			time[$i] = $(this).children(".time_to_eat").children("input").val();
 			mass[$i] = $(this).children(".count_to_eat").children("input").val();
+			week_kkal += parseInt($(this).children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text(), 10);
 			$i++;
 		});
 
 		$dname = $(".diary_name").val();
-		$str = "t=" + Math.random() + "&diaryname=" + $dname + "&rec=" + recip_id + "&day=" + day + "&time=" + time + "&mass=" + mass;
+		$str = "t=" + Math.random() + "&diaryname=" + $dname + "&rec=" + recip_id + "&day=" + day + "&time=" + time + "&mass=" + mass + "&week_mass=" + week_kkal;
 		send_request_diary_recipes($str);
 	});
 });
@@ -151,7 +159,7 @@ function changeKkal(t){
 	$one_g = $(t).parent().parent().find(".total_kkal_to_eat").find(".one_portion").text();
 	$mass_p = $(t).parent().find("input").val();
 	$total_mass = Math.round($one_g * $mass_p).toFixed(2);
-	$(t).parent().parent().find(".total_kkal_to_eat").find(".wrap_kkal_to_eat").text($total_mass + " Ккал");
+	$(t).parent().parent().find(".total_kkal_to_eat").find(".wrap_kkal_to_eat").html("<span>" + $total_mass + "</span> Ккал");
 }
 function send_request_diary_recipes(str)
 {
@@ -166,13 +174,13 @@ function send_request_diary_recipes(str)
 			alert(r.responseText);
 		}
 	}
-	/*r.onload = function () {
-		if(this.responseText == "Неправильный логин или пароль!"){
-			$(".total_log_prov").text("Неправильный логин или пароль!");
+	r.onload = function () {
+		if(this.responseText == "Не указано название дневника!"){
+			$(".error_add_diary").text("Не указано название дневника!");
 		}
 		else{
-			document.location.reload();
+			document.location.href = "http://dailyfood.online/php/diary.php";
 		}
-	};*/
+	};
 	r.send(vars);
 }

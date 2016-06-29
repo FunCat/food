@@ -166,6 +166,50 @@ a{
 	}
 }
 
+.wrap_diary_block{
+	overflow: hidden;
+	.diary_name{
+		width: 46%;
+		background-color: #7ed42f;
+		padding: 10px 0px;
+		margin: 2%;
+		float: left;
+		.dname{
+			width: 70%;
+			text-align: center;
+			color: white;
+			font-size: 28px;
+			margin: 10px 0px;
+			float: left;
+		}
+		.total_kkal{
+			width: 30%;
+			font-size: 26px;
+			color: white;
+			float: left;
+			img{
+				vertical-align: middle;
+				margin: 0px 15px 0px 30px;
+			}
+		}
+		.diary_more{
+			width: 24%;
+			height: 30px;
+			color: white;
+			float: left;
+			text-align: center;
+			padding-top: 5px;
+			border: 2px solid white;
+			margin: 10px 3%;
+			transition: all 0.3s;
+		}
+		.diary_more:hover{
+			color: #7ed42f;
+			background-color: white;
+			cursor: pointer;
+		}
+	}
+}
 
 .but_create_diaries{
 	text-align: center;
@@ -178,6 +222,13 @@ a{
 		background-color: #7ed42f;
 		margin-top: 20px;
 	}
+}
+
+
+.error_add_diary{
+	text-align: center;
+	margin: 10px 0px;
+	font-size: 20px;
 }
 
 

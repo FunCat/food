@@ -1,7 +1,6 @@
 <?php 
 	include "config.php";
-	include "cookie.php";
-	include "reg_script.php";
+	include "exit.php";
 ?>
 <html>
 <head>
@@ -18,6 +17,7 @@
 	<script src="../js/log_dialog.js" type="text/javascript"></script>
 	<script src="../js/reg_valid.js" type="text/javascript"></script>
 	<script src="../js/log_valid.js" type="text/javascript"></script>
+	<script src="../js/diary.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="pict_menu">
@@ -81,12 +81,9 @@
 		</div>
 	</div>
 
-
-
-
 	<div class="block_menu">
 		<ul class="list_menu">
-			<?php if(isset($_COOKIE['log'])){ ?><a href="diary.php"><li class="active_point_menu">Личый дневник</li></a><?php }?>
+			<?php if(isset($_COOKIE['log'])){ ?><a href="diaries.php"><li>Личый дневник</li></a><?php }?>
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
 			<li>Питание</li>
@@ -105,13 +102,11 @@
 				<?php 
 					if(isset($_COOKIE["name"])){
 				?>
-					<form method="post" action="index.php">
-						<div class="wrap_login">
-							<div class="welcome_text">Здравствуйте, <?php echo $_COOKIE['log'];?>!</div>
-							<input class="but_cabinet but_hov" name="but_cabinet" type="submit" value="Личный кабинет" />
-							<input class="but_login but_hov" name="but_exit" type="submit" value="Выйти" />
-						</div>
-					</form>
+					<div class="wrap_login">
+						<div class="welcome_text">Здравствуйте, <?php echo $_COOKIE['log'];?>!</div>
+						<a href="cabinet.php"><input class="but_cabinet but_hov" name="but_cabinet" type="button" value="Личный кабинет" /></a>
+						<input class="but_login but_hov" name="but_exit" type="submit" value="Выйти" />
+					</div>
 				<?php
 					}else{
 				?>
@@ -127,32 +122,129 @@
 		<?php 
 			if(isset($_COOKIE['log']))
 			{
+				$did = $_GET['r'];
+				$resul = mysqli_query($mysqli, "SELECT name FROM diary WHERE id = $did");
+				$info_d = mysqli_fetch_array($resul);
 		?>
 		<div class="wrap_main_part">
 			<div class="main_part">
-				<h1 class="title">Дневники</h1>
-					<?php 
-						$logres = $_COOKIE["log"];
-
-						$result_clients = mysqli_query($mysqli, "SELECT id FROM clients WHERE login =  '$logres'");
-						$bol_enter_client = mysqli_fetch_assoc($result_clients);
-
-						$client_id = $bol_enter_client['id'];
-						$resul = mysqli_query($mysqli, "SELECT id, name FROM diary WHERE clients_id =  $client_id");
-
-						$info = mysqli_fetch_assoc($resul);
-						$diary_id = $info["id"];
-						$diary_name = $info["name"];
-					 ?>
+				<h1 class="title"><?php echo $info_d['name']; ?></h1>
 					<form method="post" action="#">
 						<div class="wrap_diary_block">
-							<div class="diary_name"></div>
-						</div>
-						<a href="diary_add.php">
-							<div class="but_create_diary">
-								<img class="plus_image" src="../img/plus.png" />Создать дневник
+							<div class="week_day_block monday">
+								<div class="title_day">Понедельник</div>
+								<?php
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 0");
+									while($row = mysqli_fetch_array($result))
+									{
+										echo 	"<div class='added_recipe'>
+													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_name'>".$row['name']."</div>
+													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
+													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>
+													<div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'><span>".round($row['portions']*$row['kkal']/$row['portion_mass'])."</span><br/>ККал</div></div>
+												</div>";
+									}
+								?>
 							</div>
-						</a>
+							<div class="week_day_block tuesday">
+								<div class="title_day">Вторник</div>
+								<?php
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 1");
+									while($row = mysqli_fetch_array($result))
+									{
+										echo 	"<div class='added_recipe'>
+													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_name'>".$row['name']."</div>
+													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
+													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>
+													<div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'><span>".round($row['portions']*$row['kkal']/$row['portion_mass'])."</span><br/>ККал</div></div>
+												</div>";
+									}
+								?>
+							</div>
+							<div class="week_day_block wednesday">
+								<div class="title_day">Среда</div>
+								<?php
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 2");
+									while($row = mysqli_fetch_array($result))
+									{
+										echo 	"<div class='added_recipe'>
+													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_name'>".$row['name']."</div>
+													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
+													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>
+													<div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'><span>".round($row['portions']*$row['kkal']/$row['portion_mass'])."</span><br/>ККал</div></div>
+												</div>";
+									}
+								?>
+							</div>
+							<div class="week_day_block thursday">
+								<div class="title_day">Четверг</div>
+								<?php
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 3");
+									while($row = mysqli_fetch_array($result))
+									{
+										echo 	"<div class='added_recipe'>
+													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_name'>".$row['name']."</div>
+													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
+													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>
+													<div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'><span>".round($row['portions']*$row['kkal']/$row['portion_mass'])."</span><br/>ККал</div></div>
+												</div>";
+									}
+								?>
+							</div>
+							<div class="week_day_block friday">
+								<div class="title_day">Пятница</div>
+								<?php
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 4");
+									while($row = mysqli_fetch_array($result))
+									{
+										echo 	"<div class='added_recipe'>
+													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_name'>".$row['name']."</div>
+													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
+													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>
+													<div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'><span>".round($row['portions']*$row['kkal']/$row['portion_mass'])."</span><br/>ККал</div></div>
+												</div>";
+									}
+								?>
+							</div>
+							<div class="week_day_block saturday">
+								<div class="title_day">Суббота</div>
+								<?php
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 5");
+									while($row = mysqli_fetch_array($result))
+									{
+										echo 	"<div class='added_recipe'>
+													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_name'>".$row['name']."</div>
+													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
+													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>
+													<div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'><span>".round($row['portions']*$row['kkal']/$row['portion_mass'])."</span><br/>ККал</div></div>
+												</div>";
+									}
+								?>
+							</div>
+							<div class="week_day_block sunday">
+								<div class="title_day">Воскресенье</div>
+								<?php
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 6");
+									while($row = mysqli_fetch_array($result))
+									{
+										echo 	"<div class='added_recipe'>
+													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_name'>".$row['name']."</div>
+													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
+													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>
+													<div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'><span>".round($row['portions']*$row['kkal']/$row['portion_mass'])."</span><br/>ККал</div></div>
+												</div>";
+									}
+								?>
+							</div>
+
+						</div>
 					</form>
 			</div>
 		</div>

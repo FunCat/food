@@ -5,18 +5,29 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>DailyFood - Панель администратора</title>
+	<title>DailyFood - Личный кабинет</title>
 	<link rel="stylesheet" href="../css/style.css" />
-	<link rel="stylesheet" href="../css/admin_panel.css" />
 	<link rel="stylesheet" href="../css/log_dialog.css" />
+	<link rel="stylesheet" href="../css/diary.css" />
 	<link rel="stylesheet" href="../fonts/font.css" />
 	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
 	<script src="../js/index.js" type="text/javascript"></script>
 	<script src="../js/hamburger.js" type="text/javascript"></script>
 	<script src="../js/log_dialog.js" type="text/javascript"></script>
-	<script src="../js/log_valid.js" type="text/javascript"></script>
 	<script src="../js/reg_valid.js" type="text/javascript"></script>
+	<script src="../js/log_valid.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var maxheight = 0;
+		$(document).ready(function(){ 	
+			$("div.diary_name").each(function() {
+				if($(this).height() > maxheight)
+					maxheight = $(this).height() + 20;
+			});
+
+			$("div.diary_name").height(maxheight);
+		});
+	</script>
 </head>
 <body>
 	<div class="pict_menu">
@@ -85,13 +96,13 @@
 
 	<div class="block_menu">
 		<ul class="list_menu">
-			<?php if(isset($_COOKIE['log'])){ ?><a href="diaries.php"><li>Личый дневник</li></a><?php }?>
+			<?php if(isset($_COOKIE['log'])){ ?><a href="diaries.php"><li class="active_point_menu">Личый дневник</li></a><?php }?>
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
 			<li>Питание</li>
 			<li>Калькулятор</li>
 			<li>Контакты</li>
-			<?php if($_COOKIE['perm'] == 1){ ?><li class="active_point_menu">Панель администратора</li><?php }?>
+			<?php if($_COOKIE['perm'] == 1){ ?><a href="admin_panel.php"><li>Панель администратора</li></a><?php }?>
 		</ul>
 	</div>
 
@@ -124,25 +135,50 @@
 		<?php 
 			if(isset($_COOKIE['log']))
 			{
-				if($_COOKIE['perm'] == 1){
 		?>
-					<div class="wrap_main_part">
-						<div class="main_part">
-							<h1 class="title">Панель администратора</h1>
+		<div class="wrap_main_part">
+			<div class="main_part">
+				<h1 class="title">Дневники</h1>
+					<?php 
+						$logres = $_COOKIE["log"];
 
-							<input class="add_recipe" name="but_add_new_receipe" type="submit" value="Добавить рецепт" />
-							<a href="new_ingredient.php"><input class="add_recipe" name="but_add_new_ingredients" type="submit" value="Добавить ингредиент" /></a>
+						$result_clients = mysqli_query($mysqli, "SELECT id FROM clients WHERE login =  '$logres'");
+						$bol_enter_client = mysqli_fetch_assoc($result_clients);
+
+						$client_id = $bol_enter_client['id'];
+						
+						$diary_id = $info["id"];
+						$diary_name = $info["name"];
+					 ?>
+					<form method="post" action="#">
+						<div class="wrap_diary_block">
+							<?php
+							$result_diary = mysqli_query($mysqli, "SELECT id, name, week_kkal FROM diary WHERE clients_id =  $client_id");
+							while($row_diary = mysqli_fetch_array($result_diary))
+							{
+								echo 	"<div class='diary_name'>
+											<div class='dname'>".$row_diary['name']."</div>
+											<div class='total_kkal'><img src='../img/k.png' />".$row_diary['week_kkal']."</div>
+											<a href='diary.php?r=".$row_diary['id']."'>
+												<div class='diary_more'>
+													Подробнее ->
+												</div>
+											</a>
+										</div>";
+							}
+							?>
+							
 						</div>
-					</div>
-		<?php
+						<a href="diary_add.php">
+							<div class="but_create_diary">
+								<img class="plus_image" src="../img/plus.png" />Создать дневник
+							</div>
+						</a>
+					</form>
+			</div>
+		</div>
 
-				}
-				else
-				{
-		?>
-				<div class="mess_no_log">У вас нет прав!</div>
 		<?php
-				}
 			}
 			else
 			{

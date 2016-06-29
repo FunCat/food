@@ -1,7 +1,6 @@
 <?php 
 	include "config.php";
-	include "cookie.php";
-	include "reg_script.php";
+	include "exit.php";
 ?>
 <html>
 <head>
@@ -19,6 +18,7 @@
 	<script src="../js/reg_valid.js" type="text/javascript"></script>
 	<script src="../js/log_valid.js" type="text/javascript"></script>
 	<script src="../js/add_diary.js" type="text/javascript"></script>
+	<script src="../js/search_recipes.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="pict_menu">
@@ -89,9 +89,10 @@
 			</div>
 			<a class="close_dialog" href="javascript: closeRecipeDialog()"></a>
 			<div class="rec_find">
-				<div>Название: <input type="text" /></div>
+				<div>Название: <input class="search_n" type="text" /></div>
 				<div>Тип блюда: 
 				<select class="rec_cat" name="rec_cat">
+					<option value='0'>-</option>
 				<?php
 					$result=mysqli_query($mysqli, "SELECT * FROM recip_cat"); 
 					while($row=mysqli_fetch_array($result)){
@@ -101,24 +102,6 @@
 				</select></div>
 			</div>
 			<div class="rec_list">
-				<?php
-					$res=mysqli_query($mysqli, "SELECT * FROM recipes"); 
-					while($row=mysqli_fetch_array($res)){
-						echo "<div class='rec'>
-								<div class='rec_id' style='display:none;'>".$row['id']."</div>
-								<div class='small_img'><img src='".$row['main_foto']."' /></div>
-								<div class='rec_info'>
-									<div class='title_rec_name'>".$row['name']."</div>
-									<div class='rec_stat_block rec_left_block rec_prot'><img src='../img/b.png' /> ".$row['proteins']."г</div>
-									<div class='rec_stat_block rec_fats'><img src='../img/zh.png' /> ".$row['fats']."г</div>
-									<div class='rec_stat_block rec_car'><img src='../img/y.png' /> ".$row['carboh']."г</div>
-									<div class='rec_stat_block rec_kkal'><img src='../img/k.png' /> ".$row['kkal']."</div>
-									<div class='rec_stat_unblock rec_portion_mass'>".$row['portion_mass']."</div>
-									<div class='rec_stat_block'><input class='but_add' type='button' value='Добавить' /></div>
-								</div>
-							</div>";
-					}
-				?>
 			</div>
 		</div>
 	</div>
@@ -128,7 +111,7 @@
 
 	<div class="block_menu">
 		<ul class="list_menu">
-			<?php if(isset($_COOKIE['log'])){ ?><a href="diary.php"><li>Личый дневник</li></a><?php }?>
+			<?php if(isset($_COOKIE['log'])){ ?><a href="diaries.php"><li>Личый дневник</li></a><?php }?>
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
 			<li>Питание</li>
@@ -147,13 +130,11 @@
 				<?php 
 					if(isset($_COOKIE["name"])){
 				?>
-					<form method="post" action="index.php">
-						<div class="wrap_login">
-							<div class="welcome_text">Здравствуйте, <?php echo $_COOKIE['log'];?>!</div>
-							<input class="but_cabinet but_hov" name="but_cabinet" type="submit" value="Личный кабинет" />
-							<input class="but_login but_hov" name="but_exit" type="submit" value="Выйти" />
-						</div>
-					</form>
+					<div class="wrap_login">
+						<div class="welcome_text">Здравствуйте, <?php echo $_COOKIE['log'];?>!</div>
+						<a href="cabinet.php"><input class="but_cabinet but_hov" name="but_cabinet" type="button" value="Личный кабинет" /></a>
+						<input class="but_login but_hov" name="but_exit" type="submit" value="Выйти" />
+					</div>
 				<?php
 					}else{
 				?>
@@ -235,6 +216,7 @@
 						</div>
 						
 						<div class="but_create_diaries"><input class="create_diary" type="button" value="Создать" /></div>
+						<div class="error_add_diary"></div>
 
 					</form>
 			</div>
