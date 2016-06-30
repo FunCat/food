@@ -1,6 +1,5 @@
 <?php 
 	include "config.php";
-	include "cookie.php";
 	if(isset($_POST['my_lastname'])){
 		
 		$logres = $_COOKIE['log'];

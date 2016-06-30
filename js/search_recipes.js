@@ -17,7 +17,9 @@ function search_recipes(str)
 		}
 		else{
 			$(".rec_list").empty();
+			$(".rec_list").css({"opacity":"0"});
 			$(".rec_list").html(this.responseText);
+			$(".rec_list").animate({opacity: 1}, 150);
 		}
 	};
 	r.send(vars);
@@ -25,11 +27,11 @@ function search_recipes(str)
 $(document).ready(function(){
 	$s = "sname=" + $('.search_n').val() + "&scat=" + $(".rec_cat").val();
 	search_recipes($s);
-	$('.search_n').bind("change keyup input click", function(){
+	$('.search_n').bind("change input", function(){
 		$s = "sname=" + $('.search_n').val() + "&scat=" + $(".rec_cat").val();
 		search_recipes($s);
 	});
-	$('.rec_cat').bind("change input click", function(){
+	$('.rec_cat').bind("change input", function(){
 		$s = "sname=" + $('.search_n').val() + "&scat=" + $(".rec_cat").val();
 		search_recipes($s);
 	});

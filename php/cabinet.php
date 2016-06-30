@@ -1,6 +1,5 @@
 <?php 
 	include "config.php";
-	include "exit.php";
 ?>
 <html>
 <head>
@@ -87,7 +86,7 @@
 
 	<div class="block_menu">
 		<ul class="list_menu">
-			<?php if(isset($_COOKIE['log'])){ ?><a href="diary.php"><li>Личый дневник</li></a><?php }?>
+			<?php if(isset($_COOKIE['log'])){ ?><a href="diaries.php"><li>Личый дневник</li></a><?php }?>
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
 			<li>Питание</li>
@@ -106,11 +105,13 @@
 				<?php 
 					if(isset($_COOKIE["name"])){
 				?>
-					<div class="wrap_login">
-						<div class="welcome_text">Здравствуйте, <?php echo $_COOKIE['log'];?>!</div>
-						<a href="cabinet.php"><input class="but_cabinet but_hov" name="but_cabinet" type="button" value="Личный кабинет" /></a>
-						<input class="but_login but_hov" name="but_exit" type="submit" value="Выйти" />
-					</div>
+					<form action="#" method="post">
+						<div class="wrap_login">
+							<div class="welcome_text">Здравствуйте, <?php echo $_COOKIE['log'];?>!</div>
+							<a href="cabinet.php"><input class="but_cabinet but_hov" name="but_cabinet" type="button" value="Личный кабинет" /></a>
+							<input class="but_login but_hov" name="but_exit" type="submit" value="Выйти" />
+						</div>
+					</form>
 				<?php
 					}else{
 				?>

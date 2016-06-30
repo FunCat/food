@@ -8,11 +8,9 @@ li span{
 	float: left;
 	padding: 5px 20px;
 	color: #666;
-	//text-shadow: 1px 1px #FFFFFF;
 }
 li span:hover{
 	background: #A2EC5E;
-	//text-shadow: 0 0 0px #3F8202;
 	color: #000;
 	cursor: pointer;
 }
@@ -31,7 +29,6 @@ li span.active{
 		margin: 10px 1%;
 		display: none;
 		float: left;
-		//overflow: hidden;
 		transition: height 0.3s;
 		.receipe_block_wrapper {
 			height: 150px;

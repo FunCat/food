@@ -19,7 +19,7 @@ if(isset($_POST["sname"])){
 					<div class='rec_stat_block rec_car'><img src='../img/y.png' /> ".$row['carboh']."г</div>
 					<div class='rec_stat_block rec_kkal'><img src='../img/k.png' /> ".$row['kkal']."</div>
 					<div class='rec_stat_unblock rec_portion_mass'>".$row['portion_mass']."</div>
-					<div class='rec_stat_block'><input class='but_add' type='button' value='Добавить' /></div>
+					<div class='rec_stat_block'><input class='but_add' type='button' onclick='clickAddRecipe(this)' value='Добавить' /></div>
 				</div>
 			</div>";
 	}

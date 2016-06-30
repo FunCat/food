@@ -13,26 +13,26 @@ li span {
   color: #666;
 }
 
-/* line 13, ../sass/recipe.scss */
+/* line 12, ../sass/recipe.scss */
 li span:hover {
   background: #A2EC5E;
   color: #000;
   cursor: pointer;
 }
 
-/* line 19, ../sass/recipe.scss */
+/* line 17, ../sass/recipe.scss */
 li span.active {
   background: #7ED42F;
   text-shadow: 0 0 2px #3F8202;
   color: #fff;
 }
 
-/* line 24, ../sass/recipe.scss */
+/* line 22, ../sass/recipe.scss */
 .clearfix {
   overflow: hidden;
 }
 
-/* line 28, ../sass/recipe.scss */
+/* line 26, ../sass/recipe.scss */
 #receipeslist .receipe_block {
   width: 23%;
   height: 150px;
@@ -41,13 +41,13 @@ li span.active {
   float: left;
   transition: height 0.3s;
 }
-/* line 36, ../sass/recipe.scss */
+/* line 33, ../sass/recipe.scss */
 #receipeslist .receipe_block .receipe_block_wrapper {
   height: 150px;
   overflow: hidden;
   position: relative;
 }
-/* line 42, ../sass/recipe.scss */
+/* line 39, ../sass/recipe.scss */
 #receipeslist .receipe_block .kkal {
   transform: rotate(15deg);
   float: left;
@@ -63,17 +63,17 @@ li span.active {
   padding-top: 6px;
   border: 1px solid white;
 }
-/* line 57, ../sass/recipe.scss */
+/* line 54, ../sass/recipe.scss */
 #receipeslist .receipe_block img {
   max-width: 100%;
   position: relative;
 }
-/* line 61, ../sass/recipe.scss */
+/* line 58, ../sass/recipe.scss */
 #receipeslist .receipe_block .label {
   position: absolute;
   width: 100%;
 }
-/* line 65, ../sass/recipe.scss */
+/* line 62, ../sass/recipe.scss */
 #receipeslist .receipe_block .label_bg {
   background: #7ED42F;
   width: 100%;
@@ -82,19 +82,19 @@ li span.active {
   top: 0;
   left: 0;
 }
-/* line 73, ../sass/recipe.scss */
+/* line 70, ../sass/recipe.scss */
 #receipeslist .receipe_block .label_text {
   color: #fff;
   position: relative;
   z-index: 15;
   padding: 5px 8px;
 }
-/* line 79, ../sass/recipe.scss */
+/* line 76, ../sass/recipe.scss */
 #receipeslist .receipe_block .text_category {
   display: block;
   font-size: 11px;
 }
-/* line 84, ../sass/recipe.scss */
+/* line 81, ../sass/recipe.scss */
 #receipeslist .receipe_block_info {
   height: 0px;
   width: 100%;
@@ -104,11 +104,11 @@ li span.active {
   transition: height 0.3s;
   display: none;
 }
-/* line 92, ../sass/recipe.scss */
+/* line 89, ../sass/recipe.scss */
 #receipeslist .receipe_block_info .hr_pad {
   padding-top: 10px;
 }
-/* line 94, ../sass/recipe.scss */
+/* line 91, ../sass/recipe.scss */
 #receipeslist .receipe_block_info .hr_pad .recipe_hr {
   color: white;
   background-color: white;
@@ -117,20 +117,20 @@ li span.active {
   border: none;
   margin: 0px auto;
 }
-/* line 104, ../sass/recipe.scss */
+/* line 101, ../sass/recipe.scss */
 #receipeslist .receipe_block_info .recipe_stats_left, #receipeslist .receipe_block_info .recipe_stats_right {
   color: white;
   padding: 15px 0% 0px 15%;
   font-size: 20px;
   float: left;
 }
-/* line 109, ../sass/recipe.scss */
+/* line 106, ../sass/recipe.scss */
 #receipeslist .receipe_block_info .recipe_stats_left .icon_stat, #receipeslist .receipe_block_info .recipe_stats_right .icon_stat {
   vertical-align: middle;
   width: 30px;
   margin-bottom: 3px;
 }
-/* line 115, ../sass/recipe.scss */
+/* line 112, ../sass/recipe.scss */
 #receipeslist .receipe_block_info .recipe_more, #receipeslist .receipe_block_info .recipe_add {
   width: 120px;
   height: 30px;
@@ -142,14 +142,14 @@ li span.active {
   margin: 10px 8px 0px 8px;
   transition: all 0.3s;
 }
-/* line 126, ../sass/recipe.scss */
+/* line 123, ../sass/recipe.scss */
 #receipeslist .receipe_block_info .recipe_more:hover, #receipeslist .receipe_block_info .recipe_add:hover {
   color: #7ED42F;
   background-color: white;
   cursor: pointer;
 }
 
-/* line 134, ../sass/recipe.scss */
+/* line 131, ../sass/recipe.scss */
 .dop_text {
   height: 300px;
   background-color: #7ED42F;

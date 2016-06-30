@@ -1,11 +1,21 @@
 var flag_block = 0;
+var maxheight = 0;
 
 $(document).ready(function(){ 	
 	$('.added_recipe').css({"width": $(".week_day_block").width() / 3 + "px"});
 	$('.add_recipe').css({"width": $(".week_day_block").width() / 3 + "px"});
+	$("div.week_day_block").each(function() {
+		if($(this).height() > maxheight)
+			maxheight = $(this).height();
+	});
+
+	$("div.week_day_block").height(maxheight);
+	$('.added_recipe').css({"width": $(".week_day_block").width() / 3 + "px"});
+	$('.add_recipe').css({"width": $(".week_day_block").width() / 3 + "px"});
 	$("#add_recipe_dialog").hide(); //скрываем блок при запуске страницы
-	$(".create_diary").click(function(){
+	$(".save_diary").click(function(){
 		$i = 0;
+		var did = $(".did").text();
 		var recip_id = [];
 		var day = [];
 		var time = [];
@@ -74,11 +84,9 @@ $(document).ready(function(){
 		});
 
 		$dname = $(".diary_name").val();
-		$str = "t=" + Math.random() + "&diaryname=" + $dname + "&rec=" + recip_id + "&day=" + day + "&time=" + time + "&mass=" + mass + "&week_mass=" + week_kkal;
+		$str = "t=" + Math.random() + "&did=" + did + "&diaryname=" + $dname + "&rec=" + recip_id + "&day=" + day + "&time=" + time + "&mass=" + mass + "&week_mass=" + week_kkal;
 		send_request_diary_recipes($str);
 	});
-//Search recipes for added
-	
 });
 
 function openRecipeDialog(flag){ 		//плавное появление диалогового окна
@@ -100,7 +108,7 @@ function changeKkal(t){
 function send_request_diary_recipes(str)
 {
 	var r = new XMLHttpRequest();
-	var url = "add_diary_recipes.php";
+	var url = "edit_diary_recipes.php";
 	var string = str;
 	var vars = str;
 	r.open("POST", url, true);
@@ -185,4 +193,5 @@ function clickAddRecipe(t){
 	$('.added_recipe').css({"width": $(".week_day_block").width() / 3 + "px"});
 	$('.add_recipe').css({"width": $(".week_day_block").width() / 3 + "px"});
 }
+
 

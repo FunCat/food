@@ -69,13 +69,13 @@ a{
 		font-size: 22px;
 	}
 	.added_recipe{
-		height: 287px;
+		height: 320;
 		float: left;
 		border: 1px solid white;
 		background-color: #7ed42f;
 	}
 	.add_recipe{
-		height: 287px;
+		height: 320;
 		float: left;
 		border: 1px solid white;
 		background-color: #7ed42f;
@@ -182,38 +182,41 @@ a{
 			margin: 10px 0px;
 			float: left;
 		}
-		.total_kkal{
+		.right_column{
+			float: left;
 			width: 30%;
-			font-size: 26px;
-			color: white;
-			float: left;
-			img{
-				vertical-align: middle;
-				margin: 0px 15px 0px 30px;
+			.total_kkal{
+				font-size: 26px;
+				color: white;
+				float: left;
+				img{
+					vertical-align: middle;
+					margin: 0px 15px 0px 20px;
+				}
 			}
-		}
-		.diary_more{
-			width: 24%;
-			height: 30px;
-			color: white;
-			float: left;
-			text-align: center;
-			padding-top: 5px;
-			border: 2px solid white;
-			margin: 10px 3%;
-			transition: all 0.3s;
-		}
-		.diary_more:hover{
-			color: #7ed42f;
-			background-color: white;
-			cursor: pointer;
+			.diary_more{
+				width: 80%;
+				height: 30px;
+				color: white;
+				float: left;
+				text-align: center;
+				padding-top: 5px;
+				border: 2px solid white;
+				margin: 5px 3%;
+				transition: all 0.3s;
+			}
+			.diary_more:hover{
+				color: #7ed42f;
+				background-color: white;
+				cursor: pointer;
+			}
 		}
 	}
 }
 
 .but_create_diaries{
 	text-align: center;
-	.create_diary{
+	.create_diary, .save_diary{
 		width: 150px;
 		height: 50px;
 		font-size: 20px;

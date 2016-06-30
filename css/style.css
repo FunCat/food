@@ -9,13 +9,13 @@ body {
   font-family: 'Comfortaa';
 }
 
-/* line 12, ../sass/style.scss */
+/* line 11, ../sass/style.scss */
 .wrap_header {
   width: 100%;
   height: 100px;
   background-color: #7ED42F;
 }
-/* line 16, ../sass/style.scss */
+/* line 15, ../sass/style.scss */
 .wrap_header .header {
   max-width: 1200px;
   height: 100%;
@@ -23,17 +23,17 @@ body {
   background-color: #7ED42F;
   position: relative;
 }
-/* line 23, ../sass/style.scss */
+/* line 22, ../sass/style.scss */
 .wrap_header .header .logo {
   margin-left: 100px;
 }
-/* line 25, ../sass/style.scss */
+/* line 24, ../sass/style.scss */
 .wrap_header .header .logo img {
   height: 90px;
   width: auto;
   margin-top: 5px;
 }
-/* line 33, ../sass/style.scss */
+/* line 32, ../sass/style.scss */
 .wrap_header .header .wrap_login .but_login {
   position: absolute;
   right: 0;
@@ -50,13 +50,13 @@ body {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 49, ../sass/style.scss */
+/* line 48, ../sass/style.scss */
 .wrap_header .header .wrap_login .but_login:hover {
   cursor: pointer;
   color: #7ED42F;
   background-color: white;
 }
-/* line 54, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 .wrap_header .header .wrap_login .but_cabinet {
   position: absolute;
   right: 0;
@@ -73,13 +73,13 @@ body {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 70, ../sass/style.scss */
+/* line 69, ../sass/style.scss */
 .wrap_header .header .wrap_login .but_cabinet:hover {
   cursor: pointer;
   color: #7ED42F;
   background-color: white;
 }
-/* line 75, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 .wrap_header .header .wrap_login .welcome_text {
   top: 0;
   right: 0;
@@ -92,21 +92,21 @@ body {
   padding: 9px;
 }
 
-/* line 91, ../sass/style.scss */
+/* line 90, ../sass/style.scss */
 .wrap_menu {
   max-width: 1200px;
   width: 100%;
   height: 150px;
   margin: auto;
 }
-/* line 96, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 .wrap_menu .wrap_point_menu {
   width: 50%;
   height: 100px;
   margin: 25px;
   float: right;
 }
-/* line 101, ../sass/style.scss */
+/* line 100, ../sass/style.scss */
 .wrap_menu .wrap_point_menu .point_menu {
   float: right;
   width: 24%;
@@ -120,28 +120,28 @@ body {
   border-bottom: 0px solid #5ee89c;
   transition: color 0.2s, border-bottom 0.2s;
 }
-/* line 114, ../sass/style.scss */
+/* line 113, ../sass/style.scss */
 .wrap_menu .wrap_point_menu .point_menu:hover {
   color: #22824D;
   cursor: pointer;
   border-bottom: 5px solid #5ee89c;
 }
 
-/* line 122, ../sass/style.scss */
+/* line 121, ../sass/style.scss */
 .wrap_slider {
   position: relative;
   height: 600px;
   width: 100%;
   margin: 15px 0px;
 }
-/* line 127, ../sass/style.scss */
+/* line 126, ../sass/style.scss */
 .wrap_slider .slider {
   max-width: 1200px;
   height: 600px;
   margin: auto;
   display: block;
 }
-/* line 132, ../sass/style.scss */
+/* line 131, ../sass/style.scss */
 .wrap_slider .slider .slide {
   float: left;
   width: 1200px;
@@ -153,7 +153,7 @@ body {
   -moz-box-shadow: 0px 0px 10px black;
   box-shadow: 0px 0px 10px black;
 }
-/* line 142, ../sass/style.scss */
+/* line 141, ../sass/style.scss */
 .wrap_slider .slider .slide .pict_slide {
   float: left;
   position: absolute;
@@ -163,19 +163,19 @@ body {
   height: 600px;
   width: 1200px;
 }
-/* line 151, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 .wrap_slider .slider .slide .active {
   z-index: 10;
 }
-/* line 154, ../sass/style.scss */
+/* line 153, ../sass/style.scss */
 .wrap_slider .slider .slide .image_slide_1 {
   background-image: url("../img/1.jpg");
 }
-/* line 157, ../sass/style.scss */
+/* line 156, ../sass/style.scss */
 .wrap_slider .slider .slide .image_slide_2 {
   background-image: url("../img/2.jpg");
 }
-/* line 161, ../sass/style.scss */
+/* line 160, ../sass/style.scss */
 .wrap_slider .slider .right_point {
   height: 600px;
   width: 30px;
@@ -187,7 +187,7 @@ body {
   transition: background-color 0.5s;
   z-index: 15;
 }
-/* line 172, ../sass/style.scss */
+/* line 171, ../sass/style.scss */
 .wrap_slider .slider .left_point {
   height: 600px;
   width: 30px;
@@ -199,19 +199,19 @@ body {
   transition: background-color 0.5s;
   z-index: 15;
 }
-/* line 183, ../sass/style.scss */
+/* line 182, ../sass/style.scss */
 .wrap_slider .slider .left_point:hover, .wrap_slider .slider .right_point:hover {
   background-color: rgba(126, 212, 47, 0.74);
   cursor: pointer;
 }
 
-/* line 192, ../sass/style.scss */
+/* line 190, ../sass/style.scss */
 .wrap_main_part .main_part {
   max-width: 1200px;
   min-height: 500px;
   margin: auto;
 }
-/* line 197, ../sass/style.scss */
+/* line 194, ../sass/style.scss */
 .wrap_main_part .main_part h1 {
   text-align: center;
   padding: 10px 0px;
@@ -219,12 +219,12 @@ body {
   font-weight: normal;
   background-color: #7ED42F;
 }
-/* line 204, ../sass/style.scss */
+/* line 201, ../sass/style.scss */
 .wrap_main_part .main_part h1.title {
   margin: 20px 0px;
 }
 
-/* line 212, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
 .pict_menu {
   position: fixed;
   height: 88px;
@@ -232,13 +232,13 @@ body {
   z-index: 20;
 }
 
-/* line 219, ../sass/style.scss */
+/* line 216, ../sass/style.scss */
 .container_sait {
   overflow: auto;
   padding-bottom: 170px;
 }
 
-/* line 224, ../sass/style.scss */
+/* line 221, ../sass/style.scss */
 .block_menu {
   width: 0px;
   height: 100%;
@@ -248,18 +248,18 @@ body {
   transition: all 0.4s;
   border-right: 0px solid white;
 }
-/* line 232, ../sass/style.scss */
+/* line 229, ../sass/style.scss */
 .block_menu a {
   text-decoration: none;
   color: white;
 }
-/* line 236, ../sass/style.scss */
+/* line 233, ../sass/style.scss */
 .block_menu ul {
   margin-top: 120px;
   margin-left: -600px;
   transition: all 0.4s;
 }
-/* line 240, ../sass/style.scss */
+/* line 237, ../sass/style.scss */
 .block_menu ul li {
   width: 100%;
   font-size: 25px;
@@ -268,24 +268,24 @@ body {
   color: white;
   list-style: none;
 }
-/* line 248, ../sass/style.scss */
+/* line 245, ../sass/style.scss */
 .block_menu ul li:hover {
   cursor: pointer;
   background-color: #4D9808;
 }
-/* line 252, ../sass/style.scss */
+/* line 249, ../sass/style.scss */
 .block_menu ul .active_point_menu {
   background-color: #4D9808;
 }
 
-/* line 259, ../sass/style.scss */
+/* line 256, ../sass/style.scss */
 .footer {
   height: 100px;
   width: 100%;
   background-color: #7ED42F;
 }
 
-/* line 265, ../sass/style.scss */
+/* line 262, ../sass/style.scss */
 .mess_no_log {
   width: 1000px;
   height: 100px;
@@ -297,12 +297,12 @@ body {
   color: white;
 }
 
-/* line 287, ../sass/style.scss */
+/* line 284, ../sass/style.scss */
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
-/* line 291, ../sass/style.scss */
+/* line 288, ../sass/style.scss */
 .hamburglar {
   margin-top: 20px;
   transform: scale(1);
@@ -315,12 +315,12 @@ body {
   transition: margin-left 0.5s;
 }
 
-/* line 302, ../sass/style.scss */
+/* line 299, ../sass/style.scss */
 .hamburglar:hover {
   cursor: pointer;
 }
 
-/* line 307, ../sass/style.scss */
+/* line 304, ../sass/style.scss */
 .path-burger {
   position: absolute;
   top: 0;
@@ -331,7 +331,7 @@ body {
   -webkit-mask-box-image: url(https://raygun.io/upload/mask.svg);
 }
 
-/* line 318, ../sass/style.scss */
+/* line 315, ../sass/style.scss */
 .animate-path {
   position: absolute;
   top: 0;
@@ -340,7 +340,7 @@ body {
   height: 68px;
 }
 
-/* line 327, ../sass/style.scss */
+/* line 324, ../sass/style.scss */
 .path-rotation {
   height: 34px;
   width: 34px;
@@ -348,7 +348,7 @@ body {
   transform: rotate(0deg);
   transform-origin: 100% 0;
 }
-/* line 333, ../sass/style.scss */
+/* line 330, ../sass/style.scss */
 .path-rotation:before {
   content: '';
   display: block;
@@ -380,29 +380,29 @@ body {
     transform: rotate(0deg);
   }
 }
-/* line 373, ../sass/style.scss */
+/* line 370, ../sass/style.scss */
 .hamburglar.is-open .path {
   animation: dash-in 0.5s linear normal;
   animation-fill-mode: forwards;
 }
-/* line 377, ../sass/style.scss */
+/* line 374, ../sass/style.scss */
 .hamburglar.is-open .animate-path {
   animation: rotate-in 0.5s linear normal;
   animation-fill-mode: forwards;
 }
 
-/* line 384, ../sass/style.scss */
+/* line 381, ../sass/style.scss */
 .hamburglar.is-closed .path {
   animation: dash-out 0.5s linear normal;
   animation-fill-mode: forwards;
 }
-/* line 388, ../sass/style.scss */
+/* line 385, ../sass/style.scss */
 .hamburglar.is-closed .animate-path {
   animation: rotate-out 0.5s linear normal;
   animation-fill-mode: forwards;
 }
 
-/* line 394, ../sass/style.scss */
+/* line 391, ../sass/style.scss */
 .path {
   stroke-dasharray: 240;
   stroke-dashoffset: 240;
@@ -431,7 +431,7 @@ body {
     stroke-dashoffset: 240;
   }
 }
-/* line 427, ../sass/style.scss */
+/* line 424, ../sass/style.scss */
 .burger-icon {
   position: absolute;
   padding: 20px 16px;
@@ -439,14 +439,14 @@ body {
   width: 68px;
 }
 
-/* line 434, ../sass/style.scss */
+/* line 431, ../sass/style.scss */
 .burger-container {
   position: relative;
   height: 28px;
   width: 36px;
 }
 
-/* line 440, ../sass/style.scss */
+/* line 437, ../sass/style.scss */
 .burger-bun-top,
 .burger-bun-bot,
 .burger-filling {
@@ -458,24 +458,24 @@ body {
   background: #4D9808;
 }
 
-/* line 451, ../sass/style.scss */
+/* line 448, ../sass/style.scss */
 .burger-bun-top {
   top: 0;
   transform-origin: 34px 2px;
 }
 
-/* line 456, ../sass/style.scss */
+/* line 453, ../sass/style.scss */
 .burger-bun-bot {
   bottom: 0;
   transform-origin: 34px 2px;
 }
 
-/* line 464, ../sass/style.scss */
+/* line 461, ../sass/style.scss */
 .burger-filling {
   top: 12px;
 }
 
-/* line 473, ../sass/style.scss */
+/* line 470, ../sass/style.scss */
 .burger-ring {
   position: absolute;
   top: 0;
@@ -484,29 +484,29 @@ body {
   height: 68px;
 }
 
-/* line 481, ../sass/style.scss */
+/* line 478, ../sass/style.scss */
 .svg-ring {
   width: 68px;
   height: 68px;
 }
 
-/* line 489, ../sass/style.scss */
+/* line 486, ../sass/style.scss */
 .hamburglar.is-open .burger-bun-top {
   animation: bun-top-out 0.5s linear normal;
   animation-fill-mode: forwards;
 }
-/* line 493, ../sass/style.scss */
+/* line 490, ../sass/style.scss */
 .hamburglar.is-open .burger-bun-bot {
   animation: bun-bot-out 0.5s linear normal;
   animation-fill-mode: forwards;
 }
 
-/* line 499, ../sass/style.scss */
+/* line 496, ../sass/style.scss */
 .hamburglar.is-closed .burger-bun-top {
   animation: bun-top-in 0.5s linear normal;
   animation-fill-mode: forwards;
 }
-/* line 503, ../sass/style.scss */
+/* line 500, ../sass/style.scss */
 .hamburglar.is-closed .burger-bun-bot {
   animation: bun-bot-in 0.5s linear normal;
   animation-fill-mode: forwards;
@@ -594,13 +594,13 @@ body {
     transform: rotate(0deg);
   }
 }
-/* line 599, ../sass/style.scss */
+/* line 596, ../sass/style.scss */
 .hamburglar.is-open .burger-filling {
   animation: burger-fill-out 0.5s linear normal;
   animation-fill-mode: forwards;
 }
 
-/* line 606, ../sass/style.scss */
+/* line 603, ../sass/style.scss */
 .hamburglar.is-closed .burger-filling {
   animation: burger-fill-in 0.5s linear normal;
   animation-fill-mode: forwards;

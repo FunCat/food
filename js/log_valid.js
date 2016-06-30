@@ -89,7 +89,12 @@ $(document).ready(function(){
 		});
 
 
-		$(".pole_log_pass").keyup(function(){
+		$(".pole_log_pass").keyup(function(I){
+			if(I.keyCode == 13){
+				if(b_log_login == 1 || b_log_pass == 1) return;
+				str = "log_log=" + $(".pole_log_log").val() + "&log_pass=" + $(".pole_log_pass").val();
+				send_request_vxod(str);
+			}
 			var val = $(this).val();
 			if(val == '') {
 				$(this).css({"border": "2px solid red"});

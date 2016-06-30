@@ -1,6 +1,5 @@
 <?php 
 	include "config.php";
-	include "exit.php";
 ?>
 <html>
 <head>
@@ -26,7 +25,9 @@
 			});
 
 			$("div.diary_name").height(maxheight);
+			$(".dname").css({"margin-top": $(".diary_name").height()/2 - $(".dname").height()/2 + "px"});
 		});
+
 	</script>
 </head>
 <body>
@@ -115,11 +116,13 @@
 				<?php 
 					if(isset($_COOKIE["name"])){
 				?>
-					<div class="wrap_login">
-						<div class="welcome_text">Здравствуйте, <?php echo $_COOKIE['log'];?>!</div>
-						<a href="cabinet.php"><input class="but_cabinet but_hov" name="but_cabinet" type="button" value="Личный кабинет" /></a>
-						<input class="but_login but_hov" name="but_exit" type="submit" value="Выйти" />
-					</div>
+					<form action="#" method="post">
+						<div class="wrap_login">
+							<div class="welcome_text">Здравствуйте, <?php echo $_COOKIE['log'];?>!</div>
+							<a href="cabinet.php"><input class="but_cabinet but_hov" name="but_cabinet" type="button" value="Личный кабинет" /></a>
+							<input class="but_login but_hov" name="but_exit" type="submit" value="Выйти" />
+						</div>
+					</form>
 				<?php
 					}else{
 				?>
@@ -158,12 +161,19 @@
 							{
 								echo 	"<div class='diary_name'>
 											<div class='dname'>".$row_diary['name']."</div>
-											<div class='total_kkal'><img src='../img/k.png' />".$row_diary['week_kkal']."</div>
-											<a href='diary.php?r=".$row_diary['id']."'>
-												<div class='diary_more'>
-													Подробнее ->
-												</div>
-											</a>
+											<div class='right_column'>
+												<div class='total_kkal'><img src='../img/k.png' />".$row_diary['week_kkal']."</div>
+												<a href='diary.php?r=".$row_diary['id']."'>
+													<div class='diary_more'>
+														Просмотреть
+													</div>
+												</a>
+												<a href='diary_edit.php?r=".$row_diary['id']."'>
+													<div class='diary_more'>
+														Редактировать
+													</div>
+												</a>
+											</div>
 										</div>";
 							}
 							?>
