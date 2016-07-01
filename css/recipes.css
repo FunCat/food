@@ -1,9 +1,4 @@
 /* line 1, ../sass/recipes.scss */
-.section_title {
-  margin: 20px 0px;
-}
-
-/* line 4, ../sass/recipes.scss */
 .search_panel {
   width: 500px;
   height: 75px;
@@ -13,13 +8,13 @@
   /* Firefox 19+ */
   /* Firefox 18- */
 }
-/* line 10, ../sass/recipes.scss */
+/* line 7, ../sass/recipes.scss */
 .search_panel .search_title {
   text-align: center;
   font-size: 22px;
   color: #7ED42F;
 }
-/* line 15, ../sass/recipes.scss */
+/* line 12, ../sass/recipes.scss */
 .search_panel .search_button, .search_panel .fullsearch_button {
   font-size: 18px;
   padding: 3px;
@@ -31,17 +26,17 @@
   width: 100px;
   transition: all 0.3s;
 }
-/* line 26, ../sass/recipes.scss */
+/* line 23, ../sass/recipes.scss */
 .search_panel .search_button:hover, .search_panel .fullsearch_button:hover {
   cursor: pointer;
   background-color: white;
   color: #7ED42F;
 }
-/* line 31, ../sass/recipes.scss */
+/* line 28, ../sass/recipes.scss */
 .search_panel .fullsearch_button {
   width: 200px;
 }
-/* line 34, ../sass/recipes.scss */
+/* line 31, ../sass/recipes.scss */
 .search_panel .pole_search {
   font-size: 20px;
   border: 1px solid #7ED42F;
@@ -49,39 +44,39 @@
   width: 500px;
   color: #4D9808;
 }
-/* line 41, ../sass/recipes.scss */
+/* line 38, ../sass/recipes.scss */
 .search_panel .pole_search:focus::-webkit-input-placeholder {
   color: transparent;
 }
-/* line 44, ../sass/recipes.scss */
+/* line 41, ../sass/recipes.scss */
 .search_panel .pole_search:focus::-moz-placeholder {
   color: transparent;
 }
-/* line 47, ../sass/recipes.scss */
+/* line 44, ../sass/recipes.scss */
 .search_panel .pole_search:focus:-moz-placeholder {
   color: transparent;
 }
-/* line 50, ../sass/recipes.scss */
+/* line 47, ../sass/recipes.scss */
 .search_panel .pole_search:focus:-ms-input-placeholder {
   color: transparent;
 }
-/* line 53, ../sass/recipes.scss */
+/* line 50, ../sass/recipes.scss */
 .search_panel .pole_search::-webkit-input-placeholder {
   color: #4D9808;
 }
-/* line 56, ../sass/recipes.scss */
+/* line 53, ../sass/recipes.scss */
 .search_panel .pole_search::-moz-placeholder {
   color: #4D9808;
 }
-/* line 59, ../sass/recipes.scss */
+/* line 56, ../sass/recipes.scss */
 .search_panel .pole_search:-moz-placeholder {
   color: #4D9808;
 }
-/* line 62, ../sass/recipes.scss */
+/* line 59, ../sass/recipes.scss */
 .search_panel .pole_search:-ms-input-placeholder {
   color: #4D9808;
 }
-/* line 66, ../sass/recipes.scss */
+/* line 63, ../sass/recipes.scss */
 .search_panel .central_block .kkal_block, .search_panel .central_block .proteins_block,
 .search_panel .central_block .fats_block, .search_panel .central_block .carboh_block {
   width: 25%;
@@ -89,7 +84,7 @@
   padding-top: 20px;
   float: left;
 }
-/* line 72, ../sass/recipes.scss */
+/* line 69, ../sass/recipes.scss */
 .search_panel .central_block .kkal_block #kkal_min, .search_panel .central_block .kkal_block #kkal_max,
 .search_panel .central_block .kkal_block #proteins_min, .search_panel .central_block .kkal_block #proteins_max,
 .search_panel .central_block .kkal_block #fats_min, .search_panel .central_block .kkal_block #fats_max,
@@ -111,7 +106,7 @@
   width: 35px;
   text-align: center;
 }
-/* line 79, ../sass/recipes.scss */
+/* line 76, ../sass/recipes.scss */
 .search_panel .central_block .kkal_block #kkal_kol, .search_panel .central_block .kkal_block #proteins_kol,
 .search_panel .central_block .kkal_block #fats_kol, .search_panel .central_block .kkal_block #carboh_kol, .search_panel .central_block .proteins_block #kkal_kol, .search_panel .central_block .proteins_block #proteins_kol,
 .search_panel .central_block .proteins_block #fats_kol, .search_panel .central_block .proteins_block #carboh_kol,

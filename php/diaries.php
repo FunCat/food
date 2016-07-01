@@ -27,7 +27,29 @@
 			$("div.diary_name").height(maxheight);
 			$(".dname").css({"margin-top": $(".diary_name").height()/2 - $(".dname").height()/2 + "px"});
 		});
-
+		function removeDiary(t, i){
+			$str = "i=" + i;
+			send_remove_diary($str);
+			$(t).parent().parent().remove();
+		}
+		function send_remove_diary(str)
+		{
+			var r = new XMLHttpRequest();
+			var url = "remove_diary.php";
+			var string = str;
+			var vars = str;
+			r.open("POST", url, true);
+			r.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			r.onreadystatechange = function(){
+				if(r.readyState == 4 && r.status == 210){
+					alert(r.responseText);
+				}
+			}
+			r.onload = function () {
+				document.location.href = "http://dailyfood.online/php/diaries.php";
+			};
+			r.send(vars);
+		}
 	</script>
 </head>
 <body>
@@ -102,7 +124,7 @@
 			<a href="recipes.php"><li>Рецепты</li></a>
 			<li>Питание</li>
 			<li>Калькулятор</li>
-			<li>Контакты</li>
+			<a href="contact.php"><li>Контакты</li></a>
 			<?php if($_COOKIE['perm'] == 1){ ?><a href="admin_panel.php"><li>Панель администратора</li></a><?php }?>
 		</ul>
 	</div>
@@ -160,6 +182,7 @@
 							while($row_diary = mysqli_fetch_array($result_diary))
 							{
 								echo 	"<div class='diary_name'>
+											<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeDiary(this, ".$row_diary['id'].")' /></div>
 											<div class='dname'>".$row_diary['name']."</div>
 											<div class='right_column'>
 												<div class='total_kkal'><img src='../img/k.png' />".$row_diary['week_kkal']."</div>

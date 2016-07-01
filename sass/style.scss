@@ -4,9 +4,13 @@
 }
 
 body{
+	position: relative;
 	font-family: 'Comfortaa';
 }
 
+.section_title{
+	margin: 20px 0px;
+}
 
 .wrap_header{
 	width: 100%;
@@ -257,6 +261,8 @@ body{
 	height: 100px;
 	width: 100%;
 	background-color: #7ED42F;
+	position: absolute;
+	bottom: 0;
 }
 
 .mess_no_log{

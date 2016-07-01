@@ -9,3 +9,4 @@ $(document).ready(function(){
 
 	$("div.week_day_block").height(maxheight);
 });
+

@@ -1,0 +1,75 @@
+/* line 1, ../sass/contact.scss */
+.contact_form {
+  width: 500px;
+  margin: 0px auto;
+  /* Firefox 19+ */
+  /* Firefox 18- */
+  /* Firefox 19+ */
+  /* Firefox 18- */
+}
+/* line 4, ../sass/contact.scss */
+.contact_form input[type^="text"] {
+  margin-bottom: 15px;
+  width: 100%;
+  font-size: 26px;
+  padding: 5px;
+  border: 2px solid #7ed42f;
+}
+/* line 11, ../sass/contact.scss */
+.contact_form input[type^="button"] {
+  width: 200px;
+  height: 70px;
+  margin-top: 15px;
+  font-size: 24px;
+  border: 2px solid white;
+  background-color: #7ed42f;
+  color: white;
+  transition: all 0.2s;
+}
+/* line 21, ../sass/contact.scss */
+.contact_form input[type^="button"]:hover {
+  cursor: pointer;
+  border: 2px solid #7ed42f;
+  color: #7ed42f;
+  background-color: white;
+}
+/* line 27, ../sass/contact.scss */
+.contact_form textarea {
+  width: 100%;
+  height: 300px;
+  font-size: 20px;
+  padding: 5px;
+  border: 2px solid #7ed42f;
+}
+/* line 34, ../sass/contact.scss */
+.contact_form input[type^="text"]::-webkit-input-placeholder {
+  color: #4D9808;
+}
+/* line 35, ../sass/contact.scss */
+.contact_form input[type^="text"]::-moz-placeholder {
+  color: #4D9808;
+}
+/* line 36, ../sass/contact.scss */
+.contact_form input[type^="text"]:-moz-placeholder {
+  color: #4D9808;
+}
+/* line 37, ../sass/contact.scss */
+.contact_form input[type^="text"]:-ms-input-placeholder {
+  color: #4D9808;
+}
+/* line 38, ../sass/contact.scss */
+.contact_form textarea::-webkit-input-placeholder {
+  color: #4D9808;
+}
+/* line 39, ../sass/contact.scss */
+.contact_form textarea::-moz-placeholder {
+  color: #4D9808;
+}
+/* line 40, ../sass/contact.scss */
+.contact_form textarea:-moz-placeholder {
+  color: #4D9808;
+}
+/* line 41, ../sass/contact.scss */
+.contact_form textarea:-ms-input-placeholder {
+  color: #4D9808;
+}

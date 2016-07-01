@@ -6,17 +6,15 @@
 	<meta charset="utf-8" />
 	<title>DailyFood</title>
 	<link rel="stylesheet" href="../css/style.css" />
-	<link rel="stylesheet" href="../css/recipe.css" />
 	<link rel="stylesheet" href="../css/log_dialog.css" />
+	<link rel="stylesheet" href="../css/contact.css" />
 	<link rel="stylesheet" href="../fonts/font.css" />
 	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
 	<script src="../js/jquery.easing.min.js" type="text/javascript"></script>
 	<script src="../js/jquery.mixitup.min.js" type="text/javascript"></script>
 	<script src="../js/index.js" type="text/javascript"></script>
-	<script src="../js/slider.js" type="text/javascript"></script>
 	<script src="../js/hamburger.js" type="text/javascript"></script>
-	<script src="../js/search.js" type="text/javascript"></script>
 	<script src="../js/reg_valid.js" type="text/javascript"></script>
 	<script src="../js/log_valid.js" type="text/javascript"></script>
 	<script src="../js/log_dialog.js" type="text/javascript"></script>
@@ -89,11 +87,11 @@
 	<div class="block_menu">
 		<ul class="list_menu">
 			<?php if(isset($_COOKIE['log'])){ ?><a href="diaries.php"><li>Личый дневник</li></a><?php }?>
-			<a href="index.php"><li class="active_point_menu">Главная</li></a>
+			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
 			<li>Питание</li>
 			<a href="contact.php"><li>Контакты</li></a>
-			<a href="contact.php"><li>Контакты</li></a>
+			<a href="contact.php"><li class="active_point_menu">Контакты</li></a>
 			<?php if($_COOKIE['perm'] == 1){ ?><a href="admin_panel.php"><li>Панель администратора</li></a><?php }?>
 		</ul>
 	</div>
@@ -126,81 +124,21 @@
 			</div>
 		</div>
 
-		<div class="wrap_slider">
-			<div class="slider">
-				<div class='left_point'></div>
-				<div class="slide">
-					<div class="pict_slide image_slide_1 active"></div>
-					<div class="pict_slide image_slide_2"></div>
-					<!--<img class="image_slide_2" src="../img/2.jpg" width="1200" height="600" />-->
-				</div>
-				<div class='right_point'></div>
-			</div>
-		</div>
-
 		<div class="wrap_main_part">
 			<div class="main_part">
-				<h1>Следи за своим здоровьем вместе с нами!</h1>
-
-				<!--<div class="recipe recipe_border recipe_animation">Button</div>-->
-
-				<ul id="filters" class="clearfix">
-					<li><span class="filter active" data-filter="desert first breakfast salat soup snacks drinks sauces">Все</span></li>
-					<li><span class="filter" data-filter="desert">Выпечка и десерты</span></li>
-					<li><span class="filter" data-filter="first">Основное блюдо</span></li>
-					<li><span class="filter" data-filter="breakfast">Завтрак</span></li>
-					<li><span class="filter" data-filter="salat">Салаты</span></li>
-					<li><span class="filter" data-filter="soup">Супы</span></li>
-					<li><span class="filter" data-filter="snacks">Закуски</span></li>
-					<li><span class="filter" data-filter="drinks">Напитки</span></li>
-					<li><span class="filter" data-filter="sauces">Соусы</span></li>
-				</ul>
-
-				<div id="receipeslist">
-					<?php 
-						$result = mysqli_query($mysqli, "SELECT * FROM recipes AS r JOIN recip_cat AS rc ON r.recip_cat_id = rc.cid");
-						while($row = mysqli_fetch_array($result))
-						{
-							echo "<div class='receipe_block ".$row['desc']."' data-cat='".$row['desc']."'>
-								<div class='receipe_block_wrapper'>
-									<img src='".$row['main_foto']."' alt='' />
-									<div class='kkal'>
-										".$row['kkal']."<br />ККал
-									</div>
-									<div class='label'>
-										<div class='label_text'>
-											<div class='text_title'>".$row['name']."</div>
-											<span class='text_category'>".$row['cname']."</span>
-										</div>
-										<div class='label_bg'></div>
-									</div>
-								</div>
-								<div class='receipe_block_info'>
-									<div class='hr_pad'>
-										<hr class='recipe_hr' />
-									</div>
-										<div class='recipe_stats_left'>
-											<img src='../img/b.png' class='icon_stat' /> ".$row['proteins']." г<br />
-											<img src='../img/zh.png' class='icon_stat' /> ".$row['fats']." г<br />
-											<img src='../img/y.png' class='icon_stat' /> ".$row['carboh']." г<br />
-										</div>
-										<div class='recipe_stats_right'>
-											<img src='../img/k.png' class='icon_stat' /> ".$row['kkal']." К<br />
-											<img src='../img/p.png' class='icon_stat' /> ".$row['count_portion']."<br />
-											<img src='../img/v.png' class='icon_stat' /> ".$row['time']." м<br />
-										</div>
-										<div class='recipe_add'>
-											Добавить
-										</div>
-										<a href='recipe.php?r=".$row['id']."'>
-											<div class='recipe_more'>
-												Подробнее ->
-											</div>
-										</a>
-								</div>
-							</div>";
-						}
-					?>
+				<div class="section_title">
+					<h1>Контакты</h1>
+				</div>
+				<div class="wrap_from">
+					<div class="contact_form">
+						<input type="text" placeholder="Имя" />
+						<input type="text" placeholder="Фамилия" />
+						<input type="text" placeholder="E-mail" />
+						<textarea placeholder="Сообщение..."></textarea>
+						<div style="text-align: center;">
+							<input type="button" value="Отправить" />
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

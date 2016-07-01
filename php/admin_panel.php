@@ -89,7 +89,7 @@
 			<a href="recipes.php"><li>Рецепты</li></a>
 			<li>Питание</li>
 			<li>Калькулятор</li>
-			<li>Контакты</li>
+			<a href="contact.php"><li>Контакты</li></a>
 			<?php if($_COOKIE['perm'] == 1){ ?><li class="active_point_menu">Панель администратора</li><?php }?>
 		</ul>
 	</div>

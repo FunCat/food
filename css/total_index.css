@@ -1,1 +1,1097 @@
-*{margin:0;padding:0}body{font-family:Comfortaa}.wrap_header{width:100%;height:100px;background-color:#7ED42F}.wrap_header .header{max-width:1200px;height:100%;margin:auto;background-color:#7ED42F;position:relative}.wrap_header .header .logo{margin-left:100px}.wrap_header .header .logo img{height:90px;width:auto;margin-top:5px}.wrap_header .header .wrap_login .but_cabinet,.wrap_header .header .wrap_login .but_login{height:35px;border:2px solid #fff;font-size:15px;right:0;position:absolute;top:0;text-transform:uppercase}.wrap_header .header .wrap_login .but_login{margin:30px 25px 0 0;width:100px;background-color:#7ED42F;color:#fff;-webkit-transition:all .3s;-moz-transition:all .3s;transition:all .3s}.wrap_header .header .wrap_login .but_login:hover{cursor:pointer;color:#7ED42F;background-color:#fff}.wrap_header .header .wrap_login .but_cabinet{margin:30px 130px 0 0;width:200px;background-color:#7ED42F;color:#fff;-webkit-transition:all .3s;-moz-transition:all .3s;transition:all .3s}.wrap_header .header .wrap_login .but_cabinet:hover{cursor:pointer;color:#7ED42F;background-color:#fff}.wrap_header .header .wrap_login .welcome_text{top:0;right:0;position:absolute;color:#fff;width:180px;margin-right:335px;text-align:center;vertical-align:middle;padding:9px}.wrap_menu{max-width:1200px;width:100%;height:150px;margin:auto}.wrap_menu .wrap_point_menu{width:50%;height:100px;margin:25px;float:right}.wrap_menu .wrap_point_menu .point_menu{float:right;width:24%;height:50px;color:#333;font-size:25px;text-align:center;margin:15px 0;padding-top:20px;border-right:1px solid #89E8B4;border-bottom:0 solid #5ee89c;transition:color .2s,border-bottom .2s}.wrap_menu .wrap_point_menu .point_menu:hover{color:#22824D;cursor:pointer;border-bottom:5px solid #5ee89c}.wrap_slider{position:relative;height:600px;width:100%;margin:15px 0}.wrap_slider .slider{max-width:1200px;height:600px;margin:auto;display:block}.wrap_slider .slider .slide{float:left;width:1200px;height:600px;margin:auto;overflow:hidden;position:absolute;-webkit-box-shadow:0 0 10px #000;-moz-box-shadow:0 0 10px #000;box-shadow:0 0 10px #000}.wrap_slider .slider .slide .pict_slide{float:left;position:absolute;background-repeat:no-repeat;background-size:cover;background-position:center center;height:600px;width:1200px}.wrap_slider .slider .slide .active{z-index:10}.wrap_slider .slider .left_point,.wrap_slider .slider .right_point{height:600px;width:30px;background-repeat:no-repeat;background-position:center center;position:relative;transition:background-color .5s;z-index:15}.wrap_slider .slider .slide .image_slide_1{background-image:url(../img/1.jpg)}.wrap_slider .slider .slide .image_slide_2{background-image:url(../img/2.jpg)}.wrap_slider .slider .right_point{background-image:url(../img/right.png);float:right}.wrap_slider .slider .left_point{background-image:url(../img/left.png);float:left}.wrap_slider .slider .left_point:hover,.wrap_slider .slider .right_point:hover{background-color:rgba(126,212,47,.74);cursor:pointer}.wrap_main_part .main_part{max-width:1200px;min-height:500px;margin:auto}.wrap_main_part .main_part h1{text-align:center;padding:10px 0;color:#fff;font-weight:400;background-color:#7ED42F}.wrap_main_part .main_part h1.title{margin:20px 0}.pict_menu{position:fixed;height:88px;width:68px;z-index:20}.container_sait{overflow:auto;padding-bottom:170px}.block_menu{width:0;height:100%;background-color:#7ED42F;position:fixed;z-index:19;transition:all .4s;border-right:0 solid #fff}.block_menu ul .active_point_menu,.block_menu ul li:hover{background-color:#4D9808}.block_menu a{text-decoration:none;color:#fff}.block_menu ul{margin-top:120px;margin-left:-600px;transition:all .4s}.block_menu ul li{width:100%;font-size:25px;text-align:center;padding:15px 0;color:#fff;list-style:none}.block_menu ul li:hover{cursor:pointer}.footer{height:100px;width:100%;background-color:#7ED42F}.mess_no_log{width:1000px;height:100px;margin:130px auto 20px;padding-top:20px;text-align:center;font-size:50px;background-color:#7ed42f;color:#fff}.animate-path,.hamburglar,.path-burger{width:68px;height:68px;position:absolute}*,:after,:before{box-sizing:border-box}.hamburglar{margin-top:20px;transform:scale(1);display:block;-webkit-touch-callout:none;user-select:none;transition:margin-left .5s}.hamburglar:hover{cursor:pointer}.path-burger{top:0;left:0;mask:url(#mask);-webkit-mask-box-image:url(https://raygun.io/upload/mask.svg)}.animate-path{top:0;left:0}.path-rotation{height:34px;width:34px;margin:34px 34px 0 0;transform:rotate(0);transform-origin:100% 0}.path-rotation:before{content:'';display:block;width:30px;height:34px;margin:0 4px 0 0;background:0 0}@keyframes rotate-out{0%{transform:rotate(0)}40%{transform:rotate(180deg)}100%{transform:rotate(360deg)}}@keyframes rotate-in{0%{transform:rotate(360deg)}40%{transform:rotate(180deg)}100%{transform:rotate(0)}}.hamburglar.is-open .path{animation:dash-in .5s linear normal;animation-fill-mode:forwards}.hamburglar.is-open .animate-path{animation:rotate-in .5s linear normal;animation-fill-mode:forwards}.hamburglar.is-closed .path{animation:dash-out .5s linear normal;animation-fill-mode:forwards}.hamburglar.is-closed .animate-path{animation:rotate-out .5s linear normal;animation-fill-mode:forwards}.path{stroke-dasharray:240;stroke-dashoffset:240;stroke-linejoin:round}@keyframes dash-in{0%,40%{stroke-dashoffset:240}100%{stroke-dashoffset:0}}@keyframes dash-out{0%{stroke-dashoffset:0}100%,40%{stroke-dashoffset:240}}.burger-icon{position:absolute;padding:20px 16px;height:68px;width:68px}.burger-container{position:relative;height:28px;width:36px}.burger-bun-bot,.burger-bun-top,.burger-filling{position:absolute;display:block;height:4px;width:36px;border-radius:2px;background:#4D9808}.burger-ring,.svg-ring{width:68px;height:68px}.burger-bun-top{top:0;transform-origin:34px 2px}.burger-bun-bot{bottom:0;transform-origin:34px 2px}.burger-filling{top:12px}.burger-ring{position:absolute;top:0;left:0}.hamburglar.is-open .burger-bun-top{animation:bun-top-out .5s linear normal;animation-fill-mode:forwards}.hamburglar.is-open .burger-bun-bot{animation:bun-bot-out .5s linear normal;animation-fill-mode:forwards}.hamburglar.is-closed .burger-bun-top{animation:bun-top-in .5s linear normal;animation-fill-mode:forwards}.hamburglar.is-closed .burger-bun-bot{animation:bun-bot-in .5s linear normal;animation-fill-mode:forwards}@keyframes bun-top-out{0%{left:0;top:0;transform:rotate(0)}20%{left:0;top:0;transform:rotate(15deg)}80%{left:-5px;top:0;transform:rotate(-60deg)}100%{left:-5px;top:1px;transform:rotate(-45deg)}}@keyframes bun-bot-out{0%{left:0;transform:rotate(0)}20%{left:0;transform:rotate(-15deg)}80%{left:-5px;transform:rotate(60deg)}100%{left:-5px;transform:rotate(45deg)}}@keyframes bun-top-in{0%{left:-5px;bot:0;transform:rotate(-45deg)}20%{left:-5px;bot:0;transform:rotate(-60deg)}80%{left:0;bot:0;transform:rotate(15deg)}100%{left:0;bot:1px;transform:rotate(0)}}@keyframes bun-bot-in{0%{left:-5px;transform:rotate(45deg)}20%{left:-5px;bot:0;transform:rotate(60deg)}80%{left:0;bot:0;transform:rotate(-15deg)}100%{left:0;transform:rotate(0)}}.hamburglar.is-open .burger-filling{animation:burger-fill-out .5s linear normal;animation-fill-mode:forwards}.hamburglar.is-closed .burger-filling{animation:burger-fill-in .5s linear normal;animation-fill-mode:forwards}@keyframes burger-fill-in{0%{width:0;left:36px}40%{width:0;left:40px}80%{width:36px;left:-6px}100%{width:36px;left:0}}@keyframes burger-fill-out{0%{width:36px;left:0}20%{width:42px;left:-6px}40%{width:0;left:40px}100%{width:0;left:36px}}#filters{margin:1% auto;padding:0;list-style:none}li span{text-decoration:none;float:left;padding:5px 20px;color:#666}li span:hover{background:#A2EC5E;color:#000;cursor:pointer}li span.active{background:#7ED42F;text-shadow:0 0 2px #3F8202;color:#fff}.clearfix{overflow:hidden}#receipeslist .receipe_block{width:23%;height:150px;margin:10px 1%;display:none;float:left;transition:height .3s}#receipeslist .receipe_block .receipe_block_wrapper{height:150px;overflow:hidden;position:relative}#receipeslist .receipe_block .kkal{transform:rotate(15deg);float:left;position:absolute;top:5;right:5;width:50px;height:50px;background-color:#7ED42F;color:#fff;border-radius:100px;text-align:center;padding-top:6px;border:1px solid #fff}#receipeslist .receipe_block img{max-width:100%;position:relative}#receipeslist .receipe_block .label{position:absolute;width:100%}#receipeslist .receipe_block .label_bg{background:#7ED42F;width:100%;height:100%;position:absolute;top:0;left:0}#receipeslist .receipe_block .label_text{color:#fff;position:relative;z-index:15;padding:5px 8px}#receipeslist .receipe_block .text_category{display:block;font-size:11px}#receipeslist .receipe_block_info{height:0;width:100%;background:#7ED42F;z-index:15;position:relative;transition:height .3s;display:none}#receipeslist .receipe_block_info .hr_pad{padding-top:10px}#receipeslist .receipe_block_info .hr_pad .recipe_hr{color:#fff;background-color:#fff;width:60%;height:1px;border:none;margin:0 auto}#receipeslist .receipe_block_info .recipe_stats_left,#receipeslist .receipe_block_info .recipe_stats_right{color:#fff;padding:15px 0 0 15%;font-size:20px;float:left}#receipeslist .receipe_block_info .recipe_stats_left .icon_stat,#receipeslist .receipe_block_info .recipe_stats_right .icon_stat{vertical-align:middle;width:30px;margin-bottom:3px}#receipeslist .receipe_block_info .recipe_add,#receipeslist .receipe_block_info .recipe_more{width:120px;height:30px;color:#fff;float:left;text-align:center;padding-top:5px;border:2px solid #fff;margin:10px 8px 0;transition:all .3s}#receipeslist .receipe_block_info .recipe_add:hover,#receipeslist .receipe_block_info .recipe_more:hover{color:#7ED42F;background-color:#fff;cursor:pointer}.dop_text{height:300px;background-color:#7ED42F;width:100%;position:relative}.back_dialog{width:100%;min-height:100%;background-color:rgba(0,0,0,.5);overflow:hidden;position:fixed;top:0;z-index:250}.back_dialog .content_dialog{width:450px;height:300px;background-color:#7ED42F;position:relative;overflow:hidden;overflow-y:auto;margin:40px auto}.back_dialog .content_dialog .close_dialog{position:absolute;right:5;top:5;text-align:center;color:#fff;height:30px;width:30px;text-decoration:none}.back_dialog .content_dialog .close_dialog:before{font-family:Arial;content:"x";font-size:24px;color:#fff}.back_dialog .content_dialog .nav_dialog{width:450px;overflow:hidden}.back_dialog .content_dialog .nav_dialog .reg,.back_dialog .content_dialog .nav_dialog .vxod{float:left;font-size:20px;text-align:center;color:#fff;padding:10px 0}.back_dialog .content_dialog .nav_dialog .reg:hover,.back_dialog .content_dialog .nav_dialog .vxod:hover{cursor:pointer}.back_dialog .content_dialog .nav_dialog .vxod{width:135px}.back_dialog .content_dialog .nav_dialog .reg{width:315px;background-color:#4D9808}.back_dialog .content_dialog .reg_content,.back_dialog .content_dialog .vxod_content{width:100%;height:247px;background-color:#7ED42F;float:left;position:absolute}.back_dialog .content_dialog .reg_content .title_dialog,.back_dialog .content_dialog .vxod_content .title_dialog{color:#fff;font-size:23px;text-align:center;width:100%;padding:10px 0}.back_dialog .content_dialog .reg_content .wrap_box,.back_dialog .content_dialog .vxod_content .wrap_box{text-align:center}.back_dialog .content_dialog .reg_content .wrap_box .prov_firstname,.back_dialog .content_dialog .reg_content .wrap_box .prov_lastname,.back_dialog .content_dialog .reg_content .wrap_box .prov_log_log,.back_dialog .content_dialog .reg_content .wrap_box .prov_log_pass,.back_dialog .content_dialog .reg_content .wrap_box .prov_login,.back_dialog .content_dialog .reg_content .wrap_box .prov_pass,.back_dialog .content_dialog .reg_content .wrap_box .prov_pass2,.back_dialog .content_dialog .vxod_content .wrap_box .prov_firstname,.back_dialog .content_dialog .vxod_content .wrap_box .prov_lastname,.back_dialog .content_dialog .vxod_content .wrap_box .prov_log_log,.back_dialog .content_dialog .vxod_content .wrap_box .prov_log_pass,.back_dialog .content_dialog .vxod_content .wrap_box .prov_login,.back_dialog .content_dialog .vxod_content .wrap_box .prov_pass,.back_dialog .content_dialog .vxod_content .wrap_box .prov_pass2{color:#fff}.back_dialog .content_dialog .reg_content .wrap_box .total_log_prov,.back_dialog .content_dialog .reg_content .wrap_box .total_prov,.back_dialog .content_dialog .vxod_content .wrap_box .total_log_prov,.back_dialog .content_dialog .vxod_content .wrap_box .total_prov{color:#fff;margin-top:10px}.back_dialog .content_dialog .reg_content .wrap_box .pole_first,.back_dialog .content_dialog .reg_content .wrap_box .pole_last,.back_dialog .content_dialog .reg_content .wrap_box .pole_log,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_log,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2,.back_dialog .content_dialog .vxod_content .wrap_box .pole_first,.back_dialog .content_dialog .vxod_content .wrap_box .pole_last,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2{font-size:18px;padding:8px;margin-top:20px;width:350px;border:none}.back_dialog .content_dialog .reg_content .wrap_box .pole_first:focus::-webkit-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_last:focus::-webkit-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log:focus::-webkit-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:focus::-webkit-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:focus::-webkit-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:focus::-webkit-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:focus::-webkit-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_first:focus::-webkit-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_last:focus::-webkit-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log:focus::-webkit-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:focus::-webkit-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:focus::-webkit-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:focus::-webkit-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:focus::-webkit-input-placeholder{color:transparent}.back_dialog .content_dialog .reg_content .wrap_box .pole_first:focus::-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_last:focus::-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log:focus::-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:focus::-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:focus::-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:focus::-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:focus::-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_first:focus::-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_last:focus::-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log:focus::-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:focus::-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:focus::-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:focus::-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:focus::-moz-placeholder{color:transparent}.back_dialog .content_dialog .reg_content .wrap_box .pole_first:focus:-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_last:focus:-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log:focus:-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:focus:-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:focus:-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:focus:-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:focus:-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_first:focus:-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_last:focus:-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log:focus:-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:focus:-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:focus:-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:focus:-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:focus:-moz-placeholder{color:transparent}.back_dialog .content_dialog .reg_content .wrap_box .pole_first:focus:-ms-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_last:focus:-ms-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log:focus:-ms-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:focus:-ms-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:focus:-ms-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:focus:-ms-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:focus:-ms-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_first:focus:-ms-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_last:focus:-ms-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log:focus:-ms-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:focus:-ms-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:focus:-ms-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:focus:-ms-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:focus:-ms-input-placeholder{color:transparent}.back_dialog .content_dialog .reg_content .wrap_box .pole_first::-webkit-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_last::-webkit-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log::-webkit-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_log::-webkit-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass::-webkit-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2::-webkit-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass::-webkit-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_first::-webkit-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_last::-webkit-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log::-webkit-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log::-webkit-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass::-webkit-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2::-webkit-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass::-webkit-input-placeholder{color:#4D9808}.back_dialog .content_dialog .reg_content .wrap_box .pole_first::-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_last::-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log::-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_log::-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass::-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2::-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass::-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_first::-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_last::-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log::-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log::-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass::-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2::-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass::-moz-placeholder{color:#4D9808}.back_dialog .content_dialog .reg_content .wrap_box .pole_first:-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_last:-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log:-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:-moz-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_first:-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_last:-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log:-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:-moz-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:-moz-placeholder{color:#4D9808}.back_dialog .content_dialog .reg_content .wrap_box .pole_first:-ms-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_last:-ms-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log:-ms-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:-ms-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:-ms-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:-ms-input-placeholder,.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:-ms-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_first:-ms-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_last:-ms-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log:-ms-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:-ms-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:-ms-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:-ms-input-placeholder,.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:-ms-input-placeholder{color:#4D9808}.back_dialog .content_dialog .reg_content .wrap_box .but_reg,.back_dialog .content_dialog .reg_content .wrap_box .but_vxod,.back_dialog .content_dialog .vxod_content .wrap_box .but_reg,.back_dialog .content_dialog .vxod_content .wrap_box .but_vxod{text-align:center;margin:30px 0 0;width:100px;height:35px;background-color:#7ED42F;border:2px solid #fff;color:#fff;font-size:15px;text-transform:uppercase;-webkit-transition:all .3s;-moz-transition:all .3s;transition:all .3s}.back_dialog .content_dialog .reg_content .wrap_box .but_reg,.back_dialog .content_dialog .vxod_content .wrap_box .but_reg{width:170px;background-color:#4D9808}.back_dialog .content_dialog .reg_content .wrap_box .but_vxod:hover,.back_dialog .content_dialog .vxod_content .wrap_box .but_vxod:hover{cursor:pointer;color:#7ED42F;background-color:#fff}.back_dialog .content_dialog .reg_content .wrap_box .but_reg:hover,.back_dialog .content_dialog .vxod_content .wrap_box .but_reg:hover{cursor:pointer;color:#4D9808;background-color:#fff}.back_dialog .content_dialog .reg_content{display:none;height:417px;left:100%;background-color:#4D9808}
+/* line 1, ../sass/style.scss */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 6, ../sass/style.scss */
+body {
+  position: relative;
+  font-family: 'Comfortaa';
+}
+
+/* line 11, ../sass/style.scss */
+.section_title {
+  margin: 20px 0px;
+}
+
+/* line 15, ../sass/style.scss */
+.wrap_header {
+  width: 100%;
+  height: 100px;
+  background-color: #7ED42F;
+}
+/* line 19, ../sass/style.scss */
+.wrap_header .header {
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  background-color: #7ED42F;
+  position: relative;
+}
+/* line 26, ../sass/style.scss */
+.wrap_header .header .logo {
+  margin-left: 100px;
+}
+/* line 28, ../sass/style.scss */
+.wrap_header .header .logo img {
+  height: 90px;
+  width: auto;
+  margin-top: 5px;
+}
+/* line 36, ../sass/style.scss */
+.wrap_header .header .wrap_login .but_login {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 30px 25px 0px 0px;
+  width: 100px;
+  height: 35px;
+  background-color: #7ED42F;
+  border: 2px solid white;
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 52, ../sass/style.scss */
+.wrap_header .header .wrap_login .but_login:hover {
+  cursor: pointer;
+  color: #7ED42F;
+  background-color: white;
+}
+/* line 57, ../sass/style.scss */
+.wrap_header .header .wrap_login .but_cabinet {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 30px 130px 0px 0px;
+  width: 200px;
+  height: 35px;
+  background-color: #7ED42F;
+  border: 2px solid white;
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 73, ../sass/style.scss */
+.wrap_header .header .wrap_login .but_cabinet:hover {
+  cursor: pointer;
+  color: #7ED42F;
+  background-color: white;
+}
+/* line 78, ../sass/style.scss */
+.wrap_header .header .wrap_login .welcome_text {
+  top: 0;
+  right: 0;
+  position: absolute;
+  color: white;
+  width: 180px;
+  margin-right: 335px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 9px;
+}
+
+/* line 94, ../sass/style.scss */
+.wrap_menu {
+  max-width: 1200px;
+  width: 100%;
+  height: 150px;
+  margin: auto;
+}
+/* line 99, ../sass/style.scss */
+.wrap_menu .wrap_point_menu {
+  width: 50%;
+  height: 100px;
+  margin: 25px;
+  float: right;
+}
+/* line 104, ../sass/style.scss */
+.wrap_menu .wrap_point_menu .point_menu {
+  float: right;
+  width: 24%;
+  height: 50px;
+  color: #333;
+  font-size: 25px;
+  text-align: center;
+  margin: 15px 0px;
+  padding-top: 20px;
+  border-right: 1px solid #89E8B4;
+  border-bottom: 0px solid #5ee89c;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+/* line 117, ../sass/style.scss */
+.wrap_menu .wrap_point_menu .point_menu:hover {
+  color: #22824D;
+  cursor: pointer;
+  border-bottom: 5px solid #5ee89c;
+}
+
+/* line 125, ../sass/style.scss */
+.wrap_slider {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  margin: 15px 0px;
+}
+/* line 130, ../sass/style.scss */
+.wrap_slider .slider {
+  max-width: 1200px;
+  height: 600px;
+  margin: auto;
+  display: block;
+}
+/* line 135, ../sass/style.scss */
+.wrap_slider .slider .slide {
+  float: left;
+  width: 1200px;
+  height: 600px;
+  margin: auto;
+  overflow: hidden;
+  position: absolute;
+  -webkit-box-shadow: 0px 0px 10px black;
+  -moz-box-shadow: 0px 0px 10px black;
+  box-shadow: 0px 0px 10px black;
+}
+/* line 145, ../sass/style.scss */
+.wrap_slider .slider .slide .pict_slide {
+  float: left;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 600px;
+  width: 1200px;
+}
+/* line 154, ../sass/style.scss */
+.wrap_slider .slider .slide .active {
+  z-index: 10;
+}
+/* line 157, ../sass/style.scss */
+.wrap_slider .slider .slide .image_slide_1 {
+  background-image: url("../img/1.jpg");
+}
+/* line 160, ../sass/style.scss */
+.wrap_slider .slider .slide .image_slide_2 {
+  background-image: url("../img/2.jpg");
+}
+/* line 164, ../sass/style.scss */
+.wrap_slider .slider .right_point {
+  height: 600px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-image: url("../img/right.png");
+  background-position: center center;
+  float: right;
+  position: relative;
+  transition: background-color 0.5s;
+  z-index: 15;
+}
+/* line 175, ../sass/style.scss */
+.wrap_slider .slider .left_point {
+  height: 600px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-image: url("../img/left.png");
+  background-position: center center;
+  float: left;
+  position: relative;
+  transition: background-color 0.5s;
+  z-index: 15;
+}
+/* line 186, ../sass/style.scss */
+.wrap_slider .slider .left_point:hover, .wrap_slider .slider .right_point:hover {
+  background-color: rgba(126, 212, 47, 0.74);
+  cursor: pointer;
+}
+
+/* line 194, ../sass/style.scss */
+.wrap_main_part .main_part {
+  max-width: 1200px;
+  min-height: 500px;
+  margin: auto;
+}
+/* line 198, ../sass/style.scss */
+.wrap_main_part .main_part h1 {
+  text-align: center;
+  padding: 10px 0px;
+  color: white;
+  font-weight: normal;
+  background-color: #7ED42F;
+}
+/* line 205, ../sass/style.scss */
+.wrap_main_part .main_part h1.title {
+  margin: 20px 0px;
+}
+
+/* line 213, ../sass/style.scss */
+.pict_menu {
+  position: fixed;
+  height: 88px;
+  width: 68px;
+  z-index: 20;
+}
+
+/* line 220, ../sass/style.scss */
+.container_sait {
+  overflow: auto;
+  padding-bottom: 170px;
+}
+
+/* line 225, ../sass/style.scss */
+.block_menu {
+  width: 0px;
+  height: 100%;
+  background-color: #7ED42F;
+  position: fixed;
+  z-index: 19;
+  transition: all 0.4s;
+  border-right: 0px solid white;
+}
+/* line 233, ../sass/style.scss */
+.block_menu a {
+  text-decoration: none;
+  color: white;
+}
+/* line 237, ../sass/style.scss */
+.block_menu ul {
+  margin-top: 120px;
+  margin-left: -600px;
+  transition: all 0.4s;
+}
+/* line 241, ../sass/style.scss */
+.block_menu ul li {
+  width: 100%;
+  font-size: 25px;
+  text-align: center;
+  padding: 15px 0px;
+  color: white;
+  list-style: none;
+}
+/* line 249, ../sass/style.scss */
+.block_menu ul li:hover {
+  cursor: pointer;
+  background-color: #4D9808;
+}
+/* line 253, ../sass/style.scss */
+.block_menu ul .active_point_menu {
+  background-color: #4D9808;
+}
+
+/* line 260, ../sass/style.scss */
+.footer {
+  height: 100px;
+  width: 100%;
+  background-color: #7ED42F;
+  position: absolute;
+  bottom: 0;
+}
+
+/* line 268, ../sass/style.scss */
+.mess_no_log {
+  width: 1000px;
+  height: 100px;
+  margin: 130px auto 20px auto;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 50px;
+  background-color: #7ed42f;
+  color: white;
+}
+
+/* line 290, ../sass/style.scss */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* line 294, ../sass/style.scss */
+.hamburglar {
+  margin-top: 20px;
+  transform: scale(1);
+  position: absolute;
+  display: block;
+  width: 68px;
+  height: 68px;
+  -webkit-touch-callout: none;
+  user-select: none;
+  transition: margin-left 0.5s;
+}
+
+/* line 305, ../sass/style.scss */
+.hamburglar:hover {
+  cursor: pointer;
+}
+
+/* line 310, ../sass/style.scss */
+.path-burger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 68px;
+  width: 68px;
+  mask: url(#mask);
+  -webkit-mask-box-image: url(https://raygun.io/upload/mask.svg);
+}
+
+/* line 321, ../sass/style.scss */
+.animate-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 68px;
+  height: 68px;
+}
+
+/* line 330, ../sass/style.scss */
+.path-rotation {
+  height: 34px;
+  width: 34px;
+  margin: 34px 34px 0 0;
+  transform: rotate(0deg);
+  transform-origin: 100% 0;
+}
+/* line 336, ../sass/style.scss */
+.path-rotation:before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 34px;
+  margin: 0 4px 0 0;
+  background: transparent;
+}
+
+@keyframes rotate-out {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-in {
+  0% {
+    transform: rotate(360deg);
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/* line 376, ../sass/style.scss */
+.hamburglar.is-open .path {
+  animation: dash-in 0.5s linear normal;
+  animation-fill-mode: forwards;
+}
+/* line 380, ../sass/style.scss */
+.hamburglar.is-open .animate-path {
+  animation: rotate-in 0.5s linear normal;
+  animation-fill-mode: forwards;
+}
+
+/* line 387, ../sass/style.scss */
+.hamburglar.is-closed .path {
+  animation: dash-out 0.5s linear normal;
+  animation-fill-mode: forwards;
+}
+/* line 391, ../sass/style.scss */
+.hamburglar.is-closed .animate-path {
+  animation: rotate-out 0.5s linear normal;
+  animation-fill-mode: forwards;
+}
+
+/* line 397, ../sass/style.scss */
+.path {
+  stroke-dasharray: 240;
+  stroke-dashoffset: 240;
+  stroke-linejoin: round;
+}
+
+@keyframes dash-in {
+  0% {
+    stroke-dashoffset: 240;
+  }
+  40% {
+    stroke-dashoffset: 240;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash-out {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 240;
+  }
+  100% {
+    stroke-dashoffset: 240;
+  }
+}
+/* line 430, ../sass/style.scss */
+.burger-icon {
+  position: absolute;
+  padding: 20px 16px;
+  height: 68px;
+  width: 68px;
+}
+
+/* line 437, ../sass/style.scss */
+.burger-container {
+  position: relative;
+  height: 28px;
+  width: 36px;
+}
+
+/* line 443, ../sass/style.scss */
+.burger-bun-top,
+.burger-bun-bot,
+.burger-filling {
+  position: absolute;
+  display: block;
+  height: 4px;
+  width: 36px;
+  border-radius: 2px;
+  background: #4D9808;
+}
+
+/* line 454, ../sass/style.scss */
+.burger-bun-top {
+  top: 0;
+  transform-origin: 34px 2px;
+}
+
+/* line 459, ../sass/style.scss */
+.burger-bun-bot {
+  bottom: 0;
+  transform-origin: 34px 2px;
+}
+
+/* line 467, ../sass/style.scss */
+.burger-filling {
+  top: 12px;
+}
+
+/* line 476, ../sass/style.scss */
+.burger-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 68px;
+  height: 68px;
+}
+
+/* line 484, ../sass/style.scss */
+.svg-ring {
+  width: 68px;
+  height: 68px;
+}
+
+/* line 492, ../sass/style.scss */
+.hamburglar.is-open .burger-bun-top {
+  animation: bun-top-out 0.5s linear normal;
+  animation-fill-mode: forwards;
+}
+/* line 496, ../sass/style.scss */
+.hamburglar.is-open .burger-bun-bot {
+  animation: bun-bot-out 0.5s linear normal;
+  animation-fill-mode: forwards;
+}
+
+/* line 502, ../sass/style.scss */
+.hamburglar.is-closed .burger-bun-top {
+  animation: bun-top-in 0.5s linear normal;
+  animation-fill-mode: forwards;
+}
+/* line 506, ../sass/style.scss */
+.hamburglar.is-closed .burger-bun-bot {
+  animation: bun-bot-in 0.5s linear normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bun-top-out {
+  0% {
+    left: 0;
+    top: 0;
+    transform: rotate(0deg);
+  }
+  20% {
+    left: 0;
+    top: 0;
+    transform: rotate(15deg);
+  }
+  80% {
+    left: -5px;
+    top: 0;
+    transform: rotate(-60deg);
+  }
+  100% {
+    left: -5px;
+    top: 1px;
+    transform: rotate(-45deg);
+  }
+}
+@keyframes bun-bot-out {
+  0% {
+    left: 0;
+    transform: rotate(0deg);
+  }
+  20% {
+    left: 0;
+    transform: rotate(-15deg);
+  }
+  80% {
+    left: -5px;
+    transform: rotate(60deg);
+  }
+  100% {
+    left: -5px;
+    transform: rotate(45deg);
+  }
+}
+@keyframes bun-top-in {
+  0% {
+    left: -5px;
+    bot: 0;
+    transform: rotate(-45deg);
+  }
+  20% {
+    left: -5px;
+    bot: 0;
+    transform: rotate(-60deg);
+  }
+  80% {
+    left: 0;
+    bot: 0;
+    transform: rotate(15deg);
+  }
+  100% {
+    left: 0;
+    bot: 1px;
+    transform: rotate(0deg);
+  }
+}
+@keyframes bun-bot-in {
+  0% {
+    left: -5px;
+    transform: rotate(45deg);
+  }
+  20% {
+    left: -5px;
+    bot: 0;
+    transform: rotate(60deg);
+  }
+  80% {
+    left: 0;
+    bot: 0;
+    transform: rotate(-15deg);
+  }
+  100% {
+    left: 0;
+    transform: rotate(0deg);
+  }
+}
+/* line 602, ../sass/style.scss */
+.hamburglar.is-open .burger-filling {
+  animation: burger-fill-out 0.5s linear normal;
+  animation-fill-mode: forwards;
+}
+
+/* line 609, ../sass/style.scss */
+.hamburglar.is-closed .burger-filling {
+  animation: burger-fill-in 0.5s linear normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes burger-fill-in {
+  0% {
+    width: 0;
+    left: 36px;
+  }
+  40% {
+    width: 0;
+    left: 40px;
+  }
+  80% {
+    width: 36px;
+    left: -6px;
+  }
+  100% {
+    width: 36px;
+    left: 0px;
+  }
+}
+@keyframes burger-fill-out {
+  0% {
+    width: 36px;
+    left: 0px;
+  }
+  20% {
+    width: 42px;
+    left: -6px;
+  }
+  40% {
+    width: 0;
+    left: 40px;
+  }
+  100% {
+    width: 0;
+    left: 36px;
+  }
+}
+/* line 1, ../sass/recipe.scss */
+#filters {
+  margin: 1% auto;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 6, ../sass/recipe.scss */
+li span {
+  text-decoration: none;
+  float: left;
+  padding: 5px 20px;
+  color: #666;
+}
+
+/* line 12, ../sass/recipe.scss */
+li span:hover {
+  background: #A2EC5E;
+  color: #000;
+  cursor: pointer;
+}
+
+/* line 17, ../sass/recipe.scss */
+li span.active {
+  background: #7ED42F;
+  text-shadow: 0 0 2px #3F8202;
+  color: #fff;
+}
+
+/* line 22, ../sass/recipe.scss */
+.clearfix {
+  overflow: hidden;
+}
+
+/* line 26, ../sass/recipe.scss */
+#receipeslist .receipe_block {
+  width: 23%;
+  height: 150px;
+  margin: 10px 1%;
+  display: none;
+  float: left;
+  transition: height 0.3s;
+}
+/* line 33, ../sass/recipe.scss */
+#receipeslist .receipe_block .receipe_block_wrapper {
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+/* line 39, ../sass/recipe.scss */
+#receipeslist .receipe_block .kkal {
+  transform: rotate(15deg);
+  float: left;
+  position: absolute;
+  top: 5;
+  right: 5;
+  width: 50px;
+  height: 50px;
+  background-color: #7ED42F;
+  color: white;
+  border-radius: 100px;
+  text-align: center;
+  padding-top: 6px;
+  border: 1px solid white;
+}
+/* line 54, ../sass/recipe.scss */
+#receipeslist .receipe_block img {
+  max-width: 100%;
+  position: relative;
+}
+/* line 58, ../sass/recipe.scss */
+#receipeslist .receipe_block .label {
+  position: absolute;
+  width: 100%;
+}
+/* line 62, ../sass/recipe.scss */
+#receipeslist .receipe_block .label_bg {
+  background: #7ED42F;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 70, ../sass/recipe.scss */
+#receipeslist .receipe_block .label_text {
+  color: #fff;
+  position: relative;
+  z-index: 15;
+  padding: 5px 8px;
+}
+/* line 76, ../sass/recipe.scss */
+#receipeslist .receipe_block .text_category {
+  display: block;
+  font-size: 11px;
+}
+/* line 81, ../sass/recipe.scss */
+#receipeslist .receipe_block_info {
+  height: 0px;
+  width: 100%;
+  background: #7ED42F;
+  z-index: 15;
+  position: relative;
+  transition: height 0.3s;
+  display: none;
+}
+/* line 89, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .hr_pad {
+  padding-top: 10px;
+}
+/* line 91, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .hr_pad .recipe_hr {
+  color: white;
+  background-color: white;
+  width: 60%;
+  height: 1px;
+  border: none;
+  margin: 0px auto;
+}
+/* line 101, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .recipe_stats_left, #receipeslist .receipe_block_info .recipe_stats_right {
+  color: white;
+  padding: 15px 0% 0px 15%;
+  font-size: 20px;
+  float: left;
+}
+/* line 106, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .recipe_stats_left .icon_stat, #receipeslist .receipe_block_info .recipe_stats_right .icon_stat {
+  vertical-align: middle;
+  width: 30px;
+  margin-bottom: 3px;
+}
+/* line 112, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .recipe_more, #receipeslist .receipe_block_info .recipe_add {
+  width: 120px;
+  height: 30px;
+  color: white;
+  float: left;
+  text-align: center;
+  padding-top: 5px;
+  border: 2px solid white;
+  margin: 10px 8px 0px 8px;
+  transition: all 0.3s;
+}
+/* line 123, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .recipe_more:hover, #receipeslist .receipe_block_info .recipe_add:hover {
+  color: #7ED42F;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* line 131, ../sass/recipe.scss */
+.dop_text {
+  height: 300px;
+  background-color: #7ED42F;
+  width: 100%;
+  position: relative;
+}
+
+/* line 1, ../sass/log_dialog.scss */
+.back_dialog {
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  z-index: 250;
+}
+/* line 9, ../sass/log_dialog.scss */
+.back_dialog .content_dialog {
+  width: 450px;
+  height: 300px;
+  background-color: #7ED42F;
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+  margin: 40px auto;
+}
+/* line 17, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .close_dialog {
+  position: absolute;
+  right: 5;
+  top: 5;
+  text-align: center;
+  color: white;
+  height: 30px;
+  width: 30px;
+  text-decoration: none;
+}
+/* line 27, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .close_dialog:before {
+  font-family: Arial;
+  content: "x";
+  font-size: 24px;
+  color: white;
+}
+/* line 33, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .nav_dialog {
+  width: 450px;
+  overflow: hidden;
+}
+/* line 36, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .nav_dialog .vxod, .back_dialog .content_dialog .nav_dialog .reg {
+  float: left;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  padding: 10px 0px;
+}
+/* line 43, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .nav_dialog .vxod:hover, .back_dialog .content_dialog .nav_dialog .reg:hover {
+  cursor: pointer;
+}
+/* line 46, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .nav_dialog .vxod {
+  width: 135px;
+}
+/* line 49, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .nav_dialog .reg {
+  width: 315px;
+  background-color: #4D9808;
+}
+/* line 54, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content, .back_dialog .content_dialog .reg_content {
+  width: 100%;
+  height: 247px;
+  background-color: #7ED42F;
+  float: left;
+  position: absolute;
+}
+/* line 60, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .title_dialog, .back_dialog .content_dialog .reg_content .title_dialog {
+  color: white;
+  font-size: 23px;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0px;
+}
+/* line 67, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box, .back_dialog .content_dialog .reg_content .wrap_box {
+  text-align: center;
+  /* Firefox 19+ */
+  /* Firefox 18- */
+}
+/* line 69, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .prov_lastname,
+.back_dialog .content_dialog .vxod_content .wrap_box .prov_firstname,
+.back_dialog .content_dialog .vxod_content .wrap_box .prov_login,
+.back_dialog .content_dialog .vxod_content .wrap_box .prov_pass,
+.back_dialog .content_dialog .vxod_content .wrap_box .prov_pass2,
+.back_dialog .content_dialog .vxod_content .wrap_box .prov_log_log,
+.back_dialog .content_dialog .vxod_content .wrap_box .prov_log_pass, .back_dialog .content_dialog .reg_content .wrap_box .prov_lastname,
+.back_dialog .content_dialog .reg_content .wrap_box .prov_firstname,
+.back_dialog .content_dialog .reg_content .wrap_box .prov_login,
+.back_dialog .content_dialog .reg_content .wrap_box .prov_pass,
+.back_dialog .content_dialog .reg_content .wrap_box .prov_pass2,
+.back_dialog .content_dialog .reg_content .wrap_box .prov_log_log,
+.back_dialog .content_dialog .reg_content .wrap_box .prov_log_pass {
+  color: white;
+}
+/* line 78, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .total_prov, .back_dialog .content_dialog .vxod_content .wrap_box .total_log_prov, .back_dialog .content_dialog .reg_content .wrap_box .total_prov, .back_dialog .content_dialog .reg_content .wrap_box .total_log_prov {
+  color: white;
+  margin-top: 10px;
+}
+/* line 82, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log, .back_dialog .content_dialog .vxod_content .wrap_box .pole_pass, .back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_last, .back_dialog .content_dialog .vxod_content .wrap_box .pole_first,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log, .back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass, .back_dialog .content_dialog .reg_content .wrap_box .pole_log, .back_dialog .content_dialog .reg_content .wrap_box .pole_pass, .back_dialog .content_dialog .reg_content .wrap_box .pole_pass2,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_last, .back_dialog .content_dialog .reg_content .wrap_box .pole_first,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_log, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass {
+  font-size: 18px;
+  padding: 8px;
+  margin-top: 20px;
+  width: 350px;
+  border: none;
+}
+/* line 92, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_first:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_last:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:focus::-webkit-input-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_first:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_last:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:focus::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+/* line 101, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:focus::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:focus::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_first:focus::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_last:focus::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log:focus::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:focus::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:focus::-moz-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:focus::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:focus::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_first:focus::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_last:focus::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log:focus::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:focus::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:focus::-moz-placeholder {
+  color: transparent;
+}
+/* line 110, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:focus:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:focus:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_first:focus:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_last:focus:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log:focus:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:focus:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:focus:-moz-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:focus:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:focus:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_first:focus:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_last:focus:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log:focus:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:focus:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:focus:-moz-placeholder {
+  color: transparent;
+}
+/* line 119, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_first:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_last:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:focus:-ms-input-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_first:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_last:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:focus:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:focus:-ms-input-placeholder {
+  color: transparent;
+}
+/* line 128, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_first::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_last::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass::-webkit-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2::-webkit-input-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_first::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_last::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass::-webkit-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2::-webkit-input-placeholder {
+  color: #4D9808;
+}
+/* line 137, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_first::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_last::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass::-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2::-moz-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_first::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_last::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass::-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2::-moz-placeholder {
+  color: #4D9808;
+}
+/* line 146, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_first:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_last:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:-moz-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:-moz-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_first:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_last:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:-moz-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:-moz-placeholder {
+  color: #4D9808;
+}
+/* line 155, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_log:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log_pass:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_first:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_last:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_log:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass:-ms-input-placeholder,
+.back_dialog .content_dialog .vxod_content .wrap_box .pole_pass2:-ms-input-placeholder, .back_dialog .content_dialog .reg_content .wrap_box .pole_log_log:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log_pass:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_first:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_last:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_log:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass:-ms-input-placeholder,
+.back_dialog .content_dialog .reg_content .wrap_box .pole_pass2:-ms-input-placeholder {
+  color: #4D9808;
+}
+/* line 164, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .but_vxod, .back_dialog .content_dialog .vxod_content .wrap_box .but_reg, .back_dialog .content_dialog .reg_content .wrap_box .but_vxod, .back_dialog .content_dialog .reg_content .wrap_box .but_reg {
+  text-align: center;
+  margin: 30px 0px 0px 0px;
+  width: 100px;
+  height: 35px;
+  background-color: #7ED42F;
+  border: 2px solid white;
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 178, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .but_reg, .back_dialog .content_dialog .reg_content .wrap_box .but_reg {
+  width: 170px;
+  background-color: #4D9808;
+}
+/* line 182, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .but_vxod:hover, .back_dialog .content_dialog .reg_content .wrap_box .but_vxod:hover {
+  cursor: pointer;
+  color: #7ED42F;
+  background-color: white;
+}
+/* line 187, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .vxod_content .wrap_box .but_reg:hover, .back_dialog .content_dialog .reg_content .wrap_box .but_reg:hover {
+  cursor: pointer;
+  color: #4D9808;
+  background-color: white;
+}
+/* line 194, ../sass/log_dialog.scss */
+.back_dialog .content_dialog .reg_content {
+  display: none;
+  height: 417px;
+  left: 100%;
+  background-color: #4D9808;
+}
