@@ -16,7 +16,7 @@
   border: 2px solid #7ed42f;
 }
 /* line 11, ../sass/contact.scss */
-.contact_form input[type^="button"] {
+.contact_form input[type^="submit"] {
   width: 200px;
   height: 70px;
   margin-top: 15px;
@@ -27,7 +27,7 @@
   transition: all 0.2s;
 }
 /* line 21, ../sass/contact.scss */
-.contact_form input[type^="button"]:hover {
+.contact_form input[type^="submit"]:hover {
   cursor: pointer;
   border: 2px solid #7ed42f;
   color: #7ed42f;

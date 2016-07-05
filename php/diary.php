@@ -135,11 +135,11 @@
 							<div class="week_day_block monday">
 								<div class="title_day">Понедельник</div>
 								<?php
-									$result = mysqli_query($mysqli, "SELECT dr.*, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 0");
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 0");
 									while($row = mysqli_fetch_array($result))
 									{
 										echo 	"<div class='added_recipe'>
-													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
 													<div class='recipe_name'>".$row['name']."</div>
 													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
 													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>
@@ -151,11 +151,11 @@
 							<div class="week_day_block tuesday">
 								<div class="title_day">Вторник</div>
 								<?php
-									$result = mysqli_query($mysqli, "SELECT dr.*, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 1");
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 1");
 									while($row = mysqli_fetch_array($result))
 									{
 										echo 	"<div class='added_recipe'>
-													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
 													<div class='recipe_name'>".$row['name']."</div>
 													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
 													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>
@@ -167,11 +167,11 @@
 							<div class="week_day_block wednesday">
 								<div class="title_day">Среда</div>
 								<?php
-									$result = mysqli_query($mysqli, "SELECT dr.*, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 2");
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 2");
 									while($row = mysqli_fetch_array($result))
 									{
 										echo 	"<div class='added_recipe'>
-													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
 													<div class='recipe_name'>".$row['name']."</div>
 													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
 													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>
@@ -183,11 +183,11 @@
 							<div class="week_day_block thursday">
 								<div class="title_day">Четверг</div>
 								<?php
-									$result = mysqli_query($mysqli, "SELECT dr.*, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 3");
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 3");
 									while($row = mysqli_fetch_array($result))
 									{
 										echo 	"<div class='added_recipe'>
-													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
 													<div class='recipe_name'>".$row['name']."</div>
 													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
 													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>
@@ -199,11 +199,11 @@
 							<div class="week_day_block friday">
 								<div class="title_day">Пятница</div>
 								<?php
-									$result = mysqli_query($mysqli, "SELECT dr.*, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 4");
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 4");
 									while($row = mysqli_fetch_array($result))
 									{
 										echo 	"<div class='added_recipe'>
-													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
 													<div class='recipe_name'>".$row['name']."</div>
 													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
 													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>
@@ -215,11 +215,11 @@
 							<div class="week_day_block saturday">
 								<div class="title_day">Суббота</div>
 								<?php
-									$result = mysqli_query($mysqli, "SELECT dr.*, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 5");
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 5");
 									while($row = mysqli_fetch_array($result))
 									{
 										echo 	"<div class='added_recipe'>
-													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
 													<div class='recipe_name'>".$row['name']."</div>
 													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
 													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>
@@ -231,11 +231,11 @@
 							<div class="week_day_block sunday">
 								<div class="title_day">Воскресенье</div>
 								<?php
-									$result = mysqli_query($mysqli, "SELECT dr.*, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 6");
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 6");
 									while($row = mysqli_fetch_array($result))
 									{
 										echo 	"<div class='added_recipe'>
-													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
 													<div class='recipe_name'>".$row['name']."</div>
 													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
 													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>

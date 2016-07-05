@@ -8,7 +8,7 @@
 		padding: 5px;
 		border: 2px solid #7ed42f;
 	}
-	input[type^="button"]{
+	input[type^="submit"]{
 		width: 200px;
 		height: 70px;
 		margin-top: 15px;
@@ -18,7 +18,7 @@
 		color: white;
 		transition: all 0.2s;
 	}
-	input[type^="button"]:hover{
+	input[type^="submit"]:hover{
 		cursor: pointer;
 		border: 2px solid #7ed42f;
 		color: #7ed42f;

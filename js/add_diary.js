@@ -132,7 +132,7 @@ function clickAddRecipe(t){
 	var buf_name = "<div class='added_recipe'>";
 		buf_name +=		"<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeRecipe(this)' /></div>";
 		buf_name +=		"<div class='rec_id' style='display: none;'>" + rec_id + "</div>";
-		buf_name +=		"<div class='recipe_foto'><img src='" + img_src + "' /></div>";
+		buf_name +=		"<div class='recipe_foto'><a href='recipe.php?r=" + rec_id + "' target='_blank'><img src='" + img_src + "' /></a></div>";
 		buf_name +=		"<div class='recipe_name'>" + rec_name + "</div>";
 		buf_name +=		"<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='09:00' /></div>";
 		buf_name +=		"<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' onchange='changeKkal(this)' value='" + portion_mass + "' /></div>";

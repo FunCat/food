@@ -1,0 +1,241 @@
+/* line 1, ../sass/cropping.scss */
+.wrap_recip_name {
+  text-align: center;
+  /* Firefox 19+ */
+  /* Firefox 18- */
+}
+/* line 3, ../sass/cropping.scss */
+.wrap_recip_name .recip_name {
+  font-size: 24px;
+  width: 500px;
+  border: 1px solid #7ed42f;
+  margin: 15px 0px;
+  padding: 5px;
+}
+/* line 10, ../sass/cropping.scss */
+.wrap_recip_name .recip_name:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+/* line 13, ../sass/cropping.scss */
+.wrap_recip_name .recip_name:focus::-moz-placeholder {
+  color: transparent;
+}
+/* line 16, ../sass/cropping.scss */
+.wrap_recip_name .recip_name:focus:-moz-placeholder {
+  color: transparent;
+}
+/* line 19, ../sass/cropping.scss */
+.wrap_recip_name .recip_name:focus:-ms-input-placeholder {
+  color: transparent;
+}
+/* line 22, ../sass/cropping.scss */
+.wrap_recip_name .recip_name::-webkit-input-placeholder {
+  color: #4D9808;
+}
+/* line 25, ../sass/cropping.scss */
+.wrap_recip_name .recip_name::-moz-placeholder {
+  color: #4D9808;
+}
+/* line 28, ../sass/cropping.scss */
+.wrap_recip_name .recip_name:-moz-placeholder {
+  color: #4D9808;
+}
+/* line 31, ../sass/cropping.scss */
+.wrap_recip_name .recip_name:-ms-input-placeholder {
+  color: #4D9808;
+}
+
+/* line 35, ../sass/cropping.scss */
+.wrap_cat_recip {
+  text-align: center;
+  font-size: 24px;
+  color: #7ed42f;
+}
+/* line 39, ../sass/cropping.scss */
+.wrap_cat_recip select {
+  padding: 3px;
+  font-size: 20px;
+  width: 300px;
+  color: white;
+  background-color: #7ed42f;
+  border: 2px solid white;
+}
+
+/* line 48, ../sass/cropping.scss */
+.wrap_list_ingred {
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+/* line 52, ../sass/cropping.scss */
+.wrap_list_ingred .title_add_ing {
+  text-align: center;
+  color: #7ed42f;
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+/* line 59, ../sass/cropping.scss */
+.wrap_list_ingred select {
+  padding: 3px;
+  font-size: 20px;
+  width: 300px;
+  color: white;
+  background-color: #7ed42f;
+  border: 2px solid white;
+}
+/* line 67, ../sass/cropping.scss */
+.wrap_list_ingred .title_mass {
+  margin: 20px 0px 10px 0px;
+  font-size: 24px;
+  color: #7ed42f;
+}
+/* line 72, ../sass/cropping.scss */
+.wrap_list_ingred .val_mass {
+  text-align: center;
+  background-color: #7ed42f;
+  color: white;
+  border: 2px solid white;
+  font-size: 20px;
+  width: 100px;
+  padding: 5px;
+}
+/* line 81, ../sass/cropping.scss */
+.wrap_list_ingred .but_add_ing {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 56px;
+  color: white;
+  background-color: #7ed42f;
+  border: 2px solid white;
+  transition: all 0.3s;
+}
+/* line 91, ../sass/cropping.scss */
+.wrap_list_ingred .but_add_ing:hover {
+  cursor: pointer;
+  color: #7ed42f;
+  border: 2px solid #7ed42f;
+  background-color: white;
+}
+
+/* line 98, ../sass/cropping.scss */
+.wrap_table_ing {
+  float: left;
+  width: 100%;
+}
+/* line 101, ../sass/cropping.scss */
+.wrap_table_ing #t_ing {
+  border: 1px solid #7ed42f;
+  width: 80%;
+  text-align: center;
+  margin: 30px auto 0px auto;
+}
+/* line 106, ../sass/cropping.scss */
+.wrap_table_ing #t_ing td {
+  border: 1px solid #7ed42f;
+}
+
+/* line 111, ../sass/cropping.scss */
+.wrap_but_rec {
+  text-align: center;
+}
+/* line 113, ../sass/cropping.scss */
+.wrap_but_rec input {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 56px;
+  color: white;
+  background-color: #7ed42f;
+  border: 2px solid white;
+  transition: all 0.3s;
+}
+/* line 123, ../sass/cropping.scss */
+.wrap_but_rec input:hover {
+  cursor: pointer;
+  color: #7ed42f;
+  border: 2px solid #7ed42f;
+  background-color: white;
+}
+
+/* line 130, ../sass/cropping.scss */
+.wrap_stat_rec {
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+/* line 134, ../sass/cropping.scss */
+.wrap_stat_rec .title_time {
+  float: left;
+  width: 50%;
+  text-align: center;
+  margin: 20px 0px 10px 0px;
+  font-size: 24px;
+  color: #7ed42f;
+}
+/* line 141, ../sass/cropping.scss */
+.wrap_stat_rec .title_time .val_time {
+  text-align: center;
+  background-color: #7ed42f;
+  color: white;
+  border: 2px solid white;
+  font-size: 20px;
+  width: 100px;
+  padding: 5px;
+}
+/* line 151, ../sass/cropping.scss */
+.wrap_stat_rec .title_portion {
+  float: left;
+  width: 50%;
+  text-align: center;
+  margin: 20px 0px 10px 0px;
+  font-size: 24px;
+  color: #7ed42f;
+}
+/* line 158, ../sass/cropping.scss */
+.wrap_stat_rec .title_portion .val_portion {
+  text-align: center;
+  background-color: #7ed42f;
+  color: white;
+  border: 2px solid white;
+  font-size: 20px;
+  width: 100px;
+  padding: 5px;
+}
+/* line 168, ../sass/cropping.scss */
+.wrap_stat_rec .title_prepo {
+  font-size: 24px;
+  width: 70%;
+  float: left;
+  text-align: left;
+  margin: 15px 15%;
+  color: #7ed42f;
+  /* Firefox 19+ */
+  /* Firefox 18- */
+}
+/* line 175, ../sass/cropping.scss */
+.wrap_stat_rec .title_prepo textarea {
+  width: 100%;
+  font-size: 20px;
+  margin: 10px 0px;
+  padding: 10px;
+  color: #4D9808;
+  border: 2px solid #7ed42f;
+}
+/* line 183, ../sass/cropping.scss */
+.wrap_stat_rec .title_prepo textarea::-webkit-input-placeholder {
+  color: #4D9808;
+}
+/* line 184, ../sass/cropping.scss */
+.wrap_stat_rec .title_prepo textarea::-moz-placeholder {
+  color: #4D9808;
+}
+/* line 185, ../sass/cropping.scss */
+.wrap_stat_rec .title_prepo textarea:-moz-placeholder {
+  color: #4D9808;
+}
+/* line 186, ../sass/cropping.scss */
+.wrap_stat_rec .title_prepo textarea:-ms-input-placeholder {
+  color: #4D9808;
+}

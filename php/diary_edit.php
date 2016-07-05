@@ -168,7 +168,7 @@
 										echo 	"<div class='added_recipe'>
 													<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeRecipe(this)' /></div>
 													<div class='rec_id' style='display: none;'>".$row['rid']."</div>
-													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
 													<div class='recipe_name'>".$row['name']."</div>
 													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' /></div>
 													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' onchange='changeKkal(this)' value='".$row['portions']."' /></div>
@@ -189,7 +189,7 @@
 										echo 	"<div class='added_recipe'>
 													<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeRecipe(this)' /></div>
 													<div class='rec_id' style='display: none;'>".$row['rid']."</div>
-													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
 													<div class='recipe_name'>".$row['name']."</div>
 													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' /></div>
 													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' onchange='changeKkal(this)' value='".$row['portions']."' /></div>
@@ -210,7 +210,7 @@
 										echo 	"<div class='added_recipe'>
 													<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeRecipe(this)' /></div>
 													<div class='rec_id' style='display: none;'>".$row['rid']."</div>
-													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
 													<div class='recipe_name'>".$row['name']."</div>
 													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' /></div>
 													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' onchange='changeKkal(this)' value='".$row['portions']."' /></div>
@@ -231,7 +231,7 @@
 										echo 	"<div class='added_recipe'>
 													<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeRecipe(this)' /></div>
 													<div class='rec_id' style='display: none;'>".$row['rid']."</div>
-													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
 													<div class='recipe_name'>".$row['name']."</div>
 													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' /></div>
 													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' onchange='changeKkal(this)' value='".$row['portions']."' /></div>
@@ -252,7 +252,7 @@
 										echo 	"<div class='added_recipe'>
 													<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeRecipe(this)' /></div>
 													<div class='rec_id' style='display: none;'>".$row['rid']."</div>
-													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
 													<div class='recipe_name'>".$row['name']."</div>
 													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' /></div>
 													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' onchange='changeKkal(this)' value='".$row['portions']."' /></div>
@@ -273,7 +273,7 @@
 										echo 	"<div class='added_recipe'>
 													<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeRecipe(this)' /></div>
 													<div class='rec_id' style='display: none;'>".$row['rid']."</div>
-													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
 													<div class='recipe_name'>".$row['name']."</div>
 													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' /></div>
 													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' onchange='changeKkal(this)' value='".$row['portions']."' /></div>
@@ -294,7 +294,7 @@
 										echo 	"<div class='added_recipe'>
 													<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeRecipe(this)' /></div>
 													<div class='rec_id' style='display: none;'>".$row['rid']."</div>
-													<div class='recipe_foto'><img src='".$row['main_foto']."' /></div>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
 													<div class='recipe_name'>".$row['name']."</div>
 													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' /></div>
 													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' onchange='changeKkal(this)' value='".$row['portions']."' /></div>

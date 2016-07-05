@@ -1,7 +1,7 @@
 # Do not remove this line or mod_rewrite rules and search engine friendly URLs will stop working
 RewriteBase /
 
-Options All -Indexes -Includes +FollowSymLinks
+#Options All -Indexes -Includes +FollowSymLinks
 # -ExecCGI
 
 ServerSignature Off

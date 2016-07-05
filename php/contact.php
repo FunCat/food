@@ -129,17 +129,28 @@
 				<div class="section_title">
 					<h1>Контакты</h1>
 				</div>
-				<div class="wrap_from">
-					<div class="contact_form">
-						<input type="text" placeholder="Имя" />
-						<input type="text" placeholder="Фамилия" />
-						<input type="text" placeholder="E-mail" />
-						<textarea placeholder="Сообщение..."></textarea>
-						<div style="text-align: center;">
-							<input type="button" value="Отправить" />
+				<?php 
+					if(isset($_POST['send_mail'])){
+						$pname = $_POST['pole_name'];
+						$pmail = $_POST['pole_mail'];
+						$ptopic = $_POST['pole_topic'];
+						$pmessage = $_POST['pole_message'];
+						mail("dailyfood.df@gmail.com", $ptopic, $pmessage, "From: $pname <$pmail>");	
+					}
+				?>
+				<form method="post" action="#">
+					<div class="wrap_from">
+						<div class="contact_form">
+							<input name="pole_name" type="text" placeholder="Имя" />
+							<input name="pole_mail" type="text" placeholder="E-mail" />
+							<input name="pole_topic" type="text" placeholder="Тема сообщения" />
+							<textarea name="pole_message" placeholder="Сообщение..."></textarea>
+							<div style="text-align: center;">
+								<input name="send_mail" type="submit" value="Отправить" />
+							</div>
 						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
