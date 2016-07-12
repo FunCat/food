@@ -131,7 +131,7 @@
 						<div class="main_part">
 							<h1 class="title">Панель администратора</h1>
 
-							<input class="add_recipe" name="but_add_new_receipe" type="submit" value="Добавить рецепт" />
+							<a href="add_recipe.php"><input class="add_recipe" name="but_add_new_receipe" type="submit" value="Добавить рецепт" /></a>
 							<a href="new_ingredient.php"><input class="add_recipe" name="but_add_new_ingredients" type="submit" value="Добавить ингредиент" /></a>
 						</div>
 					</div>

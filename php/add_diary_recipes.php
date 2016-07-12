@@ -23,7 +23,7 @@
 			$info_client = mysqli_fetch_assoc($result_clients);
 
 			$cl_id = $info_client['id'];
-			mysqli_query($mysqli, "INSERT INTO diary (clients_id, name, week_kkal) VALUES ($cl_id, '$ddname', $week_kkal)");
+			mysqli_query($mysqli, "INSERT INTO diary (clients_id, name, week_kkal, diary_type) VALUES ($cl_id, '$ddname', $week_kkal, 0)");
 
 			$result_diaries = mysqli_query($mysqli, "SELECT MAX(id) AS id FROM diary WHERE clients_id = $cl_id");
 			$info_diary = mysqli_fetch_assoc($result_diaries);

@@ -9,8 +9,20 @@
 .but_create_diary:hover{
 	cursor: pointer;
 }
+.but_create_diary_day{
+	background-color: #d4742f;
+	width: 270px;
+	height: 50px;
+	font-size: 20px;
+	color: white;
+	margin: 10px auto 0px auto;
+}
+.but_create_diary_day:hover{
+	cursor: pointer;
+}
 a{
 	text-decoration: none;
+	color: white;
 }
 .plus_image{
 	height: 40px;
@@ -52,6 +64,38 @@ a{
 		color: #4D9808;
 	}/* Firefox 18- */
 	.diary_name:-ms-input-placeholder{
+		color: #4D9808;
+	}
+	.diary_count_portion{
+		text-align: center;
+		font-size: 24px;
+		width: 320px;
+		border: 1px solid #7ed42f;
+		margin: 15px 0px;
+		padding: 5px;
+	}
+	.diary_count_portion:focus::-webkit-input-placeholder {
+		color: transparent
+	}
+	.diary_count_portion:focus::-moz-placeholder{
+		color: transparent
+	}
+	.diary_count_portion:focus:-moz-placeholder{
+		color: transparent
+	}
+	.diary_count_portion:focus:-ms-input-placeholder{
+		color: transparent
+	}
+	.diary_count_portion::-webkit-input-placeholder{
+		color: #4D9808;
+	}
+	.diary_count_portion::-moz-placeholder{
+		color: #4D9808;
+	}/* Firefox 19+ */
+	.diary_count_portion:-moz-placeholder{
+		color: #4D9808;
+	}/* Firefox 18- */
+	.diary_count_portion:-ms-input-placeholder{
 		color: #4D9808;
 	}
 }
@@ -225,6 +269,63 @@ a{
 			}
 		}
 	}
+	.diary_name_day{
+		width: 46%;
+		background-color: #d4742f;
+		padding: 10px 0px;
+		margin: 2%;
+		float: left;
+		.close_img{
+			position: relative;
+			.cl_img{
+				width: 20px;
+				float: right;
+				margin-right: 10px;
+				position: absolute;
+				right: 0;
+			}
+			.cl_img:hover{
+				cursor:pointer;
+			}
+		}
+		.dname{
+			width: 70%;
+			text-align: center;
+			color: white;
+			font-size: 28px;
+			margin: 10px 0px;
+			float: left;
+		}
+		.right_column{
+			float: left;
+			width: 30%;
+			.total_kkal{
+				font-size: 26px;
+				color: white;
+				float: left;
+				img{
+					vertical-align: middle;
+					margin: 0px 15px 0px 20px;
+				}
+			}
+			.diary_more{
+				width: 80%;
+				height: 30px;
+				color: white;
+				float: left;
+				text-align: center;
+				padding-top: 5px;
+				border: 2px solid white;
+				margin: 5px 3%;
+				transition: all 0.3s;
+			}
+			.diary_more:hover{
+				color: #d4742f;
+				background-color: white;
+				cursor: pointer;
+			}
+		}
+	}
 }
 
 .but_create_diaries{
@@ -235,8 +336,11 @@ a{
 		font-size: 20px;
 		color: white;
 		border: none;
-		background-color: #7ed42f;
+		background-color: #7ED42F;
 		margin-top: 20px;
+	}
+	.create_diary:hover, .save_diary:hover{
+		cursor: pointer;
 	}
 }
 

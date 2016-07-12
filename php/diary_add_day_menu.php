@@ -7,7 +7,7 @@
 	<title>DailyFood - Личный кабинет</title>
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/log_dialog.css" />
-	<link rel="stylesheet" href="../css/diary.css" />
+	<link rel="stylesheet" href="../css/diary_day_menu.css" />
 	<link rel="stylesheet" href="../fonts/font.css" />
 	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
@@ -16,41 +16,8 @@
 	<script src="../js/log_dialog.js" type="text/javascript"></script>
 	<script src="../js/reg_valid.js" type="text/javascript"></script>
 	<script src="../js/log_valid.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		var maxheight = 0;
-		$(document).ready(function(){ 	
-			$("div.diary_name").each(function() {
-				if($(this).height() > maxheight)
-					maxheight = $(this).height() + 20;
-			});
-
-			$("div.diary_name").height(maxheight);
-			$(".dname").css({"margin-top": $(".diary_name").height()/2 - $(".dname").height()/2 + "px"});
-		});
-		function removeDiary(t, i){
-			$str = "i=" + i;
-			send_remove_diary($str);
-			$(t).parent().parent().remove();
-		}
-		function send_remove_diary(str)
-		{
-			var r = new XMLHttpRequest();
-			var url = "remove_diary.php";
-			var string = str;
-			var vars = str;
-			r.open("POST", url, true);
-			r.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			r.onreadystatechange = function(){
-				if(r.readyState == 4 && r.status == 210){
-					alert(r.responseText);
-				}
-			}
-			r.onload = function () {
-				document.location.href = "http://dailyfood.online/php/diaries.php";
-			};
-			r.send(vars);
-		}
-	</script>
+	<script src="../js/add_diary_day.js" type="text/javascript"></script>
+	<script src="../js/search_recipes.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="pict_menu">
@@ -115,11 +82,9 @@
 	</div>
 
 
-
-
 	<div class="block_menu">
 		<ul class="list_menu">
-			<?php if(isset($_COOKIE['log'])){ ?><a href="diaries.php"><li class="active_point_menu">Личый дневник</li></a><?php }?>
+			<?php if(isset($_COOKIE['log'])){ ?><a href="diaries.php"><li>Личый дневник</li></a><?php }?>
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
 			<li>Питание</li>
@@ -163,7 +128,7 @@
 		?>
 		<div class="wrap_main_part">
 			<div class="main_part">
-				<h1 class="title">Дневники</h1>
+				<h1 class="title">Создание дневника</h1>
 					<?php 
 						$logres = $_COOKIE["log"];
 
@@ -171,69 +136,89 @@
 						$bol_enter_client = mysqli_fetch_assoc($result_clients);
 
 						$client_id = $bol_enter_client['id'];
-						
+						$resul = mysqli_query($mysqli, "SELECT id, name FROM diary WHERE clients_id =  $client_id");
+
+						$info = mysqli_fetch_assoc($resul);
 						$diary_id = $info["id"];
 						$diary_name = $info["name"];
 					 ?>
 					<form method="post" action="#">
-						<div class="wrap_diary_block">
-							<?php
-							$result_diary = mysqli_query($mysqli, "SELECT id, name, week_kkal, diary_type FROM diary WHERE clients_id =  $client_id");
-							while($row_diary = mysqli_fetch_array($result_diary))
-							{
-								if($row_diary['diary_type'] == 0){
-									echo 	"<div class='diary_name'>
-												<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeDiary(this, ".$row_diary['id'].")' /></div>
-												<div class='dname'>".$row_diary['name']."</div>
-												<div class='right_column'>
-													<div class='total_kkal'><img src='../img/k.png' />".$row_diary['week_kkal']."</div>
-													<a href='diary.php?r=".$row_diary['id']."'>
-														<div class='diary_more'>
-															Просмотреть
-														</div>
-													</a>
-													<a href='diary_edit.php?r=".$row_diary['id']."'>
-														<div class='diary_more'>
-															Редактировать
-														</div>
-													</a>
-												</div>
-											</div>";
-								}
-								else{
-									echo 	"<div class='diary_name_day'>
-												<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeDiary(this, ".$row_diary['id'].")' /></div>
-												<div class='dname'>".$row_diary['name']."</div>
-												<div class='right_column'>
-													<div class='total_kkal'><img src='../img/k.png' />".$row_diary['week_kkal']."</div>
-													<a href='diary.php?r=".$row_diary['id']."'>
-														<div class='diary_more'>
-															Просмотреть
-														</div>
-													</a>
-													<a href='diary_edit.php?r=".$row_diary['id']."'>
-														<div class='diary_more'>
-															Редактировать
-														</div>
-													</a>
-												</div>
-											</div>";
-								}
-							}
-							?>
-							
-						</div>
-						
-						<div class="but_create_diary">
-							<a href="diary_add.php">
-								<img class="plus_image" src="../img/plus.png" />Создать дневник
-							</a>
-						</div>
-						<div class="but_create_diary_day">
-							<a href="diary_add_day_menu.php">
-								<img class="plus_image" src="../img/plus.png" />Создать меню на день
-							</a>
-						</div>
+						<div class="wrap_diary_name"><input class="diary_name" type="text" placeholder="Название дневника" /></div>
+						<div class="wrap_diary_name"><input class="diary_count_portion" type="text" placeholder="Количество приёмов пищи" /></div>
+						<!--<div class="wrap_diary_block">
+							<div class="week_day_block monday">
+								<div class="title_day">Понедельник</div>
+								<div class="add_recipe" onclick="openRecipeDialog(1)">
+									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
+								</div>
+							</div>
+							<div class="week_day_block tuesday">
+								<div class="title_day">Вторник</div>
+								<div class="add_recipe" onclick="openRecipeDialog(2)">
+									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
+								</div>
+							</div>
+							<div class="week_day_block wednesday">
+								<div class="title_day">Среда</div>
+								<div class="add_recipe" onclick="openRecipeDialog(3)">
+									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
+								</div>
+							</div>
+							<div class="week_day_block thursday">
+								<div class="title_day">Четверг</div>
+								<div class="add_recipe" onclick="openRecipeDialog(4)">
+									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
+								</div>
+							</div>
+							<div class="week_day_block friday">
+								<div class="title_day">Пятница</div>
+								<div class="add_recipe" onclick="openRecipeDialog(5)">
+									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
+								</div>
+							</div>
+							<div class="week_day_block saturday">
+								<div class="title_day">Суббота</div>
+								<div class="add_recipe" onclick="openRecipeDialog(6)">
+									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
+								</div>
+							</div>
+							<div class="week_day_block sunday">
+								<div class="title_day">Воскресенье</div>
+								<div class="add_recipe" onclick="openRecipeDialog(7)">
+									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
+								</div>
+							</div>
+
+						</div>-->
+						<?php
+						$rc = mysqli_query($mysqli,'SELECT COUNT(*) AS c FROM recipes');
+						$res_rc = mysqli_fetch_assoc($rc);
+						$row_count = $res_rc['c'] - 1;
+						$i = 0;
+						$rand = range(1, $row_count);
+						shuffle($rand);
+						echo "<div class='week_day_block'><div class='title_day'>Первый приём</div>";
+						while ($i < 3) {
+						    $res = mysqli_query($mysqli, "SELECT * FROM recipes LIMIT ".$rand[$i].", 1");
+							$rand_recip = mysqli_fetch_assoc($res);
+							echo "<div class='added_recipe'>
+									<div class='rec_id' style='display: none;'>".$rand_recip['id']."</div>
+									<div class='recipe_foto' style='margin-top: 25px;'><a href='recipe.php?r=".$rand_recip['id']."' target='_blank'><img src='".$rand_recip['main_foto']."' /></a></div>
+									<div class='recipe_name'>".$rand_recip['name']."</div>
+									<div class='wrap_recipe_stat'><div class='recipe_stats'><div class='recipe_stat'><img src='../img/b.png' /><br/>".$rand_recip['proteins']."</div><div class='recipe_stat'><img src='../img/zh.png' /><br/>".$rand_recip['fats']."</div><div class='recipe_stat'><img src='../img/y.png' /><br/>".$rand_recip['carboh']."</div></div></div>
+									<div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'><span>".$rand_recip['kkal']."</span><br/>ККал</div><div class='one_portion' style='display: none;'>".$rand_recip['kkal']/$rand_recip['portion_mass']."</div></div>
+								</div>";
+							$i++;
+						}		
+						echo "</div>";				
+
+						if(isset($_GET["r"])){
+							echo "<div class='buffer'></div>";
+						}
+						?>
+						<div class="but_create_diaries"><input class="create_diary start_generate" type="button" value="Начать сбор" /></div>
+						<div class="error_add_diary"></div>
+
 					</form>
 			</div>
 		</div>
