@@ -6,12 +6,14 @@
 	<meta charset="utf-8" />
 	<title>DailyFood</title>
 	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/jquery-ui.min.css" />
 	<link rel="stylesheet" href="../css/croppic.css" />
 	<link rel="stylesheet" href="../css/cropping.css" />
 	<link rel="stylesheet" href="../css/log_dialog.css" />
 	<link rel="stylesheet" href="../fonts/font.css" />
 	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
+	<script src="../js/jquery-ui.js" type="text/javascript"></script>
 	<script src="../js/jquery.easing.min.js" type="text/javascript"></script>
 	<script src="../js/jquery.mixitup.min.js" type="text/javascript"></script>
 	<script src="../js/index.js" type="text/javascript"></script>
@@ -22,6 +24,16 @@
 	<script src="../js/reg_valid.js" type="text/javascript"></script>
 	<script src="../js/log_valid.js" type="text/javascript"></script>
 	<script src="../js/log_dialog.js" type="text/javascript"></script>
+	<script>
+	var availableTags = [];
+	var availableIds = [];
+	$( function() {
+		
+		$( "#tags" ).autocomplete({
+		  source: availableTags
+		});
+	});
+	</script>
 </head>
 <body>
 	<div class="pict_menu">
@@ -146,30 +158,29 @@
 						?>
 					</select>
 				</div>
+
 				<div class="wrap_crop_pict">
 					<div id="croppic"></div>
 					<div class="but_crop" id="cropContainerHeaderButton">Загрузить</div>
 				</div>
 				<div class="wrap_list_ingred">
 					<div class="title_add_ing">Добавление ингредиента</div>
-					<select class="t_ing">
+					<div class="ui-widget">
+						<label class="title_mass" for="tags">Ингредиент</label><br/>
+						<input id="tags" class="pole_ing" onchange="alert('Hello');"/>
+					</div>
 						<?php
-							$res_cat = mysqli_query($mysqli, "SELECT * FROM cat_ingredient ORDER BY name");
+							$res_cat = mysqli_query($mysqli, "SELECT * FROM ingredients ORDER BY name");
+							echo "<script type='text/javascript'>";
 							while($row = mysqli_fetch_array($res_cat))
 							{
-								$cid = $row['id'];
-								echo "<optgroup label='".$row['name']."'>";
-								$res_ing = mysqli_query($mysqli, "SELECT * FROM ingredients WHERE cat_ingredient_id = $cid ORDER BY name");
-								while($row2 = mysqli_fetch_array($res_ing))
-								{
-									echo "<option value='".$row2['id']."'>".$row2['name']."</option>";
-								}
-								echo "</optgroup>";
+								echo "availableTags.push('".$row['name']."');";
+								echo 'availableIds.push('.$row['id'].');';
 							}
+							echo "</script>";
 						?>
-					</select>
 					<div class="title_mass">Вес</div>
-					<input class="val_mass" type="text" value="100"/><br />
+					<input class="val_mass" type="text" value="0"/><br />
 					<input type="button" class="but_add_ing" value="Добавить" />
 					<div class='stat_ing' style='display:none;'></div>
 				</div>
@@ -282,16 +293,19 @@
 			send_request_add_rec(str);
 		});
 
-		$(".t_ing").change(function(){
-			$t_ing = $(".t_ing").val();
-			$str = "t=" + $t_ing;
+		$(".pole_ing").focusout(function(){
+			$t_ing = $(".pole_ing").val();
+			$str = "t='" + $t_ing + "'";
 			$('.stat_ing').remove();
 			send_request_add_ing($str);
 		});
 
 		$('.but_add_ing').click(function(){
 			insert_tr();
+			$(".val_mass").val(0);
+			$(".pole_ing").val("");
 		});
+
 		function insert_tr(){
 			var id_ing = $('.id_ing').text();
 			var name_ing = $('.name_ing').text();
@@ -300,9 +314,13 @@
 			var fat_ing = $('.fat_ing').text();
 			var car_ing = $('.car_ing').text();
 			var kkal_ing = $('.kkal_ing').text();
-
-			$('#t_ing tr:last').after("<tr class='r'><td class='n'>"+name_ing+"</td><td class='m'>"+mass_ing+"</td><td class='p'>"+(mass_ing/100*prot_ing).toFixed(2)+"</td><td class='f'>"+(mass_ing/100*fat_ing).toFixed(2)+"</td><td class='c'>"+(mass_ing/100*car_ing).toFixed(2)+"</td><td class='k'>"+(mass_ing/100*kkal_ing).toFixed(2)+"</td><td class='i'><div style='display:none;'>"+id_ing+"</div></td></tr>");
+			$('#t_ing tr:last').after("<tr class='r'><td class='n'>"+name_ing+"</td><td class='m'>"+mass_ing+"</td><td class='p'>"+(mass_ing/100*prot_ing).toFixed(2)+"</td><td class='f'>"+(mass_ing/100*fat_ing).toFixed(2)+"</td><td class='c'>"+(mass_ing/100*car_ing).toFixed(2)+"</td><td class='k'>"+(mass_ing/100*kkal_ing).toFixed(2)+"</td><td class='i'><div style='display:none;'>"+id_ing+"</div><img src='../img/cross.png' onclick='delete_tr(this)' /></td></tr>");
 		}
+
+		function delete_tr(tr){
+			$(tr).parent().parent().remove();
+		}
+
 		function send_request_add_ing(str)
 		{
 			var r = new XMLHttpRequest();
@@ -346,10 +364,10 @@
 			r.send(vars);
 		}
 		$(document).ready(function(){
-			$t_ing = $(".t_ing").val();
+			/*$t_ing = $(".t_ing").val();
 			$str = "t=" + $t_ing;
 			$('.stat_ing').remove();
-			send_request_add_ing($str);
+			send_request_add_ing($str);*/
 		});
 	</script>
 

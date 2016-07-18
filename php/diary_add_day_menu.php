@@ -145,78 +145,37 @@
 					<form method="post" action="#">
 						<div class="wrap_diary_name"><input class="diary_name" type="text" placeholder="Название дневника" /></div>
 						<div class="wrap_diary_name"><input class="diary_count_portion" type="text" placeholder="Количество приёмов пищи" /></div>
-						<!--<div class="wrap_diary_block">
-							<div class="week_day_block monday">
-								<div class="title_day">Понедельник</div>
-								<div class="add_recipe" onclick="openRecipeDialog(1)">
-									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
-								</div>
-							</div>
-							<div class="week_day_block tuesday">
-								<div class="title_day">Вторник</div>
-								<div class="add_recipe" onclick="openRecipeDialog(2)">
-									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
-								</div>
-							</div>
-							<div class="week_day_block wednesday">
-								<div class="title_day">Среда</div>
-								<div class="add_recipe" onclick="openRecipeDialog(3)">
-									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
-								</div>
-							</div>
-							<div class="week_day_block thursday">
-								<div class="title_day">Четверг</div>
-								<div class="add_recipe" onclick="openRecipeDialog(4)">
-									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
-								</div>
-							</div>
-							<div class="week_day_block friday">
-								<div class="title_day">Пятница</div>
-								<div class="add_recipe" onclick="openRecipeDialog(5)">
-									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
-								</div>
-							</div>
-							<div class="week_day_block saturday">
-								<div class="title_day">Суббота</div>
-								<div class="add_recipe" onclick="openRecipeDialog(6)">
-									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
-								</div>
-							</div>
-							<div class="week_day_block sunday">
-								<div class="title_day">Воскресенье</div>
-								<div class="add_recipe" onclick="openRecipeDialog(7)">
-									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
-								</div>
-							</div>
-
-						</div>-->
 						<?php
-						$rc = mysqli_query($mysqli,'SELECT COUNT(*) AS c FROM recipes');
-						$res_rc = mysqli_fetch_assoc($rc);
-						$row_count = $res_rc['c'] - 1;
-						$i = 0;
-						$rand = range(1, $row_count);
-						shuffle($rand);
-						echo "<div class='week_day_block'><div class='title_day'>Первый приём</div>";
-						while ($i < 3) {
-						    $res = mysqli_query($mysqli, "SELECT * FROM recipes LIMIT ".$rand[$i].", 1");
-							$rand_recip = mysqli_fetch_assoc($res);
-							echo "<div class='added_recipe'>
-									<div class='rec_id' style='display: none;'>".$rand_recip['id']."</div>
-									<div class='recipe_foto' style='margin-top: 25px;'><a href='recipe.php?r=".$rand_recip['id']."' target='_blank'><img src='".$rand_recip['main_foto']."' /></a></div>
-									<div class='recipe_name'>".$rand_recip['name']."</div>
-									<div class='wrap_recipe_stat'><div class='recipe_stats'><div class='recipe_stat'><img src='../img/b.png' /><br/>".$rand_recip['proteins']."</div><div class='recipe_stat'><img src='../img/zh.png' /><br/>".$rand_recip['fats']."</div><div class='recipe_stat'><img src='../img/y.png' /><br/>".$rand_recip['carboh']."</div></div></div>
-									<div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'><span>".$rand_recip['kkal']."</span><br/>ККал</div><div class='one_portion' style='display: none;'>".$rand_recip['kkal']/$rand_recip['portion_mass']."</div></div>
-								</div>";
-							$i++;
-						}		
-						echo "</div>";				
-
 						if(isset($_GET["r"])){
-							echo "<div class='buffer'></div>";
+							echo '<script language="javascript">var flag_but_next = 1, need_priem_count = '.$_GET['r'].';</script>';
+							$priem = ["Первый приём", "Второй приём", "Третий приём", "Четвёртый приём", "Пятый приём", "Шестой приём", "Седьмой приём", "Восьмой приём"];
+							$r = $_GET['r'];
+							$rc = mysqli_query($mysqli,'SELECT COUNT(*) AS c FROM recipes');
+							$res_rc = mysqli_fetch_assoc($rc);
+							$row_count = $res_rc['c'] - 1;
+							$rand = range(1, $row_count);
+							for($k = 0; $k < $r; $k++){
+								$i = 0;
+								shuffle($rand);
+								echo "<div class='week_day_block block_day_".$k."'><div class='title_day'>".$priem[$k]."</div>";
+								while ($i < 3) {
+								    $res = mysqli_query($mysqli, "SELECT * FROM recipes LIMIT ".$rand[$i].", 1");
+									$rand_recip = mysqli_fetch_assoc($res);
+									echo "<div class='added_recipe'>
+											<div class='rec_id' style='display: none;'>".$rand_recip['id']."</div>
+											<div class='recipe_foto' style='margin-top: 25px;'><a href='recipe.php?r=".$rand_recip['id']."' target='_blank'><img src='".$rand_recip['main_foto']."' /></a></div>
+											<div class='recipe_name'>".$rand_recip['name']."</div>
+											<div class='wrap_recipe_stat'><div class='recipe_stats'><div class='recipe_stat'><img src='../img/b.png' /><br/>".$rand_recip['proteins']."</div><div class='recipe_stat'><img src='../img/zh.png' /><br/>".$rand_recip['fats']."</div><div class='recipe_stat'><img src='../img/y.png' /><br/>".$rand_recip['carboh']."</div></div></div>
+											<div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'><span>".$rand_recip['kkal']."</span><br/>ККал</div><div class='one_portion' style='display: none;'>".$rand_recip['kkal']/$rand_recip['portion_mass']."</div></div>
+										</div>";
+									$i++;
+								}		
+								echo "</div>";		
+							}		
 						}
 						?>
 						<div class="but_create_diaries"><input class="create_diary start_generate" type="button" value="Начать сбор" /></div>
+						<div class="but_create_diaries"><input class="create_diary end_priem" type="button" value="Завершить" /></div>
 						<div class="error_add_diary"></div>
 
 					</form>

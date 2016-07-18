@@ -65,9 +65,19 @@
 		border: 2px solid white;
 	}
 	.title_mass{
-		margin: 20px 0px 10px 0px;
+		margin: 10px 0px 10px 0px;
 		font-size: 24px;
 		color: #7ed42f;
+	}
+	.pole_ing{
+		text-align: center;
+		background-color: #7ed42f;
+		color: white;
+		border: 2px solid white;
+		font-size: 20px;
+		width: 400px;
+		padding: 5px;
+		margin: 10px 0px 0px 0px;
 	}
 	.val_mass{
 		text-align: center;
@@ -82,7 +92,7 @@
 		width: 200px;
 		height: 50px;
 		font-size: 20px;
-		margin-top: 56px;
+		margin-top: 26px;
 		color: white;
 		background-color: #7ed42f;
 		border: 2px solid white;
@@ -106,6 +116,9 @@
 		td{
 			border: 1px solid #7ed42f;
 		}
+	}
+	img{
+		width: 10px;
 	}
 }
 .wrap_but_rec{

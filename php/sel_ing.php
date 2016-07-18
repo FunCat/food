@@ -4,7 +4,7 @@
 
 	if(isset($_POST['t'])){
 		$t = $_POST['t'];
-		$result_ing = mysqli_query($mysqli, "SELECT * FROM ingredients WHERE id = $t");
+		$result_ing = mysqli_query($mysqli, "SELECT * FROM ingredients WHERE name = $t");
 		$info_ing = mysqli_fetch_assoc($result_ing);
 		$id = $info_ing['id'];
 		$name = $info_ing['name'];

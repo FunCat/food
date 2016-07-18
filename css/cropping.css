@@ -86,11 +86,22 @@
 }
 /* line 67, ../sass/cropping.scss */
 .wrap_list_ingred .title_mass {
-  margin: 20px 0px 10px 0px;
+  margin: 10px 0px 10px 0px;
   font-size: 24px;
   color: #7ed42f;
 }
 /* line 72, ../sass/cropping.scss */
+.wrap_list_ingred .pole_ing {
+  text-align: center;
+  background-color: #7ed42f;
+  color: white;
+  border: 2px solid white;
+  font-size: 20px;
+  width: 400px;
+  padding: 5px;
+  margin: 10px 0px 0px 0px;
+}
+/* line 82, ../sass/cropping.scss */
 .wrap_list_ingred .val_mass {
   text-align: center;
   background-color: #7ed42f;
@@ -100,18 +111,18 @@
   width: 100px;
   padding: 5px;
 }
-/* line 81, ../sass/cropping.scss */
+/* line 91, ../sass/cropping.scss */
 .wrap_list_ingred .but_add_ing {
   width: 200px;
   height: 50px;
   font-size: 20px;
-  margin-top: 56px;
+  margin-top: 26px;
   color: white;
   background-color: #7ed42f;
   border: 2px solid white;
   transition: all 0.3s;
 }
-/* line 91, ../sass/cropping.scss */
+/* line 101, ../sass/cropping.scss */
 .wrap_list_ingred .but_add_ing:hover {
   cursor: pointer;
   color: #7ed42f;
@@ -119,28 +130,32 @@
   background-color: white;
 }
 
-/* line 98, ../sass/cropping.scss */
+/* line 108, ../sass/cropping.scss */
 .wrap_table_ing {
   float: left;
   width: 100%;
 }
-/* line 101, ../sass/cropping.scss */
+/* line 111, ../sass/cropping.scss */
 .wrap_table_ing #t_ing {
   border: 1px solid #7ed42f;
   width: 80%;
   text-align: center;
   margin: 30px auto 0px auto;
 }
-/* line 106, ../sass/cropping.scss */
+/* line 116, ../sass/cropping.scss */
 .wrap_table_ing #t_ing td {
   border: 1px solid #7ed42f;
 }
+/* line 120, ../sass/cropping.scss */
+.wrap_table_ing img {
+  width: 10px;
+}
 
-/* line 111, ../sass/cropping.scss */
+/* line 124, ../sass/cropping.scss */
 .wrap_but_rec {
   text-align: center;
 }
-/* line 113, ../sass/cropping.scss */
+/* line 126, ../sass/cropping.scss */
 .wrap_but_rec input {
   width: 200px;
   height: 50px;
@@ -151,7 +166,7 @@
   border: 2px solid white;
   transition: all 0.3s;
 }
-/* line 123, ../sass/cropping.scss */
+/* line 136, ../sass/cropping.scss */
 .wrap_but_rec input:hover {
   cursor: pointer;
   color: #7ed42f;
@@ -159,13 +174,13 @@
   background-color: white;
 }
 
-/* line 130, ../sass/cropping.scss */
+/* line 143, ../sass/cropping.scss */
 .wrap_stat_rec {
   float: left;
   width: 100%;
   text-align: center;
 }
-/* line 134, ../sass/cropping.scss */
+/* line 147, ../sass/cropping.scss */
 .wrap_stat_rec .title_time {
   float: left;
   width: 50%;
@@ -174,7 +189,7 @@
   font-size: 24px;
   color: #7ed42f;
 }
-/* line 141, ../sass/cropping.scss */
+/* line 154, ../sass/cropping.scss */
 .wrap_stat_rec .title_time .val_time {
   text-align: center;
   background-color: #7ed42f;
@@ -184,7 +199,7 @@
   width: 100px;
   padding: 5px;
 }
-/* line 151, ../sass/cropping.scss */
+/* line 164, ../sass/cropping.scss */
 .wrap_stat_rec .title_portion {
   float: left;
   width: 50%;
@@ -193,7 +208,7 @@
   font-size: 24px;
   color: #7ed42f;
 }
-/* line 158, ../sass/cropping.scss */
+/* line 171, ../sass/cropping.scss */
 .wrap_stat_rec .title_portion .val_portion {
   text-align: center;
   background-color: #7ed42f;
@@ -203,7 +218,7 @@
   width: 100px;
   padding: 5px;
 }
-/* line 168, ../sass/cropping.scss */
+/* line 181, ../sass/cropping.scss */
 .wrap_stat_rec .title_prepo {
   font-size: 24px;
   width: 70%;
@@ -214,7 +229,7 @@
   /* Firefox 19+ */
   /* Firefox 18- */
 }
-/* line 175, ../sass/cropping.scss */
+/* line 188, ../sass/cropping.scss */
 .wrap_stat_rec .title_prepo textarea {
   width: 100%;
   font-size: 20px;
@@ -223,19 +238,19 @@
   color: #4D9808;
   border: 2px solid #7ed42f;
 }
-/* line 183, ../sass/cropping.scss */
+/* line 196, ../sass/cropping.scss */
 .wrap_stat_rec .title_prepo textarea::-webkit-input-placeholder {
   color: #4D9808;
 }
-/* line 184, ../sass/cropping.scss */
+/* line 197, ../sass/cropping.scss */
 .wrap_stat_rec .title_prepo textarea::-moz-placeholder {
   color: #4D9808;
 }
-/* line 185, ../sass/cropping.scss */
+/* line 198, ../sass/cropping.scss */
 .wrap_stat_rec .title_prepo textarea:-moz-placeholder {
   color: #4D9808;
 }
-/* line 186, ../sass/cropping.scss */
+/* line 199, ../sass/cropping.scss */
 .wrap_stat_rec .title_prepo textarea:-ms-input-placeholder {
   color: #4D9808;
 }
