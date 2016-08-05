@@ -4,20 +4,19 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>DailyFood</title>
+	<title>DailyFood - Личный кабинет</title>
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/log_dialog.css" />
-	<link rel="stylesheet" href="../css/contact.css" />
+	<link rel="stylesheet" href="../css/diary.css" />
 	<link rel="stylesheet" href="../fonts/font.css" />
 	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
-	<script src="../js/jquery.easing.min.js" type="text/javascript"></script>
-	<script src="../js/jquery.mixitup.min.js" type="text/javascript"></script>
 	<script src="../js/index.js" type="text/javascript"></script>
 	<script src="../js/hamburger.js" type="text/javascript"></script>
+	<script src="../js/log_dialog.js" type="text/javascript"></script>
 	<script src="../js/reg_valid.js" type="text/javascript"></script>
 	<script src="../js/log_valid.js" type="text/javascript"></script>
-	<script src="../js/log_dialog.js" type="text/javascript"></script>
+	<script src="../js/diary_day.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="pict_menu">
@@ -81,9 +80,6 @@
 		</div>
 	</div>
 
-
-
-
 	<div class="block_menu">
 		<ul class="list_menu">
 			<?php if(isset($_COOKIE['log'])){ ?>
@@ -104,8 +100,8 @@
 				echo "<a href='recipe.php?r=".$ri."'><li>Случайный рецепт</li></a>"
 			?>
 			<li>Питание</li>
+			<li>Калькулятор</li>
 			<a href="contact.php"><li>Контакты</li></a>
-			<a href="contact.php"><li class="active_point_menu">Контакты</li></a>
 			<?php if($_COOKIE['perm'] == 1){ ?><a href="admin_panel.php"><li>Панель администратора</li></a><?php }?>
 		</ul>
 	</div>
@@ -138,35 +134,49 @@
 			</div>
 		</div>
 
+		<?php 
+			if(isset($_COOKIE['log']))
+			{
+				$did = $_GET['r'];
+				$resul = mysqli_query($mysqli, "SELECT name FROM diary WHERE id = $did");
+				$info_d = mysqli_fetch_array($resul);
+		?>
 		<div class="wrap_main_part">
 			<div class="main_part">
-				<div class="section_title">
-					<h1>Контакты</h1>
-				</div>
-				<?php 
-					if(isset($_POST['send_mail'])){
-						$pname = $_POST['pole_name'];
-						$pmail = $_POST['pole_mail'];
-						$ptopic = $_POST['pole_topic'];
-						$pmessage = $_POST['pole_message'];
-						mail("dailyfood.df@gmail.com", $ptopic, $pmessage, "From: $pname <$pmail>");	
-					}
-				?>
-				<form method="post" action="#">
-					<div class="wrap_from">
-						<div class="contact_form">
-							<input name="pole_name" type="text" placeholder="Имя" />
-							<input name="pole_mail" type="text" placeholder="E-mail" />
-							<input name="pole_topic" type="text" placeholder="Тема сообщения" />
-							<textarea name="pole_message" placeholder="Сообщение..."></textarea>
-							<div style="text-align: center;">
-								<input name="send_mail" type="submit" value="Отправить" />
+				<h1 class="title"><?php echo $info_d['name']; ?></h1>
+					<form method="post" action="#">
+						<div class="wrap_diary_block">
+							<div class="week_day_d_block monday">
+								<div class="title_day">План питания</div>
+								<?php
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did ORDER BY dr.time");
+									while($row = mysqli_fetch_array($result))
+									{
+										echo 	"<div class='added_recipe'>
+													<div class='recipe_foto'><a href='recipe.php?r=".$row['rid']."' target='_blank'><img src='".$row['main_foto']."' /></a></div>
+													<div class='recipe_name'>".$row['name']."</div>
+													<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='".substr($row['time'],0,5)."' disabled/></div>
+													<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='".$row['portions']."' disabled/></div>
+													<div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'><span>".round($row['portions']*$row['kkal']/$row['portion_mass'])."</span><br/>ККал</div></div>
+												</div>";
+									}
+								?>
 							</div>
 						</div>
-					</div>
-				</form>
+					</form>
 			</div>
 		</div>
+
+		<?php
+			}
+			else
+			{
+		?>
+			<div class="mess_no_log">Вы не авторизовались!</div>
+		<?php
+			}
+		?>
+
 	</div>
 
 	<div class="footer">

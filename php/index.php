@@ -20,6 +20,11 @@
 	<script src="../js/reg_valid.js" type="text/javascript"></script>
 	<script src="../js/log_valid.js" type="text/javascript"></script>
 	<script src="../js/log_dialog.js" type="text/javascript"></script>
+	<script type="text/javascript">       
+        $(document).ready(function(){  
+            show_likes();  
+        });  
+    </script>  
 </head>
 <body>
 	<div class="pict_menu">
@@ -88,10 +93,25 @@
 
 	<div class="block_menu">
 		<ul class="list_menu">
-			<?php if(isset($_COOKIE['log'])){ ?><a href="diaries.php"><li>Личый дневник</li></a><?php }?>
+			<?php if(isset($_COOKIE['log'])){ ?>
+			<a href="diaries.php"><li>Личый дневник</li></a>
+			<a href="favorite_recipes.php"><li>Любимые рецепты</li></a>
+			<?php }?>
 			<a href="index.php"><li class="active_point_menu">Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
+			<?php
+				$rc = mysqli_query($mysqli,'SELECT COUNT(*) AS c FROM recipes');
+				$res_rc = mysqli_fetch_assoc($rc);
+				$row_count = $res_rc['c'] - 1;
+				$rand = range(1, $row_count);
+				shuffle($rand);
+				$res = mysqli_query($mysqli, "SELECT * FROM recipes LIMIT ".$rand[0].", 1");
+				$rand_recip = mysqli_fetch_assoc($res);
+				$ri = $rand_recip['id'];
+				echo "<a href='recipe.php?r=".$ri."'><li>Случайный рецепт</li></a>"
+			?>
 			<li>Питание</li>
+			
 			<li>Калькулятор</li>
 			<a href="contact.php"><li>Контакты</li></a>
 			<?php if($_COOKIE['perm'] == 1){ ?><a href="admin_panel.php"><li>Панель администратора</li></a><?php }?>
@@ -157,50 +177,7 @@
 				</ul>
 
 				<div id="receipeslist">
-					<?php 
-						$result = mysqli_query($mysqli, "SELECT * FROM recipes AS r JOIN recip_cat AS rc ON r.recip_cat_id = rc.cid");
-						while($row = mysqli_fetch_array($result))
-						{
-							echo "<div class='receipe_block ".$row['desc']."' data-cat='".$row['desc']."'>
-								<div class='receipe_block_wrapper'>
-									<img src='".$row['main_foto']."' alt='' />
-									<div class='kkal'>
-										".$row['kkal']."<br />ККал
-									</div>
-									<div class='label'>
-										<div class='label_text'>
-											<div class='text_title'>".$row['name']."</div>
-											<span class='text_category'>".$row['cname']."</span>
-										</div>
-										<div class='label_bg'></div>
-									</div>
-								</div>
-								<div class='receipe_block_info'>
-									<div class='hr_pad'>
-										<hr class='recipe_hr' />
-									</div>
-										<div class='recipe_stats_left'>
-											<img src='../img/b.png' class='icon_stat' /> ".$row['proteins']." г<br />
-											<img src='../img/zh.png' class='icon_stat' /> ".$row['fats']." г<br />
-											<img src='../img/y.png' class='icon_stat' /> ".$row['carboh']." г<br />
-										</div>
-										<div class='recipe_stats_right'>
-											<img src='../img/k.png' class='icon_stat' /> ".$row['kkal']." К<br />
-											<img src='../img/p.png' class='icon_stat' /> ".$row['count_portion']."<br />
-											<img src='../img/v.png' class='icon_stat' /> ".$row['time']." м<br />
-										</div>
-										<div class='recipe_add'>
-											Добавить
-										</div>
-										<a href='recipe.php?r=".$row['id']."'>
-											<div class='recipe_more'>
-												Подробнее ->
-											</div>
-										</a>
-								</div>
-							</div>";
-						}
-					?>
+					
 				</div>
 			</div>
 		</div>

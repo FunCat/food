@@ -7,11 +7,23 @@
 	<title>DailyFood</title>
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/jquery-ui.min.css" />
+	<link rel="stylesheet" href="../css/croppic.css" />
 	<link rel="stylesheet" href="../css/cropping.css" />
 	<link rel="stylesheet" href="../css/log_dialog.css" />
 	<link rel="stylesheet" href="../fonts/font.css" />
 	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<link rel="stylesheet" href="../css/jquery.Jcrop.css" type="text/css" />
+	<style type="text/css">
+	#crop{
+		display:none;
+	}
+	#cropresult{
+		border:2px solid #ddd;
+	}
+	.mini{
+		margin:5px;
+	}
+	</style>
 	<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
 	<script src="../js/jquery-ui.js" type="text/javascript"></script>
 	<script src="../js/jquery.easing.min.js" type="text/javascript"></script>

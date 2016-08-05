@@ -119,10 +119,35 @@ li span.active{
 			border: 2px solid white;
 			margin: 10px 8px 0px 8px;
 			transition: all 0.3s;
+			.app_like{
+				top: -3px;
+    			vertical-align: middle;
+			}
+		}
+		.recipe_add_act{
+			width: 120px;
+			height: 30px;
+			color: #7ED42F;
+			background-color: white;
+			float: left;
+			text-align: center;
+			padding-top: 5px;
+			border: 2px solid white;
+			margin: 10px 8px 0px 8px;
+			transition: all 0.3s;
+			.app_like{
+				top: -3px;
+    			vertical-align: middle;
+			}
 		}
 		.recipe_more:hover, .recipe_add:hover{
 			color: #7ED42F;
 			background-color: white;
+			cursor: pointer;
+		}
+		.recipe_add_act:hover{
+			color: white;
+			background-color: #7ED42F;
 			cursor: pointer;
 		}
 	}

@@ -6,8 +6,8 @@
 
 
 			#croppic{
-				width: 400px;  /* MANDATORY */
-				height: 208px; /* MANDATORY */
+				width: 605px;  /* MANDATORY */
+				height: 350px; /* MANDATORY */
 				position: relative;  /* MANDATORY */
 				margin: 10px auto 20px auto;
 				border: 3px  solid #FFF;

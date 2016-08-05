@@ -15,7 +15,7 @@
 
 /* line 12, ../sass/diary.scss */
 .but_create_diary_day {
-  background-color: #d4742f;
+  background-color: #4d9808;
   width: 270px;
   height: 50px;
   font-size: 20px;
@@ -264,10 +264,137 @@ a {
 }
 
 /* line 213, ../sass/diary.scss */
+.week_day_d_block {
+  margin: 0px auto;
+  width: 50%;
+  border: 1px solid #7ED42F;
+}
+/* line 217, ../sass/diary.scss */
+.week_day_d_block .title_day {
+  text-align: center;
+  background-color: #7ED42F;
+  color: white;
+  font-size: 22px;
+}
+/* line 223, ../sass/diary.scss */
+.week_day_d_block .added_recipe {
+  height: 320;
+  float: left;
+  border: 1px solid white;
+  background-color: #7ed42f;
+}
+/* line 229, ../sass/diary.scss */
+.week_day_d_block .add_recipe {
+  height: 320;
+  float: left;
+  border: 1px solid white;
+  background-color: #7ed42f;
+  text-align: center;
+}
+/* line 235, ../sass/diary.scss */
+.week_day_d_block .add_recipe img {
+  width: 100px;
+  margin-top: 70px;
+}
+/* line 239, ../sass/diary.scss */
+.week_day_d_block .add_recipe .add_text {
+  font-size: 18px;
+  color: white;
+}
+/* line 244, ../sass/diary.scss */
+.week_day_d_block .add_recipe:hover {
+  cursor: pointer;
+}
+/* line 247, ../sass/diary.scss */
+.week_day_d_block .close_img {
+  position: relative;
+  text-align: right;
+}
+/* line 250, ../sass/diary.scss */
+.week_day_d_block .close_img .cl_img {
+  width: 20px;
+  position: relative;
+  top: 7;
+  right: 7;
+}
+/* line 256, ../sass/diary.scss */
+.week_day_d_block .close_img .cl_img:hover {
+  cursor: pointer;
+}
+/* line 260, ../sass/diary.scss */
+.week_day_d_block .recipe_foto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid white;
+  overflow: hidden;
+  margin: 10px auto 0px auto;
+}
+/* line 267, ../sass/diary.scss */
+.week_day_d_block .recipe_foto img {
+  width: 180px;
+  position: relative;
+  left: -40px;
+}
+/* line 273, ../sass/diary.scss */
+.week_day_d_block .recipe_name {
+  text-align: center;
+  color: white;
+  margin: 5px 0px;
+}
+/* line 278, ../sass/diary.scss */
+.week_day_d_block .time_to_eat, .week_day_d_block .count_to_eat {
+  color: white;
+  padding: 5px;
+  text-align: center;
+  width: 50%;
+  float: left;
+}
+/* line 284, ../sass/diary.scss */
+.week_day_d_block .time_to_eat input[type="text"], .week_day_d_block .count_to_eat input[type="text"] {
+  width: 50px;
+  color: white;
+  border: 1px solid white;
+  background-color: #7ed42f;
+  text-align: center;
+}
+/* line 291, ../sass/diary.scss */
+.week_day_d_block .time_to_eat img, .week_day_d_block .count_to_eat img {
+  height: 40px;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+/* line 297, ../sass/diary.scss */
+.week_day_d_block .total_kkal_to_eat {
+  text-align: center;
+  margin: auto;
+  color: white;
+  float: left;
+  width: 100%;
+}
+/* line 303, ../sass/diary.scss */
+.week_day_d_block .total_kkal_to_eat .wrap_kkal_to_eat {
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  background-color: #7ED42F;
+  color: white;
+  border-radius: 100px;
+  text-align: center;
+  padding-top: 6px;
+  border: 1px solid white;
+}
+/* line 314, ../sass/diary.scss */
+.week_day_d_block .total_kkal_to_eat img {
+  height: 40px;
+  vertical-align: middle;
+}
+
+/* line 321, ../sass/diary.scss */
 .wrap_diary_block {
   overflow: hidden;
 }
-/* line 215, ../sass/diary.scss */
+/* line 323, ../sass/diary.scss */
 .wrap_diary_block .diary_name {
   width: 46%;
   background-color: #7ed42f;
@@ -275,11 +402,11 @@ a {
   margin: 2%;
   float: left;
 }
-/* line 221, ../sass/diary.scss */
+/* line 329, ../sass/diary.scss */
 .wrap_diary_block .diary_name .close_img {
   position: relative;
 }
-/* line 223, ../sass/diary.scss */
+/* line 331, ../sass/diary.scss */
 .wrap_diary_block .diary_name .close_img .cl_img {
   width: 20px;
   float: right;
@@ -287,11 +414,11 @@ a {
   position: absolute;
   right: 0;
 }
-/* line 230, ../sass/diary.scss */
+/* line 338, ../sass/diary.scss */
 .wrap_diary_block .diary_name .close_img .cl_img:hover {
   cursor: pointer;
 }
-/* line 234, ../sass/diary.scss */
+/* line 342, ../sass/diary.scss */
 .wrap_diary_block .diary_name .dname {
   width: 70%;
   text-align: center;
@@ -300,23 +427,23 @@ a {
   margin: 10px 0px;
   float: left;
 }
-/* line 242, ../sass/diary.scss */
+/* line 350, ../sass/diary.scss */
 .wrap_diary_block .diary_name .right_column {
   float: left;
   width: 30%;
 }
-/* line 245, ../sass/diary.scss */
+/* line 353, ../sass/diary.scss */
 .wrap_diary_block .diary_name .right_column .total_kkal {
   font-size: 26px;
   color: white;
   float: left;
 }
-/* line 249, ../sass/diary.scss */
+/* line 357, ../sass/diary.scss */
 .wrap_diary_block .diary_name .right_column .total_kkal img {
   vertical-align: middle;
   margin: 0px 15px 0px 20px;
 }
-/* line 254, ../sass/diary.scss */
+/* line 362, ../sass/diary.scss */
 .wrap_diary_block .diary_name .right_column .diary_more {
   width: 80%;
   height: 30px;
@@ -328,25 +455,25 @@ a {
   margin: 5px 3%;
   transition: all 0.3s;
 }
-/* line 265, ../sass/diary.scss */
+/* line 373, ../sass/diary.scss */
 .wrap_diary_block .diary_name .right_column .diary_more:hover {
   color: #7ed42f;
   background-color: white;
   cursor: pointer;
 }
-/* line 272, ../sass/diary.scss */
+/* line 380, ../sass/diary.scss */
 .wrap_diary_block .diary_name_day {
   width: 46%;
-  background-color: #d4742f;
+  background-color: #4d9808;
   padding: 10px 0px;
   margin: 2%;
   float: left;
 }
-/* line 278, ../sass/diary.scss */
+/* line 386, ../sass/diary.scss */
 .wrap_diary_block .diary_name_day .close_img {
   position: relative;
 }
-/* line 280, ../sass/diary.scss */
+/* line 388, ../sass/diary.scss */
 .wrap_diary_block .diary_name_day .close_img .cl_img {
   width: 20px;
   float: right;
@@ -354,11 +481,11 @@ a {
   position: absolute;
   right: 0;
 }
-/* line 287, ../sass/diary.scss */
+/* line 395, ../sass/diary.scss */
 .wrap_diary_block .diary_name_day .close_img .cl_img:hover {
   cursor: pointer;
 }
-/* line 291, ../sass/diary.scss */
+/* line 399, ../sass/diary.scss */
 .wrap_diary_block .diary_name_day .dname {
   width: 70%;
   text-align: center;
@@ -367,23 +494,23 @@ a {
   margin: 10px 0px;
   float: left;
 }
-/* line 299, ../sass/diary.scss */
+/* line 407, ../sass/diary.scss */
 .wrap_diary_block .diary_name_day .right_column {
   float: left;
   width: 30%;
 }
-/* line 302, ../sass/diary.scss */
+/* line 410, ../sass/diary.scss */
 .wrap_diary_block .diary_name_day .right_column .total_kkal {
   font-size: 26px;
   color: white;
   float: left;
 }
-/* line 306, ../sass/diary.scss */
+/* line 414, ../sass/diary.scss */
 .wrap_diary_block .diary_name_day .right_column .total_kkal img {
   vertical-align: middle;
   margin: 0px 15px 0px 20px;
 }
-/* line 311, ../sass/diary.scss */
+/* line 419, ../sass/diary.scss */
 .wrap_diary_block .diary_name_day .right_column .diary_more {
   width: 80%;
   height: 30px;
@@ -395,18 +522,18 @@ a {
   margin: 5px 3%;
   transition: all 0.3s;
 }
-/* line 322, ../sass/diary.scss */
+/* line 430, ../sass/diary.scss */
 .wrap_diary_block .diary_name_day .right_column .diary_more:hover {
-  color: #d4742f;
+  color: #4d9808;
   background-color: white;
   cursor: pointer;
 }
 
-/* line 331, ../sass/diary.scss */
+/* line 439, ../sass/diary.scss */
 .but_create_diaries {
   text-align: center;
 }
-/* line 333, ../sass/diary.scss */
+/* line 441, ../sass/diary.scss */
 .but_create_diaries .create_diary, .but_create_diaries .save_diary {
   width: 150px;
   height: 50px;
@@ -416,19 +543,19 @@ a {
   background-color: #7ED42F;
   margin-top: 20px;
 }
-/* line 342, ../sass/diary.scss */
+/* line 450, ../sass/diary.scss */
 .but_create_diaries .create_diary:hover, .but_create_diaries .save_diary:hover {
   cursor: pointer;
 }
 
-/* line 348, ../sass/diary.scss */
+/* line 456, ../sass/diary.scss */
 .error_add_diary {
   text-align: center;
   margin: 10px 0px;
   font-size: 20px;
 }
 
-/* line 356, ../sass/diary.scss */
+/* line 464, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog {
   width: 650px;
   height: 500px;
@@ -438,7 +565,7 @@ a {
   overflow-y: auto;
   margin: 40px auto;
 }
-/* line 364, ../sass/diary.scss */
+/* line 472, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .close_dialog {
   position: absolute;
   right: 5;
@@ -449,21 +576,21 @@ a {
   width: 30px;
   text-decoration: none;
 }
-/* line 374, ../sass/diary.scss */
+/* line 482, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .close_dialog:before {
   font-family: Arial;
   content: "x";
   font-size: 24px;
   color: white;
 }
-/* line 380, ../sass/diary.scss */
+/* line 488, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .title_rec_dialog {
   text-align: center;
   font-size: 24px;
   color: white;
   margin: 10px 0px;
 }
-/* line 386, ../sass/diary.scss */
+/* line 494, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_find {
   width: 100%;
   height: 100px;
@@ -471,31 +598,31 @@ a {
   color: white;
   font-size: 20px;
 }
-/* line 392, ../sass/diary.scss */
+/* line 500, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_find input[type="text"] {
   font-size: 16px;
   border: 1px solid white;
 }
-/* line 396, ../sass/diary.scss */
+/* line 504, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_find select {
   font-size: 16px;
   background-color: #7ed42f;
   border: 1px solid white;
   color: white;
 }
-/* line 402, ../sass/diary.scss */
+/* line 510, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_find div {
   margin: 15px;
   float: left;
 }
-/* line 408, ../sass/diary.scss */
+/* line 516, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_list .rec {
   height: 120px;
   border-bottom: 1px solid white;
   border-top: 1px solid white;
   padding: 10px 0px;
 }
-/* line 413, ../sass/diary.scss */
+/* line 521, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_list .rec .small_img {
   float: left;
   width: 100px;
@@ -505,25 +632,25 @@ a {
   overflow: hidden;
   margin-left: 15px;
 }
-/* line 421, ../sass/diary.scss */
+/* line 529, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_list .rec .small_img img {
   height: 100%;
   position: relative;
   left: -30;
 }
-/* line 427, ../sass/diary.scss */
+/* line 535, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_list .rec .rec_info {
   float: left;
   height: 100%;
   width: 518px;
   color: white;
 }
-/* line 432, ../sass/diary.scss */
+/* line 540, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_list .rec .rec_info .title_rec_name {
   text-align: center;
   font-size: 20px;
 }
-/* line 436, ../sass/diary.scss */
+/* line 544, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_list .rec .rec_info .rec_stat_block {
   width: 100px;
   height: 67px;
@@ -532,12 +659,12 @@ a {
   font-size: 20px;
   float: left;
 }
-/* line 443, ../sass/diary.scss */
+/* line 551, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_list .rec .rec_info .rec_stat_block img {
   height: 30px;
   vertical-align: middle;
 }
-/* line 447, ../sass/diary.scss */
+/* line 555, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_list .rec .rec_info .rec_stat_block .but_add {
   width: 100px;
   height: 30px;
@@ -546,17 +673,17 @@ a {
   color: white;
   font-size: 16px;
 }
-/* line 455, ../sass/diary.scss */
+/* line 563, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_list .rec .rec_info .rec_stat_block .but_add:hover {
   color: #7ed42f;
   background-color: white;
   cursor: pointer;
 }
-/* line 461, ../sass/diary.scss */
+/* line 569, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_list .rec .rec_info .rec_stat_unblock {
   display: none;
 }
-/* line 464, ../sass/diary.scss */
+/* line 572, ../sass/diary.scss */
 #add_recipe_dialog .content_rec_dialog .rec_list .rec .rec_info .rec_left_block {
   margin-left: 14px;
 }

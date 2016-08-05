@@ -10,7 +10,7 @@
 	cursor: pointer;
 }
 .but_create_diary_day{
-	background-color: #d4742f;
+	background-color: #4d9808;
 	width: 270px;
 	height: 50px;
 	font-size: 20px;
@@ -210,6 +210,114 @@ a{
 	}
 }
 
+.week_day_d_block{
+	margin: 0px auto;
+	width: 50%;
+	border: 1px solid #7ED42F;
+	.title_day{
+		text-align: center;
+		background-color: #7ED42F;
+		color: white;
+		font-size: 22px;
+	}
+	.added_recipe{
+		height: 320;
+		float: left;
+		border: 1px solid white;
+		background-color: #7ed42f;
+	}
+	.add_recipe{
+		height: 320;
+		float: left;
+		border: 1px solid white;
+		background-color: #7ed42f;
+		text-align: center;
+		img{
+			width: 100px;
+			margin-top: 70px;
+		}
+		.add_text{
+			font-size: 18px;
+			color: white;
+		}
+	}
+	.add_recipe:hover{
+		cursor: pointer;
+	}
+	.close_img{
+		position: relative;
+		text-align: right;
+		.cl_img{
+			width: 20px;
+			position: relative;
+			top: 7;
+			right: 7;
+		}
+		.cl_img:hover{
+			cursor: pointer;
+		}
+	}
+	.recipe_foto{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		border: 2px solid white;
+		overflow: hidden;
+		margin: 10px auto 0px auto;
+		img{
+			width: 180px;
+			position: relative;
+			left: -40px;
+		}
+	}
+	.recipe_name{
+		text-align: center;
+		color: white;
+		margin: 5px 0px;
+	}
+	.time_to_eat, .count_to_eat{
+		color: white;
+		padding: 5px;
+		text-align: center;
+		width: 50%;
+		float: left;
+		input[type="text"]{
+			width: 50px;
+			color: white;
+			border: 1px solid white;
+			background-color: #7ed42f;
+			text-align: center;
+		}
+		img{
+			height: 40px;
+			vertical-align: middle;
+			margin-bottom: 5px;
+		}
+	}
+	.total_kkal_to_eat{
+		text-align: center;
+		margin: auto;
+		color: white;
+		float: left;
+		width: 100%;
+		.wrap_kkal_to_eat{
+			margin: auto;
+			width: 50px;
+			height: 50px;
+			background-color: #7ED42F;
+			color: white;
+			border-radius: 100px;
+			text-align: center;
+			padding-top: 6px;
+			border: 1px solid white;
+		}
+		img{
+			height: 40px;
+			vertical-align: middle;
+		}
+	}
+}
+
 .wrap_diary_block{
 	overflow: hidden;
 	.diary_name{
@@ -271,7 +379,7 @@ a{
 	}
 	.diary_name_day{
 		width: 46%;
-		background-color: #d4742f;
+		background-color: #4d9808;
 		padding: 10px 0px;
 		margin: 2%;
 		float: left;
@@ -320,7 +428,7 @@ a{
 				transition: all 0.3s;
 			}
 			.diary_more:hover{
-				color: #d4742f;
+				color: #4d9808;
 				background-color: white;
 				cursor: pointer;
 			}

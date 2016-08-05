@@ -85,9 +85,23 @@
 
 	<div class="block_menu">
 		<ul class="list_menu">
-			<?php if(isset($_COOKIE['log'])){ ?><a href="diaries.php"><li>Личый дневник</li></a><?php }?>
+			<?php if(isset($_COOKIE['log'])){ ?>
+			<a href="diaries.php"><li>Личый дневник</li></a>
+			<a href="favorite_recipes.php"><li>Любимые рецепты</li></a>
+			<?php }?>
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
+			<?php
+				$rc = mysqli_query($mysqli,'SELECT COUNT(*) AS c FROM recipes');
+				$res_rc = mysqli_fetch_assoc($rc);
+				$row_count = $res_rc['c'] - 1;
+				$rand = range(1, $row_count);
+				shuffle($rand);
+				$res = mysqli_query($mysqli, "SELECT * FROM recipes LIMIT ".$rand[0].", 1");
+				$rand_recip = mysqli_fetch_assoc($res);
+				$ri = $rand_recip['id'];
+				echo "<a href='recipe.php?r=".$ri."'><li>Случайный рецепт</li></a>"
+			?>
 			<li>Питание</li>
 			<li>Калькулятор</li>
 			<a href="contact.php"><li>Контакты</li></a>
@@ -124,9 +138,14 @@
 		</div>
 
 		<?php
+		if(isset($_GET['r']))
+		{
 			$rid = $_GET['r'];
 			$result = mysqli_query($mysqli, "SELECT * FROM recipes WHERE id = $rid");
 			$row = mysqli_fetch_array($result);
+
+			$riw = $row['watchs'] + 1;
+			mysqli_query($mysqli, "UPDATE recipes SET watchs = $riw WHERE id = $rid");
 		?>
 
 
@@ -136,35 +155,37 @@
 					<h1><?php echo $row['name']; ?></h1>
 				</div>
 
-				<div class="foto_recipe">
-					<div class="main_foto"><img class="main_foto_f" src="<?php echo $row['main_foto']; ?>" /></div>
-					<div class="wrap_fotos">
-						<div class="fotos">
-							<div class="wrap_small_foto"><?php if($row['main_foto'] != "") echo "<img class='small_foto'  src='".$row['main_foto']."' onclick='change_main_foto(\"".$row['main_foto']."\")'/>"; ?></div>
-							<div class="wrap_small_foto"><?php if($row['foto1'] != "") echo "<img class='small_foto'  src='".$row['foto1']."' onclick='change_main_foto(\"".$row['foto1']."\")'/>"; ?></div>
-							<div class="wrap_small_foto"><?php if($row['foto2'] != "") echo "<img class='small_foto'  src='".$row['foto2']."' onclick='change_main_foto(\"".$row['foto2']."\")'/>"; ?></div>
-							<div class="wrap_small_foto"><?php if($row['foto3'] != "") echo "<img class='small_foto'  src='".$row['foto3']."' onclick='change_main_foto(\"".$row['foto3']."\")'/>"; ?></div>
+				<div class="hei_block">
+					<div class="foto_recipe">
+						<div class="main_foto"><img class="main_foto_f" src="<?php echo $row['main_foto']; ?>" /></div>
+						<div class="wrap_fotos">
+							<div class="fotos">
+								<div class="wrap_small_foto"><?php if($row['main_foto'] != "") echo "<img class='small_foto'  src='".$row['main_foto']."' onclick='change_main_foto(\"".$row['main_foto']."\")'/>"; ?></div>
+								<div class="wrap_small_foto"><?php if($row['foto1'] != "") echo "<img class='small_foto'  src='".$row['foto1']."' onclick='change_main_foto(\"".$row['foto1']."\")'/>"; ?></div>
+								<div class="wrap_small_foto"><?php if($row['foto2'] != "") echo "<img class='small_foto'  src='".$row['foto2']."' onclick='change_main_foto(\"".$row['foto2']."\")'/>"; ?></div>
+								<div class="wrap_small_foto"><?php if($row['foto3'] != "") echo "<img class='small_foto'  src='".$row['foto3']."' onclick='change_main_foto(\"".$row['foto3']."\")'/>"; ?></div>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="wrap_recipe_ingred">
-					<div class="recipe_ingred">
-						Ингредиенты
-					</div>
-					<div class="list_ingredients">
-						<ul>
-							<table>
-							<?php
-								$result_ingred = mysqli_query($mysqli, "SELECT * FROM recip_ingredients AS ri JOIN ingredients AS i ON ri.ingred_id = i.id WHERE ri.recipes_id = $rid");
-								while($row_ingred = mysqli_fetch_array($result_ingred))
-								{
-									echo "<tr><td><li>".$row_ingred['name']."</li></td><td class='mass_units'>".$row_ingred['mass'].$row_ingred['units']."</td></tr>";
-								}
-							?>
-							</table>
-						</ul>
+					<div class="wrap_recipe_ingred">
+						<div class="recipe_ingred">
+							Ингредиенты
+						</div>
+						<div class="list_ingredients">
+							<ul>
+								<table>
+								<?php
+									$result_ingred = mysqli_query($mysqli, "SELECT * FROM recip_ingredients AS ri JOIN ingredients AS i ON ri.ingred_id = i.id WHERE ri.recipes_id = $rid");
+									while($row_ingred = mysqli_fetch_array($result_ingred))
+									{
+										echo "<tr><td><li>".$row_ingred['name']."</li></td><td class='mass_units'>".$row_ingred['mass']." ".$row_ingred['units']."</td></tr>";
+									}
+								?>
+								</table>
+							</ul>
 
+						</div>
 					</div>
 				</div>
 
@@ -188,6 +209,13 @@
 				</div>
 			</div>
 		</div>
+		<?php 
+		}
+		else{
+			header('Location: http://dailyfood.online/php/recipes.php');
+		}
+		?>
+
 	</div>
 
 	<div class="footer">

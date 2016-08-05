@@ -82,9 +82,23 @@
 
 	<div class="block_menu">
 		<ul class="list_menu">
-			<?php if(isset($_COOKIE['log'])){ ?><a href="diaries.php"><li>Личый дневник</li></a><?php }?>
+			<?php if(isset($_COOKIE['log'])){ ?>
+			<a href="diaries.php"><li>Личый дневник</li></a>
+			<a href="favorite_recipes.php"><li>Любимые рецепты</li></a>
+			<?php }?>
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
+			<?php
+				$rc = mysqli_query($mysqli,'SELECT COUNT(*) AS c FROM recipes');
+				$res_rc = mysqli_fetch_assoc($rc);
+				$row_count = $res_rc['c'] - 1;
+				$rand = range(1, $row_count);
+				shuffle($rand);
+				$res = mysqli_query($mysqli, "SELECT * FROM recipes LIMIT ".$rand[0].", 1");
+				$rand_recip = mysqli_fetch_assoc($res);
+				$ri = $rand_recip['id'];
+				echo "<a href='recipe.php?r=".$ri."'><li>Случайный рецепт</li></a>"
+			?>
 			<li>Питание</li>
 			<li>Калькулятор</li>
 			<a href="contact.php"><li>Контакты</li></a>
@@ -133,9 +147,9 @@
 					<form method="post" action="#">
 						<div class="wrap_diary_block">
 							<div class="week_day_block monday">
-								<div class="title_day">Понедельник</div>
+								<div class="title_day">Понедельник<br />Ккал - <span class="avg_kkal">0</span><br />Б - <span class="avg_prot">0</span> / Ж - <span class="avg_fats">0</span> / У - <span class="avg_carboh">0</span></div>
 								<?php
-									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 0");
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 0 ORDER BY dr.time");
 									while($row = mysqli_fetch_array($result))
 									{
 										echo 	"<div class='added_recipe'>
@@ -149,9 +163,9 @@
 								?>
 							</div>
 							<div class="week_day_block tuesday">
-								<div class="title_day">Вторник</div>
+								<div class="title_day">Вторник<br />Ккал - <span class="avg_kkal">0</span></div>
 								<?php
-									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 1");
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 1 ORDER BY dr.time");
 									while($row = mysqli_fetch_array($result))
 									{
 										echo 	"<div class='added_recipe'>
@@ -165,9 +179,9 @@
 								?>
 							</div>
 							<div class="week_day_block wednesday">
-								<div class="title_day">Среда</div>
+								<div class="title_day">Среда<br />Ккал - <span class="avg_kkal">0</span></div>
 								<?php
-									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 2");
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 2 ORDER BY dr.time");
 									while($row = mysqli_fetch_array($result))
 									{
 										echo 	"<div class='added_recipe'>
@@ -181,9 +195,9 @@
 								?>
 							</div>
 							<div class="week_day_block thursday">
-								<div class="title_day">Четверг</div>
+								<div class="title_day">Четверг<br />Ккал - <span class="avg_kkal">0</span></div>
 								<?php
-									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 3");
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 3 ORDER BY dr.time");
 									while($row = mysqli_fetch_array($result))
 									{
 										echo 	"<div class='added_recipe'>
@@ -197,9 +211,9 @@
 								?>
 							</div>
 							<div class="week_day_block friday">
-								<div class="title_day">Пятница</div>
+								<div class="title_day">Пятница<br />Ккал - <span class="avg_kkal">0</span></div>
 								<?php
-									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 4");
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 4 ORDER BY dr.time");
 									while($row = mysqli_fetch_array($result))
 									{
 										echo 	"<div class='added_recipe'>
@@ -213,9 +227,9 @@
 								?>
 							</div>
 							<div class="week_day_block saturday">
-								<div class="title_day">Суббота</div>
+								<div class="title_day">Суббота<br />Ккал - <span class="avg_kkal">0</span></div>
 								<?php
-									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 5");
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 5 ORDER BY dr.time");
 									while($row = mysqli_fetch_array($result))
 									{
 										echo 	"<div class='added_recipe'>
@@ -229,9 +243,9 @@
 								?>
 							</div>
 							<div class="week_day_block sunday">
-								<div class="title_day">Воскресенье</div>
+								<div class="title_day">Воскресенье<br />Ккал - <span class="avg_kkal">0</span></div>
 								<?php
-									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 6");
+									$result = mysqli_query($mysqli, "SELECT dr.*, r.id AS rid, r.kkal, r.portion_mass, r.name, r.main_foto FROM diary_recipes AS dr JOIN recipes AS r ON dr.recipes_id = r.id WHERE dr.diary_id = $did AND dr.day = 6 ORDER BY dr.time");
 									while($row = mysqli_fetch_array($result))
 									{
 										echo 	"<div class='added_recipe'>

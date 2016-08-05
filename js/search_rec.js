@@ -1,8 +1,9 @@
- function show_likes()  
+ function show_likes(str)  
         {  
-            $.ajax({  
-                url: "list_likes.php",  
+            $.ajax({
+                url: "list_rec_likes.php",  
                 cache: false,  
+                data: { req: str},
                 success: function(html){  
                     $("#receipeslist").html(html);  
                     $(function () {
@@ -50,7 +51,7 @@
 							}, function() {
 								$(this).children(".app_like").attr('src', '../img/apple_like.png');
 							});
-							$(".recipe_add_act").hover(function(){
+						$(".recipe_add_act").hover(function(){
 								$(this).children(".app_like").attr('src', '../img/apple_like.png');
 							}, function() {
 								$(this).children(".app_like").attr('src', '../img/apple_like_hov.png');

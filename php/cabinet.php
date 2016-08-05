@@ -86,9 +86,23 @@
 
 	<div class="block_menu">
 		<ul class="list_menu">
-			<?php if(isset($_COOKIE['log'])){ ?><a href="diaries.php"><li>Личый дневник</li></a><?php }?>
+			<?php if(isset($_COOKIE['log'])){ ?>
+			<a href="diaries.php"><li>Личый дневник</li></a>
+			<a href="favorite_recipes.php"><li>Любимые рецепты</li></a>
+			<?php }?>
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
+			<?php
+				$rc = mysqli_query($mysqli,'SELECT COUNT(*) AS c FROM recipes');
+				$res_rc = mysqli_fetch_assoc($rc);
+				$row_count = $res_rc['c'] - 1;
+				$rand = range(1, $row_count);
+				shuffle($rand);
+				$res = mysqli_query($mysqli, "SELECT * FROM recipes LIMIT ".$rand[0].", 1");
+				$rand_recip = mysqli_fetch_assoc($res);
+				$ri = $rand_recip['id'];
+				echo "<a href='recipe.php?r=".$ri."'><li>Случайный рецепт</li></a>"
+			?>
 			<li>Питание</li>
 			<li>Калькулятор</li>
 			<a href="contact.php"><li>Контакты</li></a>

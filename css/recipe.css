@@ -142,14 +142,43 @@ li span.active {
   margin: 10px 8px 0px 8px;
   transition: all 0.3s;
 }
-/* line 123, ../sass/recipe.scss */
+/* line 122, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .recipe_more .app_like, #receipeslist .receipe_block_info .recipe_add .app_like {
+  top: -3px;
+  vertical-align: middle;
+}
+/* line 127, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .recipe_add_act {
+  width: 120px;
+  height: 30px;
+  color: #7ED42F;
+  background-color: white;
+  float: left;
+  text-align: center;
+  padding-top: 5px;
+  border: 2px solid white;
+  margin: 10px 8px 0px 8px;
+  transition: all 0.3s;
+}
+/* line 138, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .recipe_add_act .app_like {
+  top: -3px;
+  vertical-align: middle;
+}
+/* line 143, ../sass/recipe.scss */
 #receipeslist .receipe_block_info .recipe_more:hover, #receipeslist .receipe_block_info .recipe_add:hover {
   color: #7ED42F;
   background-color: white;
   cursor: pointer;
 }
+/* line 148, ../sass/recipe.scss */
+#receipeslist .receipe_block_info .recipe_add_act:hover {
+  color: white;
+  background-color: #7ED42F;
+  cursor: pointer;
+}
 
-/* line 131, ../sass/recipe.scss */
+/* line 156, ../sass/recipe.scss */
 .dop_text {
   height: 300px;
   background-color: #7ED42F;

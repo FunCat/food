@@ -3,11 +3,11 @@ $(document).ready(function(){
 	$("input#kkal_min").val(0);
 	$("input#kkal_max").val(1000);
 	$("input#proteins_min").val(0);
-	$("input#proteins_max").val(1000);
+	$("input#proteins_max").val(100);
 	$("input#fats_min").val(0);
-	$("input#fats_max").val(1000);
+	$("input#fats_max").val(100);
 	$("input#carboh_min").val(0);
-	$("input#carboh_max").val(1000);
+	$("input#carboh_max").val(100);
 
 	$(".fullsearch_button").click(function(){
 		if(fullsearch == false){

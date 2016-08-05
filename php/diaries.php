@@ -23,8 +23,12 @@
 				if($(this).height() > maxheight)
 					maxheight = $(this).height() + 20;
 			});
-
+			$("div.diary_name_day").each(function() {
+				if($(this).height() > maxheight)
+					maxheight = $(this).height() + 20;
+			});
 			$("div.diary_name").height(maxheight);
+			$("div.diary_name_day").height(maxheight);
 			$(".dname").css({"margin-top": $(".diary_name").height()/2 - $(".dname").height()/2 + "px"});
 		});
 		function removeDiary(t, i){
@@ -119,9 +123,23 @@
 
 	<div class="block_menu">
 		<ul class="list_menu">
-			<?php if(isset($_COOKIE['log'])){ ?><a href="diaries.php"><li class="active_point_menu">Личый дневник</li></a><?php }?>
+			<?php if(isset($_COOKIE['log'])){ ?>
+			<a href="diaries.php"><li class="active_point_menu">Личый дневник</li></a>
+			<a href="favorite_recipes.php"><li>Любимые рецепты</li></a>
+			<?php }?>
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
+			<?php
+				$rc = mysqli_query($mysqli,'SELECT COUNT(*) AS c FROM recipes');
+				$res_rc = mysqli_fetch_assoc($rc);
+				$row_count = $res_rc['c'] - 1;
+				$rand = range(1, $row_count);
+				shuffle($rand);
+				$res = mysqli_query($mysqli, "SELECT * FROM recipes LIMIT ".$rand[0].", 1");
+				$rand_recip = mysqli_fetch_assoc($res);
+				$ri = $rand_recip['id'];
+				echo "<a href='recipe.php?r=".$ri."'><li>Случайный рецепт</li></a>"
+			?>
 			<li>Питание</li>
 			<li>Калькулятор</li>
 			<a href="contact.php"><li>Контакты</li></a>
@@ -181,44 +199,23 @@
 							$result_diary = mysqli_query($mysqli, "SELECT id, name, week_kkal, diary_type FROM diary WHERE clients_id =  $client_id");
 							while($row_diary = mysqli_fetch_array($result_diary))
 							{
-								if($row_diary['diary_type'] == 0){
-									echo 	"<div class='diary_name'>
-												<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeDiary(this, ".$row_diary['id'].")' /></div>
-												<div class='dname'>".$row_diary['name']."</div>
-												<div class='right_column'>
-													<div class='total_kkal'><img src='../img/k.png' />".$row_diary['week_kkal']."</div>
-													<a href='diary.php?r=".$row_diary['id']."'>
-														<div class='diary_more'>
-															Просмотреть
-														</div>
-													</a>
-													<a href='diary_edit.php?r=".$row_diary['id']."'>
-														<div class='diary_more'>
-															Редактировать
-														</div>
-													</a>
-												</div>
-											</div>";
-								}
-								else{
-									echo 	"<div class='diary_name_day'>
-												<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeDiary(this, ".$row_diary['id'].")' /></div>
-												<div class='dname'>".$row_diary['name']."</div>
-												<div class='right_column'>
-													<div class='total_kkal'><img src='../img/k.png' />".$row_diary['week_kkal']."</div>
-													<a href='diary.php?r=".$row_diary['id']."'>
-														<div class='diary_more'>
-															Просмотреть
-														</div>
-													</a>
-													<a href='diary_edit.php?r=".$row_diary['id']."'>
-														<div class='diary_more'>
-															Редактировать
-														</div>
-													</a>
-												</div>
-											</div>";
-								}
+								echo 	"<div class='diary_name'>
+											<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeDiary(this, ".$row_diary['id'].")' /></div>
+											<div class='dname'>".$row_diary['name']."</div>
+											<div class='right_column'>
+												<div class='total_kkal'><img src='../img/k.png' />".$row_diary['week_kkal']."</div>
+												<a href='diary.php?r=".$row_diary['id']."'>
+													<div class='diary_more'>
+														Просмотреть
+													</div>
+												</a>
+												<a href='diary_edit.php?r=".$row_diary['id']."'>
+													<div class='diary_more'>
+														Редактировать
+													</div>
+												</a>
+											</div>
+										</div>";
 							}
 							?>
 							
@@ -229,11 +226,11 @@
 								<img class="plus_image" src="../img/plus.png" />Создать дневник
 							</a>
 						</div>
-						<div class="but_create_diary_day">
+						<!--<div class="but_create_diary_day">
 							<a href="diary_add_day_menu.php">
 								<img class="plus_image" src="../img/plus.png" />Создать меню на день
 							</a>
-						</div>
+						</div>-->
 					</form>
 			</div>
 		</div>

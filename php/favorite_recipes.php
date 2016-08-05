@@ -4,20 +4,31 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>DailyFood</title>
+	<title>DailyFood - Рецепты</title>
 	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/recipe.css" />
+	<link rel="stylesheet" href="../css/trackbar.css" />
+	<link rel="stylesheet" href="../css/recipes.css" />
 	<link rel="stylesheet" href="../css/log_dialog.css" />
-	<link rel="stylesheet" href="../css/contact.css" />
 	<link rel="stylesheet" href="../fonts/font.css" />
 	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
+	<script src="../js/jquery-1.6.1.min.js" type="text/javascript" ></script>
 	<script src="../js/jquery.easing.min.js" type="text/javascript"></script>
 	<script src="../js/jquery.mixitup.min.js" type="text/javascript"></script>
+	<script src="../js/jquery.ui-slider.js" type="text/javascript"></script>
 	<script src="../js/index.js" type="text/javascript"></script>
+	<script src="../js/recipes.js" type="text/javascript"></script>
 	<script src="../js/hamburger.js" type="text/javascript"></script>
+	<script src="../js/search_rec_fav.js" type="text/javascript"></script>
 	<script src="../js/reg_valid.js" type="text/javascript"></script>
 	<script src="../js/log_valid.js" type="text/javascript"></script>
 	<script src="../js/log_dialog.js" type="text/javascript"></script>
+	<script type="text/javascript">       
+        $(document).ready(function(){  
+            show_likes();  
+        });  
+    </script>
 </head>
 <body>
 	<div class="pict_menu">
@@ -88,7 +99,7 @@
 		<ul class="list_menu">
 			<?php if(isset($_COOKIE['log'])){ ?>
 			<a href="diaries.php"><li>Личый дневник</li></a>
-			<a href="favorite_recipes.php"><li>Любимые рецепты</li></a>
+			<a href="favorite_recipes.php"><li class="active_point_menu">Любимые рецепты</li></a>
 			<?php }?>
 			<a href="index.php"><li>Главная</li></a>
 			<a href="recipes.php"><li>Рецепты</li></a>
@@ -104,8 +115,8 @@
 				echo "<a href='recipe.php?r=".$ri."'><li>Случайный рецепт</li></a>"
 			?>
 			<li>Питание</li>
+			<li>Калькулятор</li>
 			<a href="contact.php"><li>Контакты</li></a>
-			<a href="contact.php"><li class="active_point_menu">Контакты</li></a>
 			<?php if($_COOKIE['perm'] == 1){ ?><a href="admin_panel.php"><li>Панель администратора</li></a><?php }?>
 		</ul>
 	</div>
@@ -138,33 +149,27 @@
 			</div>
 		</div>
 
+
 		<div class="wrap_main_part">
 			<div class="main_part">
 				<div class="section_title">
-					<h1>Контакты</h1>
+					<h1>Любимые рецепты</h1>
 				</div>
-				<?php 
-					if(isset($_POST['send_mail'])){
-						$pname = $_POST['pole_name'];
-						$pmail = $_POST['pole_mail'];
-						$ptopic = $_POST['pole_topic'];
-						$pmessage = $_POST['pole_message'];
-						mail("dailyfood.df@gmail.com", $ptopic, $pmessage, "From: $pname <$pmail>");	
-					}
-				?>
-				<form method="post" action="#">
-					<div class="wrap_from">
-						<div class="contact_form">
-							<input name="pole_name" type="text" placeholder="Имя" />
-							<input name="pole_mail" type="text" placeholder="E-mail" />
-							<input name="pole_topic" type="text" placeholder="Тема сообщения" />
-							<textarea name="pole_message" placeholder="Сообщение..."></textarea>
-							<div style="text-align: center;">
-								<input name="send_mail" type="submit" value="Отправить" />
-							</div>
-						</div>
-					</div>
-				</form>
+
+				<ul id="filters" class="clearfix">
+					<li><span class="filter active" data-filter="desert first breakfast salat soup snacks drinks sauces">Все</span></li>
+					<li><span class="filter" data-filter="desert">Выпечка и десерты</span></li>
+					<li><span class="filter" data-filter="first">Основное блюдо</span></li>
+					<li><span class="filter" data-filter="breakfast">Завтрак</span></li>
+					<li><span class="filter" data-filter="salat">Салаты</span></li>
+					<li><span class="filter" data-filter="soup">Супы</span></li>
+					<li><span class="filter" data-filter="snacks">Закуски</span></li>
+					<li><span class="filter" data-filter="drinks">Напитки</span></li>
+					<li><span class="filter" data-filter="sauces">Соусы</span></li>
+				</ul>
+
+				<div id="receipeslist"></div>
+
 			</div>
 		</div>
 	</div>

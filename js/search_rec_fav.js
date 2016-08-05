@@ -1,7 +1,7 @@
  function show_likes()  
         {  
             $.ajax({  
-                url: "list_likes.php",  
+                url: "list_fav_like.php",  
                 cache: false,  
                 success: function(html){  
                     $("#receipeslist").html(html);  
