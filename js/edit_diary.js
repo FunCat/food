@@ -48,8 +48,6 @@ $(document).ready(function(){
 		$str = "t=" + Math.random() + "&did=" + did + "&diaryname=" + $dname + "&rec=" + recip_id + "&time=" + time + "&mass=" + mass + "&flag=" + flag_block;
 		send_request_diary_recipes($str);
 	});
-
-
 });
 function openRecipeDialog(){ 		//плавное появление диалогового окна
 	$("#add_recipe_dialog").fadeIn();
@@ -174,17 +172,6 @@ function send_request_diary_recipes(str)
 	};
 	r.send(vars);
 }
-
-
-
-
-
-
-
-
-
-
-
 function count_info_rec(){
 	avg_kkal = 0;
 	avg_prot = 0;
@@ -222,7 +209,6 @@ function show_diary(day, t)
 		}  
 	});  
 }  
-
 function resize_calculation(){
 	$(".rec_foto").css({"height": $(".rec_foto").width() + "px"});
 	$(".rec").css({"height": $(".rec_foto").width() + 60 + "px"});

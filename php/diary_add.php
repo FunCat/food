@@ -81,31 +81,6 @@
 		</div>
 	</div>
 
-	<div id="add_recipe_dialog" class="back_dialog">
-		<div class="content_rec_dialog">
-			<div class="title_rec_dialog">
-				Выберите рецепт
-			</div>
-			<a class="close_dialog" href="javascript: closeRecipeDialog()"></a>
-			<div class="rec_find">
-				<div>Название: <input class="search_n" type="text" /></div>
-				<div>Тип блюда: 
-				<select class="rec_cat" name="rec_cat">
-					<option value='0'>-</option>
-				<?php
-					$result=mysqli_query($mysqli, "SELECT * FROM recip_cat"); 
-					while($row=mysqli_fetch_array($result)){
-						echo "<option value='".$row['cid']."'>".$row['cname']."</option>";
-					}
-				?>
-				</select></div>
-			</div>
-			<div class="rec_list">
-			</div>
-		</div>
-	</div>
-
-
 	<div class="block_menu">
 		<ul class="list_menu">
 			<?php if(isset($_COOKIE['log'])){ ?>
@@ -113,7 +88,8 @@
 			<a href="favorite_recipes.php"><li>Любимые рецепты</li></a>
 			<?php }?>
 			<a href="index.php"><li>Главная</li></a>
-			<a href="recipes.php"><li>Рецепты</li></a><?php
+			<a href="recipes.php"><li>Рецепты</li></a>
+			<?php
 				$rc = mysqli_query($mysqli,'SELECT COUNT(*) AS c FROM recipes');
 				$res_rc = mysqli_fetch_assoc($rc);
 				$row_count = $res_rc['c'] - 1;
@@ -166,74 +142,13 @@
 		<div class="wrap_main_part">
 			<div class="main_part">
 				<h1 class="title">Создание дневника</h1>
-					<?php 
-						$logres = $_COOKIE["log"];
-
-						$result_clients = mysqli_query($mysqli, "SELECT id FROM clients WHERE login =  '$logres'");
-						$bol_enter_client = mysqli_fetch_assoc($result_clients);
-
-						$client_id = $bol_enter_client['id'];
-						$resul = mysqli_query($mysqli, "SELECT id, name FROM diary WHERE clients_id =  $client_id");
-
-						$info = mysqli_fetch_assoc($resul);
-						$diary_id = $info["id"];
-						$diary_name = $info["name"];
-					 ?>
+				<div class="wrap_diary_name"><input class="diary_name" type="text" placeholder="Название дневника" /></div>
 					<form method="post" action="#">
-						<div class="wrap_diary_name"><input class="diary_name" type="text" placeholder="Название дневника" /></div>
-						<div class="wrap_diary_block">
-							<div class="week_day_block monday">
-								<div class="title_day">Понедельник</div>
-								<div class="add_recipe" onclick="openRecipeDialog(1)">
-									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
-								</div>
-							</div>
-							<div class="week_day_block tuesday">
-								<div class="title_day">Вторник</div>
-								<div class="add_recipe" onclick="openRecipeDialog(2)">
-									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
-								</div>
-							</div>
-							<div class="week_day_block wednesday">
-								<div class="title_day">Среда</div>
-								<div class="add_recipe" onclick="openRecipeDialog(3)">
-									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
-								</div>
-							</div>
-							<div class="week_day_block thursday">
-								<div class="title_day">Четверг</div>
-								<div class="add_recipe" onclick="openRecipeDialog(4)">
-									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
-								</div>
-							</div>
-							<div class="week_day_block friday">
-								<div class="title_day">Пятница</div>
-								<div class="add_recipe" onclick="openRecipeDialog(5)">
-									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
-								</div>
-							</div>
-							<div class="week_day_block saturday">
-								<div class="title_day">Суббота</div>
-								<div class="add_recipe" onclick="openRecipeDialog(6)">
-									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
-								</div>
-							</div>
-							<div class="week_day_block sunday">
-								<div class="title_day">Воскресенье</div>
-								<div class="add_recipe" onclick="openRecipeDialog(7)">
-									<img src="../img/plus.png" /><br/><div class="add_text">Добавить<br/>рецепт</div>
-								</div>
-							</div>
-
-						</div>
-						
-						<div class="but_create_diaries"><input class="create_diary" type="button" value="Создать" /></div>
+						<div class="but_create_diaries"><input class="save_diary" type="button" value="Создать" /></div>
 						<div class="error_add_diary"></div>
-
 					</form>
 			</div>
 		</div>
-
 		<?php
 			}
 			else
