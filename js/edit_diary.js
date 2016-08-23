@@ -1,159 +1,155 @@
 var flag_block = 0;
-var maxheight = 0;
 
-$(document).ready(function(){ 	
-	$('.added_recipe').css({"width": $(".week_day_block").width() / 3 + "px"});
-	$('.add_recipe').css({"width": $(".week_day_block").width() / 3 + "px"});
-	$("div.week_day_block").each(function() {
-		if($(this).height() > maxheight)
-			maxheight = $(this).height();
+$(document).ready(function(){ 
+	$(window).resize(function(){resize_calculation();});
+	show_diary(0, $('.monday'));
+	$('.monday').click(function(){
+		show_diary(0, this);
+		flag_block = 0;
 	});
-
-	$("div.week_day_block").height(maxheight);
-	$('.added_recipe').css({"width": $(".week_day_block").width() / 3 + "px"});
-	$('.add_recipe').css({"width": $(".week_day_block").width() / 3 + "px"});
+	$('.tuesday').click(function(){
+		show_diary(1, this);
+		flag_block = 1;
+	});
+	$('.wednesday').click(function(){
+		show_diary(2, this);
+		flag_block = 2;
+	});
+	$('.thursday').click(function(){
+		show_diary(3, this);
+		flag_block = 3;
+	});
+	$('.friday').click(function(){
+		show_diary(4, this);
+		flag_block = 4;
+	});
+	$('.saturday').click(function(){
+		show_diary(5, this);
+		flag_block = 5;
+	});
+	$('.sunday').click(function(){
+		show_diary(6, this);
+		flag_block = 6;
+	});
 	$("#add_recipe_dialog").hide(); //скрываем блок при запуске страницы
 	$(".save_diary").click(function(){
 		$i = 0;
 		var did = $(".did").text();
 		var recip_id = [];
-		var day = [];
 		var time = [];
 		var mass = [];
-		var week_kkal = 0;
-		$(".monday").children(".added_recipe").each(function(){
-			recip_id[$i] = $(this).children(".rec_id").text();
-			day[$i] = 0;
-			time[$i] = $(this).children(".time_to_eat").children("input").val();
-			mass[$i] = $(this).children(".count_to_eat").children("input").val();
-			week_kkal += parseInt($(this).children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text(), 10);
+		$('.rec').each(function(){
+			recip_id[$i] = parseInt($(this).children('.rec_id').text());
+			time[$i] = $(this).children(".left_column").children(".count_time").children(".time_to_eat").children("input").val();
+			mass[$i] = $(this).children(".left_column").children(".count_time").children(".count_to_eat").children("input").val();
 			$i++;
 		});
-
-		$(".tuesday").children(".added_recipe").each(function(){
-			recip_id[$i] = $(this).children(".rec_id").text();
-			day[$i] = 1;
-			time[$i] = $(this).children(".time_to_eat").children("input").val();
-			mass[$i] = $(this).children(".count_to_eat").children("input").val();
-			week_kkal += parseInt($(this).children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text(), 10);
-			$i++;
-		});
-
-		$(".wednesday").children(".added_recipe").each(function(){
-			recip_id[$i] = $(this).children(".rec_id").text();
-			day[$i] = 2;
-			time[$i] = $(this).children(".time_to_eat").children("input").val();
-			mass[$i] = $(this).children(".count_to_eat").children("input").val();
-			week_kkal += parseInt($(this).children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text(), 10);
-			$i++;
-		});
-
-		$(".thursday").children(".added_recipe").each(function(){
-			recip_id[$i] = $(this).children(".rec_id").text();
-			day[$i] = 3;
-			time[$i] = $(this).children(".time_to_eat").children("input").val();
-			mass[$i] = $(this).children(".count_to_eat").children("input").val();
-			week_kkal += parseInt($(this).children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text(), 10);
-			$i++;
-		});
-
-		$(".friday").children(".added_recipe").each(function(){
-			recip_id[$i] = $(this).children(".rec_id").text();
-			day[$i] = 4;
-			time[$i] = $(this).children(".time_to_eat").children("input").val();
-			mass[$i] = $(this).children(".count_to_eat").children("input").val();
-			week_kkal += parseInt($(this).children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text(), 10);
-			$i++;
-		});
-
-		$(".saturday").children(".added_recipe").each(function(){
-			recip_id[$i] = $(this).children(".rec_id").text();
-			day[$i] = 5;
-			time[$i] = $(this).children(".time_to_eat").children("input").val();
-			mass[$i] = $(this).children(".count_to_eat").children("input").val();
-			week_kkal += parseInt($(this).children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text(), 10);
-			$i++;
-		});
-		$(".sunday").children(".added_recipe").each(function(){
-			recip_id[$i] = $(this).children(".rec_id").text();
-			day[$i] = 6;
-			time[$i] = $(this).children(".time_to_eat").children("input").val();
-			mass[$i] = $(this).children(".count_to_eat").children("input").val();
-			week_kkal += parseInt($(this).children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text(), 10);
-			$i++;
-		});
-
 		$dname = $(".diary_name").val();
-		$str = "t=" + Math.random() + "&did=" + did + "&diaryname=" + $dname + "&rec=" + recip_id + "&day=" + day + "&time=" + time + "&mass=" + mass + "&week_mass=" + week_kkal;
+		$str = "t=" + Math.random() + "&did=" + did + "&diaryname=" + $dname + "&rec=" + recip_id + "&time=" + time + "&mass=" + mass + "&flag=" + flag_block;
 		send_request_diary_recipes($str);
 	});
-});
 
-function openRecipeDialog(flag){ 		//плавное появление диалогового окна
+
+});
+function openRecipeDialog(){ 		//плавное появление диалогового окна
 	$("#add_recipe_dialog").fadeIn();
-	flag_block = flag;
 }
 function closeRecipeDialog(){			//плавное исчезновение диалогового окна
 	$("#add_recipe_dialog").fadeOut();
 }
-function removeRecipe(t){
-	var r = $(t).parent().parent().children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text();
-	var sp_kkal = Number($(t).parent().parent().parent().children(".title_day").children(".avg_kkal").text()) - Number(r);
-	$(t).parent().parent().parent().children(".title_day").children(".avg_kkal").text(sp_kkal);
-
-	r = $(t).parent().parent().children(".total_kkal_to_eat").children(".tot_prot").text();
-	var sp_prot = Number($(t).parent().parent().parent().children(".title_day").children(".avg_prot").text()) - Number(r);
-	$(t).parent().parent().parent().children(".title_day").children(".avg_prot").text(sp_prot);
-
-	r = $(t).parent().parent().children(".total_kkal_to_eat").children(".tot_fats").text();
-	var sp_fats = Number($(t).parent().parent().parent().children(".title_day").children(".avg_fats").text()) - Number(r);
-	$(t).parent().parent().parent().children(".title_day").children(".avg_fats").text(sp_fats);
-
-	r = $(t).parent().parent().children(".total_kkal_to_eat").children(".tot_carb").text();
-	var sp_carb = Number($(t).parent().parent().parent().children(".title_day").children(".avg_carboh").text()) - Number(r);
-	$(t).parent().parent().parent().children(".title_day").children(".avg_carboh").text(sp_carb);
-
-
-	$(t).parent().parent().remove();
-}
 function changeKkal(t){
-	var k = $(t).parent().parent().children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text();
-	var p = $(t).parent().parent().children(".total_kkal_to_eat").children(".tot_prot").text();
-	var f = $(t).parent().parent().children(".total_kkal_to_eat").children(".tot_fats").text();
-	var c = $(t).parent().parent().children(".total_kkal_to_eat").children(".tot_carb").text();
+	var k = $(t).parent().parent().parent().children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text();
+	var p = $(t).parent().parent().parent().children(".total_kkal_to_eat").children(".wrap_proteins_to_eat").children("span").text();
+	var f = $(t).parent().parent().parent().children(".total_kkal_to_eat").children(".wrap_fats_to_eat").children("span").text();
+	var c = $(t).parent().parent().parent().children(".total_kkal_to_eat").children(".wrap_carboh_to_eat").children("span").text();
 
-	var sp_kkal = Number($(t).parent().parent().parent().children(".title_day").children(".avg_kkal").text()) - Number(k);
-	var sp_prot = Number($(t).parent().parent().parent().children(".title_day").children(".avg_prot").text()) - Number(p);
-	var sp_fats = Number($(t).parent().parent().parent().children(".title_day").children(".avg_fats").text()) - Number(f);
-	var sp_carb = Number($(t).parent().parent().parent().children(".title_day").children(".avg_carboh").text()) - Number(c);
+	var sp_kkal = Number($(t).parent().parent().parent().parent().parent().children(".info_zone").children(".avg_kkal").text()) - Number(k);
+	var sp_prot = Number($(t).parent().parent().parent().parent().parent().children(".info_zone").children(".avg_prot").text()) - Number(p);
+	var sp_fats = Number($(t).parent().parent().parent().parent().parent().children(".info_zone").children(".avg_fats").text()) - Number(f);
+	var sp_carb = Number($(t).parent().parent().parent().parent().parent().children(".info_zone").children(".avg_carboh").text()) - Number(c);
 
-	$one_g = $(t).parent().parent().find(".total_kkal_to_eat").find(".one_portion").text();
-	$one_g_prot = $(t).parent().parent().find(".total_kkal_to_eat").find(".one_portion_proteins").text();
-	$one_g_fats = $(t).parent().parent().find(".total_kkal_to_eat").find(".one_portion_fats").text();
-	$one_g_carb = $(t).parent().parent().find(".total_kkal_to_eat").find(".one_portion_carboh").text();
+	$one_g = $(t).parent().parent().parent().find(".total_kkal_to_eat").find(".hun_kkal").text();
+	$one_g_prot = $(t).parent().parent().parent().find(".total_kkal_to_eat").find(".hun_proteins").text();
+	$one_g_fats = $(t).parent().parent().parent().find(".total_kkal_to_eat").find(".hun_fats").text();
+	$one_g_carb = $(t).parent().parent().parent().find(".total_kkal_to_eat").find(".hun_carboh").text();
 
-	$mass_p = $(t).parent().find("input").val();
+	$mass_p = $(t).val();
 
 	$total_mass = Math.round($one_g * $mass_p);
 	$total_prop = Math.round($one_g_prot * $mass_p);
 	$total_fats = Math.round($one_g_fats * $mass_p);
 	$total_carb = Math.round($one_g_carb * $mass_p);
 
-	$(t).parent().parent().find(".total_kkal_to_eat").find(".wrap_kkal_to_eat").html("<span>" + $total_mass + "</span> Ккал");
+	$(t).parent().parent().parent().children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text($total_mass);
 	sp_kkal += Number($total_mass);
-	$(t).parent().parent().parent().children(".title_day").children(".avg_kkal").text(sp_kkal);
+	$(".info_zone").children(".avg_kkal").text(sp_kkal);
 
-	$(t).parent().parent().children(".total_kkal_to_eat").children(".tot_prot").text($total_prop);
+	$(t).parent().parent().parent().children(".total_kkal_to_eat").children(".wrap_proteins_to_eat").children("span").text($total_prop);
 	sp_prot += Number($total_prop);
-	$(t).parent().parent().parent().children(".title_day").children(".avg_prot").text(sp_prot);
+	$(".info_zone").children(".avg_prot").text(sp_prot);
 
-	$(t).parent().parent().children(".total_kkal_to_eat").children(".tot_fats").text($total_fats);
+	$(t).parent().parent().parent().children(".total_kkal_to_eat").children(".wrap_fats_to_eat").children("span").text($total_fats);
 	sp_fats += Number($total_fats);
-	$(t).parent().parent().parent().children(".title_day").children(".avg_fats").text(sp_fats);
+	$(".info_zone").children(".avg_fats").text(sp_fats);
 
-	$(t).parent().parent().children(".total_kkal_to_eat").children(".tot_carb").text($total_carb);
+	$(t).parent().parent().parent().children(".total_kkal_to_eat").children(".wrap_carboh_to_eat").children("span").text($total_carb);
 	sp_carb += Number($total_carb);
-	$(t).parent().parent().parent().children(".title_day").children(".avg_carboh").text(sp_carb);
+	$(".info_zone").children(".avg_carboh").text(sp_carb);
+}
+function clickAddRecipe(t){
+	var img_src = $(t).parent().parent().parent().find(".small_img").find("img").attr("src");
+	var rec_id = $(t).parent().parent().parent().find(".rec_id").text();
+	var rec_name = $(t).parent().parent().find(".title_rec_name").text();
+	var rec_prot = $(t).parent().parent().find(".rec_prot").text().slice(0, -1);
+	var rec_fats = $(t).parent().parent().find(".rec_fats").text().slice(0, -1);
+	var rec_car = $(t).parent().parent().find(".rec_car").text().slice(0, -1);
+	var rec_kkal = $(t).parent().parent().find(".rec_kkal").text();
+	var portion_mass = $(t).parent().parent().find(".rec_portion_mass").text();
+
+	var k = Number($(".info_zone").children(".avg_kkal").text()) + Number(rec_kkal);
+	var p = Number($(".info_zone").children(".avg_prot").text()) + Number(rec_prot);
+	var f = Number($(".info_zone").children(".avg_fats").text()) + Number(rec_fats);
+	var c = Number($(".info_zone").children(".avg_carboh").text()) + Number(rec_car);
+
+	$(".info_zone").children(".avg_kkal").text(k);
+	$(".info_zone").children(".avg_prot").text(p);
+	$(".info_zone").children(".avg_fats").text(f);
+	$(".info_zone").children(".avg_carboh").text(c);
+
+	var ings_n = $(t).parent().parent().parent().children('.ingredients').children('.n').text();
+	var ings_m = $(t).parent().parent().parent().children('.ingredients').children('.m').text();
+	var ing_n = ings_n.split("|");
+	var ing_m = ings_m.split("|");
+	var buf_name = "<div class='rec'><div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeRecipe(this)' /></div><div class='rec_id' style='display:none;'>" + rec_id + "</div><div class='rec_name'>" + rec_name + "</div><div class='left_column'><div class='rec_foto'><a href='recipe.php?r=" + rec_id + "' target='_blank'><img src='" + img_src + "' /></a></div><div class='count_time'><div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='09:00' /></div><div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' value='100' onChange='changeKkal(this)'/></div></div><div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'>ККал<br/><span>" + rec_kkal + "</span><div class='hun_kkal' style='display: none;'>" + rec_kkal/100 + "</div>";
+	buf_name += "</div><div class='wrap_proteins_to_eat'>Б<br/><span>" + rec_prot + "</span><div class='hun_proteins' style='display: none;'>" + rec_prot/100 + "</div></div><div class='wrap_fats_to_eat'>Ж<br/><span>" + rec_fats + "</span><div class='hun_fats' style='display: none;'>" + rec_fats/100 + "</div></div><div class='wrap_carboh_to_eat'>У<br/><span>" + rec_car + "</span><div class='hun_carboh' style='display: none;'>" + rec_car/100 + "</div></div></div></div>";
+	buf_name += "<div class='right_column'><div class='rec_ingred'><table><tr><td class='tab_name' colspan='2'>Основные ингредиенты</td></tr>";
+	for(i = 0; i < ing_n.length - 1; i++){
+		buf_name += "<tr><td><li>" + ing_n[i] + "</li></td><td class='mass_ing'>" + ing_m[i] + "</td></tr>";
+	}
+	buf_name += "</table></div><div class='rec_but_about'><a href='recipe.php?r=" + rec_id + "'><div class='rec_about'>Подробнее-></div></a></div></div></div>";
+	$('.day_block').append(buf_name);
+	closeRecipeDialog();
+	if($('.no_rec').length == 1){$('.no_rec').remove();}
+	resize_calculation();
+}
+function removeRecipe(t){
+	var r = $(t).parent().parent().children(".left_column").children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text();
+	var sp_kkal = Number($(t).parent().parent().parent().children(".info_zone").children(".avg_kkal").text()) - Number(r);
+	$(t).parent().parent().parent().children(".info_zone").children(".avg_kkal").text(sp_kkal);
+
+	r = $(t).parent().parent().children(".left_column").children(".total_kkal_to_eat").children(".wrap_proteins_to_eat").children("span").text();
+	var sp_prot = Number($(t).parent().parent().parent().children(".info_zone").children(".avg_prot").text()) - Number(r);
+	$(t).parent().parent().parent().children(".info_zone").children(".avg_prot").text(sp_prot);
+
+	r = $(t).parent().parent().children(".left_column").children(".total_kkal_to_eat").children(".wrap_fats_to_eat").children("span").text();
+	var sp_fats = Number($(t).parent().parent().parent().children(".info_zone").children(".avg_fats").text()) - Number(r);
+	$(t).parent().parent().parent().children(".info_zone").children(".avg_fats").text(sp_fats);
+
+	r = $(t).parent().parent().children(".left_column").children(".total_kkal_to_eat").children(".wrap_carboh_to_eat").children("span").text();
+	var sp_carb = Number($(t).parent().parent().parent().children(".info_zone").children(".avg_carboh").text()) - Number(r);
+	$(t).parent().parent().parent().children(".info_zone").children(".avg_carboh").text(sp_carb);
+
+	$(t).parent().parent().remove();
 }
 function send_request_diary_recipes(str)
 {
@@ -178,118 +174,64 @@ function send_request_diary_recipes(str)
 	};
 	r.send(vars);
 }
-function clickAddRecipe(t){
-	var img_src = $(t).parent().parent().parent().find(".small_img").find("img").attr("src");
-	var rec_id = $(t).parent().parent().parent().find(".rec_id").text();
-	var rec_name = $(t).parent().parent().find(".title_rec_name").text();
-	var rec_prot = $(t).parent().parent().find(".rec_prot").text().slice(0, -1);
-	var rec_fats = $(t).parent().parent().find(".rec_fats").text().slice(0, -1);
-	var rec_car = $(t).parent().parent().find(".rec_car").text().slice(0, -1);
-	var rec_kkal = $(t).parent().parent().find(".rec_kkal").text();
-	var portion_mass = $(t).parent().parent().find(".rec_portion_mass").text();
-	var buf_name = "<div class='added_recipe'>";
-		buf_name +=		"<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeRecipe(this)' /></div>";
-		buf_name +=		"<div class='rec_id' style='display: none;'>" + rec_id + "</div>";
-		buf_name +=		"<div class='recipe_foto'><img src='" + img_src + "' /></div>";
-		buf_name +=		"<div class='recipe_name'>" + rec_name + "</div>";
-		buf_name +=		"<div class='time_to_eat'><img src='../img/eat.png' /> <input type='text' value='09:00' /></div>";
-		buf_name +=		"<div class='count_to_eat'><img src='../img/mass.png' /> <input class='inp_text' type='text' onchange='changeKkal(this)' value='" + portion_mass + "' /></div>";
-		buf_name +=		"<div class='total_kkal_to_eat'><div class='wrap_kkal_to_eat'><span>" + rec_kkal + "</span><br/>ККал</div><div class='one_portion' style='display: none;'>" + rec_kkal/portion_mass+ "</div><div class='one_portion_proteins' style='display: none;'>" + rec_prot/portion_mass + "</div><div class='tot_prot' style='display: none;'>" + rec_prot + "</div><div class='one_portion_fats' style='display: none;'>" + rec_fats/portion_mass + "</div><div class='tot_fats' style='display: none;'>" + rec_fats + "</div><div class='one_portion_carboh' style='display: none;'>" + rec_car/portion_mass + "</div><div class='tot_carb' style='display: none;'>" + rec_car + "</div></div>";
-		buf_name +=	"</div>";
-	if(flag_block == 1)
-	{
-		$(".week_day_block.monday .add_recipe").remove();
-		$(".week_day_block.monday").append(buf_name);
-		buf_name = "<div class='add_recipe' onclick='openRecipeDialog(1)'><img src='../img/plus.png' /><br/><div class='add_text'>Добавить<br/>рецепт</div></div>";
-		$(".week_day_block.monday").append(buf_name);
-		var sp_kkal = Number($(".week_day_block.monday .title_day .avg_kkal").text());
-		sp_kkal += Number(rec_kkal);
-		$(".week_day_block.monday .title_day .avg_kkal").text(sp_kkal);
-		var sp_proteins = Number($(".week_day_block.monday .title_day .avg_prot").text());
-		sp_proteins += Math.round(rec_prot);
-		$(".week_day_block.monday .title_day .avg_prot").text(sp_proteins);
-		var sp_fats = Number($(".week_day_block.monday .title_day .avg_fats").text());
-		sp_fats += Math.round(rec_fats);
-		$(".week_day_block.monday .title_day .avg_fats").text(sp_fats);
-		var sp_carb = Number($(".week_day_block.monday .title_day .avg_carboh").text());
-		sp_carb += Math.round(rec_car);
-		$(".week_day_block.monday .title_day .avg_carboh").text(sp_carb);
-	} 
-	else if(flag_block == 2){
-		$(".week_day_block.tuesday .add_recipe").remove();
-		$(".week_day_block.tuesday").append(buf_name);
-		buf_name = "<div class='add_recipe' onclick='openRecipeDialog(2)'><img src='../img/plus.png' /><br/><div class='add_text'>Добавить<br/>рецепт</div></div>";
-		$(".week_day_block.tuesday").append(buf_name);
-		var sp_kkal = Number($(".week_day_block.tuesday .title_day .avg_kkal").text());
-		sp_kkal += Number(rec_kkal);
-		$(".week_day_block.tuesday .title_day .avg_kkal").text(sp_kkal);
-		var sp_proteins = Number($(".week_day_block.monday .title_day .avg_prot").text());
-		sp_proteins += Math.round(rec_prot);
-		$(".week_day_block.monday .title_day .avg_prot").text(sp_proteins);
-	}
-	else if(flag_block == 3){
-		$(".week_day_block.wednesday .add_recipe").remove();
-		$(".week_day_block.wednesday").append(buf_name);
-		buf_name = "<div class='add_recipe' onclick='openRecipeDialog(3)'><img src='../img/plus.png' /><br/><div class='add_text'>Добавить<br/>рецепт</div></div>";
-		$(".week_day_block.wednesday").append(buf_name);
-		var sp_kkal = Number($(".week_day_block.wednesday .title_day .avg_kkal").text());
-		sp_kkal += Number(rec_kkal);
-		$(".week_day_block.wednesday .title_day .avg_kkal").text(sp_kkal);
-		var sp_proteins = Number($(".week_day_block.monday .title_day .avg_prot").text());
-		sp_proteins += Math.round(rec_prot);
-		$(".week_day_block.monday .title_day .avg_prot").text(sp_proteins);
-	}
-	else if(flag_block == 4){
-		$(".week_day_block.thursday .add_recipe").remove();
-		$(".week_day_block.thursday").append(buf_name);
-		buf_name = "<div class='add_recipe' onclick='openRecipeDialog(4)'><img src='../img/plus.png' /><br/><div class='add_text'>Добавить<br/>рецепт</div></div>";
-		$(".week_day_block.thursday").append(buf_name);
-		var sp_kkal = Number($(".week_day_block.thursday .title_day .avg_kkal").text());
-		sp_kkal += Number(rec_kkal);
-		$(".week_day_block.thursday .title_day .avg_kkal").text(sp_kkal);
-		var sp_proteins = Number($(".week_day_block.monday .title_day .avg_prot").text());
-		sp_proteins += Math.round(rec_prot);
-		$(".week_day_block.monday .title_day .avg_prot").text(sp_proteins);
-	}
-	else if(flag_block == 5){
-		$(".week_day_block.friday .add_recipe").remove();
-		$(".week_day_block.friday").append(buf_name);
-		buf_name = "<div class='add_recipe' onclick='openRecipeDialog(5)'><img src='../img/plus.png' /><br/><div class='add_text'>Добавить<br/>рецепт</div></div>";
-		$(".week_day_block.friday").append(buf_name);
-		var sp_kkal = Number($(".week_day_block.friday .title_day .avg_kkal").text());
-		sp_kkal += Number(rec_kkal);
-		$(".week_day_block.friday .title_day .avg_kkal").text(sp_kkal);
-		var sp_proteins = Number($(".week_day_block.monday .title_day .avg_prot").text());
-		sp_proteins += Math.round(rec_prot);
-		$(".week_day_block.monday .title_day .avg_prot").text(sp_proteins);
-	}
-	else if(flag_block == 6){
-		$(".week_day_block.saturday .add_recipe").remove();
-		$(".week_day_block.saturday").append(buf_name);
-		buf_name = "<div class='add_recipe' onclick='openRecipeDialog(6)'><img src='../img/plus.png' /><br/><div class='add_text'>Добавить<br/>рецепт</div></div>";
-		$(".week_day_block.saturday").append(buf_name);
-		var sp_kkal = Number($(".week_day_block.saturday .title_day .avg_kkal").text());
-		sp_kkal += Number(rec_kkal);
-		$(".week_day_block.saturday .title_day .avg_kkal").text(sp_kkal);
-		var sp_proteins = Number($(".week_day_block.monday .title_day .avg_prot").text());
-		sp_proteins += Math.round(rec_prot);
-		$(".week_day_block.monday .title_day .avg_prot").text(sp_proteins);
-	}
-	else if(flag_block == 7){
-		$(".week_day_block.sunday .add_recipe").remove();
-		$(".week_day_block.sunday").append(buf_name);
-		buf_name = "<div class='add_recipe' onclick='openRecipeDialog(7)'><img src='../img/plus.png' /><br/><div class='add_text'>Добавить<br/>рецепт</div></div>";
-		$(".week_day_block.sunday").append(buf_name);
-		var sp_kkal = Number($(".week_day_block.sunday .title_day .avg_kkal").text());
-		sp_kkal += Number(rec_kkal);
-		$(".week_day_block.sunday .title_day .avg_kkal").text(sp_kkal);
-		var sp_proteins = Number($(".week_day_block.monday .title_day .avg_prot").text());
-		sp_proteins += Math.round(rec_prot);
-		$(".week_day_block.monday .title_day .avg_prot").text(sp_proteins);
-	}
-	closeRecipeDialog();
-	$('.added_recipe').css({"width": $(".week_day_block").width() / 3 + "px"});
-	$('.add_recipe').css({"width": $(".week_day_block").width() / 3 + "px"});
+
+
+
+
+
+
+
+
+
+
+
+function count_info_rec(){
+	avg_kkal = 0;
+	avg_prot = 0;
+	avg_fats = 0;
+	avg_carb = 0;
+	$(".rec").each(function(){
+		avg_kkal += Number($(this).children(".left_column").children(".total_kkal_to_eat").children(".wrap_kkal_to_eat").children("span").text());
+		avg_prot += Number($(this).children(".left_column").children(".total_kkal_to_eat").children(".wrap_proteins_to_eat").children("span").text());
+		avg_fats += Number($(this).children(".left_column").children(".total_kkal_to_eat").children(".wrap_fats_to_eat").children("span").text());
+		avg_carb += Number($(this).children(".left_column").children(".total_kkal_to_eat").children(".wrap_carboh_to_eat").children("span").text());	
+	});
+	$(".info_zone").children(".avg_kkal").text(avg_kkal);
+	$(".info_zone").children(".avg_prot").text(avg_prot);
+	$(".info_zone").children(".avg_fats").text(avg_fats);
+	$(".info_zone").children(".avg_carboh").text(avg_carb);	
 }
+function show_diary(day, t)  
+{  
+	$('.rec').remove();
+	$('.day_line_active').removeClass("day_line_active").addClass("day_line");
+	$(t).addClass("day_line_active");
+	$.ajax({
+		url: "list_diary_edit_rec.php",  
+		cache: false,  
+		data: { day: day, did: did},
+		success: function(html){  
+			$(".day_block").html(html);  
+			$(document).ready(function(){
+				count_info_rec();
+				if($('.rec').length == 0){
+					$('.day_block').append("<div class='no_rec'>No recipes!</div>");
+				}
+				 resize_calculation();
+			});
+		}  
+	});  
+}  
 
-
+function resize_calculation(){
+	$(".rec_foto").css({"height": $(".rec_foto").width() + "px"});
+	$(".rec").css({"height": $(".rec_foto").width() + 60 + "px"});
+	$(".left_column").css({"height": $(".rec").height() - $(".rec_name").height() + "px"});
+	$(".right_column").css({"height": $(".rec").height() - $(".rec_name").height() + "px"});
+	$(".rec_foto img").css({"height": $(".rec_foto").width() + "px"});
+	$(".wrap_kkal_to_eat").css({"height": $(".wrap_kkal_to_eat").width() + "px", "padding-top": $(".wrap_kkal_to_eat").width() / 2 - $(".wrap_kkal_to_eat span").height() + "px"});
+	$(".wrap_proteins_to_eat").css({"height": $(".wrap_proteins_to_eat").width() + "px", "padding-top": $(".wrap_proteins_to_eat").width() / 2 - $(".wrap_kkal_to_eat span").height() + "px"});
+	$(".wrap_fats_to_eat").css({"height": $(".wrap_fats_to_eat").width() + "px", "padding-top": $(".wrap_fats_to_eat").width() / 2 - $(".wrap_kkal_to_eat span").height() + "px"});
+	$(".wrap_carboh_to_eat").css({"height": $(".wrap_carboh_to_eat").width() + "px", "padding-top": $(".wrap_carboh_to_eat").width() / 2 - $(".wrap_kkal_to_eat span").height() + "px"});
+	$(".total_kkal_to_eat").css({"margin-top": ($(".rec").height() - $(".rec_name").height()) / 2 - $(".total_kkal_to_eat").height() / 2 + "px"});
+}

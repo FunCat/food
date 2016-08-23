@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="../css/jquery-ui.min.css" />
 	<link rel="stylesheet" href="../css/cropping.css" />
 	<link rel="stylesheet" href="../css/log_dialog.css" />
+	<link rel="stylesheet" href="../css/add_recipe.css" />
 	<link rel="stylesheet" href="../fonts/font.css" />
 	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<link rel="stylesheet" href="../css/jquery.Jcrop.css" type="text/css" />
@@ -24,6 +25,7 @@
 	<script src="../js/reg_valid.js" type="text/javascript"></script>
 	<script src="../js/log_valid.js" type="text/javascript"></script>
 	<script src="../js/log_dialog.js" type="text/javascript"></script>
+	<script src="../js/add_recipe.js" type="text/javascript"></script>
 	<script>
 	var availableTags = [];
 	var availableIds = [];
@@ -261,7 +263,14 @@
 						Кол-во порций: <input class="val_portion" type="text" value="1"/>
 					</div>
 					<div class="title_prepo">
-						Способ приготовления:<textarea class="val_prepo" placeholder="Способ приготовления..."></textarea>
+						<div class="title_steps_cooking">Способ приготовления:</div>
+						<div class="add_step">+</div><br />
+						<div class="steps">
+							<div class="box">
+								<textarea class="step" placeholder="Шаг 1"></textarea><div class="del_step" onclick="rem_step(this)">x</div>
+							</div>
+						</div>
+						<!--<textarea class="val_prepo" placeholder="Способ приготовления..."></textarea>-->
 					</div>
 				</div>				
 				<div class="wrap_but_rec">
@@ -284,7 +293,13 @@
 			var cat = $(".cat_rec").val();
 			var time_prep = $(".val_time").val();
 			var count_port = $(".val_portion").val();
-			var prepo = $(".val_prepo").val();
+			//var prepo = $(".val_prepo").val();
+			var prepo = "";
+			var count = 1;
+			$(".step").each(function(){
+				prepo += count + ". " + $(this).val() + "<br />";
+				count++;
+			});
 			var n = []; // название ингредиента
 			var m = []; // масса в гр
 			var count = []; // количество
@@ -323,10 +338,15 @@
 				avgkkal += parseFloat(k[a]);
 				avgmass += parseFloat(m[a]);
 			}
-			avgprot /= p.length;
+			avgprot =  avgprot / avgmass * 100;
+			avgfat = avgfat / avgmass * 100;
+			avgcarb = avgcarb / avgmass * 100;
+			avgkkal = avgkkal / avgmass * 100;
+
+			/*avgprot /= p.length;
 			avgfat /= p.length;
 			avgcarb /= p.length;
-			avgkkal /= p.length;
+			avgkkal /= p.length;*/
 			avgmass /= count_port;
 
 			var str = "name_rec=" + encodeURIComponent(name_rec) + "&cat=" + cat + "&time=" + time_prep + "&count=" + count_port + "&prepo=" + prepo + "&n=" + encodeURIComponent(n) + "&count_mass=" + count + "&u=" + u + "&am=" + avgmass.toFixed(2) + "&p=" + avgprot.toFixed(2) + "&f=" + avgfat.toFixed(2) + "&c=" + avgcarb.toFixed(2) + "&k=" + avgkkal.toFixed(2) + "&i=" + i + "&crop_img=" + crop_img;

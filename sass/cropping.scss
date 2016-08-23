@@ -47,7 +47,7 @@
 }
 .wrap_list_ingred{
 	width: 50%;
-	height: 436px;
+	min-height: 436px;
 	float: left;
 	text-align: center;
 	.title_add_ing{
@@ -201,7 +201,6 @@
 		margin: 15px 15%;
 		color: #7ed42f;
 		textarea{
-			width: 100%;
 			font-size: 20px;
 			margin: 10px 0px;
 			padding: 10px;

@@ -1,0 +1,597 @@
+/* line 1, ../sass/diary_edit.scss */
+.add_new_rec {
+  background-color: #7ed42f;
+  width: 220px;
+  height: 50px;
+  font-size: 20px;
+  color: white;
+  margin: 10px auto 0px auto;
+}
+/* line 8, ../sass/diary_edit.scss */
+.add_new_rec .plus_image {
+  height: 40px;
+  margin: 5px;
+  vertical-align: middle;
+}
+
+/* line 14, ../sass/diary_edit.scss */
+.add_new_rec:hover {
+  cursor: pointer;
+}
+
+/* line 17, ../sass/diary_edit.scss */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* line 21, ../sass/diary_edit.scss */
+.wrap_diary_block {
+  overflow: hidden;
+}
+
+/* line 24, ../sass/diary_edit.scss */
+.wrap_diary_name {
+  text-align: center;
+  /* Firefox 19+ */
+  /* Firefox 18- */
+  /* Firefox 19+ */
+  /* Firefox 18- */
+}
+/* line 26, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_name {
+  font-size: 24px;
+  width: 500px;
+  border: 1px solid #7ed42f;
+  margin: 15px 0px;
+  padding: 5px;
+}
+/* line 33, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_name:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+/* line 36, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_name:focus::-moz-placeholder {
+  color: transparent;
+}
+/* line 39, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_name:focus:-moz-placeholder {
+  color: transparent;
+}
+/* line 42, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_name:focus:-ms-input-placeholder {
+  color: transparent;
+}
+/* line 45, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_name::-webkit-input-placeholder {
+  color: #4D9808;
+}
+/* line 48, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_name::-moz-placeholder {
+  color: #4D9808;
+}
+/* line 51, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_name:-moz-placeholder {
+  color: #4D9808;
+}
+/* line 54, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_name:-ms-input-placeholder {
+  color: #4D9808;
+}
+/* line 57, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_count_portion {
+  text-align: center;
+  font-size: 24px;
+  width: 320px;
+  border: 1px solid #7ed42f;
+  margin: 15px 0px;
+  padding: 5px;
+}
+/* line 65, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_count_portion:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+/* line 68, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_count_portion:focus::-moz-placeholder {
+  color: transparent;
+}
+/* line 71, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_count_portion:focus:-moz-placeholder {
+  color: transparent;
+}
+/* line 74, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_count_portion:focus:-ms-input-placeholder {
+  color: transparent;
+}
+/* line 77, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_count_portion::-webkit-input-placeholder {
+  color: #4D9808;
+}
+/* line 80, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_count_portion::-moz-placeholder {
+  color: #4D9808;
+}
+/* line 83, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_count_portion:-moz-placeholder {
+  color: #4D9808;
+}
+/* line 86, ../sass/diary_edit.scss */
+.wrap_diary_name .diary_count_portion:-ms-input-placeholder {
+  color: #4D9808;
+}
+
+/* line 91, ../sass/diary_edit.scss */
+.menu_day_line {
+  width: 100%;
+  height: 30px;
+  color: white;
+  background-color: #7ED42F;
+}
+/* line 96, ../sass/diary_edit.scss */
+.menu_day_line .day_line {
+  float: left;
+  width: 14.28%;
+  height: 27px;
+  background-color: white;
+  color: #7ED42F;
+  text-align: center;
+  padding-top: 5px;
+  border: 1px solid #7ED42F;
+}
+/* line 106, ../sass/diary_edit.scss */
+.menu_day_line .day_line:hover {
+  background-color: #7ED42F;
+  color: white;
+  cursor: pointer;
+}
+/* line 111, ../sass/diary_edit.scss */
+.menu_day_line .day_line_active {
+  float: left;
+  width: 14.28%;
+  height: 27px;
+  background-color: #7ED42F;
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+}
+
+/* line 122, ../sass/diary_edit.scss */
+.day_block .no_rec {
+  width: 100%;
+  height: 100px;
+  background-color: #7ed42f;
+  text-align: center;
+  color: white;
+  padding-top: 25px;
+  font-size: 30px;
+}
+/* line 131, ../sass/diary_edit.scss */
+.day_block .info_zone {
+  background-color: #7ED42F;
+  font-size: 20px;
+  color: white;
+  padding-left: 20px;
+}
+/* line 137, ../sass/diary_edit.scss */
+.day_block .rec {
+  overflow: hidden;
+  border: 3px solid white;
+  background-color: #7ed42f;
+}
+/* line 141, ../sass/diary_edit.scss */
+.day_block .rec .close_img {
+  position: relative;
+}
+/* line 143, ../sass/diary_edit.scss */
+.day_block .rec .close_img .cl_img {
+  width: 15px;
+  float: right;
+  margin: 5px;
+  position: absolute;
+  right: 0;
+}
+/* line 150, ../sass/diary_edit.scss */
+.day_block .rec .close_img .cl_img:hover {
+  cursor: pointer;
+}
+/* line 154, ../sass/diary_edit.scss */
+.day_block .rec .rec_name {
+  height: 30px;
+  text-align: left;
+  padding: 2px 10px;
+  font-size: 20px;
+  color: white;
+  border-bottom: 1px solid white;
+}
+/* line 162, ../sass/diary_edit.scss */
+.day_block .rec .left_column {
+  float: left;
+  width: 60%;
+}
+/* line 165, ../sass/diary_edit.scss */
+.day_block .rec .left_column .rec_foto {
+  margin: 2%;
+  width: 16%;
+  border-radius: 50%;
+  border: 2px solid white;
+  overflow: hidden;
+  float: left;
+}
+/* line 172, ../sass/diary_edit.scss */
+.day_block .rec .left_column .rec_foto img {
+  position: relative;
+  left: -40px;
+}
+/* line 177, ../sass/diary_edit.scss */
+.day_block .rec .left_column .count_time {
+  width: 20%;
+  margin: 2% 0px;
+  /*height: 120px;
+  padding: 10px 0px;*/
+  float: left;
+}
+/* line 183, ../sass/diary_edit.scss */
+.day_block .rec .left_column .count_time .time_to_eat, .day_block .rec .left_column .count_time .count_to_eat {
+  color: white;
+  padding: 5px;
+  text-align: center;
+  margin: auto;
+}
+/* line 188, ../sass/diary_edit.scss */
+.day_block .rec .left_column .count_time .time_to_eat input[type="text"], .day_block .rec .left_column .count_time .count_to_eat input[type="text"] {
+  width: 50%;
+  color: white;
+  border: 1px solid white;
+  background-color: #7ed42f;
+  text-align: center;
+}
+/* line 195, ../sass/diary_edit.scss */
+.day_block .rec .left_column .count_time .time_to_eat img, .day_block .rec .left_column .count_time .count_to_eat img {
+  width: 30%;
+  vertical-align: middle;
+}
+/* line 201, ../sass/diary_edit.scss */
+.day_block .rec .left_column .total_kkal_to_eat {
+  width: 60%;
+  text-align: center;
+  color: white;
+  float: left;
+}
+/* line 207, ../sass/diary_edit.scss */
+.day_block .rec .left_column .total_kkal_to_eat .wrap_kkal_to_eat, .day_block .rec .left_column .total_kkal_to_eat .wrap_proteins_to_eat, .day_block .rec .left_column .total_kkal_to_eat .wrap_fats_to_eat, .day_block .rec .left_column .total_kkal_to_eat .wrap_carboh_to_eat {
+  float: left;
+  width: 21%;
+  margin: 2%;
+  /*width: 70px;
+  height: 70px;*/
+  background-color: #7ED42F;
+  color: white;
+  border-radius: 100px;
+  text-align: center;
+  border: 2px solid white;
+}
+/* line 221, ../sass/diary_edit.scss */
+.day_block .rec .left_column .total_kkal_to_eat img {
+  height: 40px;
+  vertical-align: middle;
+}
+/* line 227, ../sass/diary_edit.scss */
+.day_block .rec .right_column {
+  float: left;
+  width: 40%;
+}
+/* line 230, ../sass/diary_edit.scss */
+.day_block .rec .right_column .rec_ingred {
+  width: 70%;
+  height: 98%;
+  float: left;
+}
+/* line 234, ../sass/diary_edit.scss */
+.day_block .rec .right_column .rec_ingred table {
+  color: white;
+  width: 100%;
+  height: 100%;
+  padding: 0px 3% 0px 3%;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+/* line 241, ../sass/diary_edit.scss */
+.day_block .rec .right_column .rec_ingred table .tab_name {
+  color: white;
+}
+/* line 244, ../sass/diary_edit.scss */
+.day_block .rec .right_column .rec_ingred table .mass_ing {
+  text-align: center;
+}
+/* line 249, ../sass/diary_edit.scss */
+.day_block .rec .right_column .rec_but_about {
+  width: 30%;
+  float: left;
+}
+/* line 252, ../sass/diary_edit.scss */
+.day_block .rec .right_column .rec_but_about .rec_about {
+  padding-top: 4px;
+  width: 80%;
+  text-align: center;
+  margin: 45px auto 0px auto;
+  background-color: #7ED42F;
+  border: 2px solid white;
+  color: white;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 264, ../sass/diary_edit.scss */
+.day_block .rec .right_column .rec_but_about .rec_about:hover {
+  cursor: pointer;
+  color: #7ED42F;
+  background-color: white;
+}
+
+@media screen and (min-width: 1367px) {
+  /* line 274, ../sass/diary_edit.scss */
+  .rec_about {
+    height: 30px;
+  }
+
+  /* line 275, ../sass/diary_edit.scss */
+  .wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1366px) {
+  /* line 278, ../sass/diary_edit.scss */
+  .rec_about {
+    height: 30px;
+  }
+
+  /* line 279, ../sass/diary_edit.scss */
+  .wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat {
+    font-size: 19px;
+  }
+}
+@media screen and (max-width: 1150px) {
+  /* line 282, ../sass/diary_edit.scss */
+  .rec_about {
+    font-size: 14px;
+    height: 30px;
+  }
+
+  /* line 283, ../sass/diary_edit.scss */
+  .wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  /* line 286, ../sass/diary_edit.scss */
+  .info_zone {
+    font-size: 18px !important;
+  }
+
+  /* line 287, ../sass/diary_edit.scss */
+  .rec_about {
+    height: 30px;
+  }
+
+  /* line 288, ../sass/diary_edit.scss */
+  .rec_ingred table {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 980px) {
+  /* line 291, ../sass/diary_edit.scss */
+  .info_zone {
+    font-size: 17px !important;
+  }
+
+  /* line 292, ../sass/diary_edit.scss */
+  .rec_about {
+    font-size: 12px;
+    height: 25px;
+  }
+}
+@media screen and (max-width: 900px) {
+  /* line 298, ../sass/diary_edit.scss */
+  .day_line {
+    font-size: 14px;
+  }
+
+  /* line 299, ../sass/diary_edit.scss */
+  .info_zone {
+    font-size: 16px !important;
+  }
+
+  /* line 300, ../sass/diary_edit.scss */
+  .wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat {
+    font-size: 15px;
+  }
+
+  /* line 301, ../sass/diary_edit.scss */
+  .rec_ingred table {
+    font-size: 12px;
+  }
+  /* line 301, ../sass/diary_edit.scss */
+  .rec_ingred table tr {
+    height: 0px;
+  }
+
+  /* line 304, ../sass/diary_edit.scss */
+  .count_time .time_to_eat input[type="text"], .count_time .count_to_eat input[type="text"] {
+    font-size: 12px;
+  }
+
+  /* line 309, ../sass/diary_edit.scss */
+  .rec_name {
+    height: 25px !important;
+    font-size: 18px !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  /* line 312, ../sass/diary_edit.scss */
+  .info_zone {
+    font-size: 16px !important;
+  }
+
+  /* line 313, ../sass/diary_edit.scss */
+  .rec_about {
+    font-size: 10px;
+  }
+}
+/* line 316, ../sass/diary_edit.scss */
+.but_create_diaries {
+  text-align: center;
+}
+/* line 318, ../sass/diary_edit.scss */
+.but_create_diaries .create_diary, .but_create_diaries .save_diary {
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  color: white;
+  border: none;
+  background-color: #7ED42F;
+  margin-top: 20px;
+}
+/* line 327, ../sass/diary_edit.scss */
+.but_create_diaries .create_diary:hover, .but_create_diaries .save_diary:hover {
+  cursor: pointer;
+}
+
+/* line 331, ../sass/diary_edit.scss */
+.error_add_diary {
+  text-align: center;
+  margin: 10px 0px;
+  font-size: 20px;
+}
+
+/* line 337, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog {
+  width: 650px;
+  height: 500px;
+  background-color: #7ED42F;
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+  margin: 40px auto;
+}
+/* line 345, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .close_dialog {
+  position: absolute;
+  right: 5;
+  top: 5;
+  text-align: center;
+  color: white;
+  height: 30px;
+  width: 30px;
+  text-decoration: none;
+}
+/* line 355, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .close_dialog:before {
+  font-family: Arial;
+  content: "x";
+  font-size: 24px;
+  color: white;
+}
+/* line 361, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .title_rec_dialog {
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  margin: 10px 0px;
+}
+/* line 367, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_find {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+/* line 373, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_find input[type="text"] {
+  font-size: 16px;
+  border: 1px solid white;
+}
+/* line 377, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_find select {
+  font-size: 16px;
+  background-color: #7ed42f;
+  border: 1px solid white;
+  color: white;
+}
+/* line 383, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_find div {
+  margin: 15px;
+  float: left;
+}
+/* line 389, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_list .recip_var {
+  height: 120px;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  padding: 10px 0px;
+}
+/* line 394, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_list .recip_var .small_img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  border: 1px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 15px;
+}
+/* line 402, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_list .recip_var .small_img img {
+  height: 100%;
+  position: relative;
+  left: -30;
+}
+/* line 408, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_list .recip_var .rec_info {
+  float: left;
+  height: 100%;
+  width: 518px;
+  color: white;
+}
+/* line 413, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_list .recip_var .rec_info .title_rec_name {
+  text-align: center;
+  font-size: 20px;
+}
+/* line 417, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_list .recip_var .rec_info .rec_stat_block {
+  width: 100px;
+  height: 67px;
+  color: white;
+  padding-top: 20px;
+  font-size: 20px;
+  float: left;
+}
+/* line 424, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_list .recip_var .rec_info .rec_stat_block img {
+  height: 30px;
+  vertical-align: middle;
+}
+/* line 428, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_list .recip_var .rec_info .rec_stat_block .but_add {
+  width: 100px;
+  height: 30px;
+  border: 1px solid white;
+  background-color: #7ed42f;
+  color: white;
+  font-size: 16px;
+}
+/* line 436, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_list .recip_var .rec_info .rec_stat_block .but_add:hover {
+  color: #7ed42f;
+  background-color: white;
+  cursor: pointer;
+}
+/* line 442, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_list .recip_var .rec_info .rec_stat_unblock {
+  display: none;
+}
+/* line 445, ../sass/diary_edit.scss */
+#add_recipe_dialog .content_rec_dialog .rec_list .recip_var .rec_info .rec_left_block {
+  margin-left: 14px;
+}

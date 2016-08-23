@@ -64,7 +64,7 @@
 /* line 48, ../sass/cropping.scss */
 .wrap_list_ingred {
   width: 50%;
-  height: 436px;
+  min-height: 436px;
   float: left;
   text-align: center;
 }
@@ -248,37 +248,36 @@
 }
 /* line 203, ../sass/cropping.scss */
 .wrap_stat_rec .title_prepo textarea {
-  width: 100%;
   font-size: 20px;
   margin: 10px 0px;
   padding: 10px;
   color: #4D9808;
   border: 2px solid #7ed42f;
 }
-/* line 211, ../sass/cropping.scss */
+/* line 210, ../sass/cropping.scss */
 .wrap_stat_rec .title_prepo textarea::-webkit-input-placeholder {
   color: #4D9808;
 }
-/* line 212, ../sass/cropping.scss */
+/* line 211, ../sass/cropping.scss */
 .wrap_stat_rec .title_prepo textarea::-moz-placeholder {
   color: #4D9808;
 }
-/* line 213, ../sass/cropping.scss */
+/* line 212, ../sass/cropping.scss */
 .wrap_stat_rec .title_prepo textarea:-moz-placeholder {
   color: #4D9808;
 }
-/* line 214, ../sass/cropping.scss */
+/* line 213, ../sass/cropping.scss */
 .wrap_stat_rec .title_prepo textarea:-ms-input-placeholder {
   color: #4D9808;
 }
 
-/* line 218, ../sass/cropping.scss */
+/* line 217, ../sass/cropping.scss */
 .wrap_crop_pict {
   width: 50%;
   float: left;
   text-align: center;
 }
-/* line 222, ../sass/cropping.scss */
+/* line 221, ../sass/cropping.scss */
 .wrap_crop_pict .title_crop_pict {
   text-align: center;
   color: #7ed42f;
@@ -286,12 +285,12 @@
   margin-top: 10px;
   margin-bottom: 20px;
 }
-/* line 230, ../sass/cropping.scss */
+/* line 229, ../sass/cropping.scss */
 .wrap_crop_pict .crop_off #target {
   border: 3px solid #FFF;
   box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
 }
-/* line 235, ../sass/cropping.scss */
+/* line 234, ../sass/cropping.scss */
 .wrap_crop_pict .wrap_crop_off {
   width: 605px;
   height: 350px;
@@ -307,7 +306,7 @@
   background-position: center;
   box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
 }
-/* line 250, ../sass/cropping.scss */
+/* line 249, ../sass/cropping.scss */
 .wrap_crop_pict #release, .wrap_crop_pict #crop {
   width: 200px;
   height: 50px;
@@ -318,7 +317,7 @@
   border: 2px solid white;
   transition: all 0.3s;
 }
-/* line 260, ../sass/cropping.scss */
+/* line 259, ../sass/cropping.scss */
 .wrap_crop_pict #release:hover, .wrap_crop_pict #crop:hover {
   cursor: pointer;
   color: #7ed42f;
@@ -326,7 +325,7 @@
   background-color: white;
 }
 
-/* line 268, ../sass/cropping.scss */
+/* line 267, ../sass/cropping.scss */
 .file_upload {
   padding: 4px;
   position: relative;
@@ -338,11 +337,11 @@
   line-height: 2em;
   /* the same as height */
 }
-/* line 275, ../sass/cropping.scss */
+/* line 274, ../sass/cropping.scss */
 .file_upload .focus {
   box-shadow: 0 0 5px rgba(0, 30, 255, 0.4);
 }
-/* line 278, ../sass/cropping.scss */
+/* line 277, ../sass/cropping.scss */
 .file_upload button {
   font-size: 18px;
   width: 12em;
@@ -356,7 +355,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-/* line 290, ../sass/cropping.scss */
+/* line 289, ../sass/cropping.scss */
 .file_upload input[type=file] {
   position: absolute;
   left: 0;
@@ -372,14 +371,14 @@
   cursor: pointer;
 }
 
-/* line 303, ../sass/cropping.scss */
+/* line 302, ../sass/cropping.scss */
 .file_upload:hover button {
   background: #fff;
   color: #7ed42f;
   border: 1px solid #7ed42f;
 }
 
-/* line 309, ../sass/cropping.scss */
+/* line 308, ../sass/cropping.scss */
 .jcrop-tracker {
   border: 3px solid #FFF;
   box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);

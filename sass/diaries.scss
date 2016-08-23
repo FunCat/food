@@ -1,0 +1,138 @@
+.wrap_diary_block{
+	overflow: hidden;
+	.diary_name{
+		width: 46%;
+		background-color: #7ed42f;
+		padding: 10px 0px;
+		margin: 2%;
+		float: left;
+		.close_img{
+			position: relative;
+			.cl_img{
+				width: 20px;
+				float: right;
+				margin-right: 10px;
+				position: absolute;
+				right: 0;
+			}
+			.cl_img:hover{
+				cursor:pointer;
+			}
+		}
+		.dname{
+			width: 70%;
+			text-align: center;
+			color: white;
+			font-size: 28px;
+			margin: 10px 0px;
+			float: left;
+		}
+		.right_column{
+			float: left;
+			width: 30%;
+			.total_kkal{
+				font-size: 26px;
+				color: white;
+				float: left;
+				img{
+					vertical-align: middle;
+					margin: 0px 15px 0px 20px;
+				}
+			}
+			.diary_more{
+				width: 80%;
+				height: 30px;
+				color: white;
+				float: left;
+				text-align: center;
+				padding-top: 5px;
+				border: 2px solid white;
+				margin: 5px 3%;
+				transition: all 0.3s;
+			}
+			.diary_more:hover{
+				color: #7ed42f;
+				background-color: white;
+				cursor: pointer;
+			}
+		}
+	}
+	.diary_name_day{
+		width: 46%;
+		background-color: #4d9808;
+		padding: 10px 0px;
+		margin: 2%;
+		float: left;
+		.close_img{
+			position: relative;
+			.cl_img{
+				width: 20px;
+				float: right;
+				margin-right: 10px;
+				position: absolute;
+				right: 0;
+			}
+			.cl_img:hover{
+				cursor:pointer;
+			}
+		}
+		.dname{
+			width: 70%;
+			text-align: center;
+			color: white;
+			font-size: 28px;
+			margin: 10px 0px;
+			float: left;
+		}
+		.right_column{
+			float: left;
+			width: 30%;
+			.total_kkal{
+				font-size: 26px;
+				color: white;
+				float: left;
+				img{
+					vertical-align: middle;
+					margin: 0px 15px 0px 20px;
+				}
+			}
+			.diary_more{
+				width: 80%;
+				height: 30px;
+				color: white;
+				float: left;
+				text-align: center;
+				padding-top: 5px;
+				border: 2px solid white;
+				margin: 5px 3%;
+				transition: all 0.3s;
+			}
+			.diary_more:hover{
+				color: #4d9808;
+				background-color: white;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.but_create_diary{
+	background-color: #7ED42F;
+	width: 220px;
+	height: 50px;
+	font-size: 20px;
+	color: white;
+	margin: auto;
+	a{
+		text-decoration: none;
+		color: white;
+	}
+	.plus_image{
+		height: 40px;
+		margin: 5px;
+		vertical-align: middle;
+	}
+}
+.but_create_diary:hover{
+	cursor: pointer;
+}

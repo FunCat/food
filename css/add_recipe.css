@@ -1,0 +1,43 @@
+/* line 1, ../sass/add_recipe.scss */
+.title_steps_cooking {
+  float: left;
+}
+
+/* line 4, ../sass/add_recipe.scss */
+.step {
+  float: left;
+}
+
+/* line 7, ../sass/add_recipe.scss */
+.add_step {
+  height: 30px;
+  width: 30px;
+  float: left;
+  text-align: center;
+  background-color: #7ed42f;
+  color: white;
+  margin: 0px 15px;
+  border: 2px solid white;
+  transition: all 0.3s;
+}
+
+/* line 18, ../sass/add_recipe.scss */
+.add_step:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #7ed42f;
+  border: 2px solid #7ed42f;
+}
+
+/* line 24, ../sass/add_recipe.scss */
+.del_step {
+  float: left;
+  color: #7ed42f;
+  margin: 25px 0px 0px 15px;
+  transition: all 0.3s;
+}
+
+/* line 30, ../sass/add_recipe.scss */
+.del_step:hover {
+  cursor: pointer;
+}

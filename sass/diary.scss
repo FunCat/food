@@ -1,579 +1,185 @@
-.but_create_diary{
-	background-color: #7ED42F;
-	width: 220px;
-	height: 50px;
-	font-size: 20px;
-	color: white;
-	margin: auto;
-}
-.but_create_diary:hover{
-	cursor: pointer;
-}
-.but_create_diary_day{
-	background-color: #4d9808;
-	width: 270px;
-	height: 50px;
-	font-size: 20px;
-	color: white;
-	margin: 10px auto 0px auto;
-}
-.but_create_diary_day:hover{
-	cursor: pointer;
-}
 a{
 	text-decoration: none;
 	color: white;
 }
-.plus_image{
-	height: 40px;
-	margin: 5px;
-	vertical-align: middle;
-}
-
-.wrap_diary_block{
-	overflow: hidden;
-}
-.wrap_diary_name{
-	text-align: center;
-	.diary_name{
-		font-size: 24px;
-		width: 500px;
-		border: 1px solid #7ed42f;
-		margin: 15px 0px;
-		padding: 5px;
-	}
-	.diary_name:focus::-webkit-input-placeholder {
-		color: transparent
-	}
-	.diary_name:focus::-moz-placeholder{
-		color: transparent
-	}
-	.diary_name:focus:-moz-placeholder{
-		color: transparent
-	}
-	.diary_name:focus:-ms-input-placeholder{
-		color: transparent
-	}
-	.diary_name::-webkit-input-placeholder{
-		color: #4D9808;
-	}
-	.diary_name::-moz-placeholder{
-		color: #4D9808;
-	}/* Firefox 19+ */
-	.diary_name:-moz-placeholder{
-		color: #4D9808;
-	}/* Firefox 18- */
-	.diary_name:-ms-input-placeholder{
-		color: #4D9808;
-	}
-	.diary_count_portion{
+.menu_day_line{
+	width: 100%;
+	height: 30px;
+	color: white;
+	background-color: #7ED42F;
+	.day_line{
+		float: left;
+		width: 14.28%;
+		height: 27px;
+		background-color: white;
+		color: #7ED42F;
 		text-align: center;
-		font-size: 24px;
-		width: 320px;
-		border: 1px solid #7ed42f;
-		margin: 15px 0px;
-		padding: 5px;
+		padding-top: 5px;
+		border: 1px solid #7ED42F;
 	}
-	.diary_count_portion:focus::-webkit-input-placeholder {
-		color: transparent
-	}
-	.diary_count_portion:focus::-moz-placeholder{
-		color: transparent
-	}
-	.diary_count_portion:focus:-moz-placeholder{
-		color: transparent
-	}
-	.diary_count_portion:focus:-ms-input-placeholder{
-		color: transparent
-	}
-	.diary_count_portion::-webkit-input-placeholder{
-		color: #4D9808;
-	}
-	.diary_count_portion::-moz-placeholder{
-		color: #4D9808;
-	}/* Firefox 19+ */
-	.diary_count_portion:-moz-placeholder{
-		color: #4D9808;
-	}/* Firefox 18- */
-	.diary_count_portion:-ms-input-placeholder{
-		color: #4D9808;
-	}
-}
-
-
-
-.week_day_block{
-	float: left;
-	width: 50%;
-	border: 1px solid #7ED42F;
-	.title_day{
-		text-align: center;
-		background-color: #7ED42F;
+	.day_line:hover{
+		background-color:  #7ED42F;
 		color: white;
-		font-size: 22px;
-	}
-	.added_recipe{
-		height: 320;
-		float: left;
-		border: 1px solid white;
-		background-color: #7ed42f;
-	}
-	.add_recipe{
-		height: 320;
-		float: left;
-		border: 1px solid white;
-		background-color: #7ed42f;
-		text-align: center;
-		img{
-			width: 100px;
-			margin-top: 70px;
-		}
-		.add_text{
-			font-size: 18px;
-			color: white;
-		}
-	}
-	.add_recipe:hover{
 		cursor: pointer;
 	}
-	.close_img{
-		position: relative;
-		text-align: right;
-		.cl_img{
-			width: 20px;
-			position: relative;
-			top: 7;
-			right: 7;
-		}
-		.cl_img:hover{
-			cursor: pointer;
-		}
-	}
-	.recipe_foto{
-		width: 100px;
-		height: 100px;
-		border-radius: 50%;
-		border: 2px solid white;
-		overflow: hidden;
-		margin: 10px auto 0px auto;
-		img{
-			width: 180px;
-			position: relative;
-			left: -40px;
-		}
-	}
-	.recipe_name{
-		text-align: center;
-		color: white;
-		margin: 5px 0px;
-	}
-	.time_to_eat, .count_to_eat{
-		color: white;
-		padding: 5px;
-		text-align: center;
-		width: 50%;
+	.day_line_active{
 		float: left;
-		input[type="text"]{
-			width: 50px;
-			color: white;
-			border: 1px solid white;
-			background-color: #7ed42f;
-			text-align: center;
-		}
-		img{
-			height: 40px;
-			vertical-align: middle;
-			margin-bottom: 5px;
-		}
-	}
-	.total_kkal_to_eat{
-		text-align: center;
-		margin: auto;
+		width: 14.28%;
+		height: 27px;
+		background-color:  #7ED42F;
 		color: white;
-		float: left;
+		text-align: center;
+		padding-top: 5px;
+	}
+}
+.day_block{
+	.no_rec{
 		width: 100%;
-		.wrap_kkal_to_eat{
-			margin: auto;
-			width: 50px;
-			height: 50px;
-			background-color: #7ED42F;
-			color: white;
-			border-radius: 100px;
-			text-align: center;
-			padding-top: 6px;
-			border: 1px solid white;
-		}
-		img{
-			height: 40px;
-			vertical-align: middle;
-		}
-	}
-}
-
-.week_day_d_block{
-	margin: 0px auto;
-	width: 50%;
-	border: 1px solid #7ED42F;
-	.title_day{
-		text-align: center;
-		background-color: #7ED42F;
-		color: white;
-		font-size: 22px;
-	}
-	.added_recipe{
-		height: 320;
-		float: left;
-		border: 1px solid white;
-		background-color: #7ed42f;
-	}
-	.add_recipe{
-		height: 320;
-		float: left;
-		border: 1px solid white;
-		background-color: #7ed42f;
-		text-align: center;
-		img{
-			width: 100px;
-			margin-top: 70px;
-		}
-		.add_text{
-			font-size: 18px;
-			color: white;
-		}
-	}
-	.add_recipe:hover{
-		cursor: pointer;
-	}
-	.close_img{
-		position: relative;
-		text-align: right;
-		.cl_img{
-			width: 20px;
-			position: relative;
-			top: 7;
-			right: 7;
-		}
-		.cl_img:hover{
-			cursor: pointer;
-		}
-	}
-	.recipe_foto{
-		width: 100px;
 		height: 100px;
-		border-radius: 50%;
-		border: 2px solid white;
-		overflow: hidden;
-		margin: 10px auto 0px auto;
-		img{
-			width: 180px;
-			position: relative;
-			left: -40px;
-		}
-	}
-	.recipe_name{
-		text-align: center;
-		color: white;
-		margin: 5px 0px;
-	}
-	.time_to_eat, .count_to_eat{
-		color: white;
-		padding: 5px;
-		text-align: center;
-		width: 50%;
-		float: left;
-		input[type="text"]{
-			width: 50px;
-			color: white;
-			border: 1px solid white;
-			background-color: #7ed42f;
-			text-align: center;
-		}
-		img{
-			height: 40px;
-			vertical-align: middle;
-			margin-bottom: 5px;
-		}
-	}
-	.total_kkal_to_eat{
-		text-align: center;
-		margin: auto;
-		color: white;
-		float: left;
-		width: 100%;
-		.wrap_kkal_to_eat{
-			margin: auto;
-			width: 50px;
-			height: 50px;
-			background-color: #7ED42F;
-			color: white;
-			border-radius: 100px;
-			text-align: center;
-			padding-top: 6px;
-			border: 1px solid white;
-		}
-		img{
-			height: 40px;
-			vertical-align: middle;
-		}
-	}
-}
-
-.wrap_diary_block{
-	overflow: hidden;
-	.diary_name{
-		width: 46%;
 		background-color: #7ed42f;
-		padding: 10px 0px;
-		margin: 2%;
-		float: left;
-		.close_img{
-			position: relative;
-			.cl_img{
-				width: 20px;
-				float: right;
-				margin-right: 10px;
-				position: absolute;
-				right: 0;
-			}
-			.cl_img:hover{
-				cursor:pointer;
-			}
-		}
-		.dname{
-			width: 70%;
-			text-align: center;
-			color: white;
-			font-size: 28px;
-			margin: 10px 0px;
-			float: left;
-		}
-		.right_column{
-			float: left;
-			width: 30%;
-			.total_kkal{
-				font-size: 26px;
-				color: white;
-				float: left;
-				img{
-					vertical-align: middle;
-					margin: 0px 15px 0px 20px;
-				}
-			}
-			.diary_more{
-				width: 80%;
-				height: 30px;
-				color: white;
-				float: left;
-				text-align: center;
-				padding-top: 5px;
-				border: 2px solid white;
-				margin: 5px 3%;
-				transition: all 0.3s;
-			}
-			.diary_more:hover{
-				color: #7ed42f;
-				background-color: white;
-				cursor: pointer;
-			}
-		}
+		text-align: center;
+		color: white;
+		padding-top: 25px;
+		font-size: 30px;
 	}
-	.diary_name_day{
-		width: 46%;
-		background-color: #4d9808;
-		padding: 10px 0px;
-		margin: 2%;
-		float: left;
-		.close_img{
-			position: relative;
-			.cl_img{
-				width: 20px;
-				float: right;
-				margin-right: 10px;
-				position: absolute;
-				right: 0;
-			}
-			.cl_img:hover{
-				cursor:pointer;
-			}
-		}
-		.dname{
-			width: 70%;
-			text-align: center;
-			color: white;
-			font-size: 28px;
-			margin: 10px 0px;
-			float: left;
-		}
-		.right_column{
-			float: left;
-			width: 30%;
-			.total_kkal{
-				font-size: 26px;
-				color: white;
-				float: left;
-				img{
-					vertical-align: middle;
-					margin: 0px 15px 0px 20px;
-				}
-			}
-			.diary_more{
-				width: 80%;
-				height: 30px;
-				color: white;
-				float: left;
-				text-align: center;
-				padding-top: 5px;
-				border: 2px solid white;
-				margin: 5px 3%;
-				transition: all 0.3s;
-			}
-			.diary_more:hover{
-				color: #4d9808;
-				background-color: white;
-				cursor: pointer;
-			}
-		}
-	}
-}
-
-.but_create_diaries{
-	text-align: center;
-	.create_diary, .save_diary{
-		width: 150px;
-		height: 50px;
+	.info_zone{
+		background-color:  #7ED42F;
 		font-size: 20px;
 		color: white;
-		border: none;
-		background-color: #7ED42F;
-		margin-top: 20px;
+		padding-left: 20px;
 	}
-	.create_diary:hover, .save_diary:hover{
-		cursor: pointer;
-	}
-}
-
-
-.error_add_diary{
-	text-align: center;
-	margin: 10px 0px;
-	font-size: 20px;
-}
-
-
-#add_recipe_dialog{
-	.content_rec_dialog{
-		width: 650px;
-		height: 500px;
-		background-color: #7ED42F;
-		position: relative;
+	.rec{
 		overflow: hidden;
-		overflow-y: auto;
-		margin: 40px auto;
-		.close_dialog{
-			position: absolute;
-			right: 5;
-			top: 5;
-			text-align: center;
-			color: white;
-			height: 30px;
-			width: 30px;
-			text-decoration: none;
-		}
-		.close_dialog:before{
-			font-family: Arial;
-			content: "x";
-			font-size: 24px;
-			color: white;
-		}
-		.title_rec_dialog{
-			text-align: center;
-			font-size: 24px;
-			color: white;
-			margin: 10px 0px;
-		}
-		.rec_find{
-			width: 100%;
-			height: 100px;
-			text-align: center;
-			color: white;
+		border: 3px solid white;
+		background-color: #7ed42f;
+		.rec_name{
+			text-align: left;
+			padding: 2px 10px;
 			font-size: 20px;
-			input[type="text"]{
-				font-size: 16px;
-				border: 1px solid white;
-			}
-			select{
-				font-size: 16px;
-				background-color: #7ed42f;
-				border: 1px solid white;
-				color: white;
-			}
-			div{
-				margin: 15px;
-				float: left;
-			}
+			color: white;
+			border-bottom: 1px solid white;
 		}
-		.rec_list{
-			.rec{
+		.left_column{
+			float: left;
+			width: 60%;
+			height: 120px;
+			.rec_foto{
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				border: 2px solid white;
+				overflow: hidden;
+				float: left;
+				margin: 10px;
+				img{
+					width: 180px;
+					position: relative;
+					left: -40px;
+				}
+			}
+			.count_time{
+				width: 20%;
 				height: 120px;
-				border-bottom: 1px solid white;
-				border-top: 1px solid white;
 				padding: 10px 0px;
-				.small_img{
-					float: left;
-					width: 100px;
-					height: 100px;
-					border: 1px solid white;
-					border-radius: 50%;
-					overflow: hidden;
-					margin-left: 15px;
+				float: left;
+				.time_to_eat, .count_to_eat{
+					color: white;
+					padding: 5px;
+					text-align: center;
+					margin: auto;
+					input[type="text"]{
+						width: 50px;
+						color: white;
+						border: 1px solid white;
+						background-color: #7ed42f;
+						text-align: center;
+					}
 					img{
-						height: 100%;
-						position: relative;
-						left: -30;
+						height: 40px;
+						vertical-align: middle;
+						margin-bottom: 5px;
 					}
 				}
-				.rec_info{
+			}
+			
+			.total_kkal_to_eat{
+				width: 60%;
+				text-align: center;
+				margin: auto;
+				color: white;
+				float: left;
+				margin-top: 25px;
+				.wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat{
 					float: left;
-					height: 100%;
-					width: 518px;
+					margin: 0px 4%;
+					width: 70px;
+					height: 70px;
+					background-color: #7ED42F;
 					color: white;
-					.title_rec_name{
-						text-align: center;
-						font-size: 20px;
-					}
-					.rec_stat_block{
-						width: 100px;
-						height: 67px;
+					border-radius: 100px;
+					text-align: center;
+					padding-top: 11px;
+					font-size: 20px;
+					border: 2px solid white;
+				}
+				img{
+					height: 40px;
+					vertical-align: middle;
+				}
+			}
+		}
+		.right_column{
+			float: left;
+			width: 40%;
+			height: 120px;
+			.rec_ingred{
+				width: 70%;
+				float: left;
+				table{
+					font-size: 14px;
+					color: white;
+					width: 100%;
+					height: 100%;
+					padding: 0px 3% 0px 3%;
+					border-left: 1px solid white;
+					border-right: 1px solid white;
+					.tab_name{
 						color: white;
-						padding-top: 20px;
-						font-size: 20px;
-						float: left;
-						img{
-							height: 30px;
-							vertical-align: middle;
-						}
-						.but_add{
-							width: 100px;
-							height: 30px;
-							border: 1px solid white;
-							background-color: #7ed42f;
-							color: white;
-							font-size: 16px;
-						}
-						.but_add:hover{
-							color: #7ed42f;
-							background-color: white;
-							cursor: pointer;
-						}
+						font-size: 18px;
 					}
-					.rec_stat_unblock{
-						display: none;
+					.mass_ing{
+						width: 75px;
+						text-align: center;
 					}
-					.rec_left_block{
-						margin-left: 14px;
-					}
+				}
+			}
+			.rec_but_about{
+				width: 30%;
+				float: left;
+				.rec_about{
+					text-align: center;
+					margin: 45px auto 0px auto;
+					padding-top: 8px;
+					width: 120px;
+					height: 35px;
+					background-color: #7ED42F;
+					border: 2px solid white;
+					color: white;
+					font-size: 15px;
+					-webkit-transition: all 0.3s;
+					-moz-transition: all 0.3s;
+					transition: all 0.3s;
+				}
+				.rec_about:hover{
+					cursor: pointer;
+					color: #7ED42F;
+					background-color: white;
 				}
 			}
 		}
 	}
 }
+
+
+
+
