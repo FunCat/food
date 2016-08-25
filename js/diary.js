@@ -1,4 +1,5 @@
  $(document).ready(function(){  
+ 	$(window).resize(function(){resize_calculation();});
 	show_diary(0, $('.monday'));
 	$('.monday').click(function(){
 		show_diary(0, this);
@@ -41,23 +42,35 @@ function count_info_rec(){
 }
 
 
-function show_diary(day, t)  
-		{  
-			$('.rec').remove();
-			$('.day_line_active').removeClass("day_line_active").addClass("day_line");
-			$(t).addClass("day_line_active");
-			$.ajax({
-				url: "list_diary_rec.php",  
-				cache: false,  
-				data: { day: day, did: did},
-				success: function(html){  
-					$(".day_block").html(html);  
-					$(document).ready(function(){
-						count_info_rec();
-						if($('.rec').length == 0){
-							$('.day_block').append("<div class='no_rec'>No recipes!</div>");
-						}
-					});
-				}  
-			});  
+function show_diary(day, t){  
+	$('.rec').remove();
+	$('.day_line_active').removeClass("day_line_active").addClass("day_line");
+	$(t).addClass("day_line_active");
+	$.ajax({
+		url: "list_diary_rec.php",  
+		cache: false,  
+		data: { day: day, did: did},
+		success: function(html){  
+			$(".day_block").html(html);  
+			$(document).ready(function(){
+				count_info_rec();
+				if($('.rec').length == 0){
+					$('.day_block').append("<div class='no_rec'>No recipes!</div>");
+				}
+				resize_calculation();
+			});
 		}  
+	});  
+}
+function resize_calculation(){
+	$(".rec_foto").css({"height": $(".rec_foto").width() + "px"});
+	$(".rec").css({"height": $(".rec_foto").width() + 60 + "px"});
+	$(".left_column").css({"height": $(".rec").height() - $(".rec_name").height() + "px"});
+	$(".right_column").css({"height": $(".rec").height() - $(".rec_name").height() + "px"});
+	$(".rec_foto img").css({"height": $(".rec_foto").width() + "px"});
+	$(".wrap_kkal_to_eat").css({"height": $(".wrap_kkal_to_eat").width() + "px", "padding-top": $(".wrap_kkal_to_eat").width() / 2 - $(".wrap_kkal_to_eat span").height() + "px"});
+	$(".wrap_proteins_to_eat").css({"height": $(".wrap_proteins_to_eat").width() + "px", "padding-top": $(".wrap_proteins_to_eat").width() / 2 - $(".wrap_kkal_to_eat span").height() + "px"});
+	$(".wrap_fats_to_eat").css({"height": $(".wrap_fats_to_eat").width() + "px", "padding-top": $(".wrap_fats_to_eat").width() / 2 - $(".wrap_kkal_to_eat span").height() + "px"});
+	$(".wrap_carboh_to_eat").css({"height": $(".wrap_carboh_to_eat").width() + "px", "padding-top": $(".wrap_carboh_to_eat").width() / 2 - $(".wrap_kkal_to_eat span").height() + "px"});
+	$(".total_kkal_to_eat").css({"margin-top": ($(".rec").height() - $(".rec_name").height()) / 2 - $(".total_kkal_to_eat").height() / 2 + "px"});
+}  

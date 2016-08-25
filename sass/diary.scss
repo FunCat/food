@@ -52,7 +52,21 @@ a{
 		overflow: hidden;
 		border: 3px solid white;
 		background-color: #7ed42f;
+		.close_img{
+			position: relative;
+			.cl_img{
+				width: 15px;
+				float: right;
+				margin: 5px;
+				position: absolute;
+				right: 0;
+			}
+			.cl_img:hover{
+				cursor:pointer;
+			}
+		}
 		.rec_name{
+			height: 30px;
 			text-align: left;
 			padding: 2px 10px;
 			font-size: 20px;
@@ -62,25 +76,21 @@ a{
 		.left_column{
 			float: left;
 			width: 60%;
-			height: 120px;
 			.rec_foto{
-				width: 100px;
-				height: 100px;
+				margin: 2%;
+				width: 16%;
 				border-radius: 50%;
 				border: 2px solid white;
 				overflow: hidden;
 				float: left;
-				margin: 10px;
 				img{
-					width: 180px;
 					position: relative;
 					left: -40px;
 				}
 			}
 			.count_time{
 				width: 20%;
-				height: 120px;
-				padding: 10px 0px;
+				margin: 2% 0px;
 				float: left;
 				.time_to_eat, .count_to_eat{
 					color: white;
@@ -88,38 +98,31 @@ a{
 					text-align: center;
 					margin: auto;
 					input[type="text"]{
-						width: 50px;
+						width: 50%;
 						color: white;
 						border: 1px solid white;
 						background-color: #7ed42f;
 						text-align: center;
 					}
 					img{
-						height: 40px;
+						width: 30%;
 						vertical-align: middle;
-						margin-bottom: 5px;
 					}
 				}
 			}
-			
 			.total_kkal_to_eat{
 				width: 60%;
 				text-align: center;
-				margin: auto;
 				color: white;
 				float: left;
-				margin-top: 25px;
 				.wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat{
 					float: left;
-					margin: 0px 4%;
-					width: 70px;
-					height: 70px;
+					width: 21%;
+					margin: 2%;
 					background-color: #7ED42F;
 					color: white;
 					border-radius: 100px;
 					text-align: center;
-					padding-top: 11px;
-					font-size: 20px;
 					border: 2px solid white;
 				}
 				img{
@@ -131,12 +134,11 @@ a{
 		.right_column{
 			float: left;
 			width: 40%;
-			height: 120px;
 			.rec_ingred{
 				width: 70%;
+				height: 98%;
 				float: left;
 				table{
-					font-size: 14px;
 					color: white;
 					width: 100%;
 					height: 100%;
@@ -145,10 +147,8 @@ a{
 					border-right: 1px solid white;
 					.tab_name{
 						color: white;
-						font-size: 18px;
 					}
 					.mass_ing{
-						width: 75px;
 						text-align: center;
 					}
 				}
@@ -157,15 +157,13 @@ a{
 				width: 30%;
 				float: left;
 				.rec_about{
+					padding-top: 4px;
+					width: 80%;
 					text-align: center;
 					margin: 45px auto 0px auto;
-					padding-top: 8px;
-					width: 120px;
-					height: 35px;
 					background-color: #7ED42F;
 					border: 2px solid white;
 					color: white;
-					font-size: 15px;
 					-webkit-transition: all 0.3s;
 					-moz-transition: all 0.3s;
 					transition: all 0.3s;
@@ -178,6 +176,48 @@ a{
 			}
 		}
 	}
+}
+@media screen and (min-width: 1367px) {
+	.rec_about{height: 30px;}
+	.wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat{font-size: 20px;}
+}
+@media screen and (max-width: 1366px) {
+	.rec_about{height: 30px;}
+	.wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat{font-size: 19px;}
+}
+@media screen and (max-width: 1150px) {
+	.rec_about{font-size: 14px; height: 30px;}
+	.wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat{font-size: 16px;}
+}
+@media screen and (max-width: 1024px) {
+	.info_zone{font-size: 18px !important;}
+	.rec_about{height: 30px;}
+	.rec_ingred{table{font-size: 14px;}}
+}
+@media screen and (max-width: 980px) {
+	.info_zone{font-size: 17px !important;}
+	.rec_about{
+		font-size: 12px;
+		height: 25px;
+	}
+}
+@media screen and (max-width: 900px) {
+	.day_line{font-size: 14px;}
+	.info_zone{font-size: 16px !important;}
+	.wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat{font-size: 15px;}
+	.rec_ingred{table{font-size: 12px; tr{height: 0px;}}}
+	.count_time{
+		.time_to_eat, .count_to_eat{
+			input[type="text"]{
+				font-size: 12px;
+			}
+		}
+	}
+	.rec_name{height: 25px !important; font-size: 18px !important;}
+}
+@media screen and (max-width: 800px) {
+	.info_zone{font-size: 16px !important;}
+	.rec_about{font-size: 10px;}
 }
 
 

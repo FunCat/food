@@ -204,7 +204,7 @@ function show_diary(day, t)
 				if($('.rec').length == 0){
 					$('.day_block').append("<div class='no_rec'>No recipes!</div>");
 				}
-				 resize_calculation();
+				resize_calculation();
 			});
 		}  
 	});  

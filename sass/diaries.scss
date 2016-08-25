@@ -20,17 +20,19 @@
 			}
 		}
 		.dname{
-			width: 70%;
+			width: 100%;
 			text-align: center;
 			color: white;
 			font-size: 28px;
 			margin: 10px 0px;
 			float: left;
 		}
-		.right_column{
+		.center_line{
 			float: left;
-			width: 30%;
-			.total_kkal{
+			width: 100%;
+			margin: 5px 0px;
+			.total_kkal, .total_prot, .total_fats, .total_carb{
+				width: 25%;
 				font-size: 26px;
 				color: white;
 				float: left;
@@ -39,15 +41,17 @@
 					margin: 0px 15px 0px 20px;
 				}
 			}
+		}
+		.bottom_line{
 			.diary_more{
-				width: 80%;
+				width: 40%;
 				height: 30px;
 				color: white;
 				float: left;
 				text-align: center;
 				padding-top: 5px;
 				border: 2px solid white;
-				margin: 5px 3%;
+				margin: 5px 5%;
 				transition: all 0.3s;
 			}
 			.diary_more:hover{

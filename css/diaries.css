@@ -28,7 +28,7 @@
 }
 /* line 22, ../sass/diaries.scss */
 .wrap_diary_block .diary_name .dname {
-  width: 70%;
+  width: 100%;
   text-align: center;
   color: white;
   font-size: 28px;
@@ -36,40 +36,42 @@
   float: left;
 }
 /* line 30, ../sass/diaries.scss */
-.wrap_diary_block .diary_name .right_column {
+.wrap_diary_block .diary_name .center_line {
   float: left;
-  width: 30%;
+  width: 100%;
+  margin: 5px 0px;
 }
-/* line 33, ../sass/diaries.scss */
-.wrap_diary_block .diary_name .right_column .total_kkal {
+/* line 34, ../sass/diaries.scss */
+.wrap_diary_block .diary_name .center_line .total_kkal, .wrap_diary_block .diary_name .center_line .total_prot, .wrap_diary_block .diary_name .center_line .total_fats, .wrap_diary_block .diary_name .center_line .total_carb {
+  width: 25%;
   font-size: 26px;
   color: white;
   float: left;
 }
-/* line 37, ../sass/diaries.scss */
-.wrap_diary_block .diary_name .right_column .total_kkal img {
+/* line 39, ../sass/diaries.scss */
+.wrap_diary_block .diary_name .center_line .total_kkal img, .wrap_diary_block .diary_name .center_line .total_prot img, .wrap_diary_block .diary_name .center_line .total_fats img, .wrap_diary_block .diary_name .center_line .total_carb img {
   vertical-align: middle;
   margin: 0px 15px 0px 20px;
 }
-/* line 42, ../sass/diaries.scss */
-.wrap_diary_block .diary_name .right_column .diary_more {
-  width: 80%;
+/* line 46, ../sass/diaries.scss */
+.wrap_diary_block .diary_name .bottom_line .diary_more {
+  width: 40%;
   height: 30px;
   color: white;
   float: left;
   text-align: center;
   padding-top: 5px;
   border: 2px solid white;
-  margin: 5px 3%;
+  margin: 5px 5%;
   transition: all 0.3s;
 }
-/* line 53, ../sass/diaries.scss */
-.wrap_diary_block .diary_name .right_column .diary_more:hover {
+/* line 57, ../sass/diaries.scss */
+.wrap_diary_block .diary_name .bottom_line .diary_more:hover {
   color: #7ed42f;
   background-color: white;
   cursor: pointer;
 }
-/* line 60, ../sass/diaries.scss */
+/* line 64, ../sass/diaries.scss */
 .wrap_diary_block .diary_name_day {
   width: 46%;
   background-color: #4d9808;
@@ -77,11 +79,11 @@
   margin: 2%;
   float: left;
 }
-/* line 66, ../sass/diaries.scss */
+/* line 70, ../sass/diaries.scss */
 .wrap_diary_block .diary_name_day .close_img {
   position: relative;
 }
-/* line 68, ../sass/diaries.scss */
+/* line 72, ../sass/diaries.scss */
 .wrap_diary_block .diary_name_day .close_img .cl_img {
   width: 20px;
   float: right;
@@ -89,11 +91,11 @@
   position: absolute;
   right: 0;
 }
-/* line 75, ../sass/diaries.scss */
+/* line 79, ../sass/diaries.scss */
 .wrap_diary_block .diary_name_day .close_img .cl_img:hover {
   cursor: pointer;
 }
-/* line 79, ../sass/diaries.scss */
+/* line 83, ../sass/diaries.scss */
 .wrap_diary_block .diary_name_day .dname {
   width: 70%;
   text-align: center;
@@ -102,23 +104,23 @@
   margin: 10px 0px;
   float: left;
 }
-/* line 87, ../sass/diaries.scss */
+/* line 91, ../sass/diaries.scss */
 .wrap_diary_block .diary_name_day .right_column {
   float: left;
   width: 30%;
 }
-/* line 90, ../sass/diaries.scss */
+/* line 94, ../sass/diaries.scss */
 .wrap_diary_block .diary_name_day .right_column .total_kkal {
   font-size: 26px;
   color: white;
   float: left;
 }
-/* line 94, ../sass/diaries.scss */
+/* line 98, ../sass/diaries.scss */
 .wrap_diary_block .diary_name_day .right_column .total_kkal img {
   vertical-align: middle;
   margin: 0px 15px 0px 20px;
 }
-/* line 99, ../sass/diaries.scss */
+/* line 103, ../sass/diaries.scss */
 .wrap_diary_block .diary_name_day .right_column .diary_more {
   width: 80%;
   height: 30px;
@@ -130,14 +132,14 @@
   margin: 5px 3%;
   transition: all 0.3s;
 }
-/* line 110, ../sass/diaries.scss */
+/* line 114, ../sass/diaries.scss */
 .wrap_diary_block .diary_name_day .right_column .diary_more:hover {
   color: #4d9808;
   background-color: white;
   cursor: pointer;
 }
 
-/* line 119, ../sass/diaries.scss */
+/* line 123, ../sass/diaries.scss */
 .but_create_diary {
   background-color: #7ED42F;
   width: 220px;
@@ -146,19 +148,19 @@
   color: white;
   margin: auto;
 }
-/* line 126, ../sass/diaries.scss */
+/* line 130, ../sass/diaries.scss */
 .but_create_diary a {
   text-decoration: none;
   color: white;
 }
-/* line 130, ../sass/diaries.scss */
+/* line 134, ../sass/diaries.scss */
 .but_create_diary .plus_image {
   height: 40px;
   margin: 5px;
   vertical-align: middle;
 }
 
-/* line 136, ../sass/diaries.scss */
+/* line 140, ../sass/diaries.scss */
 .but_create_diary:hover {
   cursor: pointer;
 }

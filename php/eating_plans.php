@@ -180,7 +180,7 @@
 		?>
 		<div class="wrap_main_part">
 			<div class="main_part">
-				<h1 class="title">Дневники</h1>
+				<h1 class="title">Планы питания</h1>
 					<?php 
 						$logres = $_COOKIE["log"];
 
@@ -199,7 +199,6 @@
 							while($row_diary = mysqli_fetch_array($result_diary))
 							{
 								echo 	"<div class='diary_name'>
-											<div class='close_img'><img class='cl_img' src='../img/close.png' onclick='removeDiary(this, ".$row_diary['id'].")' /></div>
 											<div class='dname'>".$row_diary['name']."</div>
 											<div class='center_line'>
 												<div class='total_kkal'><img src='../img/k.png' />".$row_diary['week_kkal']."</div>
@@ -215,7 +214,7 @@
 												</a>
 												<a href='diary_edit.php?r=".$row_diary['id']."'>
 													<div class='diary_more'>
-														Редактировать
+														Добавить к себе
 													</div>
 												</a>
 											</div>
@@ -225,11 +224,6 @@
 							
 						</div>
 						
-						<div class="but_create_diary">
-							<a href="diary_add.php">
-								<img class="plus_image" src="../img/plus.png" />Создать дневник
-							</a>
-						</div>
 						<!--<div class="but_create_diary_day">
 							<a href="diary_add_day_menu.php">
 								<img class="plus_image" src="../img/plus.png" />Создать меню на день
