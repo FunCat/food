@@ -192,16 +192,16 @@
 					<form method="post" action="#">
 						<div class="wrap_diary_block">
 							<?php
-							$result_diary = mysqli_query($mysqli, "SELECT id, name, week_kkal, week_prot, week_fats, week_carboh, diary_type FROM diary WHERE clients_id =  $client_id");
+							$result_diary = mysqli_query($mysqli, "SELECT id, name, kkal_avr, proteins_avr, fats_avr, carboh_avr FROM diets");
 							while($row_diary = mysqli_fetch_array($result_diary))
 							{
 								echo 	"<div class='diary_name'>
 											<div class='dname'>".$row_diary['name']."</div>
 											<div class='center_line'>
-												<div class='total_kkal'><img src='../img/k.png' />".$row_diary['week_kkal']."</div>
-												<div class='total_prot'><img src='../img/b.png' />".$row_diary['week_prot']."</div>
-												<div class='total_fats'><img src='../img/zh.png' />".$row_diary['week_fats']."</div>
-												<div class='total_carb'><img src='../img/y.png' />".$row_diary['week_carboh']."</div>
+												<div class='total_kkal'><img src='../img/k.png' />".$row_diary['kkal_avr']."</div>
+												<div class='total_prot'><img src='../img/b.png' />".$row_diary['proteins_avr']."</div>
+												<div class='total_fats'><img src='../img/zh.png' />".$row_diary['fats_avr']."</div>
+												<div class='total_carb'><img src='../img/y.png' />".$row_diary['carboh_avr']."</div>
 											</div>
 											<div class='bottom_line'>
 												<a href='eating_plan.php?r=".$row_diary['id']."'>

@@ -7,7 +7,7 @@
 	<title>DailyFood</title>
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/log_dialog.css" />
-	<link rel="stylesheet" href="../css/recipe_list.css" />
+	<link rel="stylesheet" href="../css/eating_plan.css" />
 	<link rel="stylesheet" href="../fonts/font.css" />
 	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
@@ -141,72 +141,33 @@
 		if(isset($_GET['r']))
 		{
 			$rid = $_GET['r'];
-			$result = mysqli_query($mysqli, "SELECT * FROM recipes WHERE id = $rid");
+			$result = mysqli_query($mysqli, "SELECT * FROM diets WHERE id = $rid");
 			$row = mysqli_fetch_array($result);
-
-			$riw = $row['watchs'] + 1;
-			mysqli_query($mysqli, "UPDATE recipes SET watchs = $riw WHERE id = $rid");
 		?>
-
-
 		<div class="wrap_main_part">
 			<div class="main_part">
 				<div class="section_title">
 					<h1><?php echo $row['name']; ?></h1>
 				</div>
 
-				<div class="hei_block">
-					<div class="foto_recipe">
-						<div class="main_foto"><img class="main_foto_f" src="<?php echo $row['main_foto']; ?>" /></div>
-						<div class="wrap_fotos">
-							<div class="fotos">
-								<div class="wrap_small_foto"><?php if($row['main_foto'] != "") echo "<img class='small_foto'  src='".$row['main_foto']."' onclick='change_main_foto(\"".$row['main_foto']."\")'/>"; ?></div>
-								<div class="wrap_small_foto"><?php if($row['foto1'] != "") echo "<img class='small_foto'  src='".$row['foto1']."' onclick='change_main_foto(\"".$row['foto1']."\")'/>"; ?></div>
-								<div class="wrap_small_foto"><?php if($row['foto2'] != "") echo "<img class='small_foto'  src='".$row['foto2']."' onclick='change_main_foto(\"".$row['foto2']."\")'/>"; ?></div>
-								<div class="wrap_small_foto"><?php if($row['foto3'] != "") echo "<img class='small_foto'  src='".$row['foto3']."' onclick='change_main_foto(\"".$row['foto3']."\")'/>"; ?></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="wrap_recipe_ingred">
-						<div class="recipe_ingred">
-							Ингредиенты
-						</div>
-						<div class="list_ingredients">
-							<ul>
-								<table>
-								<?php
-									$result_ingred = mysqli_query($mysqli, "SELECT * FROM recip_ingredients AS ri JOIN ingredients AS i ON ri.ingred_id = i.id WHERE ri.recipes_id = $rid");
-									while($row_ingred = mysqli_fetch_array($result_ingred))
-									{
-										echo "<tr><td><li>".$row_ingred['name']."</li></td><td class='mass_units'>".$row_ingred['mass']." ".$row_ingred['units']."</td></tr>";
-									}
-								?>
-								</table>
-							</ul>
-
-						</div>
+				<div class="description_title">
+					<h1>Описание</h1>
+				</div>
+				<div class="wrap_description">
+					<div class="description">
+						<?php echo $row['description']; ?>
 					</div>
 				</div>
 
 
 				<div class="stats">
-					<div class="small_block_stat"><img src="../img/b.png" /><?php echo $row['proteins']; ?>г</div>
-					<div class="small_block_stat"><img src="../img/zh.png" /><?php echo $row['fats']; ?>г</div>
-					<div class="small_block_stat"><img src="../img/y.png" /><?php echo $row['carboh']; ?>г</div>
-					<div class="small_block_stat"><img src="../img/k.png" /><?php echo $row['kkal']; ?>К</div>
-					<div class="small_block_stat"><img src="../img/p.png" /><?php echo $row['count_portion']; ?></div>
-					<div class="small_block_stat"><img src="../img/v.png" /><?php echo $row['time']; ?>м</div>
+					<div class="small_block_stat"><img src="../img/b.png" /><?php echo $row['proteins_avr']; ?>г</div>
+					<div class="small_block_stat"><img src="../img/zh.png" /><?php echo $row['fats_avr']; ?>г</div>
+					<div class="small_block_stat"><img src="../img/y.png" /><?php echo $row['carboh_avr']; ?>г</div>
+					<div class="small_block_stat"><img src="../img/k.png" /><?php echo $row['kkal_avr']; ?>К</div>
 				</div>
 
-				<div class="prepare_title">
-					<h1>Способ приготовления</h1>
-				</div>
-				<div class="list_preparing">
-					<div class="content_preparing">
-						<?php echo $row['text_preporation']; ?>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 		<?php 
