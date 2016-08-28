@@ -16,7 +16,7 @@
 	<script src="../js/index.js" type="text/javascript"></script>
 	<script src="../js/slider.js" type="text/javascript"></script>
 	<script src="../js/hamburger.js" type="text/javascript"></script>
-	<script src="../js/search.js" type="text/javascript"></script>
+	<script src="../js/index_recipes_view.js" type="text/javascript"></script>
 	<script src="../js/reg_valid.js" type="text/javascript"></script>
 	<script src="../js/log_valid.js" type="text/javascript"></script>
 	<script src="../js/log_dialog.js" type="text/javascript"></script>

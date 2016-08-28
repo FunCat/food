@@ -4,10 +4,10 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>DailyFood - Личный кабинет</title>
+	<title>DailyFood</title>
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" href="../css/log_dialog.css" />
-	<link rel="stylesheet" href="../css/diaries.css" />
+	<link rel="stylesheet" href="../css/recipe_list.css" />
 	<link rel="stylesheet" href="../fonts/font.css" />
 	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
@@ -16,44 +16,7 @@
 	<script src="../js/log_dialog.js" type="text/javascript"></script>
 	<script src="../js/reg_valid.js" type="text/javascript"></script>
 	<script src="../js/log_valid.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		var maxheight = 0;
-		$(document).ready(function(){ 	
-			$("div.diary_name").each(function() {
-				if($(this).height() > maxheight)
-					maxheight = $(this).height() + 20;
-			});
-			$("div.diary_name_day").each(function() {
-				if($(this).height() > maxheight)
-					maxheight = $(this).height() + 20;
-			});
-			$("div.diary_name").height(maxheight);
-			$("div.diary_name_day").height(maxheight);
-		});
-		function removeDiary(t, i){
-			$str = "i=" + i;
-			send_remove_diary($str);
-			$(t).parent().parent().remove();
-		}
-		function send_remove_diary(str)
-		{
-			var r = new XMLHttpRequest();
-			var url = "remove_diary.php";
-			var string = str;
-			var vars = str;
-			r.open("POST", url, true);
-			r.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			r.onreadystatechange = function(){
-				if(r.readyState == 4 && r.status == 210){
-					alert(r.responseText);
-				}
-			}
-			r.onload = function () {
-				document.location.href = "http://dailyfood.online/php/diaries.php";
-			};
-			r.send(vars);
-		}
-	</script>
+	<script src="../js/recipe.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="pict_menu">
@@ -123,7 +86,7 @@
 	<div class="block_menu">
 		<ul class="list_menu">
 			<?php if(isset($_COOKIE['log'])){ ?>
-			<a href="diaries.php"><li class="active_point_menu">Личый дневник</li></a>
+			<a href="diaries.php"><li>Личый дневник</li></a>
 			<a href="favorite_recipes.php"><li>Любимые рецепты</li></a>
 			<?php }?>
 			<a href="index.php"><li>Главная</li></a>
@@ -174,64 +137,84 @@
 			</div>
 		</div>
 
-		
+		<?php
+		if(isset($_GET['r']))
+		{
+			$rid = $_GET['r'];
+			$result = mysqli_query($mysqli, "SELECT * FROM recipes WHERE id = $rid");
+			$row = mysqli_fetch_array($result);
+
+			$riw = $row['watchs'] + 1;
+			mysqli_query($mysqli, "UPDATE recipes SET watchs = $riw WHERE id = $rid");
+		?>
+
+
 		<div class="wrap_main_part">
 			<div class="main_part">
-				<h1 class="title">Планы питания</h1>
-					<?php 
-						$logres = $_COOKIE["log"];
+				<div class="section_title">
+					<h1><?php echo $row['name']; ?></h1>
+				</div>
 
-						$result_clients = mysqli_query($mysqli, "SELECT id FROM clients WHERE login =  '$logres'");
-						$bol_enter_client = mysqli_fetch_assoc($result_clients);
-
-						$client_id = $bol_enter_client['id'];
-						
-						$diary_id = $info["id"];
-						$diary_name = $info["name"];
-					 ?>
-					<form method="post" action="#">
-						<div class="wrap_diary_block">
-							<?php
-							$result_diary = mysqli_query($mysqli, "SELECT id, name, week_kkal, week_prot, week_fats, week_carboh, diary_type FROM diary WHERE clients_id =  $client_id");
-							while($row_diary = mysqli_fetch_array($result_diary))
-							{
-								echo 	"<div class='diary_name'>
-											<div class='dname'>".$row_diary['name']."</div>
-											<div class='center_line'>
-												<div class='total_kkal'><img src='../img/k.png' />".$row_diary['week_kkal']."</div>
-												<div class='total_prot'><img src='../img/b.png' />".$row_diary['week_prot']."</div>
-												<div class='total_fats'><img src='../img/zh.png' />".$row_diary['week_fats']."</div>
-												<div class='total_carb'><img src='../img/y.png' />".$row_diary['week_carboh']."</div>
-											</div>
-											<div class='bottom_line'>
-												<a href='eating_plan.php?r=".$row_diary['id']."'>
-													<div class='diary_more'>
-														Просмотреть
-													</div>
-												</a>";
-											if(isset($_COOKIE['log']))
-											{
-												echo "<a href='diary_edit.php?r=".$row_diary['id']."'>
-														<div class='diary_more'>
-															Добавить к себе
-														</div>
-													</a>";
-											}
-										echo "</div>
-										</div>";
-							}
-							?>
-							
+				<div class="hei_block">
+					<div class="foto_recipe">
+						<div class="main_foto"><img class="main_foto_f" src="<?php echo $row['main_foto']; ?>" /></div>
+						<div class="wrap_fotos">
+							<div class="fotos">
+								<div class="wrap_small_foto"><?php if($row['main_foto'] != "") echo "<img class='small_foto'  src='".$row['main_foto']."' onclick='change_main_foto(\"".$row['main_foto']."\")'/>"; ?></div>
+								<div class="wrap_small_foto"><?php if($row['foto1'] != "") echo "<img class='small_foto'  src='".$row['foto1']."' onclick='change_main_foto(\"".$row['foto1']."\")'/>"; ?></div>
+								<div class="wrap_small_foto"><?php if($row['foto2'] != "") echo "<img class='small_foto'  src='".$row['foto2']."' onclick='change_main_foto(\"".$row['foto2']."\")'/>"; ?></div>
+								<div class="wrap_small_foto"><?php if($row['foto3'] != "") echo "<img class='small_foto'  src='".$row['foto3']."' onclick='change_main_foto(\"".$row['foto3']."\")'/>"; ?></div>
+							</div>
 						</div>
-						
-						<!--<div class="but_create_diary_day">
-							<a href="diary_add_day_menu.php">
-								<img class="plus_image" src="../img/plus.png" />Создать меню на день
-							</a>
-						</div>-->
-					</form>
+					</div>
+
+					<div class="wrap_recipe_ingred">
+						<div class="recipe_ingred">
+							Ингредиенты
+						</div>
+						<div class="list_ingredients">
+							<ul>
+								<table>
+								<?php
+									$result_ingred = mysqli_query($mysqli, "SELECT * FROM recip_ingredients AS ri JOIN ingredients AS i ON ri.ingred_id = i.id WHERE ri.recipes_id = $rid");
+									while($row_ingred = mysqli_fetch_array($result_ingred))
+									{
+										echo "<tr><td><li>".$row_ingred['name']."</li></td><td class='mass_units'>".$row_ingred['mass']." ".$row_ingred['units']."</td></tr>";
+									}
+								?>
+								</table>
+							</ul>
+
+						</div>
+					</div>
+				</div>
+
+
+				<div class="stats">
+					<div class="small_block_stat"><img src="../img/b.png" /><?php echo $row['proteins']; ?>г</div>
+					<div class="small_block_stat"><img src="../img/zh.png" /><?php echo $row['fats']; ?>г</div>
+					<div class="small_block_stat"><img src="../img/y.png" /><?php echo $row['carboh']; ?>г</div>
+					<div class="small_block_stat"><img src="../img/k.png" /><?php echo $row['kkal']; ?>К</div>
+					<div class="small_block_stat"><img src="../img/p.png" /><?php echo $row['count_portion']; ?></div>
+					<div class="small_block_stat"><img src="../img/v.png" /><?php echo $row['time']; ?>м</div>
+				</div>
+
+				<div class="prepare_title">
+					<h1>Способ приготовления</h1>
+				</div>
+				<div class="list_preparing">
+					<div class="content_preparing">
+						<?php echo $row['text_preporation']; ?>
+					</div>
+				</div>
 			</div>
 		</div>
+		<?php 
+		}
+		else{
+			header('Location: http://dailyfood.online/php/recipes.php');
+		}
+		?>
 
 	</div>
 

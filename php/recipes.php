@@ -20,7 +20,7 @@
 	<script src="../js/index.js" type="text/javascript"></script>
 	<script src="../js/recipes.js" type="text/javascript"></script>
 	<script src="../js/hamburger.js" type="text/javascript"></script>
-	<script src="../js/search_rec.js" type="text/javascript"></script>
+	<script src="../js/recipes_recipes_view.js" type="text/javascript"></script>
 	<script src="../js/search_recip.js" type="text/javascript"></script>
 	<script src="../js/reg_valid.js" type="text/javascript"></script>
 	<script src="../js/log_valid.js" type="text/javascript"></script>
