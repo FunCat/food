@@ -159,6 +159,44 @@
 					</div>
 				</div>
 
+				<div class="wrap_daily_plan">
+					<div class="daily_plan">
+						<div class="plan_title">Распланировка</div>
+						<div class="plan_total">
+							<div class="total_stat"><img src="../img/b.png" /><?php echo $row['proteins_avr']; ?>г</div>
+							<div class="total_stat"><img src="../img/zh.png" /><?php echo $row['fats_avr']; ?>г</div>
+							<div class="total_stat"><img src="../img/y.png" /><?php echo $row['carboh_avr']; ?>г</div>
+							<div class="total_stat"><img src="../img/k.png" /><?php echo $row['kkal_avr']; ?>К</div>
+						</div>
+						<div class="plan_days">
+							<table cellpadding="0" cellspacing="0">
+								<tr style="color: #7ed42f; background-color: white;">
+									<td>День недели</td>
+									<td>Белки</td>
+									<td>Жиры</td>
+									<td>Углеводы</td>
+									<td>Ккал</td>
+								</tr>
+								<?php
+									$days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+									$days_state = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+									$i = 0;
+									while($i != 7){
+										$d = $days_state[$i];
+										$result = mysqli_query($mysqli, "SELECT $d FROM diets_plan WHERE diets_id = $rid");
+										while($row = mysqli_fetch_array($result)){
+											$st = $row[$d];
+											$stats = explode('|', $st);
+											echo "<tr><td>".$days[$i]."</td><td>".$stats[0]."</td><td>".$stats[1]."</td><td>".$stats[2]."</td><td>".$stats[3]."</td></tr>";
+										}
+										$i++;
+									}
+								?>
+							</table>
+						</div>
+					</div>
+				</div>
+
 
 				<div class="stats">
 					<div class="small_block_stat"><img src="../img/b.png" /><?php echo $row['proteins_avr']; ?>г</div>
