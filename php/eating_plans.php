@@ -123,7 +123,7 @@
 	<div class="block_menu">
 		<ul class="list_menu">
 			<?php if(isset($_COOKIE['log'])){ ?>
-			<a href="diaries.php"><li class="active_point_menu">Личый дневник</li></a>
+			<a href="diaries.php"><li>Личый дневник</li></a>
 			<a href="favorite_recipes.php"><li>Любимые рецепты</li></a>
 			<?php }?>
 			<a href="index.php"><li>Главная</li></a>
@@ -139,7 +139,7 @@
 				$ri = $rand_recip['id'];
 				echo "<a href='recipe.php?r=".$ri."'><li>Случайный рецепт</li></a>"
 			?>
-			<li>Питание</li>
+			<a href="eating_plans.php"><li class="active_point_menu">Питание</li></a>
 			<li>Калькулятор</li>
 			<a href="contact.php"><li>Контакты</li></a>
 			<?php if($_COOKIE['perm'] == 1){ ?><a href="admin_panel.php"><li>Панель администратора</li></a><?php }?>
@@ -192,26 +192,26 @@
 					<form method="post" action="#">
 						<div class="wrap_diary_block">
 							<?php
-							$result_diary = mysqli_query($mysqli, "SELECT id, name, kkal_avr, proteins_avr, fats_avr, carboh_avr FROM diets");
-							while($row_diary = mysqli_fetch_array($result_diary))
+							$result_plan = mysqli_query($mysqli, "SELECT id, name, kkal_avr, proteins_avr, fats_avr, carboh_avr FROM diets");
+							while($row_plan = mysqli_fetch_array($result_plan))
 							{
 								echo 	"<div class='diary_name'>
-											<div class='dname'>".$row_diary['name']."</div>
+											<div class='dname'>".$row_plan['name']."</div>
 											<div class='center_line'>
-												<div class='total_kkal'><img src='../img/k.png' />".$row_diary['kkal_avr']."</div>
-												<div class='total_prot'><img src='../img/b.png' />".$row_diary['proteins_avr']."</div>
-												<div class='total_fats'><img src='../img/zh.png' />".$row_diary['fats_avr']."</div>
-												<div class='total_carb'><img src='../img/y.png' />".$row_diary['carboh_avr']."</div>
+												<div class='total_kkal'><img src='../img/k.png' />".$row_plan['kkal_avr']."</div>
+												<div class='total_prot'><img src='../img/b.png' />".$row_plan['proteins_avr']."</div>
+												<div class='total_fats'><img src='../img/zh.png' />".$row_plan['fats_avr']."</div>
+												<div class='total_carb'><img src='../img/y.png' />".$row_plan['carboh_avr']."</div>
 											</div>
 											<div class='bottom_line'>
-												<a href='eating_plan.php?r=".$row_diary['id']."'>
+												<a href='eating_plan.php?r=".$row_plan['id']."'>
 													<div class='diary_more'>
 														Просмотреть
 													</div>
 												</a>";
 											if(isset($_COOKIE['log']))
 											{
-												echo "<a href='diary_edit.php?r=".$row_diary['id']."'>
+												echo "<a href='diary_edit.php?r=".$row_plan['id']."'>
 														<div class='diary_more'>
 															Добавить к себе
 														</div>

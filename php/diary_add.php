@@ -100,7 +100,7 @@
 				$ri = $rand_recip['id'];
 				echo "<a href='recipe.php?r=".$ri."'><li>Случайный рецепт</li></a>"
 			?>
-			<li>Питание</li>
+			<a href="eating_plans.php"><li>Питание</li></a>
 			<li>Калькулятор</li>
 			<a href="contact.php"><li>Контакты</li></a>
 			<?php if($_COOKIE['perm'] == 1){ ?><a href="admin_panel.php"><li>Панель администратора</li></a><?php }?>

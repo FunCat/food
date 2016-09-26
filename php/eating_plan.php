@@ -102,7 +102,7 @@
 				$ri = $rand_recip['id'];
 				echo "<a href='recipe.php?r=".$ri."'><li>Случайный рецепт</li></a>"
 			?>
-			<li>Питание</li>
+			<a href="eating_plans.php"><li>Питание</li></a>
 			<li>Калькулятор</li>
 			<a href="contact.php"><li>Контакты</li></a>
 			<?php if($_COOKIE['perm'] == 1){ ?><a href="admin_panel.php"><li>Панель администратора</li></a><?php }?>
@@ -150,15 +150,6 @@
 					<h1><?php echo $row['name']; ?></h1>
 				</div>
 
-				<div class="description_title">
-					<h1>Описание</h1>
-				</div>
-				<div class="wrap_description">
-					<div class="description">
-						<?php echo $row['description']; ?>
-					</div>
-				</div>
-
 				<div class="wrap_daily_plan">
 					<div class="daily_plan">
 						<div class="plan_title">Распланировка</div>
@@ -184,8 +175,8 @@
 									while($i != 7){
 										$d = $days_state[$i];
 										$result = mysqli_query($mysqli, "SELECT $d FROM diets_plan WHERE diets_id = $rid");
-										while($row = mysqli_fetch_array($result)){
-											$st = $row[$d];
+										while($row_line = mysqli_fetch_array($result)){
+											$st = $row_line[$d];
 											$stats = explode('|', $st);
 											echo "<tr><td>".$days[$i]."</td><td>".$stats[0]."</td><td>".$stats[1]."</td><td>".$stats[2]."</td><td>".$stats[3]."</td></tr>";
 										}
@@ -197,15 +188,15 @@
 					</div>
 				</div>
 
-
-				<div class="stats">
-					<div class="small_block_stat"><img src="../img/b.png" /><?php echo $row['proteins_avr']; ?>г</div>
-					<div class="small_block_stat"><img src="../img/zh.png" /><?php echo $row['fats_avr']; ?>г</div>
-					<div class="small_block_stat"><img src="../img/y.png" /><?php echo $row['carboh_avr']; ?>г</div>
-					<div class="small_block_stat"><img src="../img/k.png" /><?php echo $row['kkal_avr']; ?>К</div>
+				<div class="description_title">
+					<h1>Описание</h1>
+				</div>
+				<div class="wrap_description">
+					<div class="description">
+						<?php echo $row['description']; ?>
+					</div>
 				</div>
 
-				
 			</div>
 		</div>
 		<?php 

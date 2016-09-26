@@ -99,7 +99,7 @@
 				$ri = $rand_recip['id'];
 				echo "<a href='recipe.php?r=".$ri."'><li>Случайный рецепт</li></a>"
 			?>
-			<li>Питание</li>
+			<a href="eating_plans.php"><li>Питание</li></a>
 			<li>Калькулятор</li>
 			<a href="contact.php"><li>Контакты</li></a>
 			<?php if($_COOKIE['perm'] == 1){ ?><a href="admin_panel.php"><li>Панель администратора</li></a><?php }?>
@@ -159,6 +159,9 @@
 							<div class="day_block"></div>
 						</div>
 					</form>
+					<div class="wrap_link_doc">
+						<?php echo "<a href='word.php?r=$did' class='link_doc' target='_blank'>Скачать DOC файл</a>"; ?>
+					</div>
 			</div>
 		</div>
 

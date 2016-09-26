@@ -208,111 +208,121 @@ a {
   background-color: white;
 }
 
+/* line 180, ../sass/diary.scss */
+.wrap_link_doc {
+  width: 170px;
+  color: white;
+  background-color: #7ed42f;
+  margin: 5px auto;
+  padding: 5px;
+  text-align: center;
+}
+
 @media screen and (min-width: 1367px) {
-  /* line 181, ../sass/diary.scss */
+  /* line 190, ../sass/diary.scss */
   .rec_about {
     height: 30px;
   }
 
-  /* line 182, ../sass/diary.scss */
+  /* line 191, ../sass/diary.scss */
   .wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat {
     font-size: 20px;
   }
 }
 @media screen and (max-width: 1366px) {
-  /* line 185, ../sass/diary.scss */
-  .rec_about {
-    height: 30px;
-  }
-
-  /* line 186, ../sass/diary.scss */
-  .wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat {
-    font-size: 19px;
-  }
-}
-@media screen and (max-width: 1150px) {
-  /* line 189, ../sass/diary.scss */
-  .rec_about {
-    font-size: 14px;
-    height: 30px;
-  }
-
-  /* line 190, ../sass/diary.scss */
-  .wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat {
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  /* line 193, ../sass/diary.scss */
-  .info_zone {
-    font-size: 18px !important;
-  }
-
   /* line 194, ../sass/diary.scss */
   .rec_about {
     height: 30px;
   }
 
   /* line 195, ../sass/diary.scss */
+  .wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat {
+    font-size: 19px;
+  }
+}
+@media screen and (max-width: 1150px) {
+  /* line 198, ../sass/diary.scss */
+  .rec_about {
+    font-size: 14px;
+    height: 30px;
+  }
+
+  /* line 199, ../sass/diary.scss */
+  .wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  /* line 202, ../sass/diary.scss */
+  .info_zone {
+    font-size: 18px !important;
+  }
+
+  /* line 203, ../sass/diary.scss */
+  .rec_about {
+    height: 30px;
+  }
+
+  /* line 204, ../sass/diary.scss */
   .rec_ingred table {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 980px) {
-  /* line 198, ../sass/diary.scss */
+  /* line 207, ../sass/diary.scss */
   .info_zone {
     font-size: 17px !important;
   }
 
-  /* line 199, ../sass/diary.scss */
+  /* line 208, ../sass/diary.scss */
   .rec_about {
     font-size: 12px;
     height: 25px;
   }
 }
 @media screen and (max-width: 900px) {
-  /* line 205, ../sass/diary.scss */
+  /* line 214, ../sass/diary.scss */
   .day_line {
     font-size: 14px;
   }
 
-  /* line 206, ../sass/diary.scss */
+  /* line 215, ../sass/diary.scss */
   .info_zone {
     font-size: 16px !important;
   }
 
-  /* line 207, ../sass/diary.scss */
+  /* line 216, ../sass/diary.scss */
   .wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat {
     font-size: 15px;
   }
 
-  /* line 208, ../sass/diary.scss */
+  /* line 217, ../sass/diary.scss */
   .rec_ingred table {
     font-size: 12px;
   }
-  /* line 208, ../sass/diary.scss */
+  /* line 217, ../sass/diary.scss */
   .rec_ingred table tr {
     height: 0px;
   }
 
-  /* line 211, ../sass/diary.scss */
+  /* line 220, ../sass/diary.scss */
   .count_time .time_to_eat input[type="text"], .count_time .count_to_eat input[type="text"] {
     font-size: 12px;
   }
 
-  /* line 216, ../sass/diary.scss */
+  /* line 225, ../sass/diary.scss */
   .rec_name {
     height: 25px !important;
     font-size: 18px !important;
   }
 }
 @media screen and (max-width: 800px) {
-  /* line 219, ../sass/diary.scss */
+  /* line 228, ../sass/diary.scss */
   .info_zone {
     font-size: 16px !important;
   }
 
-  /* line 220, ../sass/diary.scss */
+  /* line 229, ../sass/diary.scss */
   .rec_about {
     font-size: 10px;
   }

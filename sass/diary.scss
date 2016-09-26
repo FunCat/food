@@ -177,6 +177,15 @@ a{
 		}
 	}
 }
+.wrap_link_doc{
+	width: 170px;
+	color: white;
+	background-color: #7ed42f;
+	margin: 5px auto;
+	padding: 5px;
+	text-align: center;
+}
+
 @media screen and (min-width: 1367px) {
 	.rec_about{height: 30px;}
 	.wrap_kkal_to_eat, .wrap_proteins_to_eat, .wrap_fats_to_eat, .wrap_carboh_to_eat{font-size: 20px;}
