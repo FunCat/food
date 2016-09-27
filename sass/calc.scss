@@ -1,0 +1,32 @@
+.section_title{
+	margin: 20px 0px;
+}
+.form_calc{
+	width: 300px;
+	height: 160px;
+	margin: auto;
+	padding-top: 9px;
+	background-color: #7ed42f;
+	table{
+		margin: auto;
+		color: white;
+		font-size: 20px;
+	}
+	.but_calc{
+		width: 150px;
+		height: 35px;
+		background-color: #7ed42f;
+		color: white;
+		border: 1px solid white;
+		margin: 5px auto;
+		text-align: center;
+		padding: 5px 0px;
+		font-size: 20px;
+	}
+	.but_calc:hover{
+		color: #7ed42f;
+		background-color: white;
+		cursor: pointer;
+		transition: all 0.3s;
+	}
+}

@@ -1,0 +1,38 @@
+/* line 1, ../sass/calc.scss */
+.section_title {
+  margin: 20px 0px;
+}
+
+/* line 4, ../sass/calc.scss */
+.form_calc {
+  width: 300px;
+  height: 160px;
+  margin: auto;
+  padding-top: 9px;
+  background-color: #7ed42f;
+}
+/* line 10, ../sass/calc.scss */
+.form_calc table {
+  margin: auto;
+  color: white;
+  font-size: 20px;
+}
+/* line 15, ../sass/calc.scss */
+.form_calc .but_calc {
+  width: 150px;
+  height: 35px;
+  background-color: #7ed42f;
+  color: white;
+  border: 1px solid white;
+  margin: 5px auto;
+  text-align: center;
+  padding: 5px 0px;
+  font-size: 20px;
+}
+/* line 26, ../sass/calc.scss */
+.form_calc .but_calc:hover {
+  color: #7ed42f;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}

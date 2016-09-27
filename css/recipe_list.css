@@ -2,29 +2,41 @@
 .section_title {
   margin: 20px 0px;
 }
+/* line 3, ../sass/recipe_list.scss */
+.section_title .img_rec_watch {
+  font-size: 22px;
+  margin: 5px 10px 0px 0px;
+  float: right;
+}
+/* line 7, ../sass/recipe_list.scss */
+.section_title .img_rec_watch img {
+  margin: 0px 10px;
+  vertical-align: middle;
+  height: 20px;
+}
 
-/* line 4, ../sass/recipe_list.scss */
+/* line 14, ../sass/recipe_list.scss */
 .foto_recipe {
   width: 50%;
   height: 450px;
   overflow: hidden;
   float: left;
 }
-/* line 9, ../sass/recipe_list.scss */
+/* line 19, ../sass/recipe_list.scss */
 .foto_recipe img {
   width: 100%;
 }
-/* line 12, ../sass/recipe_list.scss */
+/* line 22, ../sass/recipe_list.scss */
 .foto_recipe .main_foto {
   height: 350px;
   overflow: hidden;
 }
 
-/* line 17, ../sass/recipe_list.scss */
+/* line 27, ../sass/recipe_list.scss */
 .wrap_fotos {
   margin-top: 10px;
 }
-/* line 20, ../sass/recipe_list.scss */
+/* line 30, ../sass/recipe_list.scss */
 .wrap_fotos .fotos .wrap_small_foto {
   width: 140px;
   height: 85px;
@@ -32,19 +44,19 @@
   float: left;
   margin: 0px 5px;
 }
-/* line 26, ../sass/recipe_list.scss */
+/* line 36, ../sass/recipe_list.scss */
 .wrap_fotos .fotos .wrap_small_foto .small_foto {
   width: 100%;
   height: auto;
 }
 
-/* line 34, ../sass/recipe_list.scss */
+/* line 44, ../sass/recipe_list.scss */
 .wrap_recipe_ingred {
   float: left;
   width: 50%;
   height: 90px;
 }
-/* line 38, ../sass/recipe_list.scss */
+/* line 48, ../sass/recipe_list.scss */
 .wrap_recipe_ingred .recipe_ingred {
   background-color: #7ed42f;
   margin: 2% 2% 0px 2%;
@@ -56,28 +68,28 @@
   font-size: 28px;
   color: white;
 }
-/* line 49, ../sass/recipe_list.scss */
+/* line 59, ../sass/recipe_list.scss */
 .wrap_recipe_ingred .list_ingredients {
   width: 90%;
   margin: 0px 5%;
   box-shadow: 0 0 5px #2b5801;
 }
-/* line 53, ../sass/recipe_list.scss */
+/* line 63, ../sass/recipe_list.scss */
 .wrap_recipe_ingred .list_ingredients ul {
   padding: 10px 30px 0px 50px;
 }
-/* line 55, ../sass/recipe_list.scss */
+/* line 65, ../sass/recipe_list.scss */
 .wrap_recipe_ingred .list_ingredients ul table {
   font-size: 25px;
   color: #4d9808;
 }
-/* line 58, ../sass/recipe_list.scss */
+/* line 68, ../sass/recipe_list.scss */
 .wrap_recipe_ingred .list_ingredients ul table .mass_units {
   text-align: center;
   padding: 0px 20px;
 }
 
-/* line 67, ../sass/recipe_list.scss */
+/* line 77, ../sass/recipe_list.scss */
 .stats {
   width: 100%;
   height: 70px;
@@ -85,7 +97,7 @@
   float: left;
   margin-top: 10px;
 }
-/* line 73, ../sass/recipe_list.scss */
+/* line 83, ../sass/recipe_list.scss */
 .stats .small_block_stat {
   width: 12%;
   height: 80%;
@@ -96,13 +108,13 @@
   margin-top: 10px;
   text-align: center;
 }
-/* line 82, ../sass/recipe_list.scss */
+/* line 92, ../sass/recipe_list.scss */
 .stats .small_block_stat img {
   vertical-align: middle;
   margin-right: 9px;
 }
 
-/* line 89, ../sass/recipe_list.scss */
+/* line 99, ../sass/recipe_list.scss */
 .prepare_title {
   float: left;
   width: 100%;
@@ -111,7 +123,7 @@
   color: white;
 }
 
-/* line 96, ../sass/recipe_list.scss */
+/* line 106, ../sass/recipe_list.scss */
 .list_preparing {
   width: 90%;
   min-height: 250px;
@@ -119,7 +131,7 @@
   box-shadow: 0 0 5px #2b5801;
   float: left;
 }
-/* line 102, ../sass/recipe_list.scss */
+/* line 112, ../sass/recipe_list.scss */
 .list_preparing .content_preparing {
   padding: 15px 30px 15px 50px;
   font-size: 25px;

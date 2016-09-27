@@ -1,5 +1,15 @@
 .section_title{
 	margin: 20px 0px;
+	.img_rec_watch{
+		font-size: 22px;
+		margin: 5px 10px 0px 0px;
+		float: right;
+		img{
+			margin: 0px 10px;
+			vertical-align: middle;
+			height: 20px;
+		}
+	}
 }
 .foto_recipe{
 	width: 50%;
